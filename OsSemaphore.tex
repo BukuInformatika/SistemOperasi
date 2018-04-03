@@ -1,5 +1,6 @@
 \section{System Operasi Semaphore}
 \subsection{Definisi}
+<<<<<<< HEAD
 Semaphore pada system operasi merupakan sebuah variabel bertipe integer. Di kehidupan nyata, semaphore merupakan sistem sinyal yang
 digunakan untuk memberi sinyal atau tanda dan berkomunikasi secara visual. Pada software, semaphore merupakan sebuah variabel bertipe data
 integer yang selain saat inisialisasi, yang hanya dapat diakses melalui dua operasi standar, yaitu increment dan decrement. Semaphore bias
@@ -43,3 +44,31 @@ tidak membuang waktu untuk memeriksa nilai semaphore yang tidak perlu.
 Konsep penghitungan semaphore dapat diperpanjang dengan kemampuan untuk mengklaim atau mengembalikan lebih dari satu \"unit\" dari semaphore, teknik yang 
 diterapkan di Unix. Operasi V dan P yang dimodifikasi adalah sebagai berikut, menggunakan tanda kurung siku untuk menunjukkan operasi atom, yaitu operasi 
 yang tampak terpisah dari perspektif proses lain:
+=======
+Semaphore pada system operasi merupakan sebuah variabel bertipe integer. Di kehidupan nyata, semaphore merupakan sistem sinyal 		yang digunakan untuk memberi sinyal atau tanda dan berkomunikasi secara visual. Pada software, semaphore merupakan sebuah variabel bertipe data integer yang selain saat inisialisasi, yang hanya dapat diakses melalui dua operasi standar, yaitu increment dan decrement.
+Semaphore bias digunakan untuk menyelesaikan masalah sinkronisasi secara umum, berdasarkan jenisnya. Semaphore hanya memiliki nilai 1 atau 0, atau lebih dari sama dengan 0. Konsep semaphore pertama kali diajukan idenya oleh Edsger Dijkstra pada tahun 1967. Semaphore memiliki dua jenis, yaitu, Biner semaphore dan counting semaphore. Biner semaphore hanya memiliki nilai 1 atau 0, Sering juga disebut sebagai semaphore primitive. Sedangkan Counting semaphore memiliki nilai 0, 1, sampai seterusnya atau integer lainnya. Banyak sistem operasi yang tidak secara langsung menggunakan semaphore jenis ini, namun lebih banyak yang memanfaatkan semaphore jenis biner semaphore
+	
+	\subsection{Prinsip Semaphore}
+		\begin{enumerate}
+
+			\item Suatu proses yang berbeda bisa berkaitan dengan memanfaatkan sinyal - sinyal.
+			\item Suatu proses dapat dihentikan oleh 
+			\item Semaphore bertipe data integer yang diakses oleh dua operasi atomik standar (wait dan signal).
+			\item Ada dua operasi di semaphore (Down dan UP). Yang nama aslinya : P dan V.
+			
+		\end{enumerate}
+		
+	\subsection{Kelemahan Semaphore}
+
+		\begin{enumerate}
+
+			\item Semaphore termasuk Low Level
+			\item Dikarenaka semaphore tersebar di dalam seluruh program maka kita akan kesulitan dalam pemeliharaannya.
+			\item Jika kita menghapus \"wait\" akan mengakibatkan \"nonmutual exclusion\"
+			\item Jika kita menghapus \"signal\" akan mengakibatkan \"deadlock\"
+			\item Jika terjadi deadlock akan sulti untuk dideteksi.
+			
+		\begin{enumerate}
+		
+	\cite{luu1982apparatus}
+>>>>>>> 79156b38814266022a0b390e9666f0aceca7820e
