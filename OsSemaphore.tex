@@ -2,6 +2,54 @@
 	\subsection{Definisi}
 	Semaphore pada system operasi merupakan sebuah variabel bertipe integer. Di kehidupan nyata, semaphore merupakan sistem sinyal yang digunakan untuk memberi 
 	sinyal atau tanda dan berkomunikasi secara visual. Pada software, semaphore merupakan sebuah variabel bertipe data integer yang selain saat inisialisasi, yang hanya dapat diakses melalui dua operasi standar, yaitu increment dan decrement.
+\subsection{Definisi}
+Semaphore pada system operasi merupakan sebuah variabel bertipe integer. Di kehidupan nyata, semaphore merupakan sistem sinyal yang
+digunakan untuk memberi sinyal atau tanda dan berkomunikasi secara visual. Pada software, semaphore merupakan sebuah variabel bertipe data
+integer yang selain saat inisialisasi, yang hanya dapat diakses melalui dua operasi standar, yaitu increment dan decrement. Semaphore bias
+digunakan untuk menyelesaikan masalah sinkronisasi secara umum, berdasarkan jenisnya. Semaphore hanya memiliki nilai 1 atau 0, atau lebih
+dari sama dengan 0. Konsep semaphore pertama kali diajukan idenya oleh Edsger Dijkstra pada tahun 1967. Semaphore memiliki dua jenis,
+yaitu, Biner semaphore dan counting semaphore. Biner semaphore hanya memiliki nilai 1 atau 0, Sering juga disebut sebagai semaphore
+primitive. Sedangkan Counting semaphore memiliki nilai 0, 1, sampai seterusnya atau integer lainnya. Banyak sistem operasi yang tidak
+secara langsung menggunakan semaphore jenis ini, namun lebih banyak yang memanfaatkan semaphore jenis biner semaphore
+
+\subsection{Prinsip Semaphore}
+1. Suatu proses yang berbeda bisa berkaitan dengan memanfaatkan sinyal - sinyal.
+2. Suatu proses dapat dihentikan oleh 
+3. Semaphore bertipe data integer yang diakses oleh dua operasi atomik standar (wait dan signal).
+4. Ada dua operasi di semaphore (Down dan UP). Yang nama aslinya : P dan V.
+
+\subsection{Kelemahan Semaphore}
+1. Semaphore termasuk Low Level
+2. Dikarenaka semaphore tersebar di dalam seluruh program maka kita akan kesulitan dalam pemeliharaannya.
+3. Jika kita menghapus \"wait\" akan mengakibatkan \"nonmutual exclusion\"
+4. Jika kita menghapus \"signal\" akan mengakibatkan \"deadlock\"
+5. Jika terjadi deadlock akan sulti untuk dideteksi.
+
+\subsection{Semantik dan Impelementasi}
+Menghitung semaphores dilengkapi dengan dua operasi, secara historis dilambangkan sebagai P dan V (lihat § Nama operasi untuk nama alternatif). Operasi V 
+menambahkan semaphore S, dan operasi P menurunkannya.
+
+Nilai semaphore S adalah jumlah unit sumber daya yang saat ini tersedia. Operasi P membuang waktu atau tidur sampai sumber daya yang dilindungi oleh semaphore 
+menjadi tersedia, pada saat itu sumber daya segera diklaim. Operasi V adalah kebalikannya: ia membuat sumber daya tersedia lagi setelah proses selesai 
+menggunakannya. Satu properti penting dari semaphore S adalah bahwa nilainya tidak dapat diubah kecuali dengan menggunakan operasi V dan P.
+
+Cara sederhana untuk memahami operasi tunggu (P) dan sinyal (V) adalah:
+• menunggu: Jika nilai variabel semaphore tidak negatif, turunkan dengan 1. Jika variabel semaphore sekarang negatif, proses menunggu eksekusi diblokir 
+(yaitu, ditambahkan ke antrian semaphore) sampai nilainya lebih besar atau sama dengan 1 Jika tidak, proses terus berjalan, setelah menggunakan satu unit 
+sumber daya.
+• sinyal: Menambah nilai semaphore variabel dengan 1. Setelah kenaikan, jika nilai pre-increment negatif (berarti ada proses menunggu sumber daya), ia 
+mentransfer proses yang diblokir dari antrian menunggu semaphore ke antrean siap.
+
+Banyak sistem operasi menyediakan primitif semaphore yang efisien yang membuka blokir proses menunggu ketika semaphore bertambah. Ini berarti bahwa proses 
+tidak membuang waktu untuk memeriksa nilai semaphore yang tidak perlu.
+
+Konsep penghitungan semaphore dapat diperpanjang dengan kemampuan untuk mengklaim atau mengembalikan lebih dari satu \"unit\" dari semaphore, teknik yang 
+diterapkan di Unix. Operasi V dan P yang dimodifikasi adalah sebagai berikut, menggunakan tanda kurung siku untuk menunjukkan operasi atom, yaitu operasi 
+yang tampak terpisah dari perspektif proses lain:
+
+Semaphore pada system operasi merupakan sebuah variabel bertipe integer. Di kehidupan nyata, semaphore merupakan sistem sinyal 		yang digunakan untuk memberi sinyal atau tanda dan berkomunikasi secara visual. Pada software, semaphore merupakan sebuah variabel bertipe data integer yang selain saat inisialisasi, yang hanya dapat diakses melalui dua operasi standar, yaitu increment dan decrement.
+Semaphore bias digunakan untuk menyelesaikan masalah sinkronisasi secara umum, berdasarkan jenisnya. Semaphore hanya memiliki nilai 1 atau 0, atau lebih dari sama dengan 0. Konsep semaphore pertama kali diajukan idenya oleh Edsger Dijkstra pada tahun 1967. Semaphore memiliki dua jenis, yaitu, Biner semaphore dan counting semaphore. Biner semaphore hanya memiliki nilai 1 atau 0, Sering juga disebut sebagai semaphore primitive. Sedangkan Counting semaphore memiliki nilai 0, 1, sampai seterusnya atau integer lainnya. Banyak sistem operasi yang tidak secara langsung menggunakan semaphore jenis ini, namun lebih banyak yang memanfaatkan semaphore jenis biner semaphore
+
 	
 	\subsection{Prinsip Semaphore}
 		\begin{enumerate}
@@ -26,3 +74,5 @@
 		\begin{enumerate}
 		
 	\cite{luu1982apparatus}
+	\cite{luu1982apparatus}
+
