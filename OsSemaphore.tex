@@ -21,3 +21,25 @@ secara langsung menggunakan semaphore jenis ini, namun lebih banyak yang memanfa
 3. Jika kita menghapus \"wait\" akan mengakibatkan \"nonmutual exclusion\"
 4. Jika kita menghapus \"signal\" akan mengakibatkan \"deadlock\"
 5. Jika terjadi deadlock akan sulti untuk dideteksi.
+
+\subsection{Semantik dan Impelementasi}
+Menghitung semaphores dilengkapi dengan dua operasi, secara historis dilambangkan sebagai P dan V (lihat § Nama operasi untuk nama alternatif). Operasi V 
+menambahkan semaphore S, dan operasi P menurunkannya.
+
+Nilai semaphore S adalah jumlah unit sumber daya yang saat ini tersedia. Operasi P membuang waktu atau tidur sampai sumber daya yang dilindungi oleh semaphore 
+menjadi tersedia, pada saat itu sumber daya segera diklaim. Operasi V adalah kebalikannya: ia membuat sumber daya tersedia lagi setelah proses selesai 
+menggunakannya. Satu properti penting dari semaphore S adalah bahwa nilainya tidak dapat diubah kecuali dengan menggunakan operasi V dan P.
+
+Cara sederhana untuk memahami operasi tunggu (P) dan sinyal (V) adalah:
+• menunggu: Jika nilai variabel semaphore tidak negatif, turunkan dengan 1. Jika variabel semaphore sekarang negatif, proses menunggu eksekusi diblokir 
+(yaitu, ditambahkan ke antrian semaphore) sampai nilainya lebih besar atau sama dengan 1 Jika tidak, proses terus berjalan, setelah menggunakan satu unit 
+sumber daya.
+• sinyal: Menambah nilai semaphore variabel dengan 1. Setelah kenaikan, jika nilai pre-increment negatif (berarti ada proses menunggu sumber daya), ia 
+mentransfer proses yang diblokir dari antrian menunggu semaphore ke antrean siap.
+
+Banyak sistem operasi menyediakan primitif semaphore yang efisien yang membuka blokir proses menunggu ketika semaphore bertambah. Ini berarti bahwa proses 
+tidak membuang waktu untuk memeriksa nilai semaphore yang tidak perlu.
+
+Konsep penghitungan semaphore dapat diperpanjang dengan kemampuan untuk mengklaim atau mengembalikan lebih dari satu \"unit\" dari semaphore, teknik yang 
+diterapkan di Unix. Operasi V dan P yang dimodifikasi adalah sebagai berikut, menggunakan tanda kurung siku untuk menunjukkan operasi atom, yaitu operasi 
+yang tampak terpisah dari perspektif proses lain:
