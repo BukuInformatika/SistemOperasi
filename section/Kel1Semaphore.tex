@@ -10,3 +10,41 @@
 
 	\subsection{Pengertian}
 	Semaphore dicetuskan oleh Edsger Dijkstra, dengan menggunakan prinsip  dimana proses atau thread yang lebih dari satu dapat dijalankan bersamaan dengan menggunakan penanda-penanda yang sederhana dan harus diatur kerjanya. Proses dapat dipaksa berhenti, sampai proses mendapatkan penanda tertentu untuk berhenti. Variabel khusus untuk penanda ini disebut semaphore. Semaphore adalah mekanisme yang efektif digunakan pada sistem uniprosesor ataupun multiprosesor.
+	
+	Terdapat beberapa prinsip pada Semaphore :
+	\begin{enumerate}
+		\item Dengan memanfaatkan penanda-penanda sedehana, dua proses atau lebih dapat dijalankan secara bersamaan.
+		\item Ketika mendapatkan penanda tertentu untuk berhenti, maka sebuah proses akan dihentikan. Ketika nilai integer-nya menjadi 0, suatu proses akan dengan segera diproses. lalu sinyal akan melakukan increamen dengan penambahan 1.
+		\item Semaphore ialah merupakan variable yang bertipe data integer dan diakses oleh 2 operasi atomik standar, ialah signal dan wait.
+		\item Ada dua buah operasi terhadap semaphore ialah Down dan Up, atau nama aslinya disebut P dan V
+	\end{enumerate}
+	
+	\subsection{Jenis-Jenis Semaphore}
+	terdapat 2 jenis semaphore, yaitu: 
+	\begin{enumerate}
+		\item Binary semaphore, adalah semafor yang memiliki nilai hanya 1 dan 0. Banyak sistem operasi yang hanya mengimplementasi binary semaphore dianggap sebagai primitif.
+		\item Counting semaphore, ialah semaphore yang dapat bernilai 1 dan 0 dan nilai integer yang lainnya. ada beberapa jenis dari counting semaphore, yaitu Semaphor yang tidak menapai nilai yang negatif dan semaphor yang bisa mencapai nilai yang negatif.
+	\end{enumerate}
+	
+	\subsection{Kelebihan dan Kekurangan Semaphore}
+		\subsubsection{Kelebihan}
+			\begin{itemize}
+				\item Dari segi programming, mudah dibuktikan kebenarannya, dikarenakan penanganan masalah pada sinkronisasi dengan menggunakan semaphore sangat rapi dan sangat teratur.
+				\item Penggunannya semaphore bersifat portabel, sehingga diimplementasikan dalam bentuk hard code.
+				\item Semaphore bisa digunakan dalam membentuk mutex dan dapat mengatur proses secara fleksibel.
+				\item Semaphore merupakan sebuah tool yang sangat serbaguna.
+			\end{itemize}
+		
+		\subsubsection{Kekurangan}
+			\begin{itemize}
+				\item Dikarenakan tersebar pada seluruh program, maka mengakibatkan kesulitan dalam pemeliharaannya..
+				\item Temasuk Low Level.
+				\item Sulit untuk mendeteksi error yang terjadi.
+				\item High Level Construct Lebih baik digunakan/
+				\item Jika semua proses yang mengakses resource baru diprogram secara benar, maka akses terhadap resource tersebut benar.
+				\item Tanggung jawab programmer secara penuh dalam penanganan mutex dan sinkronisasi.
+				\item Dapat terjadi deadlock, jika menghapus signal.
+				\item Dapat terjadi nonmutual exclusion, jika menghapus wait.
+				\item Seluruh efek semaphore tidak mudah untuk dilihat.
+				\item Busy Waiting.
+			\end{itemize}
