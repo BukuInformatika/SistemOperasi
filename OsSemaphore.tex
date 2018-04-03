@@ -1,10 +1,15 @@
 \section{System Operasi Semaphore}
 \subsection{Definisi}
 Semaphore pada system operasi merupakan sebuah variabel bertipe integer. Di kehidupan nyata, semaphore merupakan sistem sinyal yang digunakan untuk memberi 
-sinyal atau tanda dan berkomunikasi secara visual. Pada software, semaphore merupakan sebuah variabel bertipe data integer yang selain saat inisialisasi, yang 
-hanya dapat diakses melalui dua operasi standar, yaitu increment dan decrement.
+sinyal atau tanda dan berkomunikasi secara visual. Pada software, semaphore merupakan sebuah variabel bertipe data integer yang selain saat inisialisasi, yang hanya dapat diakses melalui dua operasi standar, yaitu increment dan decrement.
 \subsection{Prinsip Semaphore}
 1. Suatu proses yang berbeda bisa berkaitan dengan memanfaatkan sinyal - sinyal.
 2. Suatu proses dapat dihentikan oleh 
 3. Semaphore bertipe data integer yang diakses oleh dua operasi atomik standar (wait dan signal).
 4. Ada dua operasi di semaphore (Down dan UP). Yang nama aslinya : P dan V.
+\subsection{Kelemahan Semaphore}
+1. Semaphore termasuk Low Level
+2. Dikarenaka semaphore tersebar di dalam seluruh program maka kita akan kesulitan dalam pemeliharaannya.
+3. Jika kita menghapus \"wait\" akan mengakibatkan \"nonmutual exclusion\"
+4. Jika kita menghapus \"signal\" akan mengakibatkan \"deadlock\"
+5. Jika terjadi deadlock akan sulti untuk dideteksi.
