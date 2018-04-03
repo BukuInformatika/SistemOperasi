@@ -3,6 +3,7 @@ Semaphore merupakan struktur data yang digunakan untuk mensinkronisasikan proses
 Semaphore sendiri adalah sebuah variabel dengan tipe data bilangan bulat atau integer, Dalam kehidupan nyata, semaphore adalah sistem sinyal yang digunakan untuk berkomunikasi secara visual. 
 \cite{zuberi1997efficient}Dalam pemrograman berbasis obyek, memperbaharui dari penegasan variabel dari obyek dapat dilindungi melalui semaphore untuk memastikan pengecualian. Operasi semaphore dipanggil setiap obyek diakses, dan ini menampilkan pengeluaran yang signifikan.
 
+
 \subsection{Jenis Semaphore}
 Semaphore memiliki 2 jenis, diantaranya:
 \begin{enumerate}
@@ -10,9 +11,20 @@ Semaphore memiliki 2 jenis, diantaranya:
 	\item Counting semaphore.\\ Semaphore ini memiliki nilai 0, 1, serta integer lainnya.
 \end{enumerate}
 
-\section{Fungsi Semaphore}
+Keuntungan dalam menggunakan semaphore :
 
+\begin{itemize}
+	\item Penanganan masalah dan sinkronisasi lebih teratur sehinggan mudah untuk dicari kebenarannya.
+	\item Penggunaan semaphore bersifat portable karena implementasi semaphore ke dalam hard code.
+\end{itemize}
 	
+	Kerugian dalam menggunakan semaphore :
+	
+	\begin{itemize}
+		\item Pemeliharaan yang cukup sulit karena tersebar di seluruh program.
+		\item Memungkinkan terjadinya non  mutual exclusion dan deadlock.
+		\item Penanganan error yang lebih sulit.
+	\end{itemize}
 \section{Semaphore memory}
 \cite{earnshaw1991semaphore}Penemuan dari semaphore memory dengan pesat mengurangi pertikaian atau bentrok antar bus dengan membolehkan semaphore bit test dan set operations untuk berperforma dalam setiap bus lokal dalam CPU. Semaphore lock bits disimpan dalam SRAM kecepatan tinggi dalam setiap CPU atau Proessor, dan koherensi dari 
 lock bits telah diatur dari bus monitoring logic pada setiap CPU. Sebuah CPU berharap untuk mengambil alih sebuah semaphore yang melakukan pembacaan lokal dalam semaphore memory itu sendiri, dan berputar sampai lock bit sudah direset pada waktu dimana pembacaan lokal dilakukan untuk mensetting bit.
