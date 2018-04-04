@@ -1,5 +1,11 @@
 \section{Semaphore}
-Semaphore merupakan struktur data yang digunakan untuk mensinkronisasikan proses yang ada pada sebuah komputer, yang memiliki proses yang dijalankan lebih dari satu dan melakukan proses tersebut secara bersamaan dan teratur urutan kerjanya. Dalam sistem proses data, banyak dari simpul berbagi sumber daya. 
+\begin{figure} [ht]
+	\centerline{\includegraphics[width=1\textwidth]{figures/proses.jpg}}
+	\caption{Gambar Hirarki Semaphore}
+	\label{SemaphoreHirarki}
+\end{figure}
+
+Semaphore merupakan struktur data yang digunakan untuk mensinkronisasikan proses yang ada pada sebuah komputer, yang memiliki proses yang dijalankan lebih dari satu dan melakukan proses tersebut secara bersamaan dan teratur urutan kerjanya \ref{SemaphoreHirarki}. Dalam sistem proses data, banyak dari simpul berbagi sumber daya. 
 Semaphore sendiri adalah sebuah variabel dengan tipe data bilangan bulat atau integer, Dalam kehidupan nyata, semaphore adalah sistem sinyal yang digunakan untuk berkomunikasi secara visual. 
 \cite{zuberi1997efficient}Dalam pemrograman berbasis obyek, memperbaharui dari penegasan variabel dari obyek dapat dilindungi melalui semaphore untuk memastikan pengecualian. Operasi semaphore dipanggil setiap obyek diakses, dan ini menampilkan pengeluaran yang signifikan.
 \break Dalam pemrograman semaphore dapat diakses menggunakan operasi ini :
@@ -21,6 +27,7 @@ Init(Semaphore s, Integer v)
   s := v;
 }
 \end{verbatim}
+
 
 \subsection{Jenis Semaphore}
 Semaphore memiliki 2 jenis, diantaranya:
