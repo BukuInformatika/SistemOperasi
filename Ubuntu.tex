@@ -1,8 +1,10 @@
-\section {Ubuntu}
+\section {Semaphore Programming}
 \subsection {Definisi}
-\begin ({enumerance}
-		\item Ubuntu sistem operasi open source untuk komputer. Ini adalah distribusi Linux berdasarkan arsitektur Debian. Ini biasanya berjalan di komputer pribadi, dan juga populer di server jaringan, biasanya menjalankan varian Ubuntu Server, dengan fitur kelas perusahaan. Ubuntu beroperasi pada arsitektur yang paling terkenal, seperti Intel, AMD, dan mesin berbasis ARM. Ubuntu juga tersedia untuk tablet dan smartphone, dengan edisi Ubuntu Touch.
-		\item Ubuntu diterbitkan oleh Canonical Ltd, yang menawarkan dukungan komersial. Hal ini didasarkan pada perangkat lunak bebas dan dinamakan sesuai dengan filosofi Afrika Selatan dari ubuntu (secara harfiah, 'ke-manusia-an'), yang menurut Canonical Ltd. dapat diterjemahkan secara bebas sebagai "kemanusiaan untuk orang lain" atau "Saya adalah saya karena siapa kami semua adalah".
-		\item Ubuntu adalah sistem operasi paling populer yang berjalan di lingkungan yang dihosting, yang disebut "awan", karena ini adalah distribusi server Linux yang paling populer.
-		\item Pengembangan Ubuntu dipimpin oleh Canonical Ltd. yang berbasis di Inggris, sebuah perusahaan yang didirikan oleh pengusaha Afrika Selatan, Mark Shuttleworth. Canonical menghasilkan pendapatan melalui penjualan dukungan teknis dan layanan lain yang terkait dengan Ubuntu. Proyek Ubuntu secara terbuka berkomitmen pada prinsip pengembangan perangkat lunak sumber terbuka; orang didorong untuk menggunakan perangkat lunak bebas, mempelajari cara kerjanya, meningkatkan, dan mendistribusikannya.
-\end
+		\begin{enumerance}
+			\item Dalam ilmu komputer, semaphore adalah variabel atau tipe data abstrak yang digunakan untuk mengontrol akses ke sumber daya umum dengan beberapa proses dalam sistem konkuren seperti sistem operasi multitasking.
+			\item Semaphore sepele adalah variabel biasa yang diubah (misalnya, bertambah atau dikurangi, atau toggle) tergantung pada kondisi yang ditentukan oleh programmer.
+			\item Cara yang berguna untuk memikirkan semaphore seperti yang digunakan dalam sistem dunia nyata adalah sebagai catatan berapa banyak unit sumber daya tertentu yang tersedia, ditambah dengan operasi untuk menyesuaikan catatan itu dengan aman (yaitu untuk menghindari kondisi balapan) karena unit diperlukan atau menjadi gratis, dan, jika perlu, tunggu hingga unit sumber daya tersedia.
+			\item Semaphores adalah alat yang berguna dalam pencegahan kondisi balapan; namun, penggunaannya sama sekali bukan jaminan bahwa suatu program bebas dari masalah ini. Semaphore yang memungkinkan perhitungan sumber daya secara acak disebut menghitung semaphore, sementara semaphore yang dibatasi pada nilai 0 dan 1 (atau terkunci / tidak terkunci, tidak tersedia / tersedia) disebut semaphore biner dan digunakan untuk mengimplementasikan kunci.
+			\item Konsep semafor diciptakan oleh ilmuwan komputer Belanda Edsger Dijkstra pada tahun 1962 atau 1963, [1] ketika Dijkstra dan timnya mengembangkan sistem operasi untuk Electrologica X8. Sistem itu akhirnya dikenal sebagai THE multiprogramming system.
+		\end
+
