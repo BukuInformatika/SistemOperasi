@@ -50,3 +50,7 @@ Keuntungan dalam menggunakan semaphore :
 \section{Semaphore memory}
 \cite{earnshaw1991semaphore}Penemuan dari semaphore memory dengan pesat mengurangi pertikaian atau bentrok antar bus dengan membolehkan semaphore bit test dan set operations untuk berperforma dalam setiap bus lokal dalam CPU. Semaphore lock bits disimpan dalam SRAM kecepatan tinggi dalam setiap CPU atau Proessor, dan koherensi dari 
 lock bits telah diatur dari bus monitoring logic pada setiap CPU. Sebuah CPU berharap untuk mengambil alih sebuah semaphore yang melakukan pembacaan lokal dalam semaphore memory itu sendiri, dan berputar sampai lock bit sudah direset pada waktu dimana pembacaan lokal dilakukan untuk mensetting bit.
+
+\section {Kesimpulan}
+1. Semaphore adalah sebuah cara kerja sistem yang efektif dan digunakan baik pada sistem uniprosesor dan atau sistem multiprosesor. Semaphore pada dasarnya adalah counter yang penyajian pesannya hampir selalu menggunakan struktur data.
+2. Semaphore merupakan variable data bertipe integer yang dapat diakses menggunakan 2 operasi atomik standar, yaitu wait dan signal.
