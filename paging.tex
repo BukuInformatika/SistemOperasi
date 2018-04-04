@@ -5,3 +5,7 @@ Untuk mengatasi hal tersebut Sistem Paging mempunyai 2 solusi, yaitu:
 
 \subsection Konsep Overlay
 Dimana program yang dijalankan dipecah menjadi beberapa bagian yang dapat dimuat memori (overlay). Overlay yang belum diperlukan pada saat program berjalan (tidak sedang di eksekusi) disimpan di disk, dimana nantinya overlay tersebut akan dimuat ke memori begitu diperlukan dalam eksekusinya.
+- Konsep Memori Maya (virtual Memory)
+Adalah kemampuan mengalamati ruang memori melebihi memori utama yang tersedia. Konsep ini pertama kali dikemukakan Fotheringham pada tahun 1961 untuk sistem komputer Atlas di Universitas Manchester, Inggris.
+
+Gagasan Memori Maya adalah ukuran gabungan program, data dan stack melampaui jumlah memori fisik yang tersedia. Sistem operasi menyimpan bagian-bagian proses yang sedang digunakan di memori utama dan sisanya di disk. Begitu bagian di disk diperlukan maka bagian memori yang tidak diperlukan disingkirkan dan diganti bagian disk yang diperlukan.
