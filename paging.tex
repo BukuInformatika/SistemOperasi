@@ -5,3 +5,11 @@ Untuk mengatasi hal tersebut Sistem Paging mempunyai 2 solusi, yaitu:
 
 \subsection Konsep Overlay
 Dimana program yang dijalankan dipecah menjadi beberapa bagian yang dapat dimuat memori (overlay). Overlay yang belum diperlukan pada saat program berjalan (tidak sedang di eksekusi) disimpan di disk, dimana nantinya overlay tersebut akan dimuat ke memori begitu diperlukan dalam eksekusinya.
+
+
+\section Masalah Penggantian Halaman
+disini punya mu ham
+
+Berdasarkan pertimbangan tersebut, sebenarnya proses-proses yang memiliki 10 halaman hanya akan menggunakan setengah dari jumlah seluruh halaman yang dimilikinya. Kemudian demand paging akan menyimpan I/O yang dibutuhkan untuk mengisi 5 halaman yang belum pernah digunakan. Kita juga dapat meningkatkan derajat multiprogramming dengan menjalankan banyak proses sebanyak 2 kali.
+
+Jika kita meningkatkan derajat multiprogramming, itu sama artinya dengan melakukan over-allocating terhadap memori
