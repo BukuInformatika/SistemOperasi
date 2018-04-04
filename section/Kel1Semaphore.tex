@@ -53,7 +53,7 @@
 		 semaphore berfungsi untuk menyelesaikan  masalah sinkronisasi :
 		 
 		 \begin{enumerate}
-		 	\item Mutual Exclusion. jika suatu thread sedang berada di dalam critical section-nya, thread lain kemungkinan  harus menunggu thread tersebut keluar dari critical section-nya sebelum dapat memasuki critical section-nya sendiri. Di sinilah semaphore digunakan, thread yang akan memasuki critical section-nya akan memanggil fungsi kunci terlebih dahulu 
+		 	\item Mutual Exclusion. Semaphore akan digunakan jika suatu thread atau proses ingin memasuki critical section, dan jika terdapat thread yang sedang berada di critical section, maka thread yang ingin memasuki critical section itu harus menunggu thread yang berada di critical section keluar terlebih dahulu, fungsi kunci akan dipanggil terlebih dahulu oleh thread yang akan memasuki critical section-nya.
 			\item Resource controller.Merupakan fungsi semaphore untuk mengatur dan mengelola resource yang  telah ada sehingga dapat saling digunakan oleh berbagai thread secara tertib dan teratur
 			\item Sinkronisasi antar proses.Fungsi semaphore ini digunakan  untuk melakukan sinkronisasi antara proses atau membuat mekanisme dalam mengatur urutan eksekusi thread sehingga terjadi harmonisasi antar thread.
 		\end{enumerate}
