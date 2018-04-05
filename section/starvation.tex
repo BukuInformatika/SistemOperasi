@@ -13,3 +13,5 @@ Ada beberapa cara untuk mengatasi Starvation, salah satunya dengan Aging,  prose
 (N) pemrosesan dengan rumus N = ( P+T ) / P. N maksimum akan mulai dikerjakan dan proses yang lain dinaikkan tingkat urutan prosesnya agar nanti jika ada proses lain yang masuk, proses terdahulu mendapatkan bagian resource dan dapat dikerjakan.
 
 Round Robin , adalah proses yang akan dimasukkan ke dalam antrian menurut proses kedatangannya. Dalam penyelesainnya, suatu proses tidak akan langsung selesai jika waktu yang dibutuhkan melebihi waktu kuantum yang diberikan.
+
+Waktu kuantum itu sendiri adalah waktu yang telah diberikan untuk menyelesaikan suatu proses. Ketika suatu proses telah mencapai batas waktu kuantum, sisa dari proses tersebut dikembalikan ke antrian paling belakang dan sumber-sumber data dipindahkan ke proses selanjutnya. Maka dengan cara ini, semua proses yang mengantri akan mendapatkan sumber-sumber data secara bergantian ( tidak ada proses yang memonopoli resource ) sehingga semua proses dapat diselesaikan.
