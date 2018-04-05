@@ -13,6 +13,9 @@ Alokasi Memori Fisik yang Adil Biasanya Digunakan dalam Manajemen Memori untuk m
 \subsection Shared Virtual Memory.
 Meskipun dalam Memori Virtual Bersama setiap proses menggunakan ruang alamat yang berbeda dari memori virtual, tetapi ada kalanya proses dihadapkan untuk berbagi penggunaan memori.
 
+C. Ruang Alamat Logika dan Fisik
+Alamat logika adalah alamat yang dihasilkan dalam CPU, juga disebut alamat virtual. Alamat fisik adalah alamat yang terlihat oleh memori. Untuk mengubah dari alamat logis ke alamat fisik perangkat keras yang disebut MMU (Memory Management Unit) diperlukan. Mengubah dari alamat logis ke alamat fisik adalah pusat manajemen memori. Alamat yang dihasilkan oleh CPU disebut alamat logis di mana alamat muncul sebagai memori uni yang disebut alamat fisik. Tujuan utama dari manajemen memori adalah konsep menempatkan ruang alamat logis ke ruang alamat fisik (Ama, 2003).
+
 \subsection Multiprogramming Dengan Swapping
 manajemen memori adalah kegiatan mentransfer gambar proses antara memori utama dan disk selama eksekusi, atau dengan kata lain itu adalah pengalihan manajemen proses dari memori utama ke disk dan kembali lagi (swapping). Manajemen ini terdiri dari:
 Multiprogramming Dengan Partisi Dinamis
