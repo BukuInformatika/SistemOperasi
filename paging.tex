@@ -35,6 +35,8 @@ Adalah kemampuan mengalamati ruang memori melebihi memori utama yang tersedia. K
 \section penggantian page 
 Pada dasarnya, kesalahan halaman tidak lagi menjadi masalah serius. Ini karena setiap halaman akan mengalami setidaknya satu kesalahan dalam pengiriman halaman, yaitu ketika halaman ini ditujukan untuk pertama kalinya. Representasi seperti ini sebenarnya tidak terlalu akurat. Berdasarkan pertimbangan ini, sebenarnya proses yang memiliki 10 halaman hanya akan menggunakan setengah dari jumlah total halaman yang dimilikinya. Kemudian permintaan paging akan menyimpan I / O yang diperlukan untuk mengisi 5 halaman yang belum pernah digunakan. Kami juga dapat meningkatkan tingkat multiprogramming dengan menjalankan beberapa proses 2 kali.
 
+Jika kita meningkatkan derajat multiprogramming, itu sama artinya dengan melakukan over-allocating terhadap memori. Jika kita menjalankan 6 proses, dengan masing-masing mendapatkan 10 halaman, walau pun sebenarnya yang digunakan hanya 5 halaman, kita akan memiliki utilisasi CPU dan throughput yang lebih tinggi dengan 10 frame yang masih kosong.
 
+Lebih jauh lagi, 
 
 
