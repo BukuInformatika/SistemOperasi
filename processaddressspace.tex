@@ -21,3 +21,10 @@ Jumlah, lokasi, dan ukuran proses dalam memori dapat bervariasi dari waktu ke wa
 \subsection Swapping
 salah satu contoh untuk mengilustrasikan teknik swapping adalah Algoritma Round-Robin yang digunakan dalam lingkungan multiprogamming menggunakan waktu kuantum dalam pelaksanaan prosesnya. ketika waktu kuantum berakhir, pengelola memori akan mengeluarkan proses lain ke dalam memori bebas.. Pada saat yang sama, penjadwal CPU akan mengalokasikan waktu ke proses lain dalam memori. Perhatiannya adalah bahwa waktu kuantum harus cukup lama sehingga waktu penggunaan CPU dapat lebih optimal bila dibandingkan dengan proses pertukaran yang terjadi antara memori dan disk.
 Teknik swapping bergulir keluar, roll in menggunakan algoritma berbasis prioritas di mana ketika proses prioritas yang lebih tinggi tiba maka manajer memori akan mengeluarkan proses prioritas yang lebih rendah dan memuat proses dengan prioritas yang lebih tinggi.
+
+\subsection Solusi:
+Lubang-lubang kecil di antara blok-blok memori yang digunakan dapat diatasi dengan pemadatan memori yaitu menggabungkan semua lubang kecil menjadi satu lubang besar dengan memindahkan semua proses agar saling berdekatan.
+ 
+Strategi Alokasi Memori
+a)      First fit algorithm : memory  manager men-scan list untuk  menemukan hole yg cukup untuk menampung proses yg baru. Proses akan menempati hole pertama yg ditemuinya yg cukup untuk dirinya.
+
