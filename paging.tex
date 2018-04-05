@@ -51,3 +51,13 @@ Beberapa sistem mengalokasikan persis beberapa persen dari memori mereka untuk m
 
 
 >>>>>>> bb5b1b8fb5ec356edc5fac3a7fdb84aeb4100dc3
+
+Beberapa sistem mengalokasikan tepat beberapa persen dari memori mereka untuk buffer I / O, keduanya, baik proses pengguna dan subsistem I / O race untuk mengambil keuntungan dari seluruh sistem memori.
+
+\section skema dasar pemindahan halaman 
+Pemindahan halaman menggunakan pendekatan berikut. Jika tidak ada frame yang kosong, kami mencari frame yang tidak digunakan dan mengosongkannya. Kita dapat mengosongkan bingkai dengan menulis isinya ke dalam ruang swap, dan mengubah tabel halaman (serta tabel lainnya) untuk menunjukkan bahwa halaman tidak akan lama dalam memori.
+
+\subsection cara memindahkan halaman
+1. Cari lokasi dari halaman yang diinginkan pada disk
+
+2. Cari frame kosong
