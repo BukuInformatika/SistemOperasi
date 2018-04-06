@@ -1,4 +1,4 @@
-% Nama Kelompok : Kelompok 3
+﻿% Nama Kelompok : Kelompok 3
 % Kelas : D4 TI 1A
 % 1. Kadek Diva Krishna Murti (1174006)
 % 2. Niko
@@ -8,7 +8,8 @@
 
 \section{Jenis-Jenis Fragmentasi}
 \subsection{Fragmentasi Internal}
-Berdasarkan buku yang berjudul Sistem Operasi \cite{pangera2005sistem} fragmentasi internal adalah tidak efisiennya utilitas memori utama di mana sembarang program sekecil apapun tidak bergantung, akan menempati seluruh partisi. Keadaan ini mengakibatkan pemborosan ruang yang bersifat internal terhadap partisi dengan kenyataan di mana blok data yang dimuatkan berukuran lebih kecil dari partisi.
+Berdasarkan buku yang berjudul Sistem Operasi \cite{pangera2005sistem} fragmentasi internal adalah tidak efisiennya utilitas memori utama di mana sembarang program sekecil apapun tidak bergantung, akan menempati seluruh partisi. Keadaan ini mengakibatkan pemborosan ruang yang bersifat internal terhadap partisi dengan kenyataan di 
+mana blok data yang dimuatkan berukuran lebih kecil dari partisi.
 
 
 \subsection{Fragmentasi Eksternal}
@@ -20,13 +21,7 @@ Maksud tidak tetap di sini adalah blok tersebut bisa bertambah besar atau bertam
 Misalnya sebuah proses meminta ruang memori sebesar 17 KB, sedangkan memori dipartisi menjadi blok-blok yang besarnya masing-masing 5 KB. Maka yang akan diberikan proses adalah 3 blok ditambah 2 KB dari sebuah blok. Sisa blok yang besarnya 3 KB akan disiapkan untuk menampung proses lain atau jika ia bertentangga dengan ruang memori yang kosong, ia akan bergabung dengannya.
  %%%%%%%% Kadek Diva Krishna Murti %%%%%%%%%%
 
-\section{Defenisi Fragmentasi}
-1. Fragmentasi
-Pada computer penyimpanan  , fragmentasi adalah sebuah fenomena di ruang penyimpanan yang digunakan secara tidak efisien , kegunaannya adalah mengurangi kapasitas penyimpanan. Istilah ini juga biasa digunakan untuk menunjukkan tempat yang gersang itu sendiri.
-Ada tiga hal bentuk yang terkait dengan fragmentasi , yaitu : fragmentasi eksternal, internal fragmentasi, dan data fragmentasi. Ada pameran satu atau beberapa kelemahan di dalam skema penyimpanan . Fragmentasi juga dapat diterima di kembali untuk peningkatan kecepatan atau kesederhanaan.
 
-\section {Kelemahan dan kelebihan Jenis Fragmentasi}
-
-\subsection{Fragmentasi Internal}
-Terjadinya fragmentasi internal disebabkan karena saat penyimpanan dialokasikan tanpa pernah ingin menggunakannya. Sehingga ini adalah ruang-siakan.Disaat hal ini tampak bodoh, sering diterima dalam kembali untuk meningkatkan efisiensi atau kesederhanaan. Dapat disimpulkan , istilah �internal� merujuk pada kenyataan bahwa unusable penyimpanan yang dialokasikan di dalam wilayah namun tidak sedang digunakan. Contohnya, dalam banyak sistem file, setiap file selalu dimulai pada awal sebuah cluster, karena ini simplifies organisasi dan memudahkan tumbuh file. Pada setiap ruang kiri atas , antara terakhir byte dari file yang pertama dan byte berikutnya dari cluster adalah bentuk internal yang disebut fragmentasi file atau kendur kendur ruang
-
+/subsection{fragmentasi internal)
+	Fragmentasi internal terjadi saat penyimpanan dialokasikan tanpa pernah ingin menggunakannya. [1] Ini adalah ruang-siakan. Sementara ini tampaknya bodoh, sering diterima dalam kembali untuk meningkatkan efisiensi atau kesederhanaan. Istilah “internal” merujuk pada kenyataan bahwa unusable penyimpanan yang dialokasikan di dalam wilayah namun tidak sedang digunakan.
+	Misalnya, dalam banyak sistem file, setiap file selalu dimulai pada awal sebuah cluster, karena ini simplifies organisasi dan memudahkan tumbuh file. Setiap ruang kiri atas antara terakhir byte dari file yang pertama dan byte berikutnya dari cluster adalah bentuk internal disebut fragmentasi file atau kendur kendur ruang. [2] [3]
