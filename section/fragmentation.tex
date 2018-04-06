@@ -11,6 +11,8 @@
 Berdasarkan buku yang berjudul Sistem Operasi \cite{pangera2005sistem} fragmentasi internal adalah tidak efisiennya utilitas memori utama di mana sembarang program sekecil apapun tidak bergantung, akan menempati seluruh partisi. Keadaan ini mengakibatkan pemborosan ruang yang bersifat internal terhadap partisi dengan kenyataan di 
 mana blok data yang dimuatkan berukuran lebih kecil dari partisi.
 
+Hal ini umumnya terjadi ketika kita menggunakan sistem partisi banyak tetap. 
+
 
 \subsection{Fragmentasi Eksternal}
 Berdasarkan buku yang berjudul Sistem Operasi \cite{pangera2005sistem} fragmentasi eksternal adalah keadaan di mana suatu proses pada awalnya berjalan dan bekerja dengan baik, namun ketika mengarah ke situasi yang di mana terdapat banyak lubang - lubang kecil di dalam sebuah memori sehingga semakin lama memori tersebut semakin terfragmentasi dan utilisasi memori pun kinerjanya menjadi menurun sehubungan dengan kenyataan bahwa memori bersifat eksternal terhadap semua partisi menjadi sangat terfragmentasi. Keadaan ini merupakan kebalikan dari fragmentasi ini.
@@ -19,6 +21,7 @@ Fragmentasi eksternal terjadi pada saat di mana jumlah keseluruhan memori kosong
 Umumnya, ini terjadi ketika kita menggunakan sistem partisi banyak dinamis. Pada sistem partisi banyak dinamis, seperti yang diungkapkan sebelumnya, sistem terbagi menjadi blok-blok yang besarnya tidak tetap.
 Maksud tidak tetap di sini adalah blok tersebut bisa bertambah besar atau bertambah kecil. 
 Misalnya sebuah proses meminta ruang memori sebesar 17 KB, sedangkan memori dipartisi menjadi blok-blok yang besarnya masing-masing 5 KB. Maka yang akan diberikan proses adalah 3 blok ditambah 2 KB dari sebuah blok. Sisa blok yang besarnya 3 KB akan disiapkan untuk menampung proses lain atau jika ia bertentangga dengan ruang memori yang kosong, ia akan bergabung dengannya.
+Akibatnya dengan sistem partisi banyak dinamis, bisa tercipta lubang-lubang di memori, yaitu ruang memori yang kosong. Keadaan saat lubang-lubang ini tersebar yang masing-masing lubang tersebut tidak ada yang bisa memenuhi kebutuhan proses padahal jumlah dari besarnya lubang tersebut cukup untuk memenuhi kebutuhan proses disebut sebagai fragmentasi eksternal. Fragmentasi eksternal dilakukan pada algoritma alokasi dinamis, terutama strategi first-fit dan best-fit.
  %%%%%%%% Kadek Diva Krishna Murti %%%%%%%%%%
 
 
