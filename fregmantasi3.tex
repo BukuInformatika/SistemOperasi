@@ -1,0 +1,11 @@
+/section{Fragmentasi}
+/subsection{Pengertian fragmentasi}	
+	Penyimpanan di komputer, fragmentasi adalah sebuah fenomena di ruang penyimpanan yang digunakan secara tidak efisien, mengurangi kapasitas penyimpanan. Istilah ini juga digunakan untuk menunjukkan tempat yang gersang itu sendiri.
+	Ada tiga bentuk yang terkait dengan fragmentasi: fragmentasi eksternal, internal fragmentasi, dan data fragmentasi. Berbagai skema alokasi penyimpanan pameran satu atau beberapa kelemahan. Fragmentasi dapat diterima di kembali untuk peningkatan kecepatan atau kesedeahan
+	
+	/subsection{fragmentasi internal)
+	Fragmentasi internal terjadi saat penyimpanan dialokasikan tanpa pernah ingin menggunakannya. [1] Ini adalah ruang-siakan. Sementara ini tampaknya bodoh, sering diterima dalam kembali untuk meningkatkan efisiensi atau kesederhanaan. Istilah “internal” merujuk pada kenyataan bahwa unusable penyimpanan yang dialokasikan di dalam wilayah namun tidak sedang digunakan.
+	Misalnya, dalam banyak sistem file, setiap file selalu dimulai pada awal sebuah cluster, karena ini simplifies organisasi dan memudahkan tumbuh file. Setiap ruang kiri atas antara terakhir byte dari file yang pertama dan byte berikutnya dari cluster adalah bentuk internal disebut fragmentasi file atau kendur kendur ruang. [2] [3]
+
+    /subsection{fragmentasi eksternal}
+    Fragmentasi eksternal adalah fenomena yang gratis menjadi dibagi menjadi beberapa bagian kecil dari waktu ke waktu. [1] Ini adalah kelemahan dari beberapa algoritma alokasi penyimpanan, terjadi ketika aplikasi dan mengalokasikan deallocates ( “frees”) dari daerah penyimpanan berbagai ukuran, dan alokasi oleh algoritma merespon meninggalkan dialokasikan dan deallocated daerah interspersed. Hasilnya adalah bahwa, walaupun gratis tersedia, maka secara efektif unusable karena dibagi menjadi potongan-potongan yang terlalu kecil untuk memenuhi kebutuhan dari aplikasi. Istilah “eksternal” merujuk pada kenyataan bahwa unusable penyimpanan yang dialokasikan di luar daerah.
