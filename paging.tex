@@ -76,3 +76,5 @@ c. Tulis halaman yang telah dipilih ke disk, ubah tabel halaman dan tabel frame.
 3. Baca halaman yang diinginkan kedalam frame kosong yang baru, ubah tabel halaman dan tabel frame
  
 4. Ulang dari awal proses pengguna.
+
+Jika tidak ada frame yang kosong, pentransferan dua halaman (satu masuk, satu keluar) akan dilakukan. Situasi ini secara efektif akan menggandakan waktu pelayanan kesalahan halaman dan meningkatkan waktu akses efektif. Kita dapat mengurangi pemborosan ini dengan menggunakan bit tambahan. Masingmasing halaman atau frame mungkin memiliki bit tambahan yang diasosiasikan didalam perangkat keras. Pemindahan halaman merupakan dasar dari demand paging. Yang menjembatani pemisahan antara memori lojik dan memori fisik. 
