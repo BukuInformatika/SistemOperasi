@@ -28,7 +28,7 @@ Alamat logika adalah alamat yang dihasilkan dalam CPU, juga disebut alamat virtu
 
 Hasil dari skema waktu gabungan dan waktu pengikatan alamat pada alamat yang logis dan alamat yang ada pada memori adalah serupa. Tetapi skema waktu pengikatan waktu untuk eksekusi alamat berbeda. dalam hal ini, alamat logis disebut alamat virtual. Himpunan semua alamat logika yang dihasilkan oleh program disebut ruang alamat logis; himpunan semua alamat fisik yang terkait dengan alamat logis disebut ruang alamat fisik.
 Unit Manajemen Memori (MMU) adalah perangkat perangkat keras yang memetakan alamat virtual ke alamat fisik. Dalam skema MMU, nilai register relokasi ditambahkan ke setiap alamat yang dihasilkan oleh proses pengguna ketika dikirim ke memori.
-
+Register dasar disebut register relokasi. Nilai register relokasi ditambahkan ke setiap alamat yang dihasilkan oleh proses pengguna ketika dikirim ke memori, misalnya, jika basisnya 14000, pengguna mencoba menempatkannya ke alamat 0 dan dipindahkan secara dinamis ke lokasi 14000. Access ke lokasi logika 346, dipetakan ke lokasi 14346. Sistem operasi MS-DOS yang masih merupakan keluarga intel 80X86 menggunakan empat register relokasi ketika memuat dan menjalankan proses.
 \subsection Multiprogramming Dengan Swapping
 manajemen memori adalah kegiatan mentransfer gambar proses antara memori utama dan disk selama eksekusi, atau dengan kata lain itu adalah pengalihan manajemen proses dari memori utama ke disk dan kembali lagi (swapping). Manajemen ini terdiri dari:
 Multiprogramming Dengan Partisi Dinamis
