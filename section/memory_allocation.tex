@@ -38,6 +38,7 @@ Jenis memori ada 2 yaitu RAM dan ROM, RAM adalah Random Akses Memori yang isi pe
 A. Proses
 Proses adalah sebuah program yang akan dieksekusi atau yang sedang belangsung. Sedangkan program adalah kumpulan instruksi yang ada di dalam program dengan bahasa yang mudah dimengerti system operasi. Proses berisi instruksi dan data. Program counter dan semua register pemroses, dan stack berisi data sementara seperti parameter rutin, alamat pengiriman dan variabel-variabel lokal.Sistem operasi menjalankan semua proses di sistem operasi dan mengalokasikan sumber daya ke dalam proses-proses yang sesuai dengan kebijaksanaan untuk memenuhi salah satu sasaran sistemnya itu sendiri. Abstraksi proses yaitu merupakan  hal yang mendasar dalam manajemen proses-prosesnya yang bejalan di sistem. Sistem operasi dalam mengelola proses ini dapat menjalankan operasi-operasi terhadap suatu proses.
 
+
 B. Istilah yang terkait dengan Proses
 Istilah Proses dapat dibagi menjadi dua, yaitu :
 
@@ -51,7 +52,7 @@ Contoh : Rendering Video, Compress File, dan sebagainya.
 
 C. Tipe-tipe Manajemen Proses
 
-A. Berdasarkan keberadaan swapping :
+a. Berdasarkan keberadaan swapping :
 
 1. Manajemen tanpa swapping.
 Manajemen memori tanpa pemindahan citra proses antara memori utama dan disk selama ekseskusi.
@@ -59,7 +60,25 @@ Manajemen memori tanpa pemindahan citra proses antara memori utama dan disk sela
 2. Manajemen dengan swapping.
 Manajemen memori dengan pemindahan citra proses antara memori utama dan disk selama ekseskusi.
 
-B. Manajemen Memori Berdasarkan Alokasi Memori
+b. Manajemen Memori Berdasarkan Alokasi Memori
 
 Terdapat dua cara menempatkan informasi ke dalam memori kerja
 
+1. Alokasi Memori (Contigouos Allocation)
+- Dalam alokasi memori berurutan, setiap proses menempati satu blok
+lokasi memori berurutan tunggal.
+- Keuntungan: sederhana, tidak ada rongga memori
+proses sekuensial yang tersebar dapat dieksekusi dengan cepat.
+- Kekurangan: memori yang sia-sia, tidak bisa dimasukkan saat tidak hadir
+satu blok memori yang cukup.
+
+2. Alokasi Memori yang Tidak Dihitung (Alokasi Tidak Berdampingan)
+- Program / proses ditempatkan pada beberapa sambaran tersebar,
+tidak harus dekat satu sama lain atau berurutan. biasanya digunakan
+untuk lokasi memori virtual sebagai lokasi halaman-halaman.
+- Keuntungan: sistem dapat memanfaatkan memori utama lebih banyak
+efisien, dan sistem operasi masih bisa memasukkan protes kapan
+jumlah lubang memori cukup untuk memuat proses itu
+akan dieksekusi.
+- Kekurangan: membutuhkan kontrol yang lebih rumit dan
+begitu banyak memori yang tidak terpakai.
