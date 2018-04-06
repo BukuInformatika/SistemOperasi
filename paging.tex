@@ -37,6 +37,9 @@ Pada dasarnya, kesalahan halaman tidak lagi menjadi masalah serius. Ini karena s
 
 Jika kita meningkatkan derajat multiprogramming, itu sama artinya dengan melakukan over-allocating terhadap memori. Jika kita menjalankan 6 proses, dengan masing-masing mendapatkan 10 halaman, walau pun sebenarnya yang digunakan hanya 5 halaman, kita akan memiliki utilisasi CPU dan throughput yang lebih tinggi dengan 10 frame yang masih kosong.
 
-Lebih jauh lagi, 
+Lebih jauh lagi, kita harus mempertimbangkan bahwa sistem memori tidak hanya digunakan untuk menangani pengalamatan suatu program. Penyangga (buffer) untuk I/O juga menggunakan sejumlah memori. Penggunaan ini dapat meningkatkan pemakaian algoritma dalam penempatan di memori.
+
+Beberapa sistem mengalokasikan secara pasti beberapa persen dari memori yang dimilikinya untuk penyangga I/O, dimana keduanya, baik proses
+
 
 
