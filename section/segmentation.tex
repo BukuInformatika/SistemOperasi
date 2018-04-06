@@ -39,3 +39,7 @@ Alih-alih lokasi memori yang sebenarnya itu , informasi segmen yang mencakup ala
 
 >>>>>>> f0a9237d6b9e769cdaa39218bdc1709a93d70df7
 
+\subsubsection {Segmentasi Dengan Paging}
+Alih-alih lokasi memori yang sebenarnya, informasi segmen mencakup alamat tabel halaman untuk segmen tersebut. Ketika sebuah program referensi lokasi memori offset diterjemahkan ke alamat memori menggunakan tabel halaman. Segmen dapat diperpanjang hanya dengan mengalokasikan halaman memori lain dan menambahkannya ke tabel halaman segmen.
+
+Implementasi memori virtual pada sistem menggunakan segmentasi dengan paging biasanya hanya memindahkan halaman individual bolak-balik antara memori utama dan penyimpanan sekunder, mirip dengan sistem non-segmentasi paged. Halaman-halaman segmen dapat ditempatkan di mana saja dalam memori utama dan tidak perlu bersebelahan. Ini biasanya menghasilkan jumlah input / output yang berkurang antara penyimpanan primer dan sekunder dan mengurangi fragmentasi memori.
