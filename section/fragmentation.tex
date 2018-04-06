@@ -16,6 +16,8 @@ Berdasarkan buku yang berjudul Sistem Operasi \cite{pangera2005sistem} fragmenta
 
 Fragmentasi eksternal terjadi pada saat di mana jumlah keseluruhan memori kosong yang tersedia memang mencukupi untuk menampung permintaan tempat dari proses, tetapi tidak dapat dialokasikan karena letaknya tidak berkesinambungan atau tidak berurutan atau terpecah menjadi beberapa bagian kecil sehingga proses tidak dapat masuk. 
 Umumnya, ini terjadi ketika kita menggunakan sistem partisi banyak dinamis. Pada sistem partisi banyak dinamis, seperti yang diungkapkan sebelumnya, sistem terbagi menjadi blok-blok yang besarnya tidak tetap.
+Maksud tidak tetap di sini adalah blok tersebut bisa bertambah besar atau bertambah kecil. 
+Misalnya sebuah proses meminta ruang memori sebesar 17 KB, sedangkan memori dipartisi menjadi blok-blok yang besarnya masing-masing 5 KB. Maka yang akan diberikan proses adalah 3 blok ditambah 2 KB dari sebuah blok. Sisa blok yang besarnya 3 KB akan disiapkan untuk menampung proses lain atau jika ia bertentangga dengan ruang memori yang kosong, ia akan bergabung dengannya.
  %%%%%%%% Kadek Diva Krishna Murti %%%%%%%%%%
 
 \section{Defenisi Fragmentasi}
@@ -26,5 +28,5 @@ Ada tiga hal bentuk yang terkait dengan fragmentasi , yaitu : fragmentasi ekster
 \section {Kelemahan dan kelebihan Jenis Fragmentasi}
 
 \subsection{Fragmentasi Internal}
-Terjadinya fragmentasi internal disebabkan karena saat penyimpanan dialokasikan tanpa pernah ingin menggunakannya. Sehingga ini adalah ruang-siakan.Disaat hal ini tampak bodoh, sering diterima dalam kembali untuk meningkatkan efisiensi atau kesederhanaan. Dapat disimpulkan , istilah “internal” merujuk pada kenyataan bahwa unusable penyimpanan yang dialokasikan di dalam wilayah namun tidak sedang digunakan. Contohnya, dalam banyak sistem file, setiap file selalu dimulai pada awal sebuah cluster, karena ini simplifies organisasi dan memudahkan tumbuh file. Pada setiap ruang kiri atas , antara terakhir byte dari file yang pertama dan byte berikutnya dari cluster adalah bentuk internal yang disebut fragmentasi file atau kendur kendur ruang
+Terjadinya fragmentasi internal disebabkan karena saat penyimpanan dialokasikan tanpa pernah ingin menggunakannya. Sehingga ini adalah ruang-siakan.Disaat hal ini tampak bodoh, sering diterima dalam kembali untuk meningkatkan efisiensi atau kesederhanaan. Dapat disimpulkan , istilah ï¿½internalï¿½ merujuk pada kenyataan bahwa unusable penyimpanan yang dialokasikan di dalam wilayah namun tidak sedang digunakan. Contohnya, dalam banyak sistem file, setiap file selalu dimulai pada awal sebuah cluster, karena ini simplifies organisasi dan memudahkan tumbuh file. Pada setiap ruang kiri atas , antara terakhir byte dari file yang pertama dan byte berikutnya dari cluster adalah bentuk internal yang disebut fragmentasi file atau kendur kendur ruang
 
