@@ -33,3 +33,14 @@
 		\item Waiting, yaitu status dimana proses yang tidak bisa dijalankan di saat prosesor sudah siap, status yang dimiliki pada saat proses menunggu suatu sebuah event seperti I/O
 		\item Terminated, yaitu status yang dimiliki pada saat proses telah selesai dieksekusi
 	\end{enumerate}
+	
+	Berikut ini adalah proses dari ke-5 status proses di atas :
+	\begin{enumerate}
+		\item New ke Ready
+		Pertama Status dibuat lalu setelah itu , status akan memasuki proses ready dan siap untuk memasuki proses selanjutnya.
+		\item Ready ke running
+		Di saat sedang memilih proses yang akan dioperasikan, sistem operasi akan memilih salah satu proses yang berada didalam keadaan status ready.
+		\item Running ke waiting
+		Suatu proses dimasukkan dalam keadaan status waiting jika proses itu meminta sesuatu yang dapat menyebabkannya harus menunggu. Sebuah request ke sistem operasi pada umumnya merupakan bentuk panggilan dari layanan sistem (panggilan dari program yang sedang beroperasi ke prosedur yang sedang beroperasi ke prosedur yang merupakan bagian kode sistem operasi) misalnya seperti sebuah proses bisa meminta suatu layanan dari sistem operasi yang tidak siap dilakukan sistem opersi dengan segera. Atau proses dapat menginisiasi suatu aksi, misalnya operasi I/O, yang harus diselesaikan sebelum proses itu melanjutkan operasinya. Pada saat proses saling berkomunikasi dengan proses lainnya, suatu proses bisa diblokir jika sedang menunggu proses lainnya untuk menyediakan input atau sedang menunggu pesan dari proses lainnya.
+		
+	\end{enumerate}
