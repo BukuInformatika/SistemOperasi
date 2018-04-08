@@ -7,3 +7,7 @@ tarvation adalah kondisi yang biasanya terjadi setelah deadlock. Proses yang kek
 \section{Algoritma Starvation}
 Starvation terjadi pada proses proses penjadwalan yang menggunakan prinsip gproses yang paling cepat diselesaikan didahulukanh, seperti pada Shortest Job First atau yang biasa di singkat SJF dan Penjadwalan Prioritas.
 Logikanya, Misalkan saya mempunyai banyak sekali kebutuhan, saya akan memilihnya mana yang didahulukan berdasarkan sesuatu.
+
+\section {Menghindari Starvation}
+Ada beberapa cara untuk mengatasi Starvation, salah satunya dengan Aging,  proses awal yang ada diberi urutan
+(N) pemrosesan dengan rumus N = ( P+T ) / P. N maksimum akan mulai dikerjakan dan proses yang lain dinaikkan tingkat urutan prosesnya agar nanti jika ada proses lain yang masuk, proses terdahulu mendapatkan bagian resource dan dapat dikerjakan.
