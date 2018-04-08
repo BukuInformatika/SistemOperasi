@@ -195,3 +195,43 @@ Proses ini tidak akan memenuhi partisi yang ditetapkan oleh proses.
 b. Fragmentasi Luar (Eksternal)
 Partisi yang tidak dapat digunakan karena ukuran partisi lebih sedikit atau kecil dibanding ukuran proses yang menunggu di suatu lajur,
 sehingga tidak digunakan atau tidak tersedia.
+
+Fungsi manajemen memori:
+
+Kelola informasi memori yang tidak.
+2. Alokasikan memori ke proses yang diperlukan.
+3. Alokasikan memori dari proses yang telah selesai.
+4. Pindah antara memori utama dan disk.
+
+Deskripsi Hirarki memori:
+
+1. Menggunakan memori dua level, menggunakan cache memori yang dapat meningkatkan kinerja dan penggunaan memori secara dinamis.
+2. Memory Chace adalah penyimpanan tinggi dari memori utama.
+3. Chace memory lebih mahal dari memori utama, cache cache relatif kecil.
+
+
+Address Binding
+
+- Sebelum eksekusi, program / proses ada di disk, dan sekarang
+Apa yang perlu dilakukan dalam posisi dalam memori fisik.
+
+- Alamat pengikatan adalah alamat dari alamat program / proses relatif
+di alamat fisik meori (alamat memori sebenarnya). Bisa bertahan hidup
+dalam salah satu tahapan: kompilasi, pemuatan atau eksekusi
+
+Program Tahap Kiri
+
+1. Tahap Kompilasi: program sumber (kode sumber) dikompilasi menjadi
+modul objek (kode objek).
+2. Link & load stage: objek modul menggunakan modul objek lain
+menjadi modul beban (eksekusi kode) dan kemudian memuat ke dalam memori
+Akan dieksekusi.
+3. Tahapan eksekusi: bisa juga dinamis
+terhubung dengan perpustakaan penduduk.
+
+Binding Address At Compilation
+
+1. Jika lokasi proses lebih banyak pada saat ini
+alamat kompilasi dan alamat yang dilewatkan oleh alamat
+fisik.
+2. Namun, jika di tempat itu harus dilakukan rekompilasi
