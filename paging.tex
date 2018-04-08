@@ -103,3 +103,13 @@ Gambar 4-11. String Acuan. Sumber: . . .
 
 7 0 1 2 0 3 0 4 2 3 0 3 2 1 2 0 1 7 0 1
 
+7 7 7 2 2 2 4 4 4 0 0 0 7 7 7
+
+0 0 0 3 3 3 2 2 2 1 1 1 0 0
+
+1 1 1 0 0 0 3 3 3 2 2 2 1
+
+Dari contoh contoh di atas, ada 15 halaman kesalahan. Algoritma FIFO mudah dimengerti dan diimplementasikan. Namun kinerjanya tidak selalu baik. Salah satu kelemahan dari algoritma FIFO adalah kemungkinan anomali Beladi, yang ada dalam beberapa kasus, tingkat kesalahan akan meningkat apabila jumlah frame yang dialokasikan juga meningkat.
+
+\section pemindahan halaman secara optimal 
+Salah satu konsekuensi mencegah anomali Beladi adalah algoritma pergerakan halaman yang optimal. Algoritma ini memiliki tingkat kesalahan halaman terendah dibandingkan dengan algoritma lainnya. Algoritma ini tidak akan mengalami anomali Belady. Konsep utama dari algoritma ini adalah mengganti halaman yang tidak akan digunakan untuk periode waktu terlama. Algoritma ini memastikan tingkat kesalahan serendah mungkin untuk sejumlah frame yang tetap.
