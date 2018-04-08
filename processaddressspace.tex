@@ -63,4 +63,12 @@ Selain menyimpan data tidak lenyap, simpan juga ke disk tujuan untuk mengosongka
 Dalam sistem ini kita juga dapat melihat bahwa sistem operasi terletak berdekatan dengan program lain dalam RAM sehingga kemungkinan sistem operasi terganggu atau diubah oleh proses yang berjalan sangat sangat besar. Seharusnya tidak terjadi.Untuk dapat  mencegah terganggunya sistem operasi tersebut maka alamat yang tertinggi dari sistem operasi yang diletakkan pada register batas dalam CPU tersebut. Jika ada proses yang mengacu ke alamat itu atau yang lebih rendah dari itu maka proses tersebut akan di hentikan dan program tersebut akan menampilkan pesan kesalahan yang terjadi. Manajemen Memory  Untuk Multiprogramming
 Untuk sistem komputer yang berukuran besar (bukan small computers), membutuhkan pengaturan memori, karena dalam multiprogramming akan melibatkan banyak pemakai secara simultan sehingga di memori akan terdapat lebih dari satu proses bersamaan.  Oleh karena itu dibutuhkan sistem operasi yang mampu mendukung dua kebutuhan tersebut, meskipun hal tersebut saling bertentangan, yaitu (Ama, 2003) :
 a)      Pemisahan ruang-ruang alamat.
-b)      Pemakaian bersama memori
+b)      Pemakaian bersama memori.
+Manajer memori harus menerapkan isolasi ruang alamat dari setiap proses untuk memungkinkan proses atau proses yang diperlukan untuk mengakses. Manajer memori di lingkungan multiprogramming atau melakukan dua hal, yaitu:
+a) Perlindungan memori dengan isolasi ruang alamat oleh dis-joint.
+b) Penggunaan memori bersama.
+Menyalin proses bekerja bersama untuk mengakses area memori bersama. Ketika konsep multiprogramming, akses CPU dapat ditingkatkan. Sebuah model untuk pemantauan CPU probabilistik:
+Pemanfaatan CPU = 1 - p n
+Dengan:
+a) N ada proses saat ini, memungkinkan untuk semua proses yang akan menunggu menggunakan I / O (Masalah CPU idle) sebesar pn. Fungsi n disebut gelar multiprogramming.
+b) Waktu yang sangat lama
