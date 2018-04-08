@@ -11,7 +11,7 @@
 Berdasarkan buku yang berjudul Sistem Operasi \cite{pangera2005sistem} fragmentasi internal adalah tidak efisiennya utilitas memori utama di mana sembarang program sekecil apapun tidak bergantung, akan menempati seluruh partisi. Keadaan ini mengakibatkan pemborosan ruang yang bersifat internal terhadap partisi dengan kenyataan di 
 mana blok data yang dimuatkan berukuran lebih kecil dari partisi.
 
-Hal ini umumnya terjadi ketika kita menggunakan sistem partisi banyak tetap. 
+Hal ini umumnya terjadi ketika kita menggunakan sistem partisi banyak tetap. Kembali ke contoh sebelumnya, di mana ada proses dengan permintaan memori sebesar 17 KB dan memori dipartisi menjadi blok yang masing-masing besarnya 5 KB. Pada sistem partisi banyak tetap, memori yang dialokasikan untuk proses adalah 4 blok, atau sebesar 20 KB. Padahal, yang terpakai hanya 17 KB. Sisa 3 KB tetap diberikan pada proses tersebut, walaupun tidak dipakai oleh proses tersebut. Hal ini berarti pula proses lain tidak dapat memakainya.
 
 
 \subsection{Fragmentasi Eksternal}
