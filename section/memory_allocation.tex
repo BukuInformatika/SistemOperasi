@@ -87,12 +87,12 @@ Selain itu, ada 2 tipe manajemen memori yang digunakan, yaitu :
 a. Static Memory Management (Manajemen Memori Statis)
 b. Dynamic Memory Management (Manajemen Memori Dinamis)
 
-2 Tipe manajemen ini memiliki Partition yang berbeda jenis, jumlah memori, penempatan/lokasi, dan ukuran yang diproses
+Tipe manajemen ini memiliki Partition yang berbeda jenis, jumlah memori, penempatan/lokasi, dan ukuran yang diproses
 oleh memori itu sendiri. Dari 2 tipe manajemen memori disebutkan terdapat perbedaan diantara keduanya yaitu :
 a. Manajemen Memori Statis  tidaklah akan berjalan bersama karena berbeda jenis manajemen memori
 b. Manajemen Memori Dinamis akan berjalan bersama karena kemiripan/kesamaan jenis manajemen memori.
 
-MANAJEMEN MEMORI PEMARTISIAN STATIS
+\subsection {Manajemen Memori Pemartisian Statis}
 
 Kondisi tanpa swapping :
 
@@ -100,16 +100,16 @@ a. Monoprogramming.
 Monoprogramming manajemen yaitu memori yang paling sederhana di dalam sistem komputer hanya dapat mengijinkan satu sistem atau satu pemakai saja dengan berjalan pada satu waktu. Semua sumber daya sepenuhnya akan dikuasai oleh proses yang sedang berjalan.
 
 b. Multiprogramming dengan pemartisian statis
-	Multiprogramming dapat dilakukan dengan cara pemartisian statis, yaitu memori dibagi menjadi beberapa bagian dengan sejumlah partisi tetap . pada partisi ini proses-proses ditempatkan.
+Multiprogramming dapat dilakukan dengan cara pemartisian statis, yaitu memori dibagi menjadi beberapa bagian dengan sejumlah partisi tetap . pada partisi ini proses-proses ditempatkan.
 
-*MONOPROGRAMMING :
+1. MONOPROGRAMMING :
 
-1.hanya terdapat satu proses pada suatu saat, sehingga proses baru akan mempengaruhi kepada proses lama.
-2. semua memori hanya dapat di gunakan satu proses saja.
-3. pemakai hanya memusatkan kepada satu memori atau tape.
-4.suatu mesin di kendalikan oleh suatu program.
+	1.hanya terdapat satu proses pada suatu saat, sehingga proses baru akan mempengaruhi kepada proses lama.
+	2. semua memori hanya dapat di gunakan satu proses saja.
+	3. pemakai hanya memusatkan kepada satu memori atau tape.
+	4.suatu mesin di kendalikan oleh suatu program.
 
-*MONOPROGRAMMING:
+2. MONOPROGRAMMING:
 
 - Masih digunakan untuk sistem kecil yaitu embedded system (embedded system)
 terpasang atau ditemukan di sistem lain.
@@ -120,14 +120,47 @@ kecerdasan (perangkat intelegent) dalam menyediakan fungsi tertentu. Karena
 hanya satu fungsi spesifik, dapat diprogram dalam mikroprosesor dengan memori
 kecil (1-64 Kb).
 
-b. Multiprogramming dengan pemartisian statis
+\subsection {Multiprogramming dengan pemartisian statis}
 Multiprogramming dapat dilakukan dengan pemartisian statis, yaitu memori dibagi menjadi beberapa sejumlah partisi tetap. Pada partisi-partisi tersebut proses-proses ditempatkan.
 
-*MULTIPROGRAMMING
+1. MULTIPROGRAMMING
 
 melibatkan banyak pemakai secara simultan sehingga di memori akan terdapat lebih dari satu proses bersamaan. Oleh karena itu dibutuhkan sistem operasi yang mampu mendukung dua kebutuhan tersebut.
 
 Melakukan dua aktivitas :
-Proteksi memori dengan isolasi ruang-ruang alamat secara disjoint (terpisah).
-Pemakaian bersama memori.
+- Proteksi memori dengan isolasi ruang-ruang alamat secara disjoint (terpisah).
+- Pemakaian bersama memori.
 
+Multiprogramming Static Partitioning
+
+Batasi beberapa alasan:
+a. Sederhanakan pemogram.
+Pemrograman dapat memecah program menjadi dua atau lebih proses.
+b. Untuk dapat memberikan layanan interaktif kepada banyak orang secara bersamaan.
+Anda perlu memiliki lebih dari satu proses mememori
+untuk hasil kinerja yang baik.
+c. Biaya penggunaan sumber daya.
+Jika pada multiprogramming dan prosesnya diblocked (hanya DMA
+yang berfungsi) dan proses lainnya mendapat waktu pemrosesan penjatahan, lalu DMA
+dapat meningkatkan sistem mahal.
+d. Eksekusi lebih murah jika proses besar dipecah menjadi proses yang lebih kecil.
+e. Dapat melakukan sejumlah pekerjaan secara bersamaan.
+
+
+Partisi statis berdasarkan Ukuran
+
+Partisi terbagi menjadi dua:
+
+1. Partisi menjadi partisi palsu yang sama (ukuran semua partisi
+memori yang sama), yaitu:
+
+Beberapa proses kurang dari atau sama dengan ukuran partisi
+dimasukkan ke dalam
+partisi tersedia.
+Kelemahan:
+- Jika program lebih besar dari partisi yang tersedia, lalu
+Tidak bisa dimuat, tidak bisa dieksekusi. Programmer harus bekerja pada overlay, hanya bagian dari program yang benar-benar dijalankan. Untuk overlay diperlukan sistem operasi yang mendukung swapping.
+- Untuk program yang sangat kecil melebihi ukuran partisi
+set, maka banyak ruang yang tidak terpakai yang terbuang,
+disebut fragmentasi internal. Kelemahan ini dapat diurungkan dengan
+partisi tetap berbeda.
