@@ -164,3 +164,34 @@ Tidak bisa dimuat, tidak bisa dieksekusi. Programmer harus bekerja pada overlay,
 set, maka banyak ruang yang tidak terpakai yang terbuang,
 disebut fragmentasi internal. Kelemahan ini dapat diurungkan dengan
 partisi tetap berbeda.
+
+2. Pemartisian memiliki ukuran yang berbeda begitu juga ukuran semuapartisi memorinya.
+
+Strategi Penempatan Program ke partisi
+Penjelasan :
+a. Rencana penempatan pada pemartisian menjadi partisi-partisi yang memiliki ukuran sama. Penempatan proses ke memori digunakan secara mudah sebab dapat dipilih bebas/sembarang partisi yang kosong.
+b. Rencana penempatan pada pemartisian menjadi partisi-partisi dengan ukuran yang berbeda-beda.
+
+Satu jalur untuk setiap partisi (Berarti banyak jalur untuk seluruh partisi) Proses ditempatkan ke partisi paling kecil yang dapat memuatnya.
+
+Dampak Positif : Cara ini dapat mengurangi pemborosan memori yang sia-sia digunakan.
+Dampak Negatif : Dapat terjadi penghambatan jalur di suatu partisi sementara jalur yang lainnya masih kosong atau belum terisi.
+
+Satu jalur untuk semua partisi
+Proses-proses diantrikan di satu lajur tunggal untuk semua partisi. Proses tersebut ditempatkan di partisi bebas dengan ukuran paling kecil
+yang dapat memuati jalur tersebut.
+
+Dampak Positif : Sangat Mudah/Fleksibel serta Implementasi dan Operasi berjalan minimum karena hanya mengatur satu jalur
+Dampak Negatif : Proses tersebut banyak ditempatkan berbagai partisi dan mengalami pemborosan, karena proses kecil diletakkan pada satu jalur besar
+
+Fragmentasi di Partisi Statis
+
+Pengertian Fragmentasi :
+Fragmentasi adalah Pemborosan Memori yang terjadi pada suatu gudang penyimpanan.
+
+Fragmentasi di tempat pemartisian lokal/tetap terdiri dari :
+a. Fragmentasi Dalam (Internal)
+Proses ini tidak akan memenuhi partisi yang ditetapkan oleh proses.
+b. Fragmentasi Luar (Eksternal)
+Partisi yang tidak dapat digunakan karena ukuran partisi lebih sedikit atau kecil dibanding ukuran proses yang menunggu di suatu lajur,
+sehingga tidak digunakan atau tidak tersedia.
