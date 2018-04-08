@@ -1,0 +1,31 @@
+%Nama Kelompok: Sistem_Operasi_Deadlock
+%Kelas: D4 TI 1B
+%Alit Fajar Kurniawan 
+%Muhammad Iqbal Panggabean
+%Muhammad Afra Faris
+%Khadijah Khasanah Puteri Harahap
+
+\section {DEADLOCK}
+
+\subsection {Deadlock}
+\subsubsection {Pengertian Deadlock}
+	Pada kesempatan ini saya akan menjelaskan tentang definisi Deadlock, Deadlock merupakan suatu kondisi dimana 2 proses atau lebih, saling menunggu proses untuk melepaskan sumber daya atau resources yang sedang digunakan. Mudahnya, ada proses A yang memperlukan suatu resources, tetapi resources tersebut sedang digunakan oleh proses lain. Untuk lebih paham tentang definisi deadlock dan cara mengatasinya, anda dapat membandingkan dengan situasi berikut. yang pertama, Dalam kehidupan, tentunya anda membutuhkan pekerjaan. Untuk memperoleh pekerjaan, anda harus mempunyai pengalaman, untuk mempunyai pengalaman anda harus bekerja.
+	
+\subsection {Masalah Deadlock dan Metode Penanganan Deadlock}
+\subsubsection {Masalah Deadlock}
+	Deadlock merupakan dampak pengaruh dari sinkronisasi, yaitu dimana satu variabel yang digunakan oleh dua proses yang berbeda. Deadlock selalu tidak terlepas dari yang namanya sumber daya, karena hampir secara keseluruhan merupakan masalah mengenai sebuah sumber daya yang digunakan secara bersamaan. Sebuah Kelompok Proses yang diblok atau diblokir, dimana setiap proses memegang sebuah resource dan kemudian menunggu resource lain dari proses yang berada didalam proses yang sedang diBlok tersebut, biasanya dari semua proses-proses atau resource yang non preemptive.
+	
+\subsubsection {Metode Penanganan}
+	Ada tiga Metode penanganan Deadlock:
+	Yang Pertama yaitu, anda harus menggunakan satu protokol yang dapat membuat anda yakin bahwa sistem tersebut tidak akan pernah mengalami kejadian deadlock. Metode ini bisa disebut dengan Deadlock Prevention atau Avoidance.
+	
+	Yang Kedua, anda harus memberikan izin sistem untuk mengalami kejadian deadlock, namun setelah terjadinya deadlock anda harus dengan cepat segera untuk memperbaiki sistem yang mengalami deadlock tersebut. Metode ini biasanya disebut dengan Deadlock detection and recovery.
+	
+	Dan yang terakhir, anda hanya mengabaikan semua permasalahan yang terjadi secara bersamaan, dan kemudian menganggap bahwa deadlock tidak akan terjadi, metode ini digunakan dalam berbagai sistem operasi komputer, termasuk windows dan unix.
+	
+	
+\subsection {Deadlock Detection}
+	1. Pendeteksian secara Algoritma, yaitu dengan cara kita mengetahui jika terjadinya deadlock, deadlock terjadi jika suatu permintaan tidak dapat ditangani segera.
+	
+	2. Recovery atau Pemulihan, yaitu yang pertama menggagalkan semua proses deadlock, yang kedua mem backup semua proses yang deadlock dan kemudian silahkan melakukan restart di semua proses yang sedang terjadi, yang ketiga menggagalkan semua proses yang deadlock secara berurutan sehingga tidak akan terjadi lagi deadock, dan yang terakhir yaitu menggagalkan pengalokasian resource secara berurutan hingga tidak ada deadlock.
+	
