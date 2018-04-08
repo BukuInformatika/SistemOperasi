@@ -42,5 +42,10 @@
 		Di saat sedang memilih proses yang akan dioperasikan, sistem operasi akan memilih salah satu proses yang berada didalam keadaan status ready.
 		\item Running ke waiting
 		Suatu proses dimasukkan dalam keadaan status waiting jika proses itu meminta sesuatu yang dapat menyebabkannya harus menunggu. Sebuah request ke sistem operasi pada umumnya merupakan bentuk panggilan dari layanan sistem (panggilan dari program yang sedang beroperasi ke prosedur yang sedang beroperasi ke prosedur yang merupakan bagian kode sistem operasi) misalnya seperti sebuah proses bisa meminta suatu layanan dari sistem operasi yang tidak siap dilakukan sistem opersi dengan segera. Atau proses dapat menginisiasi suatu aksi, misalnya operasi I/O, yang harus diselesaikan sebelum proses itu melanjutkan operasinya. Pada saat proses saling berkomunikasi dengan proses lainnya, suatu proses bisa diblokir jika sedang menunggu proses lainnya untuk menyediakan input atau sedang menunggu pesan dari proses lainnya.
-		
+		\item Running ke ready
+		Pada umumnya alasan transisi ini ialah dimana sebuah proses yang lagi berjalan sudah mencapai batas waktu maksimum yang telah diizinkan bagi instruksi yang tidak diinterupsi. Terdapat beberapa alasan yang menyebabkan transisi ini terjadi, yang tidak diimplementasikan oleh setiap sistem operasi. Misalnya apabila sistem operasi meng-assign tingkat prioritas yang berbeda pada beberapa proses yang berlainan, suatu proses bisa diambil lebih dulu.
+		\item Waiting ke ready
+		Apabila suatu proses dalam keadaan status waiting sudah selesai dalam mendapatkan sumber daya, seperti file atau bagian virtual memori bagi pakai atau juga sudah selesai setelah menunggu proses yang lainnya untuk menyediakan input atau sudah selesai dalam menunggu pesan lainnya.
+		\item Runing ke finish(terminated)
+		proses yang sedang berjalan dihentikan oleh Sistem Operasi jika proses itu telah selesai atau tidak jadi dieksekusi. Hal ini terjadi dikarenakan jika proses induknya sendiri telah berhenti.
 	\end{enumerate}
