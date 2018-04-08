@@ -82,6 +82,14 @@ Kita harus menyelesaikan 2 masalah utama untuk mengimplementasikan demand paging
 ini adalah hal yang sangat penting.
 
 Ada beberapa algoritma pemindahan halaman yang berbeda. Kemungkinan setiap Sistem Operasi memiliki skema pemindahan yang unik. Algoritma pemindahan yang baik adalah yang memiliki tingkat kesalahan halaman terendah. Kita mengevaluasi algoritma dengan menjalankanny dalam string khusus di memori acuan dan menghitung jumlah kesalahan halaman.  String dari memori acuan disebut string acuan (reference string). Sebagai contoh, jika kita memeriksa proses khusus, kita mungkin akan mencatat urutan alamat seperti dibawah ini:
+0100, 0432, 0101, 0612, 0102, 0103, 0104, 0101, 0611, 0102, 0103, 0104, 0101, 0610, 0102, 0103,
 
+0104, 0101, 0609, 0102, 0105, di mana pada 100 byte per halaman, diturunkan menjadi string referensi sebagai berikut:
+
+1, 4, 1, 6, 1, 6, 1, 6, 1, 6, 1 
+
+Perhatikan bahwa selama jumlah frame meningkat, jumlah kesalahan halaman menurun.
+
+Penambahan memori fisik akan menambah jumlah frame.
 
 
