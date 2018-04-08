@@ -21,7 +21,8 @@ ini adalah contoh segmentation \ref{segmentation}
 Segmentasi adalah teknik manajemen memori di mana setiap pekerjaan dibagi menjadi beberapa segmen dengan ukuran yang berbeda, satu untuk setiap modul yang berisi potongan-potongan yang melakukan fungsi terkait. Setiap segmen sebenarnya merupakan ruang alamat logis yang berbeda dari program. Ketika sebuah proses akan dieksekusi, segmentasinya yang sesuai akan dimuat ke dalam memori yang tidak bersebelahan meskipun setiap segmen dimuat ke dalam blok memori yang berdekatan dengan segmen lainnya.
 Segmentasi manajemen memori bekerja sangat mirip dengan paging tetapi segmen di sini adalah variabel-panjang di mana seperti dalam halaman paging adalah ukuran tetap.
 Segmen program berisi fungsi utama program, fungsi utilitas, struktur data, dan sebagainya. Sistem operasi memelihara tabel peta segmen untuk setiap proses dan daftar blok memori bebas bersama dengan nomor segmen, ukurannya dan lokasi memori yang sesuai dalam memori utama. Untuk setiap segmen, tabel menyimpan alamat awal segmen dan panjang segmen.
-Segmen biasanya cocok atau sesuai dengan divisi alami dari suatu program seperti rutinitas individu atau tabel data sehingga segmentasi umumnya lebih terlihat oleh programmer daripada paging saja.  Segmen yang berbeda dapat dibuat untuk modul program yang berbeda, atau untuk kelas yang berbeda dari penggunaan memori seperti kode dan segmen data. 
+Segmen biasanya cocok atau sesuai dengan divisi alami dari suatu program seperti rutinitas individu atau tabel data sehingga segmentasi umumnya lebih terlihat oleh programmer daripada paging saja.  Segmen yang berbeda dapat dibuat untuk modul program yang berbeda, atau untuk kelas yang berbeda dari penggunaan memori seperti kode dan segmen data \cite{cepulis1992computer}.
+
 \subsection{Implementasi perangkat keras}
 Dalam sistem yang menggunakan segmentasi, alamat memori komputer terdiri dari id segmen dan offset dalam segmen tersebut. Sebuah unit manajemen memori perangkat keras (MMU) bertanggung jawab untuk menerjemahkan segmen dan mengimbangi ke alamat fisik, dan untuk melakukan pemeriksaan untuk memastikan terjemahan dapat dilakukan dan referensi ke segmen dan offset tersebut diizinkan.
 Setiap segmen memiliki panjang dan serangkaian izin (misalnya, baca, tulis, jalankan) yang terkait dengannya. Suatu proses hanya diperbolehkan untuk membuat referensi ke dalam segmen jika jenis referensi diizinkan oleh izin, dan jika offset dalam segmen berada dalam rentang yang ditentukan oleh panjang segmen. Jika tidak, pengecualian perangkat keras seperti kesalahan segmentasi dinaikkan.
@@ -53,6 +54,12 @@ Implementasi Memory Virtual terdapat 2 cara yaitu
 	2. Demand segmentation itu memiliki sistem yang lebih kompleks diterapkan ukuran segmen yang bervariasi.
 \subsection{Sejarah}
 Pada awalnya ada yang disebut dengan Komputer Burroughs Corporation B5000. Komputer Burroughs Corporation B5000 adalah salah satu yang pertama untuk mengimplementasikan segmentasi, dan "mungkin komputer komersial pertama yang menyediakan memori virtual" berdasarkan segmentasi. Komputer B6500 kemudian juga menerapkan segmentasi versi arsitekturnya masih digunakan saat ini di server Unisys ClearPath Libra.
+
+Komputer GE-645, modifikasi GE-635 dengan segmentasi dan dukungan paging yang ditambahkan, dirancang pada 1964 untuk mendukung Multics.
+
+Intel iAPX 432, [5] dimulai pada tahun 1975, berusaha untuk mengimplementasikan arsitektur tersegmentasi yang benar dengan proteksi memori pada mikroprosesor.
+Prime, Stratus, Apollo, IBM System / 38, dan IBM AS / 400 komputer menggunakan segmentasi memori.
+
 =======
 	
 2. Demand segmentation itu memiliki sistem yang lebih kompleks diterapkan ukuran segmen yang bervariasi.
