@@ -281,5 +281,11 @@ Address Binding Saat Eksekusi
 1. Hal binding ini memungkinkan untuk pemindahan suatu proses dari suatu tempat ke tempat yang lainnya selama berjalan.
 2.Diperlukan adanya dukungan perangkat keras untuk pemetaan address
 
+PCB dibagi dengan 3 kelompok:
 
+ Data identifikasi proses; selalu sertakan pengidentifikasi unik untuk proses (hampir selalu nilai integer) dan, dalam sistem multi-pengguna-multitasking, data seperti pengenal proses induk, pengenal pengguna, pengenal grup pengguna, dll. Proses ini sangat relevan, seperti sering digunakan untuk tabel OS referensi silang, misalnya dimungkinkan untuk mengidentifikasi proses menggunakan perangkat I / O, atau wilayah memori.
+
+ Data status prosesor; adalah sepotong informasi yang menentukan status suatu proses ketika proses ditangguhkan, memungkinkan OS untuk memulai kembali proses di masa depan dan masih dapat melaksanakannya dengan benar. Itu selalu termasuk isi register CPU tujuan.
+
+ Data kontrol proses; digunakan oleh OS untuk mengelola proses itu sendiri.
 
