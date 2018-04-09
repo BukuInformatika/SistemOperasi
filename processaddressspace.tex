@@ -54,6 +54,36 @@ Register dasar disebut register relokasi. Nilai register relokasi ditambahkan ke
 manajemen memori adalah kegiatan mentransfer gambar proses antara memori utama dan disk selama eksekusi, atau dengan kata lain itu adalah pengalihan manajemen proses dari memori utama ke disk dan kembali lagi (swapping). Manajemen ini terdiri dari:
 Multiprogramming Dengan Partisi Dinamis
 Jumlah, lokasi, dan ukuran proses dalam memori dapat bervariasi dari waktu ke waktu secara dinamis. Kelemahan: a) Lubang memori dapat terjadi di antara partisi yang digunakan; b) mempersulit alokasi dan alokasi memori.
+{Solusi}:
+Lubang-lubang kecil di antara blok-blok memori yang digunakan dapat diatasi dengan pemadatan memori yaitu menggabungkan semua lubang kecil menjadi satu lubang besar dengan memindahkan semua proses agar saling berdekatan.
+ 
+Strategi Alokasi Memori
+a) First fit algorithm : memory  manager men-scan list untuk  menemukan hole yg cukup untuk menampung proses yg baru. Proses akan menempati hole pertama yg ditemuinya yg cukup untuk dirinya.
+b) Fit algoritma berikutnya: sama seperti fit pertama, tetapi pencarian lubang dimulai dari lubang yang ditemui dari pemindaian sebelumnya.
+c) Algoritme fit terbaik: mencari lubang yang akan menghasilkan residu paling sedikit setelah proses masuk.
+d) Algoritma fit terburuk: kebalikan dari fit terbaik.
+e) Quick Fit algorithm: group holes dan membuat daftar mereka sendiri. Misalnya, ada daftar untuk 4K lubang, satu daftar untuk 8K, dan seterusnya.
+f) Sistem Sobat: Memori dalam menumpuk di dash blok bebas ukuran 1,2,4,8,16 byte dll, hingga kapasitas memori.
+Dari berbagai cara alokasi tsb. Di atas, lubang yang ditempati oleh proses akan dibagi menjadi bagian-bagian yang digunakan oleh proses dan memori yang tidak terpakai (fragmen). Munculnya memori yang tidak terpakai disebut fragmentasi. Ada dua jenis fragmen
+a)      Internal : sisa hole yang tidak terpakai setelah terisi proses.
+b)      Eksternal : hole yang secara utuh terlalu kecil untuk dipakai oleh proses manapun.
+Alokasi Ruang Swap pada Disk (Penempatan proses pada disk setelah di-swap-out dari memori)
+a)      Ruang disk tempat swap dialokasikan begitu diperlukan
+b)      Ruang disk tempat swap dialokasikan lebih dahulu.
+Algoritma untuk pengaturan ruang swap pada disk sama dengan  untuk memori utama. Perbedaannya adalah ruang pada disk harus dialokasikan sebagai kelipatan bilangan bulat dari disk block.
+BAB III : PENUTUP
+A. Kesimpulan
+Memori dan Manajemen Memori
+Memori adalah pusat dari operasi pada sistem komputer modern, berfungsi sebagai tempat penyimpanan informasi yang harus diatur dan dijaga sebaik-baiknya. Memori adalah array besar dari word atau byte, yang disebut alamat. CPU mengambil instruksi dari memory berdasarkan nilai dari program counter (Ama, 2003).
+Sedangkan manajemen memori adalah suatu kegiatan untuk mengelola memori komputer. Proses ini menyediakan cara mengalokasikan memori untuk proses atas permintaan mereka, membebaskan untuk digunakan kembali ketika tidak lagi diperlukan serta menjaga alokasi ruang memori bagi proses.Manajemen Memori merupakan salah satu bagian terpenting pada sistem operasi. Sejak awal komputer digunakan untuk keperluan komputasi, kebutuhan akan memori yang lebih besar dibandingkan dengan keadaan fisik memori di dalam sistem terus meningkat. Berbagai perhitungan dan strategi terus dilakukan untuk mengatasi keterbatasan ukuran memori fisik (Ama, 2003).
+Strategi Manjemen Memori
+Strategi yang dikenal untuk mengatasi hal tersebut adalah memori maya. Memori maya menyebabkan sistem seolah-olah memiliki banyak memori dibandingkan dengan keadaan memori fisik yang sebenarnya. Memori maya tidak saja memberikan peningkatan komputasi.
+Ruang Alamat Logika dan Fisik
+Tujuan utama manajemen memori adalah konsep meletakkan ruang alamat logika ke ruang alamat fisik. Alamat Logika adalah alamat yg dibentuk di CPU, disebut juga alamat virtual. Alamat fisik adalah alamat yang terlihat oleh memori.
+Swapping
+Sebuah proses yang harus berada di memori sebelum dieksekusi. Proses swapping menukarkan sebuah proses keluar dari memori untuk sementara waktu ke sebuah penyimpanan sementara dengan sebuah proses lain yang sedang membutuhkan sejumlah alokasi memori untuk dieksekusi. Tempat penyimpanan sementara ini biasanya berupa sebuah fast disk dengan kapasitas yang dapat menampung semua salinan dari semua gambaran memori serta menyediakan akses langsung ke gambaran tersebut.
+
+
 
 \subsection {Swapping}
 Suatu proses, seperti yang dijelaskan di atas, harus ada di dalam memori sebelum dieksekusi. Proses pertukaran menukar proses keluar sementara dari memori sementara ke penyimpanan sementara dengan proses lain yang memerlukan beberapa alokasi memori untuk dieksekusi. Room tempat penyimpanan sementara ini biasanya merupakan suatu disk cepat dengan kapasitas yang bisa menampung semua copy-an dari semua gambar memori serta memberikan akses langsung ke gambar. Jika eksekusi proses yang dikeluarkan akan dilanjutkan beberapa waktu kemudian, maka akan dibawa kembali ke memori dari tempat penyimpanan sementara tadi. Bagaimana sistem mengetahui proses mana yang akan dieksekusi?
@@ -64,7 +94,7 @@ Waktu swapping adalah waktu transer, misalnya kita melihat ilustrasi berikut. Pr
 Untuk teknik swapping agar lebih efisien, lebih baik menukar proses yang benar-benar diperlukan sehingga mengurangi waktu swap. Karena itu, sistem harus selalu tahu setiap perubahan yang terjadi dalam pemenuhan kebutuhan memori.Jika kita ingin bertukar, ada beberapa hal yang harus diperhatikan. Kita harus menghindari pertukaran proses dengan M / K tertunda (dengan asumsi operasi M / K juga antri di antrian karena peralatan M / K sibuk). Misalnya seperti ini, jika proses P1 dihapus dari memori dan kita ingin memasukkan proses P2, maka operasi M / K yang juga dalam antrian akan mengambil ransum ruang memori yang dirilis P1. Masalah ini dapat diselesaikan jika kita tidak bertukar dengan operasi M / K yang tertunda. Selain itu, pelaksanaan operasi M / K harus dilakukan pada buffer sistem operasi.
 Setiap sistem operasi memiliki versi teknik swapping yang diwakilinya sendiri. Misalnya pada UNIX, swapping pada dasarnya tidak diaktifkan, tetapi akan mulai jika banyak proses memerlukan banyak memori. Swapping akan kembali jika jumlah proses yang dimasukkan berkurang. Di sistem operasi Microsoft Windows 3.1, jika proses baru dan tidak ada cukup ruang di memori untuk menahannya, proses sebelumnya di memori akan dipindahkan ke disk. Sistem operasi ini pada dasarnya tidak menggunakan teknik swapping secara penuh, ini menyebabkan pengguna lebih dalam menentukan proses mana yang akan ditukar dari penjadwal CPU. Dengan ketentuan ini, proses yang telah dikeluarkan tidak akan dilakukan lagi.
 
-\subsection {Solusi}:
+{Solusi}:
 Lubang-lubang kecil di antara blok-blok memori yang digunakan dapat diatasi dengan pemadatan memori yaitu menggabungkan semua lubang kecil menjadi satu lubang besar dengan memindahkan semua proses agar saling berdekatan.
  
 Strategi Alokasi Memori
