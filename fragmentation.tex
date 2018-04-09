@@ -28,5 +28,8 @@ Contohnya, file yang berada dalam file sistem telah diatur dalam unit yang diseb
 Contoh lainnya, jika node yang terhubung daftar dialokasikan turut dalam memori, peristiwa ini akan meningkatkan lokalitas dari referensi dan data cache dan meningkatkan kinerja selama traversal dari daftar. Jika memori renang gratis bagi ruang adalah, baru node akan tersebar di seluruh memori, meningkatkan jumlah cache misses.
 Seperti compaction dapat menghilangkan fragmentasi eksternal, data fragmentasi dapat dihapuskan oleh rearranging data terkait agar buah yang saling berdekatan. 
 
-Misalnya, pekerjaan utama dari defragmentation alat ini adalah untuk mengatur ulang blok pada disk, sehingga setiap file blok yang berdekatan. Paling defragmenting utilitas juga berusaha untuk mengurangi atau menghilangkan fragmentasi pada ruang kosong. Beberapa pindah pengumpul sampah terkait juga akan memindahkan objek dekat bersama (disebut Memadatkan) untuk meningkatkan kinerja cache
+Misalnya, pekerjaan utama dari defragmentation alat ini adalah untuk mengatur ulang blok pada disk, sehingga setiap file blok yang berdekatan. Paling defragmenting utilitas juga berusaha untuk mengurangi atau menghilangkan fragmentasi pada ruang kosong. Beberapa pindah pengumpul sampah terkait juga akan memindahkan objek dekat bersama (disebut Memadatkan) untuk meningkatkan kinerja cache. Tentunya hal ini akan menimbulkan beberapa  kerugian  pada kinerja system. yaitu:
+1.	 Kinerja pada system  yang dapat menjadi turun karena data tersebar dan dibutuhkan lagi proses untuk penggabungan kembali data yang mengalami fragmentasi seperti semula. 
+2.	Integritas pada sistem  dapat terganggu karena  terjadi kegagalan pada salah satu site database server
+
 %%%%%%%% Nico Ekklesia Sembiring %%%%%%%%
