@@ -143,3 +143,5 @@ Untuk mengimplementasikan algoritma LRU, ada 2 implementasi yang dapat digunakan
 \section Pemindahan Halaman Secara Perkiraan LRU
 
 Hanya sedikit sistem komputer yang menyediakan perangkat lunak yang memberikan cukup dukungan terhadap algoritma pemindahan halaman secara LRU. Banyak sistem yang tidak menyediakan perangkat lunak yang memberikan memberikan dukungan terhadap algoritma LRU, sehingga terpaksa menggunakan algoritma lain, seperti FIFO. Banyak sistem menyediakan bantuan untuk menangani masalah ini, misalnya dengan bit acuan. Bit acuan untuk halaman diset oleh perangkat lunak kapan pun halaman tersebut ditunjuk. Bit acuan diasosiasikan dengan masing-masing isi dari tabel halaman.
+Awalnya, semua bit dikosongkan oleh sistem operasi. Selama proses pengguna, bit-bit yang terkait dengan setiap halaman referensi diatur ke 1 oleh perangkat keras. Setelah beberapa waktu, kami dapat menentukan halaman mana yang telah digunakan dan halaman mana yang belum digunakan dengan menguji bit referensi. Informasi ini memberikan informasi penting bagi banyak algoritma pemindahan halaman yang memperkirakan halaman mana yang tidak digunakan untuk waktu yang lama.
+ 
