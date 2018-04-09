@@ -1,4 +1,4 @@
- \section manajemen memori
+ \section {manajemen memori}
 Konsep dasar memori
 Memori adalah sebagai suatu pusat dari operasi yang pada setiap komputer modern , memori berfungsi untuk tempat penyimpan sebuah informasi dan harus diatur dan dijaga sebaik mungkin . memori adalah array besar dari word atau byte yang bisa disebut alamat CPU untuk mengambil instruksi instruksi dari sebuah memory
 CPU mengambil instruksi instruksi dari memori berdasarkan pada nilai dari penghitung program  program.
@@ -14,7 +14,7 @@ Fungsi manajemen memori ada 4 mengelola informasi yang dipakai dan tidak dipakai
 
 
 
-\subsection Jenis-Jenis Yang Ada di Manajemen Memori
+\subsection {Jenis-Jenis Yang Ada di Manajemen Memori}
 Manajemen Memori umumnya digunakan untuk monoprogramming
 Ketika itu sebuah program komputer yang hanya berjalan satu jenis maka selama proses berlangsung itu akan dikatakan bahwa mode kerja komputer adalah monoprogramming. Selama waktu itu komputer juga berfungsi maka memori dalam RAM sepenuhnya dikendalikan oleh program program.
 Sistem operasi memberikan sebuah  tanggapan terhadap manajemen memori utama untuk aktivitas-aktivitas sepertii 
@@ -37,11 +37,11 @@ jika sistem operasi telah selesai atau berhasil dimuat maka akan ada prompt munc
 \subsection
 Ketika kita bekerja dengan program aplikasi bagdi maka kita akan menghasilkan data. Data akan disimpan sementara di RAM yang tersisa. Data yang disimpan dalam RAM adalah voletile, yang berarti bahwa data hanya dapat bertahan selama daya komputer AKTIF. Untuk menyimpan kebiasaan menyimpan data ke disk dalam waktu tidak terlalu lama, misalnya setiap 5 menit
 
-\subsection Fair Physical Memory Allocation
+\subsection {Fair Physical Memory Allocation}
 Alokasi Memori Fisik yang Adil
 Alokasi Memori Fisik yang Adil Biasanya Digunakan dalam Manajemen Memori untuk membagi penggunaan memori fisik secara merata ke dalam setiap proses yang berjalan pada suatu sistem.
 
-\subsection Shared Virtual Memory.
+\subsection {Shared Virtual Memory}
 Meskipun dalam Memori Virtual Bersama setiap proses menggunakan ruang alamat yang berbeda dari memori virtual, tetapi ada kalanya proses dihadapkan untuk berbagi penggunaan memori.
 
 C. Ruang Alamat Logika dan Fisik
@@ -50,12 +50,12 @@ Alamat logika adalah alamat yang dihasilkan dalam CPU, juga disebut alamat virtu
 Hasil dari skema waktu gabungan dan waktu pengikatan alamat pada alamat yang logis dan alamat yang ada pada memori adalah serupa. Tetapi skema waktu pengikatan waktu untuk eksekusi alamat berbeda. dalam hal ini, alamat logis disebut alamat virtual. Himpunan semua alamat logika yang dihasilkan oleh program disebut ruang alamat logis; himpunan semua alamat fisik yang terkait dengan alamat logis disebut ruang alamat fisik.
 Unit Manajemen Memori (MMU) adalah perangkat perangkat keras yang memetakan alamat virtual ke alamat fisik. Dalam skema MMU, nilai register relokasi ditambahkan ke setiap alamat yang dihasilkan oleh proses pengguna ketika dikirim ke memori.
 Register dasar disebut register relokasi. Nilai register relokasi ditambahkan ke setiap alamat yang dihasilkan oleh proses pengguna ketika dikirim ke memori, misalnya, jika basisnya 14000, pengguna mencoba menempatkannya ke alamat 0 dan dipindahkan secara dinamis ke lokasi 14000. Access ke lokasi logika 346, dipetakan ke lokasi 14346. Sistem operasi MS-DOS yang masih merupakan keluarga intel 80X86 menggunakan empat register relokasi ketika memuat dan menjalankan proses.
-\subsection Multiprogramming Dengan Swapping
+\subsection {Multiprogramming Dengan Swapping}
 manajemen memori adalah kegiatan mentransfer gambar proses antara memori utama dan disk selama eksekusi, atau dengan kata lain itu adalah pengalihan manajemen proses dari memori utama ke disk dan kembali lagi (swapping). Manajemen ini terdiri dari:
 Multiprogramming Dengan Partisi Dinamis
 Jumlah, lokasi, dan ukuran proses dalam memori dapat bervariasi dari waktu ke waktu secara dinamis. Kelemahan: a) Lubang memori dapat terjadi di antara partisi yang digunakan; b) mempersulit alokasi dan alokasi memori.
 
-\subsection Swapping
+\subsection {Swapping}
 Suatu proses, seperti yang dijelaskan di atas, harus ada di dalam memori sebelum dieksekusi. Proses pertukaran menukar proses keluar sementara dari memori sementara ke penyimpanan sementara dengan proses lain yang memerlukan beberapa alokasi memori untuk dieksekusi. Room tempat penyimpanan sementara ini biasanya merupakan suatu disk cepat dengan kapasitas yang bisa menampung semua copy-an dari semua gambar memori serta memberikan akses langsung ke gambar. Jika eksekusi proses yang dikeluarkan akan dilanjutkan beberapa waktu kemudian, maka akan dibawa kembali ke memori dari tempat penyimpanan sementara tadi. Bagaimana sistem mengetahui proses mana yang akan dieksekusi?
 Ini bisa dilakukan dengan antrean siap. Antrean ready berisi semua proses yang ditempatkan baik di penyimpanan sementara dan memori yang siap untuk dieksekusi. Ketika penjadwal CPU akan menjalankan proses, ia kemudian memeriksa apakah proses sudah ada dalam memori atau masih dalam penyimpanan sementara. Jika proses tidak dalam memori maka proses swapping akan dilakukan seperti yang dijelaskan di atas.
 salah satu contoh untuk mengilustrasikan teknik swapping adalah Algoritma Round-Robin yang digunakan dalam lingkungan multiprogamming menggunakan waktu kuantum dalam pelaksanaan prosesnya. ketika waktu kuantum berakhir, pengelola memori akan mengeluarkan proses lain ke dalam memori bebas.. Pada saat yang sama, penjadwal CPU akan mengalokasikan waktu ke proses lain dalam memori. Perhatiannya adalah bahwa waktu kuantum harus cukup lama sehingga waktu penggunaan CPU dapat lebih optimal bila dibandingkan dengan proses pertukaran yang terjadi antara memori dan disk.
@@ -64,7 +64,7 @@ Waktu swapping adalah waktu transer, misalnya kita melihat ilustrasi berikut. Pr
 Untuk teknik swapping agar lebih efisien, lebih baik menukar proses yang benar-benar diperlukan sehingga mengurangi waktu swap. Karena itu, sistem harus selalu tahu setiap perubahan yang terjadi dalam pemenuhan kebutuhan memori.Jika kita ingin bertukar, ada beberapa hal yang harus diperhatikan. Kita harus menghindari pertukaran proses dengan M / K tertunda (dengan asumsi operasi M / K juga antri di antrian karena peralatan M / K sibuk). Misalnya seperti ini, jika proses P1 dihapus dari memori dan kita ingin memasukkan proses P2, maka operasi M / K yang juga dalam antrian akan mengambil ransum ruang memori yang dirilis P1. Masalah ini dapat diselesaikan jika kita tidak bertukar dengan operasi M / K yang tertunda. Selain itu, pelaksanaan operasi M / K harus dilakukan pada buffer sistem operasi.
 Setiap sistem operasi memiliki versi teknik swapping yang diwakilinya sendiri. Misalnya pada UNIX, swapping pada dasarnya tidak diaktifkan, tetapi akan mulai jika banyak proses memerlukan banyak memori. Swapping akan kembali jika jumlah proses yang dimasukkan berkurang. Di sistem operasi Microsoft Windows 3.1, jika proses baru dan tidak ada cukup ruang di memori untuk menahannya, proses sebelumnya di memori akan dipindahkan ke disk. Sistem operasi ini pada dasarnya tidak menggunakan teknik swapping secara penuh, ini menyebabkan pengguna lebih dalam menentukan proses mana yang akan ditukar dari penjadwal CPU. Dengan ketentuan ini, proses yang telah dikeluarkan tidak akan dilakukan lagi.
 
-\subsection Solusi:
+\subsection {Solusi}:
 Lubang-lubang kecil di antara blok-blok memori yang digunakan dapat diatasi dengan pemadatan memori yaitu menggabungkan semua lubang kecil menjadi satu lubang besar dengan memindahkan semua proses agar saling berdekatan.
  
 Strategi Alokasi Memori
@@ -75,7 +75,7 @@ d) Algoritma fit terburuk: kebalikan dari fit terbaik.
 e) Quick Fit algorithm: group holes dan membuat daftar mereka sendiri. Misalnya, ada daftar untuk 4K lubang, satu daftar untuk 8K, dan seterusnya.
 f) Sistem Sobat: Memori dalam menumpuk di dash blok bebas ukuran 1,2,4,8,16 byte dll, hingga kapasitas memori.
 Dari berbagai cara alokasi tsb. Di atas, lubang yang ditempati oleh proses akan dibagi menjadi bagian-bagian yang digunakan oleh proses dan memori yang tidak terpakai (fragmen). Munculnya memori yang tidak terpakai disebut fragmentasi. Ada dua jenis fragmen
-\subsection Random Access Memory
+\subsection {Random Access Memory}
 Selain menyimpan data tidak lenyap, simpan juga ke disk tujuan untuk mengosongkan RAM agar tidak cepat penuh.
 Dalam sistem ini kita juga dapat melihat bahwa sistem operasi terletak berdekatan dengan program lain dalam RAM sehingga kemungkinan sistem operasi terganggu atau diubah oleh proses yang berjalan sangat sangat besar. Seharusnya tidak terjadi.Untuk dapat  mencegah terganggunya sistem operasi tersebut maka alamat yang tertinggi dari sistem operasi yang diletakkan pada register batas dalam CPU tersebut. Jika ada proses yang mengacu ke alamat itu atau yang lebih rendah dari itu maka proses tersebut akan di hentikan dan program tersebut akan menampilkan pesan kesalahan yang terjadi. Manajemen Memory  Untuk Multiprogramming
 Untuk sistem komputer yang berukuran besar (bukan small computers), membutuhkan pengaturan memori, karena dalam multiprogramming akan melibatkan banyak pemakai secara simultan sehingga di memori akan terdapat lebih dari satu proses bersamaan.  Oleh karena itu dibutuhkan sistem operasi yang mampu mendukung dua kebutuhan tersebut, meskipun hal tersebut saling bertentangan, yaitu (Ama, 2003) :
@@ -89,3 +89,12 @@ Pemanfaatan CPU = 1 - p n
 Dengan:
 a) N ada proses saat ini, memungkinkan untuk semua proses yang akan menunggu menggunakan I / O (Masalah CPU idle) sebesar pn. Fungsi n disebut gelar multiprogramming.
 b) Waktu yang sangat lama
+\subsection {B. Strategi Manajemen Memori}
+Strategi yang dikenal untuk mengatasi ini adalah memori virtual. Memori virtual menyebabkan sistem seolah-olah memiliki lebih banyak memori daripada keadaan memori fisik yang sebenarnya. Memori virtual tidak hanya menyediakan peningkatan komputasi, tetapi virtual memory juga memiliki kelebihan seperti:
+
+Ruang Alamat Besar
+Membuat sistem operasi tampaknya memiliki lebih banyak memori daripada kapasitas memori fisik yang ada. Dalam hal ini memori virtual memiliki ukuran yang lebih besar dari ukuran memori fisik.
+Perlindungan.
+Setiap proses dalam sistem memiliki ruang alamat virtual. Ruang alamat virtual dari setiap proses berbeda dari proses lainnya, sehingga apa pun yang terjadi dalam suatu proses tidak akan secara langsung mempengaruhi proses lainnya
+Pemetaan Memori
+Pemetaan memori digunakan untuk memetakan gambar dan file data ke dalam alamat proses. Dalam pemetaan memori, isi file akan terhubung langsung ke ruang alamat virtual dari proses
