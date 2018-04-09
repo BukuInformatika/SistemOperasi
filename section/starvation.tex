@@ -16,8 +16,12 @@ Round Robin , adalah proses yang akan dimasukkan ke dalam antrian menurut proses
 
 Waktu kuantum itu sendiri adalah waktu yang telah diberikan untuk menyelesaikan suatu proses. Ketika suatu proses telah mencapai batas waktu kuantum, sisa dari proses tersebut dikembalikan ke antrian paling belakang dan sumber-sumber data dipindahkan ke proses selanjutnya. Maka dengan cara ini, semua proses yang mengantri akan mendapatkan sumber-sumber data secara bergantian ( tidak ada proses yang memonopoli resource ) sehingga semua proses dapat diselesaikan.
 
+Bounded Waiting memiliki maksimum jumlah waktu yang diijinkan oleh proses lain untuk memasuki critical section atau disebut juga bagian penting  setelah sebuah proses membuat permintaan untuk memasuki critical section-nya dan sebelum permintaan dikabulkan. Batasan–batasan itu biasanya menjamin proses dapat mengakses ke “critical section” (tidak mengalami starvation: proses se-olah berhenti menunggu request akses ke critical section diperbolehkan).
+
 \section {Menghambat Starvation dengan Disclosed}
 Disclosed adalah menghambat proces Starvation dalam Sistem Operasi multitasking dengan menyediakan tipe pertama dari event penjadwalan pada interval waktu periodik, menyediakan tipe kedua dari event penjadwalan kedua sebagai tanggapan atas proses yang berjalan. Secara sukarela melepaskan prosesor dan, sebagai tanggapan atas acara penjadwalan menggantikan proses lama dengan yang baru, jika proses lama telah berjalan selama lebih dari satu jumlah waktu yang telah ditentukan. Sistem dijelaskan di sini menyediakan kernel kecil yang dapat dijalankan pada berbagai platform perangkat keras, seperti berbasis PowerPC Papan adaptor Symmetrix digunakan dalam Penyimpanan data Symmetrix perangkat yang disediakan oleh EMC Corporation of Hopkinton, Mass. Kode inti kernel dapat ditulis untuk target umum platform, seperti arsitektur PowerPC. Sejak Pow Modul spesifik implementasi erPC didefinisikan dengan baik, sistem mungkin cukup portabel antara prosesor PowerPC (seperti 8260 dan 750)
+
+
 
 \section{Ilustrasi}
 \begin {itemize}
