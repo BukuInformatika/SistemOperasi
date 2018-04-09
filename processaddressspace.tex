@@ -9,11 +9,27 @@ Memory manager adalah salah satu bagian dari sistem operasi yang sangat berpenga
 Jenis jenis Memori seperti memori kerja, ROM, PROM, EPROM, EEPROM, RAM, Memori cache, memori yang dapat didukung
 Floppy hard drive dan cd
 Jenis jenis Alamat pada memori memiliki 4 yaitu alamat memori , alamat memori relative , Hubungan antara alamat multak dan alamat relative dan Jenis memori dan alamat memori .
+Isi Memori ada beberapa bagian yaitu Sistem bahasa peñata olahan , Sistem Utilitas, Inti Sistem Operasi , Pengendali alat (device drivers) dan File pemakai
+Fungsi manajemen memori ada 4 mengelola informasi yang dipakai dan tidak dipakai , mengalokasikan memori ke proses yang memerlukan , mengelokasikan memori dari proses telah selesai dan mengelola swapping atau paging antara memori utama dan disk 
+
 
 
 \subsection Jenis-Jenis Yang Ada di Manajemen Memori
 Manajemen Memori umumnya digunakan untuk monoprogramming
 Ketika itu sebuah program komputer yang hanya berjalan satu jenis maka selama proses berlangsung itu akan dikatakan bahwa mode kerja komputer adalah monoprogramming. Selama waktu itu komputer juga berfungsi maka memori dalam RAM sepenuhnya dikendalikan oleh program program.
+Sistem operasi memberikan sebuah  tanggapan terhadap manajemen memori utama untuk aktivitas-aktivitas sepertii 
+a)      Menjaga dan memelihara bagian-bagian memori yang sedang digunakan dan dari yang menggunakan.
+b)      Memutuskan proses-proses mana saja yang harus dipanggil kememori jika masih ada ruang di memori.
+c)      Mengalokasikan dan mendelokasikan ruang memori jika diperlukan
+Jadi  RAM tidak bisa di masuki oleh program lain. Model yang  serupa ini bisa di temui pada komputer berbasis DOS.
+Penempatan program di memory  diatur sedemikain rupa sehingga (Eko, 2009) :
+1)      BIOS selalu ada di ROM (BIOS)
+2)      Sistem Operasi  di bagian RAM bawah (alamat rendah)
+3)      Program Aplikasi di bagian RAM tengah (alamat sesudah OS terakhir)
+4)     Data Sementara di bagian RAM atas (alamat sesudah Aplikasi terakhir).
+jika sistem operasi telah selesai atau berhasil dimuat maka akan ada prompt muncul di layar, dan itu adalah tanda bahwa komputer siap untuk menerima program aplikasi. Masukkan disk yang berisi program aplikasi pada drive dan eksekusi disk yang aktif, sehingga program tersebut dimuat seluruhnya ke dalam RAM. Dengan demikian program aplikasi siap digunakan dengan benar. Kita melihat ketika komputer pertama kali dihidupkan maka proses yang pertama kali dibaca adalah apa yang tertulis di ROM. Setelah semua perintah di ROM BIOS selesai dibaca maka komputer meminta kita untuk memasukkan DOS ke dalam RAM-nya. Ketika DOS dibaca maka masukkan beberapa program DOS yang paling penting ke dalam RAM, seperti: COMMAND.COM dan INTERNAL COMMAND. Sementara program DOS lainnya masih tetap berada di disk dan jika kita perlu dieksekusi. Sangat berguna untuk menjaga RAM tidak penuh oleh Sistem Operasi saja.
+
+
 
 
 
