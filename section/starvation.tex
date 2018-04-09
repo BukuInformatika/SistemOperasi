@@ -25,5 +25,7 @@ Disclosed adalah menghambat proces Starvation dalam Sistem Operasi multitasking 
 	\item Proses1, Proses2 dan Proses3 memerlukan pengaksesan sumber daya R secara periodik Skenario berikut terjadi :
 	\item Proses1 sedang diberi sumber daya R sedangkan Proses2 dan Proses3 diblocked menunggu sumber daya R.
 	\item Ketika Proses1 keluar dari critical section, maka Proses2 dan Proses3 diijinkan mengakses R.
+	\item Asumsi Proses3 diberi hak akses, kemudian setelah selesai, hak akses kembalidiberikan ke Proses1 yang saat itu kembali membutuhkan sumber daya R.
+	\item Jika pemberian hak akses bergantian terus-menerus antara Proses1 dan Proses3,  maka Proses2 tidak pernah memperoleh pengaksesan sumber daya R. Dalam kondisi ini memang tidak terjadi deadlock, hanya saja Proses2 mengalami starvation (tidak ada kesempatan untuk dilayani).
 \end{itemize}
  
