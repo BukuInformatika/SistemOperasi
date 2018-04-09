@@ -152,6 +152,8 @@ Berikut ini adalah proses 5 proses di atas menyatakan:
 3) Berlari sampai selesai (dihentikan)
 	proses sedang dijalankan oleh SO ketika proses telah selesai atau dibatalkan. Ini terjadi karena proses self-making telah berhenti.
 
+	PROSES CONTROL BLOCK/BLOCKED
+Struktur data yang dipakai oleh OS untuk mengelola suatu proses yaitu Process Control Blok. Hampir semua OS yang sudah modern telah memiliki PBC , tetapi terdapat struktur yang berbeda-beda pada setiap OS tersebut. Process Control Blok juga terdapat informasi tentang suatu proses yaitu sebuah tanda pengenal yang disebut process ID yang sangat unik dan menjadi nomor identitas, status process. Keutamaan di dalam suatu proses merupakan suatu nilai atau besaran yang menunjukan seberapa sering proses yang harus di jalankan oleh prosesor. Proses itu sendiri memiliki prioritas yang lebih tinggi , yang akan dijalankan secara terus-menerus atau dijalankan terlebih dahulu dibandingkan dengan proses yang berprioritas lebih rendah. Sebagai contoh , struktur data yang akan mengendalikan beberapa PCB yaitu process table. Tetapi bisa saja beberapa PCB disimpan pada daftar dalam waktu yang bersamaan . pada process table ini menggambarkan suatu sistem tersebut ketika OS menemukan setiap PCB melalui process ID.
 
 \subsection {Multiprogramming dengan pemartisian statis}
 Multiprogramming dapat dilakukan dengan pemartisian statis, yaitu memori dibagi menjadi beberapa sejumlah partisi tetap. Pada partisi-partisi tersebut proses-proses ditempatkan.
@@ -278,5 +280,6 @@ Address Binding Saat Eksekusi
 
 1. Hal binding ini memungkinkan untuk pemindahan suatu proses dari suatu tempat ke tempat yang lainnya selama berjalan.
 2.Diperlukan adanya dukungan perangkat keras untuk pemetaan address
+
 
 
