@@ -154,3 +154,16 @@ Kita bisa mendapatkan informasi tambahan mengenai urutan dengan mencatat bit-bit
 
 Ketika halaman mendapat kesempatan kedua, bit referensi-nya akan dihapus dan waktu di-reset ke arus. Oleh karena itu, halaman yang mendapat kesempatan kedua tidak akan
 dipindahkan sampai seluruh halaman dipindahkan. Selain itu, jika halaman yang digunakan cukup untuk menampung 1 set bit referensi, maka halaman ini tidak akan pernah dipindahkan.
+
+\section Algoritme Second-Chance (Fixed)
+
+Kita dapat memperbaiki kekurangan dari algoritma kesempatan kedua dengan mempertimbangkan 2 hal
+sekaligus, bit referensi dan bit yang dimodifikasi. Dengan 2 bit ini, kita akan mendapatkan 4 kemungkinan
+yang akan terjadi, yaitu:
+• (0,0) tidak terpakai dan tidak dimodifikasi, sedikit terbaik untuk bergerak.
+
+• (0,1) tidak digunakan tetapi dimodifikasi, tidak terlalu bagus untuk dipindahkan karena halaman ini perlu ditulis sebelum dipindahkan.
+
+• (1.0) digunakan tetapi tidak dimodifikasi, mungkin halaman ini akan digunakan lagi segera.
+ 
+• (1,1) digunakan dan dimodifikasi, halaman ini dapat segera digunakan lagi dan halaman ini harus ditulis ke disk sebelum dipindahkan. Algoritma ini digunakan dalam skema manajemen memori virtual Macintosh.
