@@ -9,7 +9,7 @@
 \section{proses}
 
 	\subsection{Proses}	
-	Proses adalah sebuah  program yang sedang dieksekusi. Sedangkan program adalah kumpulan-kumpulan  suatu  instruksi yang sudah  ditulis ke dalam bahasa yang dimengerti sistem operasi.Proses berisi tentang  sebuah instruksi dan sebuah  data. program counter dan seluruh register pemroses, stack ini  berisi data sementara contoh  seperti parameter rutin, alamat pengiriman dan variabel lokal.Sistem operasi harus mengelola semua proses di dalam sistem tersebut dan mengalokasikan sumber daya ke sebuah  proses-proses sesuai dengan kebijaksanaan untuk memenuhi sasaran sistem
+	Proses adalah sebuah  program yang sedang dieksekusi. Sedangkan program idalah merupakan kumpulan-kumpulan  dari suatu  instruksi yang sudah ditulis ke dalam bahasa yang dapat  dimengerti oleh sistem operasi.Proses berisi tentang sebuah instruksi dan sebuah data. program counter dan seluruh register pemroses, stack ini  berisi data sementara contohnya seperti alamat pengiriman, parameter rutin dan variabel lokal. Sistem operasi diharuskan untuk mengelola semua proses di dalam sistem tersebut dan mengalokasikan sumber daya ke sebuah  proses-proses sesuai dengan kebijaksanaan untuk memenuhi sasaran sistem
 	
 	\subsection{Istilah yang berkaitan dengan proses}
 		\begin{itemize}
@@ -60,8 +60,32 @@
 	
 	\ref{statusproses}
 	
+	\subsection{Contoh dari status proses}
+	Setiap proses pasti mempunyai status yang harus diperhatikan oleh sistem operasi yang akan dicatat dalam berbagai macam tabel yang saling berhubungan, yaitu :
+		\begin{itemize}
+			\item Tabel informasi manajemen memori, Digunakan untuk menjaga keutuhan suatu memori utama dan memori sekunder yang akan menyimpan informasi.
+			\item Tabel informasi manajemen masukan atau keluaran, Digunakan untuk mengelola sebuah perangkat masukan atau keluaran, yang dimana perangkat tersebut akan digunakan oleh proses tertentu, sehingga harus dijaga supaya proses yang lainnya tidak akan memakainya. Sistem operasi harus mengetahui status operasi masukan atau keluaran dan lokasi suatu memori utama yang akan digunakan untuk melakukan transfer data.
+			\item Tabel informasi sistem file, Tabel dimana yang berisikan mengenai informasi lokasi pada memori sekunder, informasi ekstensi file, informasi status pada saat itu dan menyimpan atribut-atribut file yang lainnya.
+			\item Tabel proses, Digunakan untuk mengelola informasi suatu proses pada sistem operasi, yang berlokasi di memori, atribut proses dan status lainnya.
+		\end{itemize}
+	
 	\subsection{Proses Control Block/Blocked}
 	Sebuah struktur data yang dipakai oleh Sistem Operasi untuk mengelola sebuah proses. Hampir semua Sistem Operasi yang modern telah menggunakan PCB (Process Control Block) namun strukturnya yang berbeda-beda pada setiap Sistem Operasi tersebut. PCB (Process Control Block) juga memiliki informasi yang berhubungan dengan proses, ialah: tanda pengenal bagi sebuah proses (Process ID) yang sangat unik dan akan menjadi status proses, nomor identitas, prioritas eksekusi proses dan semua informasi lokasi proses dalam memori. Prioritas yang dimiliki oleh sebuah proses merupakan sebuah nilai atau besaran yang akan menunjukkan seberapa sering proses harus dieksekusi oleh prosesor. Sebuah proses yang mempunyai nilai prioritas yang cenderung lebih tinggi, akan lebih sering dieksekusi atau dieksekusi terlebih dulu jika dibandingkan dengan proses yang mempunyai prioritas yang lebih rendah.
 	Sebuah PCB (Process Control Block) ditunjukkan dalam gambar berikut : 
 	
+	\begin{figure} [ht]
+	\centerline{\includegraphics[width=1\textwidth]{figures/pcb.jpg}}
+	\caption{Gambar PCB}
+	\label{pcb}
+	\end{figure}
 	
+	\ref{pcb}
+	
+	PCB dibagi menjadi 3 kelompok yaitu :
+	\begin{itemize}
+		\item Process identification data
+		pasti akan selalu mengikut-sertakan suatu identifier yang sangat unik untuk prosesnya (hampir selalu mempunyai nilai integer) dan pada sebuah sistem multiuser-multitasking, data yang contohnya seperti identifier grup pengguna, identifier proses, identifier pengguna, dan yang lainnya. Proses ini sangat relevan, karena itu sering dipakai untuk referensi silang tabel sistem operasi, misalnya seperti memungkinkan untuk mengidentifikasi sebuah proses yang menggunakan device I/O, atau daerah memori.
+		\item Processor state data
+		potongan-potongan dari informasi yang mengartidefinisikan status dari sebuah proses ketika proses tersebut ditangguhkan, dan memungkinkan sistem operasi untuk melakukan restart proses pada akhirnya dan akan masih dapat mengeksekusinya dengan benar. Hal ini akan selalu mengikut-sertakan isi dari register CPU tujuan.
+		\item Process control data
+		digunakan oleh sistem operasi untuk mengelola proses itu sendiri.
