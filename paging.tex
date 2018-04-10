@@ -148,3 +148,9 @@ Awalnya, semua bit dikosongkan oleh sistem operasi. Selama proses pengguna, bit-
 \section Algoritma Additional-Reference-Bit
 
 Kita bisa mendapatkan informasi tambahan mengenai urutan dengan mencatat bit-bit acuan pada suatu interval yang tetap. Kita dapat menyimpan 8-bit byte untuk masing-masing halaman pada tabel di memori. Pada interval tertentu, pencatat waktu (timer) melakukan interupsi dengan mentransfer kontrol kepada sistem operasi. Sistem operasi mengubah bit acuan untuk masing-masing halaman kedalam bit high-order dari 8-bit byte ini dan membuang bit low-order. Register pengganti 8-bit ini berisi sejarah penggunaan halaman dalam periode 8 waktu terakhir.Sebagai contoh, seandainya register pengganti berisi 00000000, maka itu berarti halaman sudah tidak digunakan dalam periode 8 waktu terakhir, halaman yang digunakan paling tidak 1 kali akan memiliki nilai register penggati 11111111.
+
+\section Algoritma second-chance
+"Algoritma second-chance"  didasarkan pada algoritma FIFO. Ketika sebuah halaman diarahkan, kita akan memeriksa bit referensi jika bit referensi adalah 0, kita memproses untuk menghapus halaman ini. Jika bit referensi adalah 1, kita memberikan kesempatan kedua. untuk halaman ini dan pilih halaman FIFO berikutnya.
+
+Ketika halaman mendapat kesempatan kedua, bit referensi-nya akan dihapus dan waktu di-reset ke arus. Oleh karena itu, halaman yang mendapat kesempatan kedua tidak akan
+dipindahkan sampai seluruh halaman dipindahkan. Selain itu, jika halaman yang digunakan cukup untuk menampung 1 set bit referensi, maka halaman ini tidak akan pernah dipindahkan.
