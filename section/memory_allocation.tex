@@ -12,7 +12,13 @@ Memory Allocation
 \subsection {Pengertian Memori}
 
 Memori adalah pusat dari operasi computer. Memori sebagai tempat penyimpanan dan dapat menyimpan file atau program dimana file tersebut tergantung ruang atau space penyimpannya di dalam komputer. Memori sabagai tempat penyimpanan yang harus di dijaga dengan sebaik mungkin agar terhindar dari virus atau file yang dapat merusak program atau fie yang disimpan.
-<<<<<<< HEAD
+
+\begin{figure}[ht]
+\centerline{\includegraphics[width=1\textwidth]{figures/memory_allocation.jpg}}
+\caption{gambar memory allocation.}
+\label{memory allocation}
+\end{figure}
+
 
 \subsection {Fungsi Allocation Memori}
 
@@ -28,10 +34,7 @@ Manajemen memori merupakan salah satu bagian terpenting pada sistem operasi. Mem
 7.	Mendealokasikan memori dari proses yang telah selesai. 
 8.	Mengelola swapping atau pagging antara memori utama dan disk.
 
-
-=======
 Jenis memori ada 2 yaitu RAM dan ROM, RAM adalah Random Akses Memori yang isi penyimpanannya dapat diakses dalam waktu yang tetap. ROM adalah Read Only Memori adalah penyimpanan data yang permanen. sedangkan jenis-jenis memori eksternal ada 2 yaitu berdasarkan karakteristik bahan dan berdasarkan jenis akses data. Tentunya hal tersebut tergantung space dan ruang penyimpanan yang ada.
->>>>>>> 2c895bec8ef7e450dd16745cb5647695be320d69
 
 \subsection {Manajemen Proses}
 
@@ -45,20 +48,53 @@ Istilah Proses dapat dibagi menjadi dua, yaitu :
 1. Multi Programming (Multitasking)
 Multi Programming atau Multitasking adalah suatu istilah yang merujuk kepada metode banyak pekerjaan yang disebut proses, diolah menggunakan sumber daya CPU yang sama-sama bekerja.
 
+{figure}[ht]
+\centerline{\includegraphics[width=1\textwidth]{figures/multiprogamming.jpg}}
+\caption{gambar multiprogramming.}
+\label{multiprogramming}
+\end{figure}
+
+
 2. Multiprocessing
 Multiprocessing adalah Kemampuan komputer menjalani tugas beberapa proses secara bersamaan dengan menggunakan teknologi berbasis multiprocessor.
 Contoh : Rendering Video, Compress File, dan sebagainya.
 
+{figure}[ht]
+\centerline{\includegraphics[width=1\textwidth]{figures/multiprocessing.png}}
+\caption{gambar multiprocessing.}
+\label{multiprocessing}
+\end{figure}
+
 
 C. Tipe-tipe Manajemen Proses
+
+\begin{figure}[ht]
+\centerline{\includegraphics[width=1\textwidth]{figures/manajemenproses.jpg}}
+\caption{gambar manajemen proses}
+\label{manajemen proses}
+\end{figure}
 
 a. Berdasarkan keberadaan swapping :
 
 1. Manajemen tanpa swapping.
 Manajemen memori tanpa pemindahan citra proses antara memori utama dan disk selama ekseskusi.
 
+\begin{figure}[ht]
+\centerline{\includegraphics[width=1\textwidth]{figures/manajemen tanpa swapping.jpg}}
+\caption{gambar manajemen tanpa swapping.}
+\label{manajemen tanpa swapping}
+\end{figure}
+
+
 2. Manajemen dengan swapping.
 Manajemen memori dengan pemindahan citra proses antara memori utama dan disk selama ekseskusi.
+
+\begin{figure}[ht]
+\centerline{\includegraphics[width=1\textwidth]{figures/manajemen swapping.jpg}}
+\caption{gambar manajemen swapping.}
+\label{manajemen swapping}
+\end{figure}
+
 
 b. Manajemen Memori Berdasarkan Alokasi Memori
 
@@ -109,7 +145,7 @@ Multiprogramming dapat dilakukan dengan cara pemartisian statis, yaitu memori di
 	3. pemakai hanya memusatkan kepada satu memori atau tape.
 	4.suatu mesin di kendalikan oleh suatu program.
 
-2. MONOPROGRAMMING:
+	MONOPROGRAMMING:
 
 - Masih digunakan untuk sistem kecil yaitu embedded system (embedded system)
 terpasang atau ditemukan di sistem lain.
@@ -120,7 +156,7 @@ kecerdasan (perangkat intelegent) dalam menyediakan fungsi tertentu. Karena
 hanya satu fungsi spesifik, dapat diprogram dalam mikroprosesor dengan memori
 kecil (1-64 Kb).
 
-3. Memproses / mendistribusikan komputasi.
+2. Memproses / mendistribusikan komputasi.
 
 Pengolahan / komputasi terdistribusi adalah Bekerja semua pemrosesan data bersama dengan komputer.
 
@@ -158,7 +194,7 @@ Struktur data yang dipakai oleh OS untuk mengelola suatu proses yaitu Process Co
 \subsection {Multiprogramming dengan pemartisian statis}
 Multiprogramming dapat dilakukan dengan pemartisian statis, yaitu memori dibagi menjadi beberapa sejumlah partisi tetap. Pada partisi-partisi tersebut proses-proses ditempatkan.
 
-1. MULTIPROGRAMMING
+MULTIPROGRAMMING
 
 melibatkan banyak pemakai secara simultan sehingga di memori akan terdapat lebih dari satu proses bersamaan. Oleh karena itu dibutuhkan sistem operasi yang mampu mendukung dua kebutuhan tersebut.
 
@@ -283,9 +319,9 @@ Address Binding Saat Eksekusi
 
 PCB dibagi dengan 3 kelompok:
 
- Data identifikasi proses; selalu sertakan pengidentifikasi unik untuk proses (hampir selalu nilai integer) dan, dalam sistem multi-pengguna-multitasking, data seperti pengenal proses induk, pengenal pengguna, pengenal grup pengguna, dll. Proses ini sangat relevan, seperti sering digunakan untuk tabel OS referensi silang, misalnya dimungkinkan untuk mengidentifikasi proses menggunakan perangkat I / O, atau wilayah memori.
+- Data identifikasi proses; selalu sertakan pengidentifikasi unik untuk proses (hampir selalu nilai integer) dan, dalam sistem multi-pengguna-multitasking, data seperti pengenal proses induk, pengenal pengguna, pengenal grup pengguna, dll. Proses ini sangat relevan, seperti sering digunakan untuk tabel OS referensi silang, misalnya dimungkinkan untuk mengidentifikasi proses menggunakan perangkat I / O, atau wilayah memori.
 
- Data status prosesor; adalah sepotong informasi yang menentukan status suatu proses ketika proses ditangguhkan, memungkinkan OS untuk memulai kembali proses di masa depan dan masih dapat melaksanakannya dengan benar. Itu selalu termasuk isi register CPU tujuan.
+- Data status prosesor; adalah sepotong informasi yang menentukan status suatu proses ketika proses ditangguhkan, memungkinkan OS untuk memulai kembali proses di masa depan dan masih dapat melaksanakannya dengan benar. Itu selalu termasuk isi register CPU tujuan.
 
- Data kontrol proses; digunakan oleh OS untuk mengelola proses itu sendiri.
+- Data kontrol proses; digunakan oleh OS untuk mengelola proses itu sendiri.
 
