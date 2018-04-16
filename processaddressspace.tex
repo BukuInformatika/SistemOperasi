@@ -1,18 +1,13 @@
- \section {manajemen memori}
-Konsep dasar memori
-Memori adalah sebagai suatu pusat dari operasi yang pada setiap komputer modern , memori berfungsi untuk tempat penyimpan sebuah informasi dan harus diatur dan dijaga sebaik mungkin . memori adalah array besar dari word atau byte yang bisa disebut alamat CPU untuk mengambil instruksi instruksi dari sebuah memory
-CPU mengambil instruksi instruksi dari memori berdasarkan pada nilai dari penghitung program  program.
+\section {Proses Address Space}
+
+\subsection {A. Konsep dasar memori}
+Memori adalah sebagai suatu pusat dari operasi yang pada setiap komputer modern , memori berfungsi untuk tempat penyimpan sebuah informasi dan harus diatur dan dijaga sebaik mungkin . memori adalah array besar dari word atau byte yang bisa disebut alamat CPU untuk mengambil instruksi instruksi dari sebuah memory, perangkat tersebut mengambil perintah-perintah pada memori menurut nilai dari penghitung program  program.
 Sedangkan manajemen memori adalah kegiatan untuk mengatur memori komputer. Proses ini akan menyediakan cara untuk mengalokasikan memori untuk memproses atas sebuah  permintaan mereka, membebaskannya untuk digunakan kembali ketika tidak lagi diperlukan dan mempertahankan alokasi ruang memori untuk proses tersebut. Manajemen memori utama sangat penting untuk sistem komputer  penting untuk mengolah dan menginput fasilitas atau keluaran secara efisien, sehingga memori dapat ditampung sebanyak mungkin proses dan dalam upaya pemogram atau proses tidak terbatas kapasitas memori fisik dalam sistem komputer (Eko, 2009).
-
-Memory manager adalah salah satu bagian dari sistem operasi yang sangat berpengaruh dalam menentukan proses proses yang ditempatkan pada antrian.
-
-Jenis jenis Memori seperti memori kerja, ROM, PROM, EPROM, EEPROM, RAM, Memori cache, memori yang dapat didukung
-Floppy hard drive dan cd
+Memory manager merupakan suatu bagian dari sistem operasi yang sangat berperan dalam menentukan proses-proses yang ditempatkan pada antrian.
+Jenis jenis Memori seperti memori kerja, ROM, PROM, EPROM, EEPROM, RAM, Memori cache, memori yang dapat didukung Floppy hard drive dan cd.
 Jenis jenis Alamat pada memori memiliki 4 yaitu alamat memori , alamat memori relative , Hubungan antara alamat multak dan alamat relative dan Jenis memori dan alamat memori .
-Isi Memori ada beberapa bagian yaitu Sistem bahasa peñata olahan , Sistem Utilitas, Inti Sistem Operasi , Pengendali alat (device drivers) dan File pemakai
-Fungsi manajemen memori ada 4 mengelola informasi yang dipakai dan tidak dipakai , mengalokasikan memori ke proses yang memerlukan , mengelokasikan memori dari proses telah selesai dan mengelola swapping atau paging antara memori utama dan disk 
-
-
+Isi Memori ada beberapa bagian yaitu Sistem bahasa peñata olahan , Sistem Utilitas, Inti Sistem Operasi , Pengendali alat (device drivers) dan File pemakai.
+Fungsi dari manajemen memori dibagi menjadi 4 yaitu mengelola informasi yang digunakan dan tidak digunakan , mengalokasikan memori ke proses yang membutuhkan , mengelokasikan memori dari proses setelah selesai dan mengelola swapping atau paging antara memori utama dengan disk. 
 
 \subsection {Jenis-Jenis Yang Ada di Manajemen Memori}
 Manajemen Memori umumnya digunakan untuk monoprogramming
@@ -29,27 +24,31 @@ Penempatan program di memory  diatur sedemikain rupa sehingga (Eko, 2009) :
 4)     Data Sementara di bagian RAM atas (alamat sesudah Aplikasi terakhir).
 jika sistem operasi telah selesai atau berhasil dimuat maka akan ada prompt muncul di layar, dan itu adalah tanda bahwa komputer siap untuk menerima program aplikasi. Masukkan disk yang berisi program aplikasi pada drive dan eksekusi disk yang aktif, sehingga program tersebut dimuat seluruhnya ke dalam RAM. Dengan demikian program aplikasi siap digunakan dengan benar. Kita melihat ketika komputer pertama kali dihidupkan maka proses yang pertama kali dibaca adalah apa yang tertulis di ROM. Setelah semua perintah di ROM BIOS selesai dibaca maka komputer meminta kita untuk memasukkan DOS ke dalam RAM-nya. Ketika DOS dibaca maka masukkan beberapa program DOS yang paling penting ke dalam RAM, seperti: COMMAND.COM dan INTERNAL COMMAND. Sementara program DOS lainnya masih tetap berada di disk dan jika kita perlu dieksekusi. Sangat berguna untuk menjaga RAM tidak penuh oleh Sistem Operasi saja.
 
+Ketika kita bekerja dengan program aplikasi bagdi maka kita akan menghasilkan data. Data akan disimpan sementara di RAM yang tersisa. Data yang disimpan dalam RAM adalah voletile, yang berarti bahwa data hanya dapat bertahan selama daya komputer AKTIF. Untuk menyimpan kebiasaan menyimpan data ke disk dalam waktu tidak terlalu lama, misalnya setiap 5 menit.
 
+\subsection {B. Strategi Manajemen Memori}
+Strategi yang dikenal untuk mengatasi ini adalah memori virtual. Memori virtual menyebabkan sistem seolah-olah memiliki lebih banyak memori daripada keadaan memori fisik yang sebenarnya. Memori virtual tidak hanya menyediakan peningkatan komputasi, tetapi virtual memory juga memiliki kelebihan seperti:
 
-
-
-
-\subsection
-Ketika kita bekerja dengan program aplikasi bagdi maka kita akan menghasilkan data. Data akan disimpan sementara di RAM yang tersisa. Data yang disimpan dalam RAM adalah voletile, yang berarti bahwa data hanya dapat bertahan selama daya komputer AKTIF. Untuk menyimpan kebiasaan menyimpan data ke disk dalam waktu tidak terlalu lama, misalnya setiap 5 menit
+Ruang Alamat Besar
+Membuat sistem operasi tampaknya memiliki lebih banyak memori daripada kapasitas memori fisik yang ada. Dalam hal ini memori virtual memiliki ukuran yang lebih besar dari ukuran memori fisik.
+Perlindungan.
+Setiap proses dalam sistem memiliki ruang alamat virtual. Ruang alamat virtual dari setiap proses berbeda dari proses lainnya, sehingga apa pun yang terjadi dalam suatu proses tidak akan secara langsung mempengaruhi proses lainnya
+Pemetaan Memori
+Pemetaan memori digunakan untuk memetakan gambar dan file data ke dalam alamat proses. Dalam pemetaan memori, isi file akan terhubung langsung ke ruang alamat virtual dari proses
 
 \subsection {Fair Physical Memory Allocation}
-Alokasi Memori Fisik yang Adil
 Alokasi Memori Fisik yang Adil Biasanya Digunakan dalam Manajemen Memori untuk membagi penggunaan memori fisik secara merata ke dalam setiap proses yang berjalan pada suatu sistem.
 
 \subsection {Shared Virtual Memory}
 Meskipun dalam Memori Virtual Bersama setiap proses menggunakan ruang alamat yang berbeda dari memori virtual, tetapi ada kalanya proses dihadapkan untuk berbagi penggunaan memori.
 
-C. Ruang Alamat Logika dan Fisik
+\subesection {C. Ruang Alamat Logika dan Fisik}
 Alamat logika adalah alamat yang dihasilkan dalam CPU, juga disebut alamat virtual. Alamat fisik adalah alamat yang terlihat oleh memori. Untuk mengubah dari alamat logis ke alamat fisik perangkat keras yang disebut MMU (Memory Management Unit) diperlukan. Mengubah dari alamat logis ke alamat fisik adalah pusat manajemen memori. Alamat yang dihasilkan oleh CPU disebut alamat logis di mana alamat muncul sebagai memori uni yang disebut alamat fisik. Tujuan utama dari manajemen memori adalah konsep menempatkan ruang alamat logis ke ruang alamat fisik (Ama, 2003).
 
 Hasil dari skema waktu gabungan dan waktu pengikatan alamat pada alamat yang logis dan alamat yang ada pada memori adalah serupa. Tetapi skema waktu pengikatan waktu untuk eksekusi alamat berbeda. dalam hal ini, alamat logis disebut alamat virtual. Himpunan semua alamat logika yang dihasilkan oleh program disebut ruang alamat logis; himpunan semua alamat fisik yang terkait dengan alamat logis disebut ruang alamat fisik.
 Unit Manajemen Memori (MMU) adalah perangkat perangkat keras yang memetakan alamat virtual ke alamat fisik. Dalam skema MMU, nilai register relokasi ditambahkan ke setiap alamat yang dihasilkan oleh proses pengguna ketika dikirim ke memori.
 Register dasar disebut register relokasi. Nilai register relokasi ditambahkan ke setiap alamat yang dihasilkan oleh proses pengguna ketika dikirim ke memori, misalnya, jika basisnya 14000, pengguna mencoba menempatkannya ke alamat 0 dan dipindahkan secara dinamis ke lokasi 14000. Access ke lokasi logika 346, dipetakan ke lokasi 14346. Sistem operasi MS-DOS yang masih merupakan keluarga intel 80X86 menggunakan empat register relokasi ketika memuat dan menjalankan proses.
+
 \subsection {Multiprogramming Dengan Swapping}
 manajemen memori adalah kegiatan mentransfer gambar proses antara memori utama dan disk selama eksekusi, atau dengan kata lain itu adalah pengalihan manajemen proses dari memori utama ke disk dan kembali lagi (swapping). Manajemen ini terdiri dari:
 Multiprogramming Dengan Partisi Dinamis
@@ -71,19 +70,6 @@ Alokasi Ruang Swap pada Disk (Penempatan proses pada disk setelah di-swap-out da
 a)      Ruang disk tempat swap dialokasikan begitu diperlukan
 b)      Ruang disk tempat swap dialokasikan lebih dahulu.
 Algoritma untuk pengaturan ruang swap pada disk sama dengan  untuk memori utama. Perbedaannya adalah ruang pada disk harus dialokasikan sebagai kelipatan bilangan bulat dari disk block.
-BAB III : PENUTUP
-A. Kesimpulan
-Memori dan Manajemen Memori
-Memori adalah pusat dari operasi pada sistem komputer modern, berfungsi sebagai tempat penyimpanan informasi yang harus diatur dan dijaga sebaik-baiknya. Memori adalah array besar dari word atau byte, yang disebut alamat. CPU mengambil instruksi dari memory berdasarkan nilai dari program counter (Ama, 2003).
-Sedangkan manajemen memori adalah suatu kegiatan untuk mengelola memori komputer. Proses ini menyediakan cara mengalokasikan memori untuk proses atas permintaan mereka, membebaskan untuk digunakan kembali ketika tidak lagi diperlukan serta menjaga alokasi ruang memori bagi proses.Manajemen Memori merupakan salah satu bagian terpenting pada sistem operasi. Sejak awal komputer digunakan untuk keperluan komputasi, kebutuhan akan memori yang lebih besar dibandingkan dengan keadaan fisik memori di dalam sistem terus meningkat. Berbagai perhitungan dan strategi terus dilakukan untuk mengatasi keterbatasan ukuran memori fisik (Ama, 2003).
-Strategi Manjemen Memori
-Strategi yang dikenal untuk mengatasi hal tersebut adalah memori maya. Memori maya menyebabkan sistem seolah-olah memiliki banyak memori dibandingkan dengan keadaan memori fisik yang sebenarnya. Memori maya tidak saja memberikan peningkatan komputasi.
-Ruang Alamat Logika dan Fisik
-Tujuan utama manajemen memori adalah konsep meletakkan ruang alamat logika ke ruang alamat fisik. Alamat Logika adalah alamat yg dibentuk di CPU, disebut juga alamat virtual. Alamat fisik adalah alamat yang terlihat oleh memori.
-Swapping
-Sebuah proses yang harus berada di memori sebelum dieksekusi. Proses swapping menukarkan sebuah proses keluar dari memori untuk sementara waktu ke sebuah penyimpanan sementara dengan sebuah proses lain yang sedang membutuhkan sejumlah alokasi memori untuk dieksekusi. Tempat penyimpanan sementara ini biasanya berupa sebuah fast disk dengan kapasitas yang dapat menampung semua salinan dari semua gambaran memori serta menyediakan akses langsung ke gambaran tersebut.
-
-
 
 \subsection {Swapping}
 Suatu proses, seperti yang dijelaskan di atas, harus ada di dalam memori sebelum dieksekusi. Proses pertukaran menukar proses keluar sementara dari memori sementara ke penyimpanan sementara dengan proses lain yang memerlukan beberapa alokasi memori untuk dieksekusi. Room tempat penyimpanan sementara ini biasanya merupakan suatu disk cepat dengan kapasitas yang bisa menampung semua copy-an dari semua gambar memori serta memberikan akses langsung ke gambar. Jika eksekusi proses yang dikeluarkan akan dilanjutkan beberapa waktu kemudian, maka akan dibawa kembali ke memori dari tempat penyimpanan sementara tadi. Bagaimana sistem mengetahui proses mana yang akan dieksekusi?
@@ -105,6 +91,7 @@ d) Algoritma fit terburuk: kebalikan dari fit terbaik.
 e) Quick Fit algorithm: group holes dan membuat daftar mereka sendiri. Misalnya, ada daftar untuk 4K lubang, satu daftar untuk 8K, dan seterusnya.
 f) Sistem Sobat: Memori dalam menumpuk di dash blok bebas ukuran 1,2,4,8,16 byte dll, hingga kapasitas memori.
 Dari berbagai cara alokasi tsb. Di atas, lubang yang ditempati oleh proses akan dibagi menjadi bagian-bagian yang digunakan oleh proses dan memori yang tidak terpakai (fragmen). Munculnya memori yang tidak terpakai disebut fragmentasi. Ada dua jenis fragmen
+
 \subsection {Random Access Memory}
 Selain menyimpan data tidak lenyap, simpan juga ke disk tujuan untuk mengosongkan RAM agar tidak cepat penuh.
 Dalam sistem ini kita juga dapat melihat bahwa sistem operasi terletak berdekatan dengan program lain dalam RAM sehingga kemungkinan sistem operasi terganggu atau diubah oleh proses yang berjalan sangat sangat besar. Seharusnya tidak terjadi.Untuk dapat  mencegah terganggunya sistem operasi tersebut maka alamat yang tertinggi dari sistem operasi yang diletakkan pada register batas dalam CPU tersebut. Jika ada proses yang mengacu ke alamat itu atau yang lebih rendah dari itu maka proses tersebut akan di hentikan dan program tersebut akan menampilkan pesan kesalahan yang terjadi. Manajemen Memory  Untuk Multiprogramming
@@ -119,12 +106,14 @@ Pemanfaatan CPU = 1 - p n
 Dengan:
 a) N ada proses saat ini, memungkinkan untuk semua proses yang akan menunggu menggunakan I / O (Masalah CPU idle) sebesar pn. Fungsi n disebut gelar multiprogramming.
 b) Waktu yang sangat lama
-\subsection {B. Strategi Manajemen Memori}
-Strategi yang dikenal untuk mengatasi ini adalah memori virtual. Memori virtual menyebabkan sistem seolah-olah memiliki lebih banyak memori daripada keadaan memori fisik yang sebenarnya. Memori virtual tidak hanya menyediakan peningkatan komputasi, tetapi virtual memory juga memiliki kelebihan seperti:
 
-Ruang Alamat Besar
-Membuat sistem operasi tampaknya memiliki lebih banyak memori daripada kapasitas memori fisik yang ada. Dalam hal ini memori virtual memiliki ukuran yang lebih besar dari ukuran memori fisik.
-Perlindungan.
-Setiap proses dalam sistem memiliki ruang alamat virtual. Ruang alamat virtual dari setiap proses berbeda dari proses lainnya, sehingga apa pun yang terjadi dalam suatu proses tidak akan secara langsung mempengaruhi proses lainnya
-Pemetaan Memori
-Pemetaan memori digunakan untuk memetakan gambar dan file data ke dalam alamat proses. Dalam pemetaan memori, isi file akan terhubung langsung ke ruang alamat virtual dari proses
+\section {Kesimpulan}
+Memori dan Manajemen Memori
+Memori adalah pusat dari operasi pada sistem komputer modern, berfungsi sebagai tempat penyimpanan informasi yang harus diatur dan dijaga sebaik-baiknya. Memori adalah array besar dari word atau byte, yang disebut alamat. CPU mengambil instruksi dari memory berdasarkan nilai dari program counter (Ama, 2003).
+Sedangkan manajemen memori adalah suatu kegiatan untuk mengelola memori komputer. Proses ini menyediakan cara mengalokasikan memori untuk proses atas permintaan mereka, membebaskan untuk digunakan kembali ketika tidak lagi diperlukan serta menjaga alokasi ruang memori bagi proses.Manajemen Memori merupakan salah satu bagian terpenting pada sistem operasi. Sejak awal komputer digunakan untuk keperluan komputasi, kebutuhan akan memori yang lebih besar dibandingkan dengan keadaan fisik memori di dalam sistem terus meningkat. Berbagai perhitungan dan strategi terus dilakukan untuk mengatasi keterbatasan ukuran memori fisik (Ama, 2003).
+Strategi Manjemen Memori
+Strategi yang dikenal untuk mengatasi hal tersebut adalah memori maya. Memori maya menyebabkan sistem seolah-olah memiliki banyak memori dibandingkan dengan keadaan memori fisik yang sebenarnya. Memori maya tidak saja memberikan peningkatan komputasi.
+Ruang Alamat Logika dan Fisik
+Tujuan utama manajemen memori adalah konsep meletakkan ruang alamat logika ke ruang alamat fisik. Alamat Logika adalah alamat yg dibentuk di CPU, disebut juga alamat virtual. Alamat fisik adalah alamat yang terlihat oleh memori.
+Swapping
+Sebuah proses yang harus berada di memori sebelum dieksekusi. Proses swapping menukarkan sebuah proses keluar dari memori untuk sementara waktu ke sebuah penyimpanan sementara dengan sebuah proses lain yang sedang membutuhkan sejumlah alokasi memori untuk dieksekusi. Tempat penyimpanan sementara ini biasanya berupa sebuah fast disk dengan kapasitas yang dapat menampung semua salinan dari semua gambaran memori serta menyediakan akses langsung ke gambaran tersebut.
