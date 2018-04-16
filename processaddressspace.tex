@@ -13,11 +13,11 @@ Fungsi dari manajemen memori dibagi menjadi 4 yaitu mengelola informasi yang dig
 Manajemen Memori umumnya digunakan untuk monoprogramming
 Ketika itu sebuah program komputer yang hanya berjalan satu jenis maka selama proses berlangsung itu akan dikatakan bahwa mode kerja komputer adalah monoprogramming. Selama waktu itu komputer juga berfungsi maka memori dalam RAM sepenuhnya dikendalikan oleh program program.
 Sistem operasi memberikan sebuah  tanggapan terhadap manajemen memori utama untuk aktivitas-aktivitas sepertii 
-a)      Menjaga dan memelihara bagian-bagian memori yang sedang digunakan dan dari yang menggunakan.
+a)      Merawat dan memelihara  memori yang sedang digunakan dan dari yang menggunakan.
 b)      Memutuskan proses-proses mana saja yang harus dipanggil kememori jika masih ada ruang di memori.
 c)      Mengalokasikan dan mendelokasikan ruang memori jika diperlukan
 Jadi  RAM tidak bisa di masuki oleh program lain. Model yang  serupa ini bisa di temui pada komputer berbasis DOS.
-Penempatan program di memory  diatur sedemikain rupa sehingga (Eko, 2009) :
+Penempatan program di ruang penyimpanan diatur sedemikain rupa sehingga (Eko, 2009) :
 1)      BIOS selalu ada di ROM (BIOS)
 2)      Sistem Operasi  di bagian RAM bawah (alamat rendah)
 3)      Program Aplikasi di bagian RAM tengah (alamat sesudah OS terakhir)
@@ -54,66 +54,56 @@ manajemen memori adalah kegiatan mentransfer gambar proses antara memori utama d
 Multiprogramming Dengan Partisi Dinamis
 Jumlah, lokasi, dan ukuran proses dalam memori dapat bervariasi dari waktu ke waktu secara dinamis. Kelemahan: a) Lubang memori dapat terjadi di antara partisi yang digunakan; b) mempersulit alokasi dan alokasi memori.
 {Solusi}:
-Lubang-lubang kecil di antara blok-blok memori yang digunakan dapat diatasi dengan pemadatan memori yaitu menggabungkan semua lubang kecil menjadi satu lubang besar dengan memindahkan semua proses agar saling berdekatan.
+rongga-rongga kecil di antara blok-blok memori yang digunakan dapat diatasi dengan pemadatan memori yaitu menggabungkan semua rongga kecil menjadi satu rongga besar dengan memindahkan semua proses agar saling berdekatan.
  
 Strategi Alokasi Memori
-a) First fit algorithm : memory  manager men-scan list untuk  menemukan hole yg cukup untuk menampung proses yg baru. Proses akan menempati hole pertama yg ditemuinya yg cukup untuk dirinya.
+a) First fit algorithm : memory  manager men-scan daftar untuk  menemukan lubang yang muat untuk menampung proses yg baru. Proses akan menempati lubang pertama yg ditemuinya dan cukup untuk ditempati.
 b) Fit algoritma berikutnya: sama seperti fit pertama, tetapi pencarian lubang dimulai dari lubang yang ditemui dari pemindaian sebelumnya.
 c) Algoritme fit terbaik: mencari lubang yang akan menghasilkan residu paling sedikit setelah proses masuk.
 d) Algoritma fit terburuk: kebalikan dari fit terbaik.
 e) Quick Fit algorithm: group holes dan membuat daftar mereka sendiri. Misalnya, ada daftar untuk 4K lubang, satu daftar untuk 8K, dan seterusnya.
 f) Sistem Sobat: Memori dalam menumpuk di dash blok bebas ukuran 1,2,4,8,16 byte dll, hingga kapasitas memori.
+
 Dari berbagai cara alokasi tsb. Di atas, lubang yang ditempati oleh proses akan dibagi menjadi bagian-bagian yang digunakan oleh proses dan memori yang tidak terpakai (fragmen). Munculnya memori yang tidak terpakai disebut fragmentasi. Ada dua jenis fragmen
 a)      Internal : sisa hole yang tidak terpakai setelah terisi proses.
 b)      Eksternal : hole yang secara utuh terlalu kecil untuk dipakai oleh proses manapun.
-Alokasi Ruang Swap pada Disk (Penempatan proses pada disk setelah di-swap-out dari memori)
+
+Penentuan tempat pertukaran pada Disk
 a)      Ruang disk tempat swap dialokasikan begitu diperlukan
 b)      Ruang disk tempat swap dialokasikan lebih dahulu.
-Algoritma untuk pengaturan ruang swap pada disk sama dengan  untuk memori utama. Perbedaannya adalah ruang pada disk harus dialokasikan sebagai kelipatan bilangan bulat dari disk block.
+Algoritma untuk pengaturan ruang swap pada disk sama dengan  untuk memori utama.
 
 \subsection {Swapping}
-Suatu proses, seperti yang dijelaskan di atas, harus ada di dalam memori sebelum dieksekusi. Proses pertukaran menukar proses keluar sementara dari memori sementara ke penyimpanan sementara dengan proses lain yang memerlukan beberapa alokasi memori untuk dieksekusi. Room tempat penyimpanan sementara ini biasanya merupakan suatu disk cepat dengan kapasitas yang bisa menampung semua copy-an dari semua gambar memori serta memberikan akses langsung ke gambar. Jika eksekusi proses yang dikeluarkan akan dilanjutkan beberapa waktu kemudian, maka akan dibawa kembali ke memori dari tempat penyimpanan sementara tadi. Bagaimana sistem mengetahui proses mana yang akan dieksekusi?
-Ini bisa dilakukan dengan antrean siap. Antrean ready berisi semua proses yang ditempatkan baik di penyimpanan sementara dan memori yang siap untuk dieksekusi. Ketika penjadwal CPU akan menjalankan proses, ia kemudian memeriksa apakah proses sudah ada dalam memori atau masih dalam penyimpanan sementara. Jika proses tidak dalam memori maka proses swapping akan dilakukan seperti yang dijelaskan di atas.
+Suatu proses, seperti yang dijelaskan di atas, harus ada di dalam memori sebelum dieksekusi. Proses pertukaran menukar proses keluar sementara dari memori sementara ke penyimpanan sementara dengan proses lain yang memerlukan beberapa alokasi memori untuk dieksekusi.  untuk dieksekusi. Jika proses tidak dalam memori maka proses swapping akan dilakukan seperti yang dijelaskan di atas.
 salah satu contoh untuk mengilustrasikan teknik swapping adalah Algoritma Round-Robin yang digunakan dalam lingkungan multiprogamming menggunakan waktu kuantum dalam pelaksanaan prosesnya. ketika waktu kuantum berakhir, pengelola memori akan mengeluarkan proses lain ke dalam memori bebas.. Pada saat yang sama, penjadwal CPU akan mengalokasikan waktu ke proses lain dalam memori. Perhatiannya adalah bahwa waktu kuantum harus cukup lama sehingga waktu penggunaan CPU dapat lebih optimal bila dibandingkan dengan proses pertukaran yang terjadi antara memori dan disk.
 Teknik swapping bergulir keluar, roll in menggunakan algoritma berbasis prioritas di mana ketika proses prioritas yang lebih tinggi tiba maka manajer memori akan mengeluarkan proses prioritas yang lebih rendah dan memuat proses dengan prioritas yang lebih tinggi.Ketika proser prioritas tinggi telah selesai mengeksekusi feed, proses yang memiliki prioritas lebih rendah dapat dimasukkan kembali ke dalam memori dan kembali dalam eksekusi.
 Waktu swapping adalah waktu transer, misalnya kita melihat ilustrasi berikut. Proses pengguna memiliki 5 mb, sementara penyimpanan sementara / kecepatan hard drive 20 mb maka waktu yang diperlukan untuk mentransfer proses 5 MB adalah 250 ms.Karena ada dua contoh di mana satu proses melucuti proses dan yang lainnya adalah proses memasukkan proses ke dalam memori, total waktu swap menjadi 252 + 252 = 504 ms.
 Untuk teknik swapping agar lebih efisien, lebih baik menukar proses yang benar-benar diperlukan sehingga mengurangi waktu swap. Karena itu, sistem harus selalu tahu setiap perubahan yang terjadi dalam pemenuhan kebutuhan memori.Jika kita ingin bertukar, ada beberapa hal yang harus diperhatikan. Kita harus menghindari pertukaran proses dengan M / K tertunda (dengan asumsi operasi M / K juga antri di antrian karena peralatan M / K sibuk). Misalnya seperti ini, jika proses P1 dihapus dari memori dan kita ingin memasukkan proses P2, maka operasi M / K yang juga dalam antrian akan mengambil ransum ruang memori yang dirilis P1. Masalah ini dapat diselesaikan jika kita tidak bertukar dengan operasi M / K yang tertunda. Selain itu, pelaksanaan operasi M / K harus dilakukan pada buffer sistem operasi.
 Setiap sistem operasi memiliki versi teknik swapping yang diwakilinya sendiri. Misalnya pada UNIX, swapping pada dasarnya tidak diaktifkan, tetapi akan mulai jika banyak proses memerlukan banyak memori. Swapping akan kembali jika jumlah proses yang dimasukkan berkurang. Di sistem operasi Microsoft Windows 3.1, jika proses baru dan tidak ada cukup ruang di memori untuk menahannya, proses sebelumnya di memori akan dipindahkan ke disk. Sistem operasi ini pada dasarnya tidak menggunakan teknik swapping secara penuh, ini menyebabkan pengguna lebih dalam menentukan proses mana yang akan ditukar dari penjadwal CPU. Dengan ketentuan ini, proses yang telah dikeluarkan tidak akan dilakukan lagi.
 
-{Solusi}:
-Lubang-lubang kecil di antara blok-blok memori yang digunakan dapat diatasi dengan pemadatan memori yaitu menggabungkan semua lubang kecil menjadi satu lubang besar dengan memindahkan semua proses agar saling berdekatan.
- 
-Strategi Alokasi Memori
-a) First fit algorithm : memory  manager men-scan list untuk  menemukan hole yg cukup untuk menampung proses yg baru. Proses akan menempati hole pertama yg ditemuinya yg cukup untuk dirinya.
-b) Fit algoritma berikutnya: sama seperti fit pertama, tetapi pencarian lubang dimulai dari lubang yang ditemui dari pemindaian sebelumnya.
-c) Algoritme fit terbaik: mencari lubang yang akan menghasilkan residu paling sedikit setelah proses masuk.
-d) Algoritma fit terburuk: kebalikan dari fit terbaik.
-e) Quick Fit algorithm: group holes dan membuat daftar mereka sendiri. Misalnya, ada daftar untuk 4K lubang, satu daftar untuk 8K, dan seterusnya.
-f) Sistem Sobat: Memori dalam menumpuk di dash blok bebas ukuran 1,2,4,8,16 byte dll, hingga kapasitas memori.
-Dari berbagai cara alokasi tsb. Di atas, lubang yang ditempati oleh proses akan dibagi menjadi bagian-bagian yang digunakan oleh proses dan memori yang tidak terpakai (fragmen). Munculnya memori yang tidak terpakai disebut fragmentasi. Ada dua jenis fragmen
-
 \subsection {Random Access Memory}
 Selain menyimpan data tidak lenyap, simpan juga ke disk tujuan untuk mengosongkan RAM agar tidak cepat penuh.
 Dalam sistem ini kita juga dapat melihat bahwa sistem operasi terletak berdekatan dengan program lain dalam RAM sehingga kemungkinan sistem operasi terganggu atau diubah oleh proses yang berjalan sangat sangat besar. Seharusnya tidak terjadi.Untuk dapat  mencegah terganggunya sistem operasi tersebut maka alamat yang tertinggi dari sistem operasi yang diletakkan pada register batas dalam CPU tersebut. Jika ada proses yang mengacu ke alamat itu atau yang lebih rendah dari itu maka proses tersebut akan di hentikan dan program tersebut akan menampilkan pesan kesalahan yang terjadi. Manajemen Memory  Untuk Multiprogramming
-Untuk sistem komputer yang berukuran besar (bukan small computers), membutuhkan pengaturan memori, karena dalam multiprogramming akan melibatkan banyak pemakai secara simultan sehingga di memori akan terdapat lebih dari satu proses bersamaan.  Oleh karena itu dibutuhkan sistem operasi yang mampu mendukung dua kebutuhan tersebut, meskipun hal tersebut saling bertentangan, yaitu (Ama, 2003) :
 a)      Pemisahan ruang-ruang alamat.
 b)      Pemakaian bersama memori.
+
 Manajer memori harus menerapkan isolasi ruang alamat dari setiap proses untuk memungkinkan proses atau proses yang diperlukan untuk mengakses. Manajer memori di lingkungan multiprogramming atau melakukan dua hal, yaitu:
 a) Perlindungan memori dengan isolasi ruang alamat oleh dis-joint.
 b) Penggunaan memori bersama.
+
 Menyalin proses bekerja bersama untuk mengakses area memori bersama. Ketika konsep multiprogramming, akses CPU dapat ditingkatkan. Sebuah model untuk pemantauan CPU probabilistik:
 Pemanfaatan CPU = 1 - p n
 Dengan:
 a) N ada proses saat ini, memungkinkan untuk semua proses yang akan menunggu menggunakan I / O (Masalah CPU idle) sebesar pn. Fungsi n disebut gelar multiprogramming.
 b) Waktu yang sangat lama
 
-\section {Kesimpulan}
+\ section {Kesimpulan}
 Memori dan Manajemen Memori
-Memori adalah pusat dari operasi pada sistem komputer modern, berfungsi sebagai tempat penyimpanan informasi yang harus diatur dan dijaga sebaik-baiknya. Memori adalah array besar dari word atau byte, yang disebut alamat. CPU mengambil instruksi dari memory berdasarkan nilai dari program counter (Ama, 2003).
-Sedangkan manajemen memori adalah suatu kegiatan untuk mengelola memori komputer. Proses ini menyediakan cara mengalokasikan memori untuk proses atas permintaan mereka, membebaskan untuk digunakan kembali ketika tidak lagi diperlukan serta menjaga alokasi ruang memori bagi proses.Manajemen Memori merupakan salah satu bagian terpenting pada sistem operasi. Sejak awal komputer digunakan untuk keperluan komputasi, kebutuhan akan memori yang lebih besar dibandingkan dengan keadaan fisik memori di dalam sistem terus meningkat. Berbagai perhitungan dan strategi terus dilakukan untuk mengatasi keterbatasan ukuran memori fisik (Ama, 2003).
-Strategi Manjemen Memori
-Strategi yang dikenal untuk mengatasi hal tersebut adalah memori maya. Memori maya menyebabkan sistem seolah-olah memiliki banyak memori dibandingkan dengan keadaan memori fisik yang sebenarnya. Memori maya tidak saja memberikan peningkatan komputasi.
-Ruang Alamat Logika dan Fisik
-Tujuan utama manajemen memori adalah konsep meletakkan ruang alamat logika ke ruang alamat fisik. Alamat Logika adalah alamat yg dibentuk di CPU, disebut juga alamat virtual. Alamat fisik adalah alamat yang terlihat oleh memori.
+Memori adalah pusat operasi pada sistem komputer modern, berfungsi sebagai tempat penyimpanan informasi untuk dikelola dan dipelihara sebaik mungkin. Memori adalah array besar kata atau byte, yang disebut alamat. CPU mengambil instruksi dari memori berdasarkan nilai program counter (Ama, 2003).
+Sedangkan manajemen memori adalah kegiatan untuk mengatur memori komputer. Proses ini menyediakan cara untuk mengalokasikan memori untuk memproses atas permintaan mereka, membebaskannya untuk digunakan kembali ketika tidak lagi diperlukan dan mempertahankan alokasi ruang memori untuk proses tersebut. Manajemen Memori adalah salah satu bagian terpenting dari sistem operasi. pada awalnya komputer  digunakan untuk keperluan hal komputasi, kebutuhan akan memori yang lebih besar daripada kondisi fisik memori dalam sistem yang terus menerus meningkat. Dalam berbagai perhitungan dan strategi terus menerus dilakukan perbaikan untuk mengatasi keterbatasan ukuran memori fisik (Ama, 2003).
+Strategi Manajemen Memori
+Strategi yang dikenal sebagai berikut adalah untuk mengatasi permaslahan memori virtual. Memori virtual menyebabkan sistem seperti memiliki lebih banyak memori daripada keadaan memori fisik yang sebenarnya. Selain itu memori virtual juga tidak hanya menyediakan peningkatan komputasi.
+Ruang Alamat Logis dan Fisik
+Tujuan utama manajemen memori adalah konsep meletakkan ruang alamat logis ke ruang alamat fisik. Alamat logika adalah alamat yang dihasilkan didalam CPU, juga disebut dengan alamat virtual. Alamat fisik adalah alamat yang dapat terlihat oleh memori.
 Swapping
-Sebuah proses yang harus berada di memori sebelum dieksekusi. Proses swapping menukarkan sebuah proses keluar dari memori untuk sementara waktu ke sebuah penyimpanan sementara dengan sebuah proses lain yang sedang membutuhkan sejumlah alokasi memori untuk dieksekusi. Tempat penyimpanan sementara ini biasanya berupa sebuah fast disk dengan kapasitas yang dapat menampung semua salinan dari semua gambaran memori serta menyediakan akses langsung ke gambaran tersebut.
+Suatu proses yang harus di dalam memori sebelum dieksekusi. Proses pertukaran pertukaran keluar sementara dari memori sementara ke penyimpanan sementara dengan proses lain yang membutuhkan alokasi memori ganda untuk eksekusi.Memori penyimpanan sementara ini biasanya berupa hard disk dengan kapasitas yang bisa menampung salinan-salinan gambar memori serta menyediakan akses langsung ke gambar.
