@@ -9,9 +9,17 @@
 
 \subsection{Jenis sistem operasi}
 \subsubsection{Single dan multi-tasking}
-\begin{enumerate}
-\item Sistem satu tugas hanya dapat menjalankan satu program dalam satu waktu, sementara sistem operasi multi-tasking memungkinkan lebih dari satu program berjalan dalam konkurensi. Ini dicapai dengan time-sharing, di mana waktu prosesor yang tersedia dibagi antara beberapa proses. Proses ini masing-masing terganggu berulang kali dalam irisan waktu oleh subsistem penjadwalan tugas dari sistem operasi. Multi-tasking dapat dicirikan dalam tipe preemptif dan kooperatif. Dalam preemptive multitasking, sistem operasi memotong waktu CPU dan mendedikasikan slot untuk masing-masing program. Sistem operasi mirip Unix, seperti Solaris dan Linux — serta non-Unix-like, seperti AmigaOS — mendukung multitasking preemptif. Multitasking kooperatif dicapai dengan mengandalkan pada setiap proses untuk menyediakan waktu untuk proses lain dengan cara yang ditentukan. Versi 16-bit Microsoft Windows menggunakan multi-tasking kooperatif. Versi 32-bit dari Windows NT dan Win9x, menggunakan preemptive multi-tasking.
-\end{enumerate}
+	\begin{enumerate}
+		\item Sistem satu tugas hanya dapat menjalankan satu program dalam satu waktu, sementara sistem operasi multi-tasking memungkinkan lebih dari satu program berjalan dalam konkurensi. Ini dicapai dengan time-sharing, di mana waktu prosesor yang tersedia dibagi antara beberapa proses. Proses ini masing-masing terganggu berulang kali dalam irisan waktu oleh subsistem penjadwalan tugas dari sistem operasi. Multi-tasking dapat dicirikan dalam tipe preemptif dan kooperatif. Dalam preemptive multitasking, sistem operasi memotong waktu CPU dan mendedikasikan slot untuk masing-masing program. Sistem operasi mirip Unix, seperti Solaris dan Linux — serta non-Unix-like, seperti AmigaOS — mendukung multitasking preemptif. Multitasking kooperatif dicapai dengan mengandalkan pada setiap proses untuk menyediakan waktu untuk proses lain dengan cara yang ditentukan. Versi 16-bit Microsoft Windows menggunakan multi-tasking kooperatif. Versi 32-bit dari Windows NT dan Win9x, menggunakan preemptive multi-tasking.
+	\end{enumerate}
+\subsection{Single dan multi-user}
+	\begin{enumerate}
+		\item Sistem operasi pengguna tunggal tidak memiliki fasilitas untuk membedakan pengguna, tetapi dapat memungkinkan beberapa program berjalan bersama-sama. Sistem operasi multi-pengguna memperluas konsep dasar multi-tasking dengan fasilitas yang mengidentifikasi proses dan sumber daya, seperti ruang disk, milik beberapa pengguna, dan sistem memungkinkan banyak pengguna untuk berinteraksi dengan sistem pada saat yang bersamaan. Sistem operasi berbagi waktu menjadwalkan tugas untuk penggunaan sistem yang efisien dan mungkin juga termasuk perangkat lunak akuntansi untuk alokasi biaya waktu prosesor, penyimpanan massal, pencetakan, dan sumber daya lainnya untuk banyak pengguna.
+	\end{enumerate}
+\subsection{Pendistribusian}
+	\begin{enumerate}
+		\item Sistem operasi terdistribusi mengelola sekelompok komputer yang berbeda dan membuatnya tampak sebagai komputer tunggal. Pengembangan jaringan komputer yang dapat dihubungkan dan berkomunikasi satu sama lain menimbulkan komputasi terdistribusi. Komputasi terdistribusi dilakukan pada lebih dari satu mesin. Ketika komputer dalam kelompok bekerja dalam kerja sama, mereka membentuk sistem terdistribusi.
+	\end{enumerate}
 \subsection{Sejarah}
 	\begin{enumerate}
 		\item Komputer awal dibangun untuk melakukan serangkaian tugas tunggal, seperti kalkulator. Fitur-fitur sistem operasi dasar dikembangkan pada tahun 1950-an, seperti fungsi monitor penduduk yang dapat secara otomatis menjalankan program yang berbeda secara berurutan untuk mempercepat pemrosesan. Sistem operasi tidak ada dalam bentuk modern dan lebih kompleks hingga awal 1960-an. Fitur perangkat keras ditambahkan, yang memungkinkan penggunaan pustaka runtime, interupsi, dan pemrosesan paralel. Ketika komputer pribadi menjadi populer pada tahun 1980-an, sistem operasi dibuat untuk mereka yang serupa dalam konsep untuk yang digunakan pada komputer yang lebih besar.
