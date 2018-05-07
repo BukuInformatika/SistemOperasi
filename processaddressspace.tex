@@ -1,6 +1,21 @@
+% Nama Kelompok : Procces address space
+% Kelas : D4 TI 1A
+% 1. Dwi Yulianingsih
+% 2. Habib Abdul Rasyid
+% 3. Kukuh Yunaswara
+% 4. Felix Setiawan Lase
+% 5. Muhammad Dzihan Albana
+
 \section {Proses Address Space}
 
 \subsection {A. Konsep dasar memori}
+
+\begin{figure}[ht]
+\centerline{\includegraphics[width=0.5\textwidth]{figures/drive.jpg}}
+\caption{Hard Drive}
+\label{Drive}
+\end{figure}
+
 Memori adalah sebagai suatu pusat dari operasi yang pada setiap komputer modern , memori berfungsi untuk tempat penyimpan sebuah informasi dan harus diatur dan dijaga sebaik mungkin . memori adalah array besar dari word atau byte yang bisa disebut alamat CPU untuk mengambil instruksi instruksi dari sebuah memory, perangkat tersebut mengambil perintah-perintah pada memori menurut nilai dari penghitung program  program.
 Sedangkan manajemen memori adalah kegiatan untuk mengatur memori komputer. Proses ini akan menyediakan cara untuk mengalokasikan memori untuk memproses atas sebuah  permintaan mereka, membebaskannya untuk digunakan kembali ketika tidak lagi diperlukan dan mempertahankan alokasi ruang memori untuk proses tersebut. Manajemen memori utama sangat penting untuk sistem komputer  penting untuk mengolah dan menginput fasilitas atau keluaran secara efisien, sehingga memori dapat ditampung sebanyak mungkin proses dan dalam upaya pemogram atau proses tidak terbatas kapasitas memori fisik dalam sistem komputer (Eko, 2009).
 Memory manager merupakan suatu bagian dari sistem operasi yang sangat berperan dalam menentukan proses-proses yang ditempatkan pada antrian.
@@ -13,15 +28,29 @@ Fungsi dari manajemen memori dibagi menjadi 4 yaitu mengelola informasi yang dig
 Manajemen Memori umumnya digunakan untuk monoprogramming
 Ketika itu sebuah program komputer yang hanya berjalan satu jenis maka selama proses berlangsung itu akan dikatakan bahwa mode kerja komputer adalah monoprogramming. Selama waktu itu komputer juga berfungsi maka memori dalam RAM sepenuhnya dikendalikan oleh program program.
 Sistem operasi memberikan sebuah  tanggapan terhadap manajemen memori utama untuk aktivitas-aktivitas sepertii 
-a)      Merawat dan memelihara  memori yang sedang digunakan dan dari yang menggunakan.
-b)      Memutuskan proses-proses mana saja yang harus dipanggil kememori jika masih ada ruang di memori.
-c)      Mengalokasikan dan mendelokasikan ruang memori jika diperlukan
+
+\begin{itemize}
+
+\item Merawat dan memelihara  memori yang sedang digunakan dan dari yang menggunakan.
+
+\item Memutuskan proses-proses mana saja yang harus dipanggil kememori jika masih ada ruang di memori.
+
+\item Mengalokasikan dan mendelokasikan ruang memori jika diperlukan.
+
+\end{itemize}
+
 Jadi  RAM tidak bisa di masuki oleh program lain. Model yang  serupa ini bisa di temui pada komputer berbasis DOS.
 Penempatan program di ruang penyimpanan diatur sedemikain rupa sehingga (Eko, 2009) :
-1)      BIOS selalu ada di ROM (BIOS)
-2)      Sistem Operasi  di bagian RAM bawah (alamat rendah)
-3)      Program Aplikasi di bagian RAM tengah (alamat sesudah OS terakhir)
-4)     Data Sementara di bagian RAM atas (alamat sesudah Aplikasi terakhir).
+
+\begin{enumerate}
+
+\item BIOS selalu ada di ROM (BIOS)
+\item Sistem Operasi  di bagian RAM bawah (alamat rendah)
+\item Program Aplikasi di bagian RAM tengah (alamat sesudah OS terakhir)
+\item Data Sementara di bagian RAM atas (alamat sesudah Aplikasi terakhir).
+
+\end{enumerate}
+
 jika sistem operasi telah selesai atau berhasil dimuat maka akan ada prompt muncul di layar, dan itu adalah tanda bahwa komputer siap untuk menerima program aplikasi. Masukkan disk yang berisi program aplikasi pada drive dan eksekusi disk yang aktif, sehingga program tersebut dimuat seluruhnya ke dalam RAM. Dengan demikian program aplikasi siap digunakan dengan benar. Kita melihat ketika komputer pertama kali dihidupkan maka proses yang pertama kali dibaca adalah apa yang tertulis di ROM. Setelah semua perintah di ROM BIOS selesai dibaca maka komputer meminta kita untuk memasukkan DOS ke dalam RAM-nya. Ketika DOS dibaca maka masukkan beberapa program DOS yang paling penting ke dalam RAM, seperti: COMMAND.COM dan INTERNAL COMMAND. Sementara program DOS lainnya masih tetap berada di disk dan jika kita perlu dieksekusi. Sangat berguna untuk menjaga RAM tidak penuh oleh Sistem Operasi saja.
 
 Ketika kita bekerja dengan program aplikasi bagdi maka kita akan menghasilkan data. Data akan disimpan sementara di RAM yang tersisa. Data yang disimpan dalam RAM adalah voletile, yang berarti bahwa data hanya dapat bertahan selama daya komputer AKTIF. Untuk menyimpan kebiasaan menyimpan data ke disk dalam waktu tidak terlalu lama, misalnya setiap 5 menit.
@@ -57,21 +86,32 @@ Jumlah, lokasi, dan ukuran proses dalam memori dapat bervariasi dari waktu ke wa
 rongga-rongga kecil di antara blok-blok memori yang digunakan dapat diatasi dengan pemadatan memori yaitu menggabungkan semua rongga kecil menjadi satu rongga besar dengan memindahkan semua proses agar saling berdekatan.
  
 Strategi Alokasi Memori
-a) First fit algorithm : memory  manager men-scan daftar untuk  menemukan lubang yang muat untuk menampung proses yg baru. Proses akan menempati lubang pertama yg ditemuinya dan cukup untuk ditempati.
-b) Fit algoritma berikutnya: sama seperti fit pertama, tetapi pencarian lubang dimulai dari lubang yang ditemui dari pemindaian sebelumnya.
-c) Algoritme fit terbaik: mencari lubang yang akan menghasilkan residu paling sedikit setelah proses masuk.
-d) Algoritma fit terburuk: kebalikan dari fit terbaik.
-e) Quick Fit algorithm: group holes dan membuat daftar mereka sendiri. Misalnya, ada daftar untuk 4K lubang, satu daftar untuk 8K, dan seterusnya.
-f) Sistem Sobat: Memori dalam menumpuk di dash blok bebas ukuran 1,2,4,8,16 byte dll, hingga kapasitas memori.
+\begin{itemize}
+
+\item First fit algorithm : memory  manager men-scan daftar untuk  menemukan lubang yang muat untuk menampung proses yg baru. Proses akan menempati lubang pertama yg ditemuinya dan cukup untuk ditempati.
+\item Fit algoritma berikutnya: sama seperti fit pertama, tetapi pencarian lubang dimulai dari lubang yang ditemui dari pemindaian sebelumnya.
+\item Algoritme fit terbaik: mencari lubang yang akan menghasilkan residu paling sedikit setelah proses masuk.
+\item Algoritma fit terburuk: kebalikan dari fit terbaik.
+\item Quick Fit algorithm: group holes dan membuat daftar mereka sendiri. Misalnya, ada daftar untuk 4K lubang, satu daftar untuk 8K, dan seterusnya.
+\item Sistem Sobat: Memori dalam menumpuk di dash blok bebas ukuran 1,2,4,8,16 byte dll, hingga kapasitas memori.
+
+\end{itemize}
 
 Dari berbagai cara alokasi tsb. Di atas, lubang yang ditempati oleh proses akan dibagi menjadi bagian-bagian yang digunakan oleh proses dan memori yang tidak terpakai (fragmen). Munculnya memori yang tidak terpakai disebut fragmentasi. Ada dua jenis fragmen
-a)      Internal : sisa hole yang tidak terpakai setelah terisi proses.
-b)      Eksternal : hole yang secara utuh terlalu kecil untuk dipakai oleh proses manapun.
+
+\begin{itemize}
+
+\item Internal : sisa hole yang tidak terpakai setelah terisi proses.
+\item Eksternal : hole yang secara utuh terlalu kecil untuk dipakai oleh proses manapun.
+
+\end{itemize}
 
 Penentuan tempat pertukaran pada Disk
-a)      Ruang disk tempat swap dialokasikan begitu diperlukan
-b)      Ruang disk tempat swap dialokasikan lebih dahulu.
+\begin{itemize}
+\item Ruang disk tempat swap dialokasikan begitu diperlukan
+\item Ruang disk tempat swap dialokasikan lebih dahulu.
 Algoritma untuk pengaturan ruang swap pada disk sama dengan  untuk memori utama.
+\end{itemize}
 
 \subsection {Swapping}
 Suatu proses, seperti yang dijelaskan di atas, harus ada di dalam memori sebelum dieksekusi. Proses pertukaran menukar proses keluar sementara dari memori sementara ke penyimpanan sementara dengan proses lain yang memerlukan beberapa alokasi memori untuk dieksekusi.  untuk dieksekusi. Jika proses tidak dalam memori maka proses swapping akan dilakukan seperti yang dijelaskan di atas.
@@ -82,22 +122,35 @@ Untuk teknik swapping agar lebih efisien, lebih baik menukar proses yang benar-b
 Setiap sistem operasi memiliki versi teknik swapping yang diwakilinya sendiri. Misalnya pada UNIX, swapping pada dasarnya tidak diaktifkan, tetapi akan mulai jika banyak proses memerlukan banyak memori. Swapping akan kembali jika jumlah proses yang dimasukkan berkurang. Di sistem operasi Microsoft Windows 3.1, jika proses baru dan tidak ada cukup ruang di memori untuk menahannya, proses sebelumnya di memori akan dipindahkan ke disk. Sistem operasi ini pada dasarnya tidak menggunakan teknik swapping secara penuh, ini menyebabkan pengguna lebih dalam menentukan proses mana yang akan ditukar dari penjadwal CPU. Dengan ketentuan ini, proses yang telah dikeluarkan tidak akan dilakukan lagi.
 
 \subsection {Random Access Memory}
+
+\begin{figure}[ht]
+\centerline{\includegraphics[width=0.5\textwidth]{figures/ram.jpg}}
+\caption{RAM}
+\label{ram}
+\end{figure}
+
 Selain menyimpan data tidak lenyap, simpan juga ke disk tujuan untuk mengosongkan RAM agar tidak cepat penuh.
 Dalam sistem ini kita juga dapat melihat bahwa sistem operasi terletak berdekatan dengan program lain dalam RAM sehingga kemungkinan sistem operasi terganggu atau diubah oleh proses yang berjalan sangat sangat besar. Seharusnya tidak terjadi.Untuk dapat  mencegah terganggunya sistem operasi tersebut maka alamat yang tertinggi dari sistem operasi yang diletakkan pada register batas dalam CPU tersebut. Jika ada proses yang mengacu ke alamat itu atau yang lebih rendah dari itu maka proses tersebut akan di hentikan dan program tersebut akan menampilkan pesan kesalahan yang terjadi. Manajemen Memory  Untuk Multiprogramming
-a)      Pemisahan ruang-ruang alamat.
-b)      Pemakaian bersama memori.
+\begin{enumerate}
+\item Pemisahan ruang-ruang alamat.
+\item Pemakaian bersama memori.
+\end{enumerate}
 
 Manajer memori harus menerapkan isolasi ruang alamat dari setiap proses untuk memungkinkan proses atau proses yang diperlukan untuk mengakses. Manajer memori di lingkungan multiprogramming atau melakukan dua hal, yaitu:
-a) Perlindungan memori dengan isolasi ruang alamat oleh dis-joint.
-b) Penggunaan memori bersama.
+\begin{itemize}
+\item Perlindungan memori dengan isolasi ruang alamat oleh dis-joint.
+\item Penggunaan memori bersama.
+\end{itemize}
 
 Menyalin proses bekerja bersama untuk mengakses area memori bersama. Ketika konsep multiprogramming, akses CPU dapat ditingkatkan. Sebuah model untuk pemantauan CPU probabilistik:
 Pemanfaatan CPU = 1 - p n
 Dengan:
-a) N ada proses saat ini, memungkinkan untuk semua proses yang akan menunggu menggunakan I / O (Masalah CPU idle) sebesar pn. Fungsi n disebut gelar multiprogramming.
-b) Waktu yang sangat lama
+\begin{enumerate}
+\item N ada proses saat ini, memungkinkan untuk semua proses yang akan menunggu menggunakan I / O (Masalah CPU idle) sebesar pn. Fungsi n disebut gelar multiprogramming.
+\item Waktu yang sangat lama
+\end{enumerate}
 
-\ section {Kesimpulan}
+\section {Kesimpulan}
 Memori dan Manajemen Memori
 Memori adalah pusat operasi pada sistem komputer modern, berfungsi sebagai tempat penyimpanan informasi untuk dikelola dan dipelihara sebaik mungkin. Memori adalah array besar kata atau byte, yang disebut alamat. CPU mengambil instruksi dari memori berdasarkan nilai program counter (Ama, 2003).
 Sedangkan manajemen memori adalah kegiatan untuk mengatur memori komputer. Proses ini menyediakan cara untuk mengalokasikan memori untuk memproses atas permintaan mereka, membebaskannya untuk digunakan kembali ketika tidak lagi diperlukan dan mempertahankan alokasi ruang memori untuk proses tersebut. Manajemen Memori adalah salah satu bagian terpenting dari sistem operasi. pada awalnya komputer  digunakan untuk keperluan hal komputasi, kebutuhan akan memori yang lebih besar daripada kondisi fisik memori dalam sistem yang terus menerus meningkat. Dalam berbagai perhitungan dan strategi terus menerus dilakukan perbaikan untuk mengatasi keterbatasan ukuran memori fisik (Ama, 2003).
