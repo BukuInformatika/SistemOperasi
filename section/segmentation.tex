@@ -1,0 +1,73 @@
+﻿% Kelompok : 5
+% Kelas : D4 TI 1A
+% Anggota : 
+% 1. Harun Ar - Rasyid 	1174027
+% 2. Choirul Anam 		1174004
+% 3. M.Tomy N.M.		1174031
+% 4. Izza			1174013
+% 5.Putra			
+
+
+Artikel ini mengenai segmentation
+
+  \begin{figure}[ht]
+\centerline{\includegraphics[width=0.5\textwidth]{figures/segmentation.jpg}}
+  \caption{Contoh segmentation}
+  \label{segmentation}
+  \end{figure}
+
+\section{Pengertian Segmentation}
+ini adalah contoh segmentation \cite{segmentation}
+Segmentasi adalah teknik manajemen memori di mana setiap pekerjaan dibagi menjadi beberapa segmen dengan ukuran yang berbeda, satu untuk setiap modul yang berisi potongan-potongan yang melakukan fungsi terkait. Setiap segmen sebenarnya merupakan ruang alamat logis yang berbeda dari program. Ketika sebuah proses akan dieksekusi, segmentasinya yang sesuai akan dimuat ke dalam memori yang tidak bersebelahan meskipun setiap segmen dimuat ke dalam blok memori yang berdekatan dengan segmen lainnya.
+Segmentasi manajemen memori bekerja sangat mirip dengan paging tetapi segmen di sini adalah variabel-panjang di mana seperti dalam halaman paging adalah ukuran tetap.
+Segmen program berisi fungsi utama program, fungsi utilitas, struktur data, dan sebagainya. Sistem operasi memelihara tabel peta segmen untuk setiap proses dan daftar blok memori bebas bersama dengan nomor segmen, ukurannya dan lokasi memori yang sesuai dalam memori utama. Untuk setiap segmen, tabel menyimpan alamat awal segmen dan panjang segmen.
+Segmen biasanya cocok atau sesuai dengan divisi alami dari suatu program seperti rutinitas individu atau tabel data sehingga segmentasi umumnya lebih terlihat oleh programmer daripada paging saja.  Segmen yang berbeda dapat dibuat untuk modul program yang berbeda, atau untuk kelas yang berbeda dari penggunaan memori seperti kode dan segmen data\cite{cepulis1992computer}.
+
+\subsection{Implementasi perangkat keras}
+Dalam sistem yang menggunakan segmentasi, alamat memori komputer terdiri dari id segmen dan offset dalam segmen tersebut. Sebuah unit manajemen memori perangkat keras (MMU) bertanggung jawab untuk menerjemahkan segmen dan mengimbangi ke alamat fisik, dan untuk melakukan pemeriksaan untuk memastikan terjemahan dapat dilakukan dan referensi ke segmen dan offset tersebut diizinkan.
+Setiap segmen memiliki panjang dan serangkaian izin (misalnya, baca, tulis, jalankan) yang terkait dengannya. Suatu proses hanya diperbolehkan untuk membuat referensi ke dalam segmen jika jenis referensi diizinkan oleh izin, dan jika offset dalam segmen berada dalam rentang yang ditentukan oleh panjang segmen. Jika tidak, pengecualian perangkat keras seperti kesalahan segmentasi dinaikkan.
+Segmen juga dapat digunakan untuk mengimplementasikan memori virtual. Dalam hal ini setiap segmen memiliki bendera terkait yang menunjukkan apakah ia ada dalam memori utama atau tidak. Jika segmen diakses yang tidak ada dalam memori utama, pengecualian dibangkitkan, dan sistem operasi akan membaca segmen ke dalam memori dari penyimpanan sekunder.
+<<<<<<< HEAD
+Dan juga tujuan dari yang bisas kita sebut dengan tahapan implementasi ini biasanya digunakan untuk memastikan bahwa software berjalan dengan efektif sesuai dengan apa yang diinginkan dalam membantu dalam penyelesaian dan pematangan dalam kosep pengembangan sistem jaringan menjadi lebih maju dan tentunya lebih efektif.
+Ada pengertian lain dari Segmentasi, segmentasi  adalah salah satu metode penerapan proteksi memori. Disini ada istilah  Pager, artinya yang lain, dan mereka dapat digabungkan. Ukuran segmen memori umumnya tidak tetap dan bisa sekecil byte tunggal. 
+Segmentasi telah diimplementasikan dalam beberapa cara berbeda pada perangkat keras yang berbeda, dengan atau tanpa paging. 
+=======
+Dan juga tujuan dari yang biasa kita sebut dengan tahapan implementasi ini biasanya digunakan untuk memastikan bahwa software berjalan dengan efektif sesuai dengan apa yang diinginkan dalam membantu dalam penyelesaian dan pematangan dalam kosep pengembangan sistem jaringan menjadi lebih maju dan tentunya lebih efektif. ada 2 tipe segmentasi dalam implementasi perangkat yaitu segmentasi tanpa paging dan dengan paging
+\subsubsection{Segmentasi Tanpa Paging}
+Terkait dengan setiap segmen adalah informasi yang menunjukkan di mana segmen berada dalam memori — basis segmen. Ketika sebuah program referensi lokasi memori offset ditambahkan ke basis segmen untuk menghasilkan alamat memori fisik.
+Segmentasi dengan paging
+Alih-alih lokasi memori yang sebenarnya itu , informasi segmen yang mencakup alamat tabel halaman untuk segmen tersebut. Ketika sebuah program referensi lokasi memori offset diterjemahkan ke dalam alamat memori menggunakan tabel halaman. Segmen dapat diperpanjang hanya dengan mengalokasikan halaman memori lain dan menambahkannya ke tabel halaman segmen.
+
+>>>>>>> f0a9237d6b9e769cdaa39218bdc1709a93d70df7
+
+<<<<<<< HEAD
+\subsubsection{Segmentasi Dengan Paging}
+Alih-alih lokasi memori yang sebenarnya, informasi segmen mencakup alamat tabel halaman untuk segmen tersebut. Ketika sebuah program referensi lokasi memori offset diterjemahkan ke alamat memori menggunakan tabel halaman. Segmen dapat diperpanjang hanya dengan mengalokasikan halaman memori lain dan menambahkannya ke tabel halaman segmen.
+
+=======
+>>>>>>> a6bac502e29623c57f24639f84bf496f31fb6cec
+Implementasi memori virtual pada sistem menggunakan segmentasi dengan paging biasanya hanya memindahkan halaman individual bolak-balik antara memori utama dan penyimpanan sekunder, mirip dengan sistem non-segmentasi paged. Halaman-halaman segmen dapat ditempatkan di mana saja dalam memori utama dan tidak perlu bersebelahan. Ini biasanya menghasilkan jumlah input / output yang berkurang antara penyimpanan primer dan sekunder dan mengurangi fragmentasi memori.
+
+Implementasi Memory Virtual terdapat 2 cara yaitu 
+	1. Demand Paging yaitu dengan cara menerapkan konsep pemberian halaman pada proses
+<<<<<<< HEAD
+	2. Demand segmentation itu memiliki sistem yang lebih kompleks diterapkan ukuran segmen yang bervariasi.
+\subsection{Sejarah}
+Pada awalnya ada yang disebut dengan Komputer Burroughs Corporation B5000. Komputer Burroughs Corporation B5000 adalah salah satu yang pertama untuk mengimplementasikan segmentasi, dan "mungkin komputer komersial pertama yang menyediakan memori virtual" berdasarkan segmentasi. Komputer B6500 kemudian juga menerapkan segmentasi versi arsitekturnya masih digunakan saat ini di server Unisys ClearPath Libra.
+
+Komputer GE-645, modifikasi GE-635 dengan segmentasi dan dukungan paging yang ditambahkan, dirancang pada 1964 untuk mendukung Multics.
+
+Intel iAPX 432, [5] dimulai pada tahun 1975, berusaha untuk mengimplementasikan arsitektur tersegmentasi yang benar dengan proteksi memori pada mikroprosesor.
+Prime, Stratus, Apollo, IBM System / 38, dan IBM AS / 400 komputer menggunakan segmentasi memori.
+
+=======
+	
+2. Demand segmentation itu memiliki sistem yang lebih kompleks diterapkan ukuran segmen yang bervariasi.
+
+Implementasi memori virtual pada sistem menggunakan segmentasi dengan paging biasanya hanya memindahkan halaman individual bolak-balik antara memori utama dan penyimpanan sekunder, mirip dengan sistem non-segmentasi paged. Halaman-halaman segmen dapat ditempatkan di mana saja dalam memori utama dan tidak perlu bersebelahan. Ini biasanya menghasilkan jumlah input / output yang berkurang antara penyimpanan primer dan sekunder dan mengurangi fragmentasi memori.
+>>>>>>> f425101481085dc823adea4fa2ce4c985b6f3dc6
+
+\section {Kesimpulan}
+
+Jadi kesimpulannya adalah Segmentasi pada memori termasuk dalam Salah satu bagian yang penting dari management memori yang tidak dapat dipisahkan dari pemberian halaman adalah pemisahan cara pandang pengguna dengan tentang bagaimana memori dipetakan dengan keadaan yang sebenarnya. Pada kenyataannya pemetaan tersebut memperbolehkan pemisahan antara memori logis dan memori fisik.
+Jika halaman tidak ada dalam memori utama yang diminta, kesalahan halaman terjadi. Sebuah kesalahan halaman dapat diproses dalam beberapa tahap. Dan karena kesalahan, sehingga kinerja paging permintaan, kesalahan halaman dan waktu waktu akses memori (waktu yang dibutuhkan untuk memproses kesalahan halaman) dapat dihitung. Kinerja paging permintaan, dikenal sebagai waktu akses yang efektif pada umumnya.
