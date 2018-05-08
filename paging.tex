@@ -1,3 +1,4 @@
+
 Kelompok : 4
 Kelas : D4 TI 1A
 Anggota : 
@@ -15,7 +16,7 @@ Untuk mengatasi hal tersebut Sistem Paging mempunyai 2 solusi, yaitu:
 
 \subsection Konsep Overlay
 Dimana program yang dijalankan dipecah menjadi beberapa bagian yang dapat dimuat memori (overlay). Overlay yang belum diperlukan pada saat program berjalan (tidak sedang di eksekusi) disimpan di disk, dimana nantinya overlay tersebut akan dimuat ke memori begitu diperlukan dalam eksekusinya.
-<<<<<<< HEAD
+
 - Konsep Memori Maya (virtual Memory)
 Adalah kemampuan mengalamati ruang memori melebihi memori utama yang tersedia. Konsep ini pertama kali dikemukakan Fotheringham pada tahun 1961 untuk sistem komputer Atlas di Universitas Manchester, Inggris.
 
@@ -35,20 +36,19 @@ disini punya mu ham
 
 Berdasarkan pertimbangan tersebut, sebenarnya proses-proses yang memiliki 10 halaman hanya akan menggunakan setengah dari jumlah seluruh halaman yang dimilikinya. Kemudian demand paging akan menyimpan I/O yang dibutuhkan untuk mengisi 5 halaman yang belum pernah digunakan. Kita juga dapat meningkatkan derajat multiprogramming dengan menjalankan banyak proses sebanyak 2 kali.
 
-Jika kita meningkatkan derajat multiprogramming, itu sama artinya dengan melakukan over-allocating terhadap memori
-=======
+Jika kita meningkatkan derajat multiprogramming, itu sama artinya dengan melakukan over-allocating terhadap memori.
+
 \section sistem paging 
 pengertian sistem paging 
 Sistem Paging Merupakan sistem yang memanajemen pada sistem operasi dalam mengelola program program yang sedang berjalan. Program program yang berjalan harus dimuat didalam memori utama. Batasan batasan yang terjadi saat program lebih besar dari memori utama yang telah tersedia.
 
 \subsection pembagian solusi sistem paging 
-<<<<<<< HEAD
 a.Konsep Overlay
 b.Konsep Memori Maya (virtual Memory)
 
 
 \section Masalah Penggantian Halaman
- 
+ 
 Pada dasarnya, kesalahan halaman (page fault) sudah tidak lagi menjadi masalah yang terlalu  dianggap serius. Hal ini disebabkan karena masing-masing halaman pasti akan mengalami paling tidak satu kali kesalahan dalam pemberian halaman, yakni ketika halaman ini ditunjuk untuk pertama kalinya. Representasi seperti ini sebenarnya tidaklah terlalu akurat. 
 =======
 a. Konsep Overlay
@@ -62,23 +62,19 @@ Pada dasarnya, kesalahan halaman tidak lagi menjadi masalah serius. Ini karena s
 
 Jika kita meningkatkan derajat multiprogramming, itu sama artinya dengan melakukan over-allocating terhadap memori. Jika kita menjalankan 6 proses, dengan masing-masing mendapatkan 10 halaman, walau pun sebenarnya yang digunakan hanya 5 halaman, kita akan memiliki utilisasi CPU dan throughpsZsut yang lebih tinggi dengan 10 frame yang masih kosong.
 
-<<<<<<< HEAD
 Lebih jauh lagi, kita harus mempertimbangkan bahwa sistem memori tidak hanya digunakan untuk menangani pengalamatan suatu program. Penyangga (buffer) untuk I/O juga menggunakan sejumlah memori. Penggunaan ini dapat meningkatkan pemakaian algoritma dalam penempatan di memori.
 
 Beberapa sistem mengalokasikan secara pasti beberapa persen dari memori yang dimilikinya untuk penyangga I/O, dimana keduanya, baik proses
 
-=======
 Lebih jauh lagi, kita harus mempertimbangkan bahwa sistem memori tidak hanya digunakan untuk menangani pengalamatan suatu program. Buffer untuk I / O juga menggunakan beberapa memori. Penggunaan ini dapat meningkatkan penggunaan algoritma dalam penempatan di memori.
 Beberapa sistem mengalokasikan persis beberapa persen dari memori mereka untuk menyangga I / O, di mana keduanya,
 
-
->>>>>>> bb5b1b8fb5ec356edc5fac3a7fdb84aeb4100dc3
 
 Beberapa sistem mengalokasikan tepat beberapa persen dari memori mereka untuk buffer I / O, keduanya, baik proses pengguna dan subsistem I / O race untuk mengambil keuntungan dari seluruh sistem memori.
 
 \section skema dasar pemindahan halaman 
 Pemindahan halaman menggunakan pendekatan berikut. Jika tidak ada frame yang kosong, kami mencari frame yang tidak digunakan dan mengosongkannya. Kita dapat mengosongkan bingkai dengan menulis isinya ke dalam ruang swap, dan mengubah tabel halaman (serta tabel lainnya) untuk menunjukkan bahwa halaman tidak akan lama dalam memori.
->>>>>>> d2adb95ac32c341dbf4c06f719cc40907625cc41
+
 
 \subsection cara memindahkan halaman
 1. Cari lokasi dari halaman yang diinginkan pada disk
@@ -97,7 +93,7 @@ Jika tidak ada frame yang kosong, pentransferan dua halaman (satu masuk, satu ke
 Kita harus menyelesaikan 2 masalah utama untuk mengimplementasikan demand paging. Kita harus  mengembangkan algoritma pengalokasian rame dan algoritma pemindahan halaman. Jika kita memiliki banyak proses di memori, kita harus memutuskan berapa banyak frame yang akan dialokasikan ke masing-masing proses. Lebih jauh lagi, saat pemindahan halaman diinginkan, kita harus memilih frame yang akan dipindahkan. Membuat suatu algoritma yang tepat untuk menyelesaikan masalah ini adalah hal yang sangat penting.
 ini adalah hal yang sangat penting.
 
-Ada beberapa algoritma pemindahan halaman yang berbeda. Kemungkinan setiap Sistem Operasi memiliki skema pemindahan yang unik. Algoritma pemindahan yang baik adalah yang memiliki tingkat kesalahan halaman terendah. Kita mengevaluasi algoritma dengan menjalankanny dalam string khusus di memori acuan dan menghitung jumlah kesalahan halaman.  String dari memori acuan disebut string acuan (reference string). Sebagai contoh, jika kita memeriksa proses khusus, kita mungkin akan mencatat urutan alamat seperti dibawah ini:
+Ada beberapa algoritma pemindahan halaman yang berbeda. Kemungkinan setiap Sistem Operasi memiliki skema pemindahan yang unik. Algoritma pemindahan yang baik adalah yang memiliki tingkat kesalahan halaman terendah. Kita mengevaluasi algoritma dengan menjalankanny dalam string khusus di memori acuan dan menghitung jumlah kesalahan halaman.  String dari memori acuan disebut string acuan (reference string). Sebagai contoh, jika kita memeriksa proses khusus, kita mungkin akan mencatat urutan alamat seperti dibawah ini:
 0100, 0432, 0101, 0612, 0102, 0103, 0104, 0101, 0611, 0102, 0103, 0104, 0101, 0610, 0102, 0103,
 
 0104, 0101, 0609, 0102, 0105, di mana pada 100 byte per halaman, diturunkan menjadi string referensi sebagai berikut:
@@ -108,22 +104,13 @@ Perhatikan bahwa selama jumlah frame meningkat, jumlah kesalahan halaman menurun
 
 Penambahan memori fisik akan menambah jumlah frame.
 
-<<<<<<< HEAD
 \section Pemindahan Halaman Secara FIFO
 
 Algoritma ini adalah algoritma paling sederhana dalam hal pemindahan halaman. Algoritma pemindahan
  
 FIFO (First In First Out) mengasosiasikan waktu pada saat halaman dibawa kedalam memori dengan masing-masing halaman. Pada saat halaman harus dipindahkan, halaman yang paling tua yang dipilih.
 
-Sebagai contoh:
-\subsection
-Gambar 4-11. String Acuan. Sumber: . . .
-
-
-
-=======
 Pemindahan Halaman Secara FIFO
->>>>>>> 7018814d0ceaa7fe1ac2eb3131052e52feeef48f
 
 Algoritma ini adalah algoritma paling sederhana dalam hal pemindahan halaman. Algoritma pemindahan
  
