@@ -25,14 +25,14 @@ Memori adalah pusat dari operasi computer. Memori sebagai tempat penyimpanan dan
 
 Manajemen memori merupakan salah satu bagian terpenting pada sistem operasi. Memori sangat perlu dikelola dengan sebaik-baiknya agar :
 
-1.	Utility CPU akan meningkat.
-2.	Data dan instruksi akan diakses dengan cepat oleh CPU.
-3.	Tercapai efisiensitas dalam pemakaian memori.
-4.	Transfer data memori utama ke/dari CPU lebih efisien.
-5.	Mengelola informasi. 
-6.	Mengalokasikan memori ke proses yang diperlukan. 
-7.	Mendealokasikan memori dari proses yang telah selesai. 
-8.	Mengelola swapping atau pagging antara memori utama dan disk.
+1. Utility CPU akan meningkat.
+2. Data dan instruksi akan diakses dengan cepat oleh CPU.
+3. Tercapai efisiensitas dalam pemakaian memori.
+4. Transfer data memori utama ke/dari CPU lebih efisien.
+5. Mengelola informasi. 
+6. Mengalokasikan memori ke proses yang diperlukan. 
+7. Mendealokasikan memori dari proses yang telah selesai. 
+8. Mengelola swapping atau pagging antara memori utama dan disk.
 
 Jenis memori ada 2 yaitu RAM dan ROM, RAM adalah Random Akses Memori yang isi penyimpanannya dapat diakses dalam waktu yang tetap. ROM adalah Read Only Memori adalah penyimpanan data yang permanen. sedangkan jenis-jenis memori eksternal ada 2 yaitu berdasarkan karakteristik bahan dan berdasarkan jenis akses data. Tentunya hal tersebut tergantung space dan ruang penyimpanan yang ada.
 
@@ -76,52 +76,43 @@ C. Tipe-tipe Manajemen Proses
 
 a. Berdasarkan keberadaan swapping :
 
-1. Manajemen tanpa swapping.
-Manajemen memori tanpa pemindahan citra proses antara memori utama dan disk selama ekseskusi.
+	1. Manajemen tanpa swapping.
+		Manajemen memori tanpa pemindahan citra proses antara memori utama dan disk selama ekseskusi.
+	
+		\begin{figure}[ht]
+		\centerline{\includegraphics[width=1\textwidth]{figures/manajemen tanpa swapping.jpg}}
+		\caption{gambar manajemen tanpa swapping.}
+		\label{manajemen tanpa swapping}
+		\end{figure}
 
-\begin{figure}[ht]
-\centerline{\includegraphics[width=1\textwidth]{figures/manajemen tanpa swapping.jpg}}
-\caption{gambar manajemen tanpa swapping.}
-\label{manajemen tanpa swapping}
-\end{figure}
 
+	2. Manajemen dengan swapping.
+		Manajemen memori dengan pemindahan citra proses antara memori utama dan disk selama ekseskusi.
 
-2. Manajemen dengan swapping.
-Manajemen memori dengan pemindahan citra proses antara memori utama dan disk selama ekseskusi.
-
-\begin{figure}[ht]
-\centerline{\includegraphics[width=1\textwidth]{figures/manajemen swapping.jpg}}
-\caption{gambar manajemen swapping.}
-\label{manajemen swapping}
-\end{figure}
+		\begin{figure}[ht]
+		\centerline{\includegraphics[width=1\textwidth]{figures/manajemen swapping.jpg}}
+		\caption{gambar manajemen swapping.}
+		\label{manajemen swapping}
+		\end{figure}
 
 
 b. Manajemen Memori Berdasarkan Alokasi Memori
 
 Terdapat dua cara menempatkan informasi ke dalam memori kerja
 
-1. Alokasi Memori (Contigouos Allocation)
-- Dalam alokasi memori berurutan, setiap proses menempati satu blok
-lokasi memori berurutan tunggal.
-- Keuntungan: sederhana, tidak ada rongga memori
-proses sekuensial yang tersebar dapat dieksekusi dengan cepat.
-- Kekurangan: memori yang sia-sia, tidak bisa dimasukkan saat tidak hadir
-satu blok memori yang cukup.
+	1. Alokasi Memori (Contigouos Allocation)
+		- Dalam alokasi memori berurutan, setiap proses menempati satu blok lokasi memori berurutan tunggal.
+		- Keuntungan: sederhana, tidak ada rongga memori proses sekuensial yang tersebar dapat dieksekusi dengan cepat.
+		- Kekurangan: memori yang sia-sia, tidak bisa dimasukkan saat tidak hadir satu blok memori yang cukup.
 
-2. Alokasi Memori yang Tidak Dihitung (Alokasi Tidak Berdampingan)
-- Program / proses ditempatkan pada beberapa sambaran tersebar,
-tidak harus dekat satu sama lain atau berurutan. biasanya digunakan
-untuk lokasi memori virtual sebagai lokasi halaman-halaman.
-- Keuntungan: sistem dapat memanfaatkan memori utama lebih banyak
-efisien, dan sistem operasi masih bisa memasukkan protes kapan
-jumlah lubang memori cukup untuk memuat proses itu
-akan dieksekusi.
-- Kekurangan: membutuhkan kontrol yang lebih rumit dan
-begitu banyak memori yang tidak terpakai.
+	2. Alokasi Memori yang Tidak Dihitung (Alokasi Tidak Berdampingan)
+		- Program/proses ditempatkan pada beberapa sambaran tersebar, tidak harus dekat satu sama lain atau berurutan. Biasanya digunakan untuk lokasi memori virtual sebagai lokasi halaman-halaman.
+		- Keuntungan: sistem dapat memanfaatkan memori utama lebih banyak efisien, dan sistem operasi masih bisa memasukkan protes kapan jumlah lubang memori cukup untuk memuat proses itu akan dieksekusi.
+		- Kekurangan: membutuhkan kontrol yang lebih rumit dan begitu banyak memori yang tidak terpakai.
 
-Selain itu, ada 2 tipe manajemen memori yang digunakan, yaitu :
-a. Static Memory Management (Manajemen Memori Statis)
-b. Dynamic Memory Management (Manajemen Memori Dinamis)
+	Selain itu, ada 2 tipe manajemen memori yang digunakan, yaitu :
+	a. Static Memory Management (Manajemen Memori Statis)
+	b. Dynamic Memory Management (Manajemen Memori Dinamis)
 
 Tipe manajemen ini memiliki Partition yang berbeda jenis, jumlah memori, penempatan/lokasi, dan ukuran yang diproses
 oleh memori itu sendiri. Dari 2 tipe manajemen memori disebutkan terdapat perbedaan diantara keduanya yaitu :
@@ -145,16 +136,11 @@ Multiprogramming dapat dilakukan dengan cara pemartisian statis, yaitu memori di
 	3. pemakai hanya memusatkan kepada satu memori atau tape.
 	4.suatu mesin di kendalikan oleh suatu program.
 
-	MONOPROGRAMMING:
+		MONOPROGRAMMING:
 
-- Masih digunakan untuk sistem kecil yaitu embedded system (embedded system)
-terpasang atau ditemukan di sistem lain.
-- Sistem tertanam menggunakan mikroprosesor kecil, seperti Intel 8051,
-dll.
-- Sistem ini biasanya untuk mengendalikan satu alat menjadi umum
-kecerdasan (perangkat intelegent) dalam menyediakan fungsi tertentu. Karena
-hanya satu fungsi spesifik, dapat diprogram dalam mikroprosesor dengan memori
-kecil (1-64 Kb).
+	- Masih digunakan untuk sistem kecil yaitu embedded system (embedded system) terpasang atau ditemukan di sistem lain.
+	- Sistem tertanam menggunakan mikroprosesor kecil, seperti Intel 8051.
+	- Sistem ini biasanya untuk mengendalikan satu alat menjadi umum kecerdasan (perangkat intelegent) dalam menyediakan fungsi tertentu. Karena hanya satu fungsi spesifik, dapat diprogram dalam mikroprosesor dengan memori kecil (1-64 Kb).
 
 2. Memproses / mendistribusikan komputasi.
 
@@ -162,7 +148,7 @@ Pengolahan / komputasi terdistribusi adalah Bekerja semua pemrosesan data bersam
 
 Misalnya: komputer yang dirancang untuk tugas proyek
 
-Proses Status
+\subsection {Proses Status}
 
 Ada 5 jenis status berbeda yang mungkin dimiliki oleh proses:
 
@@ -191,31 +177,33 @@ Berikut ini adalah proses 5 proses di atas menyatakan:
 	PROSES CONTROL BLOCK/BLOCKED
 Struktur data yang dipakai oleh OS untuk mengelola suatu proses yaitu Process Control Blok. Hampir semua OS yang sudah modern telah memiliki PBC , tetapi terdapat struktur yang berbeda-beda pada setiap OS tersebut. Process Control Blok juga terdapat informasi tentang suatu proses yaitu sebuah tanda pengenal yang disebut process ID yang sangat unik dan menjadi nomor identitas, status process. Keutamaan di dalam suatu proses merupakan suatu nilai atau besaran yang menunjukan seberapa sering proses yang harus di jalankan oleh prosesor. Proses itu sendiri memiliki prioritas yang lebih tinggi , yang akan dijalankan secara terus-menerus atau dijalankan terlebih dahulu dibandingkan dengan proses yang berprioritas lebih rendah. Sebagai contoh , struktur data yang akan mengendalikan beberapa PCB yaitu process table. Tetapi bisa saja beberapa PCB disimpan pada daftar dalam waktu yang bersamaan . pada process table ini menggambarkan suatu sistem tersebut ketika OS menemukan setiap PCB melalui process ID.
 
+
 \subsection {Multiprogramming dengan pemartisian statis}
 Multiprogramming dapat dilakukan dengan pemartisian statis, yaitu memori dibagi menjadi beberapa sejumlah partisi tetap. Pada partisi-partisi tersebut proses-proses ditempatkan.
 
-MULTIPROGRAMMING
 
-melibatkan banyak pemakai secara simultan sehingga di memori akan terdapat lebih dari satu proses bersamaan. Oleh karena itu dibutuhkan sistem operasi yang mampu mendukung dua kebutuhan tersebut.
+	MULTIPROGRAMMING
 
-Melakukan dua aktivitas :
-- Proteksi memori dengan isolasi ruang-ruang alamat secara disjoint (terpisah).
-- Pemakaian bersama memori.
+	Melibatkan banyak pemakai secara simultan sehingga di memori akan terdapat lebih dari satu proses bersamaan. Oleh karena itu dibutuhkan sistem operasi yang mampu mendukung dua kebutuhan tersebut.
 
-Multiprogramming Static Partitioning
+	Melakukan dua aktivitas :
+	- Proteksi memori dengan isolasi ruang-ruang alamat secara disjoint (terpisah).
+	- Pemakaian bersama memori.
 
-Batasi beberapa alasan:
-a. Sederhanakan pemogram.
-Pemrograman dapat memecah program menjadi dua atau lebih proses.
-b. Untuk dapat memberikan layanan interaktif kepada banyak orang secara bersamaan.
-Anda perlu memiliki lebih dari satu proses mememori
-untuk hasil kinerja yang baik.
-c. Biaya penggunaan sumber daya.
-Jika pada multiprogramming dan prosesnya diblocked (hanya DMA
-yang berfungsi) dan proses lainnya mendapat waktu pemrosesan penjatahan, lalu DMA
-dapat meningkatkan sistem mahal.
-d. Eksekusi lebih murah jika proses besar dipecah menjadi proses yang lebih kecil.
-e. Dapat melakukan sejumlah pekerjaan secara bersamaan.
+a. Multiprogramming Static Partitioning
+
+	Batasi beberapa alasan:
+	a. Sederhanakan pemogram.
+	Pemrograman dapat memecah program menjadi dua atau lebih proses.
+
+	b. Untuk dapat memberikan layanan interaktif kepada banyak orang secara bersamaan. Anda perlu memiliki lebih dari satu proses mememori untuk hasil kinerja yang baik.
+
+	c. Biaya penggunaan sumber daya.
+	Jika pada multiprogramming dan prosesnya diblocked (hanya DMA yang berfungsi) dan proses lainnya mendapat waktu pemrosesan penjatahan, lalu DMA dapat meningkatkan sistem mahal.
+
+	d. Eksekusi lebih murah jika proses besar dipecah menjadi proses yang lebih kecil.
+
+	e. Dapat melakukan sejumlah pekerjaan secara bersamaan.
 
 
 Partisi statis berdasarkan Ukuran
@@ -225,16 +213,10 @@ Partisi terbagi menjadi dua:
 1. Partisi menjadi partisi palsu yang sama (ukuran semua partisi
 memori yang sama), yaitu:
 
-Beberapa proses kurang dari atau sama dengan ukuran partisi
-dimasukkan ke dalam
-partisi tersedia.
+Beberapa proses kurang dari atau sama dengan ukuran partisi dimasukkan ke dalam partisi tersedia.
 Kelemahan:
-- Jika program lebih besar dari partisi yang tersedia, lalu
-Tidak bisa dimuat, tidak bisa dieksekusi. Programmer harus bekerja pada overlay, hanya bagian dari program yang benar-benar dijalankan. Untuk overlay diperlukan sistem operasi yang mendukung swapping.
-- Untuk program yang sangat kecil melebihi ukuran partisi
-set, maka banyak ruang yang tidak terpakai yang terbuang,
-disebut fragmentasi internal. Kelemahan ini dapat diurungkan dengan
-partisi tetap berbeda.
+	- Jika program lebih besar dari partisi yang tersedia, lalu Tidak bisa dimuat, tidak bisa dieksekusi. Programmer harus bekerja pada overlay, hanya bagian dari program yang benar-benar dijalankan. Untuk overlay diperlukan sistem operasi yang mendukung swapping.
+	- Untuk program yang sangat kecil melebihi ukuran partisi set, maka banyak ruang yang tidak terpakai yang terbuang, disebut fragmentasi internal. Kelemahan ini dapat diurungkan dengan partisi tetap berbeda.
 
 2. Pemartisian memiliki ukuran yang berbeda begitu juga ukuran semuapartisi memorinya.
 
@@ -248,31 +230,28 @@ Satu jalur untuk setiap partisi (Berarti banyak jalur untuk seluruh partisi) Pro
 Dampak Positif : Cara ini dapat mengurangi pemborosan memori yang sia-sia digunakan.
 Dampak Negatif : Dapat terjadi penghambatan jalur di suatu partisi sementara jalur yang lainnya masih kosong atau belum terisi.
 
-Satu jalur untuk semua partisi
-Proses-proses diantrikan di satu lajur tunggal untuk semua partisi. Proses tersebut ditempatkan di partisi bebas dengan ukuran paling kecil
-yang dapat memuati jalur tersebut.
+Satu jalur untuk semua partisi Proses-proses diantrikan di satu lajur tunggal untuk semua partisi. Proses tersebut ditempatkan di partisi bebas dengan ukuran paling kecil yang dapat memuati jalur tersebut.
 
 Dampak Positif : Sangat Mudah/Fleksibel serta Implementasi dan Operasi berjalan minimum karena hanya mengatur satu jalur
 Dampak Negatif : Proses tersebut banyak ditempatkan berbagai partisi dan mengalami pemborosan, karena proses kecil diletakkan pada satu jalur besar
 
-Fragmentasi di Partisi Statis
+\subsection {Fragmentasi di Partisi Statis}
 
-Pengertian Fragmentasi :
+Pengertian Fragmentasi:
 Fragmentasi adalah Pemborosan Memori yang terjadi pada suatu gudang penyimpanan.
 
 Fragmentasi di tempat pemartisian lokal/tetap terdiri dari :
 a. Fragmentasi Dalam (Internal)
 Proses ini tidak akan memenuhi partisi yang ditetapkan oleh proses.
 b. Fragmentasi Luar (Eksternal)
-Partisi yang tidak dapat digunakan karena ukuran partisi lebih sedikit atau kecil dibanding ukuran proses yang menunggu di suatu lajur,
-sehingga tidak digunakan atau tidak tersedia.
+Partisi yang tidak dapat digunakan karena ukuran partisi lebih sedikit atau kecil dibanding ukuran proses yang menunggu di suatu lajur, sehingga tidak digunakan atau tidak tersedia.
 
 Fungsi manajemen memori:
 
 Kelola informasi memori yang tidak.
-2. Alokasikan memori ke proses yang diperlukan.
-3. Alokasikan memori dari proses yang telah selesai.
-4. Pindah antara memori utama dan disk.
+1. Alokasikan memori ke proses yang diperlukan.
+2. Alokasikan memori dari proses yang telah selesai.
+3. Pindah antara memori utama dan disk.
 
 Deskripsi Hirarki memori:
 
@@ -281,47 +260,39 @@ Deskripsi Hirarki memori:
 3. Chace memory lebih mahal dari memori utama, cache cache relatif kecil.
 
 
-Address Binding
+Address Binding :
 
-- Sebelum eksekusi, program / proses ada di disk, dan sekarang
-Apa yang perlu dilakukan dalam posisi dalam memori fisik.
+- Sebelum eksekusi, program / proses ada di disk, dan sekarang Apa yang perlu dilakukan dalam posisi dalam memori fisik.
 
-- Alamat pengikatan adalah alamat dari alamat program / proses relatif
-di alamat fisik meori (alamat memori sebenarnya). Bisa bertahan hidup
-dalam salah satu tahapan: kompilasi, pemuatan atau eksekusi
+- Alamat pengikatan adalah alamat dari alamat program / proses relatif di alamat fisik meori (alamat memori sebenarnya). Bisa bertahan hidup dalam salah satu tahapan: kompilasi, pemuatan atau eksekusi.
 
-Program Tahap Kiri
 
-1. Tahap Kompilasi: program sumber (kode sumber) dikompilasi menjadi
-modul objek (kode objek).
-2. Link & load stage: objek modul menggunakan modul objek lain
-menjadi modul beban (eksekusi kode) dan kemudian memuat ke dalam memori
-Akan dieksekusi.
-3. Tahapan eksekusi: bisa juga dinamis
-terhubung dengan perpustakaan penduduk.
+Program Tahap Kiri :
 
-Binding Address At Compilation
+1. Tahap Kompilasi: program sumber (kode sumber) dikompilasi menjadi modul objek (kode objek).
+2. Link & load stage: objek modul menggunakan modul objek lain menjadi modul beban (eksekusi kode) dan kemudian memuat ke dalam memori akan dieksekusi.
+3. Tahapan eksekusi: bisa juga dinamis terhubung dengan perpustakaan penduduk.
 
-1. Jika lokasi proses lebih banyak pada saat ini
-alamat kompilasi dan alamat yang dilewatkan oleh alamat
-fisik.
-2. Namun, jika di tempat itu harus dilakukan rekompilasi
+Binding Address At Compilation :
 
-Address Binding Saat Load
+1. Jika lokasi proses lebih banyak pada saat ini alamat kompilasi dan alamat yang dilewatkan oleh alamat fisik.
+2. Namun, jika di tempat itu harus dilakukan rekompilasi.
+
+Address Binding Saat Load :
 
 1. Kode hasil yang di kompilasi masih sangat menunjuk pada address-address secara relatif, pada saat di load address-adress disubtitusikan dengan alamat fisik berdasarkan relokasi proses yang diterima.
 2. Jika terjadi perubahan pada saat relokasi maka kode yang di-load di ulang kembali.
 
-Address Binding Saat Eksekusi
+Address Binding Saat Eksekusi :
 
 1. Hal binding ini memungkinkan untuk pemindahan suatu proses dari suatu tempat ke tempat yang lainnya selama berjalan.
-2.Diperlukan adanya dukungan perangkat keras untuk pemetaan address
+2. Diperlukan adanya dukungan perangkat keras untuk pemetaan address.
 
 PCB dibagi dengan 3 kelompok:
 
-- Data identifikasi proses; selalu sertakan pengidentifikasi unik untuk proses (hampir selalu nilai integer) dan, dalam sistem multi-pengguna-multitasking, data seperti pengenal proses induk, pengenal pengguna, pengenal grup pengguna, dll. Proses ini sangat relevan, seperti sering digunakan untuk tabel OS referensi silang, misalnya dimungkinkan untuk mengidentifikasi proses menggunakan perangkat I / O, atau wilayah memori.
+- Data identifikasi proses: Selalu sertakan pengidentifikasi unik untuk proses (hampir selalu nilai integer) dan, dalam sistem multi-pengguna-multitasking, data seperti pengenal proses induk, pengenal pengguna, pengenal grup pengguna, dll. Proses ini sangat relevan, seperti sering digunakan untuk tabel OS referensi silang, misalnya dimungkinkan untuk mengidentifikasi proses menggunakan perangkat I / O, atau wilayah memori.
 
-- Data status prosesor; adalah sepotong informasi yang menentukan status suatu proses ketika proses ditangguhkan, memungkinkan OS untuk memulai kembali proses di masa depan dan masih dapat melaksanakannya dengan benar. Itu selalu termasuk isi register CPU tujuan.
+- Data status prosesor: Adalah sepotong informasi yang menentukan status suatu proses ketika proses ditangguhkan, memungkinkan OS untuk memulai kembali proses di masa depan dan masih dapat melaksanakannya dengan benar. Itu selalu termasuk isi register CPU tujuan.
 
-- Data kontrol proses; digunakan oleh OS untuk mengelola proses itu sendiri.
+- Data kontrol proses: Digunakan oleh OS untuk mengelola proses itu sendiri.
 
