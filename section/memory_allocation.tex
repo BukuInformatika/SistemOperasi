@@ -36,6 +36,23 @@ Manajemen memori merupakan salah satu bagian terpenting pada sistem operasi. Mem
 
 Jenis memori ada 2 yaitu RAM dan ROM, RAM adalah Random Akses Memori yang isi penyimpanannya dapat diakses dalam waktu yang tetap. ROM adalah Read Only Memori adalah penyimpanan data yang permanen. sedangkan jenis-jenis memori eksternal ada 2 yaitu berdasarkan karakteristik bahan dan berdasarkan jenis akses data. Tentunya hal tersebut tergantung space dan ruang penyimpanan yang ada.
 
+1. RAM
+
+{figure}[ht]
+\centerline{\includegraphics[width=1\textwidth]{figures/RandomAksesMemori.jpg}}
+\caption{gambar RandomAksesMemori}
+\label{RandomAksesMemori}
+\end{figure}
+
+2. ROM
+
+{figure}[ht]
+\centerline{\includegraphics[width=1\textwidth]{figures/rom.jpg}}
+\caption{gambar rom}
+\label{rom}
+\end{figure}
+
+
 \subsection {Manajemen Proses}
 
 A. Proses
@@ -175,7 +192,7 @@ Berikut ini adalah proses 5 proses di atas menyatakan:
 	proses sedang dijalankan oleh SO ketika proses telah selesai atau dibatalkan. Ini terjadi karena proses self-making telah berhenti.
 
 	PROSES CONTROL BLOCK/BLOCKED
-Struktur data yang dipakai oleh OS untuk mengelola suatu proses yaitu Process Control Blok. Hampir semua OS yang sudah modern telah memiliki PBC , tetapi terdapat struktur yang berbeda-beda pada setiap OS tersebut. Process Control Blok juga terdapat informasi tentang suatu proses yaitu sebuah tanda pengenal yang disebut process ID yang sangat unik dan menjadi nomor identitas, status process. Keutamaan di dalam suatu proses merupakan suatu nilai atau besaran yang menunjukan seberapa sering proses yang harus di jalankan oleh prosesor. Proses itu sendiri memiliki prioritas yang lebih tinggi , yang akan dijalankan secara terus-menerus atau dijalankan terlebih dahulu dibandingkan dengan proses yang berprioritas lebih rendah. Sebagai contoh , struktur data yang akan mengendalikan beberapa PCB yaitu process table. Tetapi bisa saja beberapa PCB disimpan pada daftar dalam waktu yang bersamaan . pada process table ini menggambarkan suatu sistem tersebut ketika OS menemukan setiap PCB melalui process ID.
+	Struktur data yang dipakai oleh OS untuk mengelola suatu proses yaitu Process Control Blok. Hampir semua OS yang sudah modern telah memiliki PBC , tetapi terdapat struktur yang berbeda-beda pada setiap OS tersebut. Process Control Blok juga terdapat informasi tentang suatu proses yaitu sebuah tanda pengenal yang disebut process ID yang sangat unik dan menjadi nomor identitas, status process. Keutamaan di dalam suatu proses merupakan suatu nilai atau besaran yang menunjukan seberapa sering proses yang harus di jalankan oleh prosesor. Proses itu sendiri memiliki prioritas yang lebih tinggi , yang akan dijalankan secara terus-menerus atau dijalankan terlebih dahulu dibandingkan dengan proses yang berprioritas lebih rendah. Sebagai contoh , struktur data yang akan mengendalikan beberapa PCB yaitu process table. Tetapi bisa saja beberapa PCB disimpan pada daftar dalam waktu yang bersamaan . pada process table ini menggambarkan suatu sistem tersebut ketika OS menemukan setiap PCB melalui process ID.
 
 
 \subsection {Multiprogramming dengan pemartisian statis}
