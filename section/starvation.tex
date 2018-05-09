@@ -1,31 +1,34 @@
-\section{Starvation} 
+\section{Starvation}
+\subsection{Definisi}
 Suatu kondisi yang biasanya terjadi setelah deadlock. Progres deadlock yang terjadi dapat mengakibatkan kekurangan resource, maka  yang akan terjadi deadlock tidak akan pernah mendapat resource yang dibutuhkan
-sehingga dapat mengakibatkan suatu kejadian, yaitu “starvation” atau kelaparan. Namun, starvation juga bisa terjadi tanpa deadlock.
-Hal ini ketika terdapat kesalahan dalam sistem sehingga terjadi ketimpangan dalam pembagian resouce. Suatu proses selalu mendapatkan resource, sedangkan proses yang lain tidak pernah mendapatkannya
-tarvation adalah kondisi yang biasanya terjadi setelah deadlock. Proses yang kekurangan resource (karena terjadi deadlock) tidak akan pernah mendapat resource yang dibutuhkan sehingga mengalami starvation (kelaparan). Namun, starvation juga bisa terjadi tanpa deadlock. Hal ini ketika terdapat kesalahan dalam sistem sehingga terjadi ketimpangan dalam pembagian resouce. Satu proses selalu mendapat resource, sedangkan proses yang lain tidak pernah mendapatkannya
-
-\section{Algoritma Starvation}
+sehingga dapat mengakibatkan suatu kejadian, yaitu “starvation” atau kelaparan.  
+\cite{james1999method} Sistem computer dengan processor ganda memuat simpul pertama dan simpul kedua dipasangkan pada sebuah bus respont yang terpisah, dimana simpul pertama dan kedua berkomunikasi dengan mengirimkan permintaan paket pada bus respon terpisah.
+Ketika kesalahan terjadi dalam sebuah sistem,maka akan terjadi ketimpangan dalam pembagian sumber daya karena pada suatu proses selalu dibutuhkannya pendapatan resource, sedangkan proses yang lain tidak pernah mendapatkannya
+starvation adalah kondisi yang biasanya terjadi setelah deadlock. Proses yang kekurangan resource (karena terjadi deadlock) tidak akan pernah mendapat resource yang dibutuhkan sehingga mengalami starvation (kelaparan). Starvation bisa terjadi tanpa deadlock saat terdapat kesalahan pada sistem sehingga terjadi ketimpangan dalam pembagian sumberdaya karena pada suatu proses selalu mendapat sebuah sumber daya, sedangkan proses yang lain tidak pernah mendapatkannya
+\subsection{Algoritma Starvation}
 Starvation terjadi pada proses proses penjadwalan yang menggunakan prinsip gproses yang paling cepat diselesaikan didahulukanh, seperti pada Shortest Job First atau yang biasa di singkat SJF dan Penjadwalan Prioritas.
-Logikanya, Misalkan saya mempunyai banyak sekali kebutuhan, saya akan memilihnya mana yang didahulukan berdasarkan sesuatu.
-
-\section {Menghindari Starvation}
+Secara logis, misalkan individu mempunyai banyak sekali kebutuhan, maka individu tersebut akan memilih mana yang didahulukan berdasarkan sesuatu hal yang dibutuhkan.
+\section{Teknik menghadapi starvation}
+\subsection {Menghindari Starvation}
 Ada beberapa cara untuk mengatasi Starvation, salah satunya dengan Aging,  proses awal yang ada diberi urutan
-(N) pemrosesan dengan rumus N = ( P+T ) / P. N maksimum akan mulai dikerjakan dan proses yang lain dinaikkan tingkat urutan prosesnya agar nanti jika ada proses lain yang masuk, proses terdahulu mendapatkan bagian resource dan dapat dikerjakan.
+(N) pemrosesan dengan rumus : 
+\begin{verbatim}
+N = ( P+T ) / P.
+\end{verbatim}
 
-Round Robin , adalah proses yang akan dimasukkan ke dalam antrian menurut proses kedatangannya. Dalam penyelesainnya, suatu proses tidak akan langsung selesai jika waktu yang dibutuhkan melebihi waktu kuantum yang diberikan.
 
+N maksimum akan diproses dan proses lainnya akan dinaikkan tingkat urutan prosesnya supaya nanti saat ada proses lain yang masuk, proses sebelumnya akan mendapatkan bagian sumberdaya dan dapat diproses.
+Round Robin , adalah proses yang akan dimasukkan ke dalam antrian menurut proses kedatangannya. Suatu proses tidak akan selesai dengan cepat jika waktu yang dibutuhkan melebihi waktu yang sudah diberikan.
 Waktu kuantum itu sendiri adalah waktu yang telah diberikan untuk menyelesaikan suatu proses. Ketika suatu proses telah mencapai batas waktu kuantum, sisa dari proses tersebut dikembalikan ke antrian paling belakang dan sumber-sumber data dipindahkan ke proses selanjutnya. Maka dengan cara ini, semua proses yang mengantri akan mendapatkan sumber-sumber data secara bergantian ( tidak ada proses yang memonopoli resource ) sehingga semua proses dapat diselesaikan.
-
-\section {Menghambat Starvation dengan Disclosed}
+\subsection {Menghambat Starvation dengan Disclosed}
 Disclosed adalah menghambat proces Starvation dalam Sistem Operasi multitasking dengan menyediakan tipe pertama dari event penjadwalan pada interval waktu periodik, menyediakan tipe kedua dari event penjadwalan kedua sebagai tanggapan atas proses yang berjalan. Secara sukarela melepaskan prosesor dan, sebagai tanggapan atas acara penjadwalan menggantikan proses lama dengan yang baru, jika proses lama telah berjalan selama lebih dari satu jumlah waktu yang telah ditentukan. Sistem dijelaskan di sini menyediakan kernel kecil yang dapat dijalankan pada berbagai platform perangkat keras, seperti berbasis PowerPC Papan adaptor Symmetrix digunakan dalam Penyimpanan data Symmetrix perangkat yang disediakan oleh EMC Corporation of Hopkinton, Mass. Kode inti kernel dapat ditulis untuk target umum platform, seperti arsitektur PowerPC. Sejak Pow Modul spesifik implementasi erPC didefinisikan dengan baik, sistem mungkin cukup portabel antara prosesor PowerPC (seperti 8260 dan 750)
-
-\section{Ilustrasi}
+\subsection{Ilustrasi}
 \begin {itemize}
 	\item Terdapat tiga proses, yaitu Proses1, Proses2 dan Proses3.
 	\item Proses1, Proses2 dan Proses3 memerlukan pengaksesan sumber daya R secara periodik Skenario berikut terjadi :
 	\item Proses1 sedang diberi sumber daya R sedangkan Proses2 dan Proses3 diblocked menunggu sumber daya R.
 	\item Ketika Proses1 keluar dari critical section, maka Proses2 dan Proses3 diijinkan mengakses R.
 	\item Asumsi Proses3 diberi hak akses, kemudian setelah selesai, hak akses kembalidiberikan ke Proses1 yang saat itu kembali membutuhkan sumber daya R.
-	\item Jika pemberian hak akses bergantian terus-menerus antara Proses1 dan Proses3,  maka Proses2 tidak pernah memperoleh pengaksesan sumber daya R. Dalam kondisi ini memang tidak terjadi deadlock, hanya saja Proses2 mengalami starvation (tidak ada kesempatan untuk dilayani).
+	\item Jika pemberian hak akses bergantian terus-menerus antara Proses pertama dan Proses ketiga,  maka Proses kedua tidak akan mendapat akses sumber daya. Dalam kondisi ini memang tidak terjadi deadlock, hanya saja Proses kedua mengalami starvation atau tidak mendapat pelayanan yang dibutuhkan.
 \end{itemize}
  
