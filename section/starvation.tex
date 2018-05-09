@@ -1,9 +1,12 @@
 %Nama Kelompok: Sistem_Operasi_Starvation
 %Kelas: D4 TI 1B
+%Anggota : 
 %Kevin Natanael Nainggolan(1174059) 
 %Luthfi Muhammad Nabil(1174035)
 %Salwaa Tania(1174047)
 %Surya Pandu Prananda(1174036)
+%Penilai : 
+
 
 \section{Starvation}
 
@@ -16,7 +19,7 @@
 
 \subsection{Definisi}
 Suatu kondisi yang biasanya terjadi setelah deadlock. Progres deadlock yang terjadi dapat mengakibatkan kekurangan resource, maka  yang akan terjadi deadlock tidak akan pernah mendapat resource yang dibutuhkan
-sehingga dapat mengakibatkan suatu kejadian, yaitu “starvation” atau kelaparan, Starvation berbarengan dengan deadlock sesuai dengan gambar \ref{starvationvsdeadlock}.  
+sehingga dapat mengakibatkan suatu kejadian, yaitu â€œstarvationâ€ atau kelaparan, Starvation berbarengan dengan deadlock sesuai dengan gambar \ref{starvationvsdeadlock}.  
 \cite{james1999method} Sistem computer dengan processor ganda memuat simpul pertama dan simpul kedua dipasangkan pada sebuah bus respont yang terpisah, dimana simpul pertama dan kedua berkomunikasi dengan mengirimkan permintaan paket pada bus respon terpisah.
 Ketika kesalahan terjadi dalam sebuah sistem,maka akan terjadi ketimpangan dalam pembagian sumber daya karena pada suatu proses selalu dibutuhkannya pendapatan resource, sedangkan proses yang lain tidak pernah mendapatkannya
 starvation adalah kondisi yang biasanya terjadi setelah deadlock. Proses yang kekurangan sumber daya tidak akan mendapat sumberdaya yang dibutuhkan yang menjadikan sistem mengalami starvation . Starvation bisa terjadi tanpa deadlock saat terdapat kesalahan pada sistem sehingga terjadi ketimpangan dalam pembagian sumberdaya karena pada suatu proses selalu mendapat sebuah sumber daya, sedangkan proses yang lain tidak pernah mendapatkannya
@@ -38,7 +41,7 @@ Waktu kuantum itu sendiri adalah waktu yang telah diberikan untuk menyelesaikan 
 \cite{chalmer2004inhibiting} Disclosed adalah menghambat proces Starvation dalam Sistem Operasi multitasking dengan menyediakan tipe pertama dari event penjadwalan pada interval waktu periodik, menyediakan tipe kedua dari event penjadwalan kedua sebagai tanggapan atas proses yang berjalan. Secara sukarela melepaskan prosesor dan, sebagai tanggapan atas acara penjadwalan menggantikan proses lama dengan yang baru, jika proses lama telah berjalan selama lebih dari satu jumlah waktu yang telah ditentukan. Sistem dijelaskan di sini menyediakan kernel kecil yang dapat dijalankan pada berbagai platform perangkat keras, seperti berbasis PowerPC Papan adaptor Symmetrix digunakan dalam Penyimpanan data Symmetrix perangkat yang disediakan oleh EMC Corporation of Hopkinton, Mass. Kode inti kernel dapat ditulis untuk target umum platform, seperti arsitektur PowerPC. Sejak Pow Modul spesifik implementasi erPC didefinisikan dengan baik, sistem mungkin cukup portabel antara prosesor PowerPC (seperti 8260 dan 750)
 \subsection{Ilustrasi}
 
-Bounded Waiting memiliki maksimum jumlah waktu yang diijinkan oleh proses lain untuk memasuki critical section atau disebut juga bagian penting  setelah sebuah proses membuat permintaan untuk memasuki critical section-nya dan sebelum permintaan dikabulkan. Batasan–batasan itu biasanya menjamin proses dapat mengakses ke “critical section” (tidak mengalami starvation: proses se-olah berhenti menunggu request akses ke critical section diperbolehkan).
+Bounded Waiting memiliki maksimum jumlah waktu yang diijinkan oleh proses lain untuk memasuki critical section atau disebut juga bagian penting  setelah sebuah proses membuat permintaan untuk memasuki critical section-nya dan sebelum permintaan dikabulkan. Batasanâ€“batasan itu biasanya menjamin proses dapat mengakses ke â€œcritical sectionâ€ (tidak mengalami starvation: proses se-olah berhenti menunggu request akses ke critical section diperbolehkan).
 
 
 \section {Menghambat Starvation dengan Disclosed}
