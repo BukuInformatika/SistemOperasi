@@ -24,17 +24,19 @@
 			Contohnya komputer yang dirancang untuk melaksanakan tugas-tugas proyek.
 		\end{itemize}
 		
-		Fungsi fungsi sistem operasi:
-1. Resource manager, pengolahan sumber daya dan mengalokasikan.
-2. Interface atau tatap muka, sebagai perantara antara pengguna dengan perangkat keras.
-3. Coordinator, mengkoordinasi fasilitas sehingga aktifitas yang komplek dapat diatur..
+	\subsection{Fungsi fungsi sistem operasi}
+		\begin{enumerate}
+			\item Resource manager, pengolahan sumber daya dan mengalokasikan.
+			\item Interface atau tatap muka, sebagai perantara antara pengguna dengan perangkat keras.
+			\item Coordinator, mengkoordinasi fasilitas sehingga aktifitas yang komplek dapat diatur..
+		\end{enumerate}
 		
 	\subsection{Status proses}
 	Terdapat 5 macam jenis status yang mungkin dimiliki oleh suatu proses :
 	\begin{enumerate}
 		\item New, yaitu status yang dimiliki pada saat proses baru saja terjadi.
 		\item Ready, yaitu status dimana proses siap untuk dieksekusi pada giliran berikutnya.
-		\item Running, yaitu status dimana saat ini proses sedang dieksekusi oleh prosesor
+		\item Running, yaitu status suatu proses dimana saat ini proses tersebut sedang dieksekusi oleh prosesor
 		\item Waiting, yaitu status dimana proses yang tidak bisa dijalankan di saat prosesor sudah siap, status yang dimiliki pada saat proses menunggu suatu sebuah event seperti I/O
 		\item Terminated, yaitu status yang dimiliki pada saat proses telah selesai dieksekusi
 	\end{enumerate}
@@ -46,7 +48,7 @@
 		\item Ready ke running
 		Di saat sedang memilih proses yang akan dioperasikan, sistem operasi akan memilih salah satu proses yang berada didalam keadaan status ready.
 		\item Running ke waiting
-		Suatu proses dimasukkan dalam keadaan status waiting jika proses itu meminta sesuatu yang dapat menyebabkannya harus menunggu. Sebuah request ke sistem operasi pada umumnya merupakan bentuk panggilan dari layanan sistem (panggilan dari program yang sedang beroperasi ke prosedur yang sedang beroperasi ke prosedur yang merupakan bagian kode sistem operasi) misalnya seperti sebuah proses bisa meminta suatu layanan dari sistem operasi yang tidak siap dilakukan sistem opersi dengan segera. Atau proses dapat menginisiasi suatu aksi, misalnya operasi I/O, yang harus diselesaikan sebelum proses itu melanjutkan operasinya. Pada saat proses saling berkomunikasi dengan proses lainnya, suatu proses bisa diblokir jika sedang menunggu proses lainnya untuk menyediakan input atau sedang menunggu pesan dari proses lainnya.
+		Suatu proses dimasukkan dalam keadaan status waiting jika proses itu meminta sesuatu yang dapat menyebabkannya harus menunggu. Sebuah request ke sistem operasi yang pada umumnya merupakan bentuk panggilan dari layanan sistem (panggilan dari program yang sedang beroperasi ke dalam suatu prosedur yang merupakan bagian kode sistem operasi) misalnya seperti sebuah proses yang bisa meminta suatu layanan dari sistem operasi yang tidak siap dilakukan oleh sistem opersi dengan segera. Atau proses yang bisa menginisiasi suatu aksi, seperti misalnya operasi I/O, yang seharusnya bisa diselesaikan sebelum proses itu melanjutkan operasinya. Pada saat proses saling melakukan komunikasi dengan proses yang lainnya, suatu proses bisa diblokir jika sedang menunggu proses lainnya untuk menyediakan input.
 		\item Running ke ready
 		Pada umumnya alasan transisi ini ialah dimana sebuah proses yang lagi berjalan sudah mencapai batas waktu maksimum yang telah diizinkan bagi instruksi yang tidak diinterupsi. Terdapat beberapa alasan yang menyebabkan transisi ini terjadi, yang tidak diimplementasikan oleh setiap sistem operasi. Misalnya apabila sistem operasi meng-assign tingkat prioritas yang berbeda pada beberapa proses yang berlainan, suatu proses bisa diambil lebih dulu.
 		\item Waiting ke ready
@@ -68,8 +70,8 @@
 	\subsection{Contoh dari status proses}
 	Setiap proses pasti mempunyai status yang harus diperhatikan oleh sistem operasi yang akan dicatat dalam berbagai macam tabel yang saling berhubungan, yaitu :
 		\begin{itemize}
-			\item Tabel informasi manajemen memori, Digunakan untuk menjaga keutuhan suatu memori utama dan memori sekunder yang akan menyimpan informasi.
-			\item Tabel informasi manajemen masukan atau keluaran, Digunakan untuk mengelola sebuah perangkat masukan atau keluaran, yang dimana perangkat tersebut akan digunakan oleh proses tertentu, sehingga harus dijaga supaya proses yang lainnya tidak akan memakainya. Sistem operasi harus mengetahui status operasi masukan atau keluaran dan lokasi suatu memori utama yang akan digunakan untuk melakukan transfer data.
+			\item Tabel informasi manajemen memori, Digunakan untuk menjaga keutuhan dari suatu memori utama dan memori sekunder yang akan menyimpan suatu informasi.
+			\item Tabel informasi manajemen masukan atau keluaran, Digunakan untuk melakukan pengelolan sebuah perangkat masukan atau keluaran, yang dimana perangkat tersebut akan digunakan oleh proses yang tertentu, sehingga harus dijaga supaya proses yang lainnya tidak akan memakainya. Sistem operasi harus mengetahui status operasi masukan atau keluaran dan lokasi suatu memori utama yang akan digunakan untuk melakukan transfer data.
 			\item Tabel informasi sistem file, Tabel dimana yang berisikan mengenai informasi lokasi pada memori sekunder, informasi ekstensi file, informasi status pada saat itu dan menyimpan atribut-atribut file yang lainnya.
 			\item Tabel proses, Digunakan untuk mengelola informasi suatu proses pada sistem operasi, yang berlokasi di memori, atribut proses dan status lainnya.
 		\end{itemize}
