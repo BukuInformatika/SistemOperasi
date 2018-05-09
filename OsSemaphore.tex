@@ -24,6 +24,18 @@
 		Pada semaphore ini harus diketahui bahwa, ada beberapa jenis dari counting semaphore yang salah satu jenisnya adalah semafor yang tidak bisa mencapai nilai negatif dan jenis yang lain adalah semaphore yang dapat mencapai nilai negatif. 
 		Solusi dari Pembuatan Counting Semaphore adalah Binary Semaphore. Pembuatan counting semaphore banyak dilakukan para programmer untuk memenuhi alat sinkronisasi yang sesuai dengannya. 
 		
+		Operasi standarnya dalam bahasa pemrograman C :
+		
+		\begin{algorithm}
+			void kunci(int sem_value) {
+				while(sem_value <= 0);
+				sem_value–;
+			}
+			void buka(int sem_value) {
+				sem_value++;
+			}
+		\end{algorithm}
+		
 	\subsection{Prinsip Semaphore}
 	
 		\begin{enumerate}
