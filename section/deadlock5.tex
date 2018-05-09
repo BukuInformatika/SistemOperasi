@@ -1,0 +1,54 @@
+%Nama Kelompok: Sistem_Operasi_Deadlock
+%Kelas: D4 TI 1B
+%Alit Fajar Kurniawan 
+%Muhammad Iqbal Panggabean
+%Muhammad Afra Faris
+%Khadijah Khasanah Puteri Harahap
+
+\section {DEADLOCK}
+
+\subsection {Deadlock}
+\subsubsection {Pengertian Deadlock}
+	Pada kesempatan ini saya akan menjelaskan tentang definisi Deadlock, Deadlock merupakan suatu kondisi dimana 2 proses atau lebih, saling menunggu proses untuk melepaskan sumber daya atau resources yang sedang digunakan. Mudahnya, ada proses A yang memperlukan suatu resources, tetapi resources tersebut sedang digunakan oleh proses lain. Untuk lebih paham tentang definisi deadlock dan cara mengatasinya, anda dapat membandingkan dengan situasi berikut. yang pertama, Dalam kehidupan, tentunya anda membutuhkan pekerjaan. Untuk memperoleh pekerjaan, anda harus mempunyai pengalaman, untuk mempunyai pengalaman anda harus bekerja.
+	
+\subsection {Masalah Deadlock dan Metode Penanganan Deadlock}
+\subsubsection {Masalah Deadlock}
+	Deadlock merupakan dampak pengaruh dari sinkronisasi, yaitu dimana satu variabel yang digunakan oleh dua proses yang berbeda. Deadlock selalu tidak terlepas dari yang namanya sumber daya, karena hampir secara keseluruhan merupakan masalah mengenai sebuah sumber daya yang digunakan secara bersamaan. Sebuah Kelompok Proses yang diblok atau diblokir, dimana setiap proses memegang sebuah resource dan kemudian menunggu resource lain dari proses yang berada didalam proses yang sedang diBlok tersebut, biasanya dari semua proses-proses atau resource yang non preemptive.
+	
+\subsubsection {Metode Penanganan}
+	Ada tiga Metode penanganan Deadlock:
+	Yang Pertama yaitu, anda harus menggunakan satu protokol yang dapat membuat anda yakin bahwa sistem tersebut tidak akan pernah mengalami kejadian deadlock. Metode ini bisa disebut dengan Deadlock Prevention atau Avoidance.
+	
+	Yang Kedua, anda harus memberikan izin sistem untuk mengalami kejadian deadlock, namun setelah terjadinya deadlock anda harus dengan cepat segera untuk memperbaiki sistem yang mengalami deadlock tersebut. Metode ini biasanya disebut dengan Deadlock detection and recovery.
+	
+	Dan yang terakhir, anda hanya mengabaikan semua permasalahan yang terjadi secara bersamaan, dan kemudian menganggap bahwa deadlock tidak akan terjadi, metode ini digunakan dalam berbagai sistem operasi komputer, termasuk windows dan unix.
+	
+	
+\subsection {Deadlock Detection}
+	1. Pendeteksian secara Algoritma, yaitu dengan cara kita mengetahui jika terjadinya deadlock, deadlock terjadi jika suatu permintaan tidak dapat ditangani segera.
+	
+	2. Recovery atau Pemulihan, yaitu yang pertama menggagalkan semua proses deadlock, yang kedua mem backup semua proses yang deadlock dan kemudian silahkan melakukan restart di semua proses yang sedang terjadi, yang ketiga menggagalkan semua proses yang deadlock secara berurutan sehingga tidak akan terjadi lagi deadock, dan yang terakhir yaitu menggagalkan pengalokasian resource secara berurutan hingga tidak ada deadlock.
+	
+\subsection {Beberapa hal yang terjadi ketika mendeteksi adanya deadlock}
+	1. Permintaan sumber daya dikabulkan selama memungkinkan
+	2. Sistem operasi melakukan scanning apakah ada kondisi circular wait secara peiodik.
+	3. Pemeriksaan dilakukan setiap ada sumber daya yang hendak digunakan.
+	4. memeriksa dengan algoritma tertentu.
+	
+\subsection {Beberapa jalan untuk kembali dari deadlock}
+	1. Lewat Preemption, yaitu dengan jauhkan sumber daya dari pemakainya untuk sementara waktu, tujuannya untuk memberikannya pada proses lain. strategi dengan memberikannya kesempatan pada proses lain dengan tanpa diketahui oleh pemilik dari sumber daya itu dan tergantung juga dari sifat sumber daya itu sendiri.
+	
+	2. Lewat melacak kembali, setelah melakukan prosesn dari preemption tersebut maka secara otomatis proses utama yang diambil sumber dayanya akan stop dan tidak akan melanjutkan prosesnya, oleh karena itu dibutuhkan langkah untuk dapat kembali pada keadaan aman, tetapi untuk menentukan keadaan aman tersebut sangatlah susah.
+	
+	3. Mematikan proses yang menyebabkan deadlock, ini merupakan cara yang sangat umum digunakan yaitu dengan cara mematikan semua proses yang mengalami deadlock.
+	
+	4. Menghindari deadlock, pada sistem permintaan untuk sumberdaya biasanya hanya dilakukan sekali saja, sistem harus sudah dapat mengenali bahwa sistem itu aman atau tidak.
+	
+\subsection {Kondisi untuk terjadinya deadlock}
+	1. Mutual exclusion (mutual exclusion conditional) : Hanya boleh ada satu proses yang boleh memakai sebuah sumber daya, dan proses lainnya yang ingin menggunakan sumber daya tersebut harus menunggu sampai sumber daya yang tadi dilepaskan atau tidak ada proses yang menggunakan sumber daya tersebut .
+	
+	2. Kondisi hold and wait (genggam dan tunggu) : Hold and wait atau bisa dikatakan genggam dan tunggu. Proses yang sedang menggunakan sumber daya dapat meminta sumber daya lagi . Maksudnya ialah menunggu sampai benar-benar sumber daya yang diminta tidak dipakai oleh proses lain . Hal ini bisa menyebabkan kelaparan sumber daya karena bisa saja sebuah proses tidak mendapat suatu sumber daya dalam waktu yang lama.
+	
+	3. Kondisi non-preemption (non-preemption condition) : Sebuah sumber daya yang ada dalam sebuah proses, dan tidak boleh diambil begitu saja oleh proses lainnya. cara untuk mendapatkan sumber daya itu,harus dilepaskan terlebih dahulu oleh proses yang memegang nya . selain itu ,seluruh proses yang menunggu dan yang mempersilahkan hanyalah proses yang memiliki sumber daya yang boleh berjalan .
+	
+	4. Kondisi menunggu secara sirkuler (circular wait condition) : Kondisi yang seperti , ini bisa dibilang mirip seperti rantai . Alasan kondisi ini bisa dibilang seperti rantai , yaitu keadaan dimana sebuah proses membutuhkan sumber daya yang dipegang proses berikutnya . 
