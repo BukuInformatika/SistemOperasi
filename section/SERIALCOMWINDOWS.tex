@@ -1,0 +1,21 @@
+\section{Serial Com Windows}
+ \subsection{Membuka Port}
+	\begin{enumerate} 
+	   Dokumentasi SDK Platform menyatakan bahwa ketika membuka port komunikasi, panggilan ke CreateFile memiliki persyaratan berikut:
+		\item 1. fdwShareMode harus nol. Port komunikasi tidak dapat dibagikan dengan cara yang sama seperti file yang dibagikan. Aplikasi yang menggunakan TAPI dapat menggunakan fungsi TAPI untuk memfasilitasi berbagi sumber daya antar aplikasi. Untuk aplikasi yang tidak menggunakan TAPI, penanganan warisan atau duplikasi diperlukan untuk berbagi port komunikasi. Berurusan dengan duplikat berada di luar cakupan artikel ini; silakan merujuk ke dokumentasi Platform SDK untuk informasi lebih lanjut.
+		\item 2. fdwCreate harus menentukan bendera OPEN_EXISTING.
+		\item 3. hTemplateFile parameter harus NULL.
+	   Satu hal yang perlu diperhatikan tentang nama port adalah bahwa mereka secara tradisional telah COM1, COM2, COM3, atau COM4. Windows API tidak menyediakan mekanisme apa pun untuk menentukan port apa yang ada pada sistem. Beberapa sistem bahkan memiliki lebih banyak port daripada maksimum tradisional empat. Vendor perangkat keras dan pembuat perangkat serial-driver bebas memberi nama port apa pun yang mereka sukai. Untuk alasan ini, yang terbaik adalah pengguna memiliki kemampuan untuk menentukan nama port yang ingin mereka gunakan. Jika port tidak ada, kesalahan akan terjadi (ERROR_FILE_NOT_FOUND) setelah mencoba membuka port, dan pengguna harus diberitahu bahwa port tidak tersedia.
+	\end{enumerate}
+	\begin{verbatim}
+		HANDLE hComm;
+		hComm = CreateFile( gszPort,  
+                    GENERIC_READ | GENERIC_WRITE, 
+                    0, 
+                    0, 
+                    OPEN_EXISTING,
+                    FILE_FLAG_OVERLAPPED,
+                    0);
+		if (hComm == INVALID_HANDLE_VALUE)
+			// error opening port; abort
+	\end{verbatim}
