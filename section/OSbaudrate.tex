@@ -35,6 +35,9 @@ Baud rate mengindikasikan seberapa cepat data dikirim melalui komunikasi berturu
 \subsection{Fungsi Baud Rate}
 Baud rate dideteksi untuk mengetahui keluaran dari perangkat yang memerlukan basis serial untuk mengecek kecepatan data dan data itu sendiri. \cite{anderson1973method} Secara singkat, mendeteksi baud rate terdiri dari menentukan kecepatan transmisi dari perangkat yang mendapatkan sinyal karena perangkat penerima dapat dengan tepat mendecode sinyal dan mengkonversikannya ke perangkat. Baud rate memberitahu kecepatan data yang dapat dikirim melalui komunikasi serial. Dalam bps sendiri, berarti diketahui berapa kecepatan data yang dialirkan. Biasanya baud rate yang dipakai adalah 9600. Semakin besar baud rate yang dipakai, semakin tinggi kecepatan transfer data. Tetapi makin tinggi kecepatan maka makin beresiko mengalami error data. Untuk itu, disarankan untuk memakai baud rate standar atau dibawah 115.201.
 
+\subsection{ Perbedaan baud rate dengan bit rate }
+Kedua nya ini digunakan untuk mengukur kecepatan dalam konektivitas . Baud rate adalah ukuran berapa banyak simbol yang dikirimkan setiap sinyal . Simbol adalah setiap perubahan bentuk gelombang atau pulsa elektrik yang digunakan untuk mentransmisikan data sepanjang medium . Di sisi lain , bitrate adalah ukuran jumlah bit yang ditransmisikan .
+
 \subsection{Framing Data}
 Framing data adalah teknik penyusunan data untuk dikirim melalui komunikasi serial. Pada gambar \ref{serialframe}, Data yang dikirim melalui komunikasi serial biasanya dari 5 sampai 9 bit. Pada arduino, data yang dipakai berukuran 8 bit. Urutan dari pengiriman data biasanya mengikuti endian tertentu. seperti pengiriman most-significant-bit atau least-significant-bit terlebih dahulu yang dikirim.
 \subsubsection{Kit Framing Data}
