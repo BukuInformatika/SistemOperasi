@@ -29,3 +29,20 @@
 						root.after(200,task)
 						root.after(200,task)
 						root.mainloop()
+					\end{verbatim}
+			\item Dibawah ini adalah hasilnya :
+			akan muncul window:
+			dan di Python Shell akan muncul :
+		\end{enumerate}
+		
+		Penjelasannya : 
+		\begin{itemize}
+			\item import serial
+			bagian diatas ini mempunyai fungsi untuk melibatkan module serial sehingga dapat digunakan pada Python.
+			
+			\item \begin{verbatim} ser = serial.Serial(‘com10’,9600,timeout=1)\end{verbatim}
+			Bagian diatas ini berfungsi sebagai pendeklerasian variabel ser sebagai serial port yang propertinya adalah konfigurasi nomer port= COM10, baudrate= 9600, dan timeout=1.
+			\item \begin{verbatim} a=ser.readline() \end{verbatim}
+			Bagian diatas ini berfungsi untuk membaca data dari serial lalu menampungnya pada variabel a sebagai buffer.
+			
+		
