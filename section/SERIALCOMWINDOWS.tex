@@ -22,5 +22,30 @@
 	\subsection{Membaca dan menulis}
 		\begin{enumerate}
 			\item Membaca dari dan menulis ke port komunikasi di Windows sangat mirip dengan file input / output (I / O) di Windows. Bahkan, fungsi yang melengkapi I / O file adalah fungsi yang sama yang digunakan untuk serial I / O. I / O dapat dilakukan dengan salah satu dari dua cara: tumpang tindih atau tidak tumpang tindih. Dokumentasi SDK Platform menggunakan istilah asinkron dan sinkron untuk mengkonotasikan jenis operasi I / O ini. Artikel ini, bagaimanapun, menggunakan istilah yang tumpang tindih dan tidak terabaikan.
+				\begin{verbatim}
+				DWORD dwRead;
+					BOOL fWaitingOnRead = FALSE;
+					OVERLAPPED osReader = {0};
+
+						// Create the overlapped event. Must be closed before exiting
+						// to avoid a handle leak.
+						osReader.hEvent = CreateEvent(NULL, TRUE, FALSE, NULL);
+
+						if (osReader.hEvent == NULL)
+						// Error creating overlapped event; abort.
+
+						if (!fWaitingOnRead) {
+						// Issue read operation.
+						if (!ReadFile(hComm, lpBuf, READ_BUF_SIZE, &dwRead, &osReader)) {
+						if (GetLastError() != ERROR_IO_PENDING)     // read not delayed?
+						// Error in communications; report it.
+					else
+						fWaitingOnRead = TRUE;
+				}
+					else {    
+						// read completed immediately
+						HandleASuccessfulRead(lpBuf, dwRead);
+			}
+		}
 			\item Nonoverlapped I / O akrab bagi kebanyakan pengembang karena ini adalah bentuk tradisional I / O, di mana operasi diminta dan diasumsikan lengkap ketika fungsi kembali. Dalam kasus I / O yang tumpang tindih, sistem dapat kembali ke pemanggil segera bahkan ketika operasi tidak selesai dan akan memberi sinyal kepada pemanggil ketika operasi selesai. Program ini dapat menggunakan waktu antara permintaan I / O dan penyelesaiannya untuk melakukan beberapa pekerjaan latar belakang.
 		\end{enumerate}
