@@ -11,23 +11,27 @@
 	\subsection{Konsep Dasar Komunikasi Serial}
 	Suatu komunikasi yang dilakukan dimana suatu pengiriman data dilakukan per bit ialah dinamakan komunikasi serial, sehingga akan lebih lambat jika dibandingkan dengan komunikasi parallel seperti yang ada pada port printer yang dapat mengirim 8 bit sekaligus dalam sekali detak.
 	Terdapat 2 macam cara komunikasi data serial yaitu :
-	\begin{enumerate}
-		\item Komunikasi data serial sinkron
-		\item Komunikasi data serial asinkron
-	\end{enumerate}
+		\begin{enumerate}
+			\item Komunikasi data serial sinkron
+			\item Komunikasi data serial asinkron
+		\end{enumerate}
 	
 	Terdapat 2 kelompok device pada komunikasi serial yaitu :
-	\begin{enumerate}
-		\item Data Communication Equipment (DCE)
-		Contohnya seperti scanner, printer, modem dan yang lainnya.
-		\item Data Terminal Equipment (DTE)
-		Contohnya sepertia terminal yang ada pada komputer.
-	\end{enumerate}
+		\begin{enumerate}
+			\item Data Communication Equipment (DCE)
+			Contohnya seperti scanner, printer, modem dan yang lainnya.
+			\item Data Terminal Equipment (DTE)
+			Contohnya sepertia terminal yang ada pada komputer.
+		\end{enumerate}
 	
 	Keuntungan menggunakan port serial
-	\begin{itemize}
-		\item Masalah cable loss tidak akan menjadi suatu masalah yang besar pada komunikasi dengan kabel yang panjang, dari pada menggunakan kabel paralel. Port paralel akan mentransmisikan 0 pada tegangan 0 volt dan 1 di tegangan 1 volt, sedangkan port serial akan mentransmisikan 1 di tegangan -3 - -25 volt dan 0 di tegangan +3 - +25 volt.
-		\item Hanya membutuhkan jumlah kabel yang sedikit, menggunakan 3 kabel saja pun bisa yaitu saluran Ground, saluran Transmit Data, saluran Receive Data.
-		\item Populernya penggunaan mikrokontroler dan kebanyakan mikrokontroler dilengkapi dengan Serial Communication Interface (SCI) yang bisa dipaki untuk melakukan komunikasi dengan port serial pada komputer.
-	\end{itemize}
+		\begin{itemize}
+			\item Masalah cable loss tidak akan menjadi suatu masalah yang besar pada komunikasi dengan kabel yang panjang, dari pada menggunakan kabel paralel. Port paralel akan mentransmisikan 0 pada tegangan 0 volt dan 1 di tegangan 1 volt, sedangkan port serial akan mentransmisikan 1 di tegangan -3 - -25 volt dan 0 di tegangan +3 - +25 volt.
+			\item Hanya membutuhkan jumlah kabel yang sedikit, menggunakan 3 kabel saja pun bisa yaitu saluran Ground, saluran Transmit Data, saluran Receive Data.
+			\item Populernya penggunaan mikrokontroler dan kebanyakan mikrokontroler dilengkapi dengan Serial Communication Interface (SCI) yang bisa dipaki untuk melakukan komunikasi dengan port serial pada komputer.
+		\end{itemize}
+		
+	\subsection{Koneksi Linux ke Serial Port}
+	Untuk melakukan setting pada suatu perangkat, terkadang harus masuk terlebuh dahulu ke dalam console box. Biasanya akan menggunakan hyperterminal, namun software bawaan seperti itu tidak terdapat pada linux pada saat linux terinstall. Maka dari itu terdapat sebuah software yang dapat digunakan pada linux untuk melakukan komunikasi serial yaitu minicom untuk menggantikan hyperterminal.
+	
 		
