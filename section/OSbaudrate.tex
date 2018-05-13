@@ -33,5 +33,7 @@ Baud rate dideteksi untuk mengetahui keluaran dari perangkat yang memerlukan bas
 
 \section{Framing Data}
 Framing data adalah teknik penyusunan data untuk dikirim melalui komunikasi serial. Pada gambar \ref{serialframe}, Data yang dikirim melalui komunikasi serial biasanya dari 5 sampai 9 bit. Pada arduino, data yang dipakai berukuran 8 bit. Urutan dari pengiriman data biasanya mengikuti endian tertentu. seperti pengiriman most-significant-bit atau least-significant-bit terlebih dahulu yang dikirim.\break
-Start dan Stop bit biasa dikenal sebagai synchronization bit yang biasanya berukuran 2 atau 3 bit. Bit-bit ini mengawali dan mengakhiri pengiriman data. Start bit selalu diberi ukuran 1 bit sedangkan stop bit dapat diberi 1 atau 2 bit tergantung bagaimana pengguna perangkat keras atau pengkonfigurasi perangkat keras menggunakaannya.
+Start dan Stop bit biasa dikenal sebagai synchronization bit yang biasanya berukuran 2 atau 3 bit. Bit-bit ini mengawali dan mengakhiri pengiriman data. Start bit selalu diberi ukuran 1 bit sedangkan stop bit dapat diberi 1 atau 2 bit tergantung bagaimana pengguna perangkat keras atau pengkonfigurasi perangkat keras menggunakaannya. Jika tidak memerlukan konfigurasi, nilai stop bit dapat dibiarkan menjadi sebesar 1 bit. seperti pada gambar \ref{serialframe}.
+\break
+Posisi idle pada komunikasi serial bernilai 1. Start bit diidentifikasi dengan adanya transisi dari keadaan idle atau diam. yaitu dari 1 ke 0, sedangkan stop bit adalah kebalikan transisi dari keadaan idle untuk dari 0 ke 1
 
