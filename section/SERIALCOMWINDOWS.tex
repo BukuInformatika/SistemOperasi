@@ -160,6 +160,14 @@ dwStoredFlags = EV_BREAK | EV_CTS   | EV_DSR | EV_ERR | EV_RING |\
 if (!SetCommMask(hComm, dwStoredFlags))
    // error setting communications mask
 \end{verbatim}
+\subsection{Flow Control}
+	\begin{enumerate}
+		\item Kontrol aliran dalam komunikasi serial menyediakan mekanisme untuk menangguhkan komunikasi sementara salah satu perangkat sibuk atau karena alasan tertentu tidak dapat melakukan komunikasi apa pun. Secara tradisional ada dua jenis kontrol aliran: perangkat keras dan perangkat lunak.
+
+Masalah umum dengan komunikasi serial adalah operasi tulis yang sebenarnya tidak menulis data ke perangkat. Seringkali, masalah terletak pada kontrol aliran yang digunakan ketika program tidak menentukannya. Pemeriksaan dekat dari struktur DCB mengungkapkan bahwa satu atau lebih dari anggota berikut mungkin BENAR: fOutxCtsFlow, fOutxDsrFlow, atau fOutX. Mekanisme lain untuk mengungkapkan bahwa kontrol aliran diaktifkan adalah memanggil ClearCommError dan memeriksa struktur COMSTAT. Ini akan mengungkapkan ketika transmisi ditangguhkan karena kontrol aliran.
+
+Sebelum membahas jenis-jenis pengendalian aliran, pemahaman yang baik tentang beberapa istilah sudah teratur. Komunikasi serial terjadi antara dua perangkat. Secara tradisional, ada PC dan modem atau printer. PC diberi label Data Terminal Equipment (DTE). DTE kadang-kadang disebut tuan rumah. Modem, printer, atau peralatan periferal lainnya diidentifikasi sebagai Peralatan Komunikasi Data (DCE). DCE kadang-kadang disebut sebagai perangkat.
+\end{enumerate}
 
 \cite{bai2004windows}
 \cite{carvey2005tracking}
