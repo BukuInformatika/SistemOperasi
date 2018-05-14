@@ -53,6 +53,12 @@
 			}
 		}
 				\end{verbatim}
+
+				\begin{enumerate}
+						\item Bagian kedua dari operasi yang tumpang tindih adalah deteksi penyelesaiannya. Pegangan acara dalam struktur OVERLAPPED diteruskan ke fungsi WaitForSingleObject, yang akan menunggu hingga objek diberi isyarat. Setelah acara ditandai, operasi selesai. Ini tidak berarti bahwa itu berhasil diselesaikan, hanya saja itu selesai. Fungsi GetOverlappedResult melaporkan hasil operasi. Jika kesalahan terjadi, GetOverlappedResult mengembalikan FALSE dan GetLastError mengembalikan kode kesalahan. Jika operasi selesai dengan sukses, GetOverlappedResult akan mengembalikan TRUE.
+				\end{enumerate}
+
+
 			
 		\end{enumerate}
 			\subsubsection{Penulisan}
