@@ -126,7 +126,18 @@
 }
 \end{verbatim}	
 
+\subsection{Serial Status}
+	\begin{enumerate}
+		\item Ada dua metode untuk mengambil status port komunikasi. Yang pertama adalah dengan mengatur event mask yang menyebabkan pemberitahuan aplikasi ketika peristiwa yang diinginkan terjadi. Fungsi SetCommMask mengatur masker kejadian ini, dan fungsi WaitCommEvent menunggu kejadian yang diinginkan terjadi. Metode kedua untuk mengambil status port komunikasi adalah secara berkala memanggil beberapa fungsi status yang berbeda. Polling, tentu saja, tidak efisien dan tidak direkomendasikan. Berikut ini contoh fungsi SetCommMask:
+	\end{enumerate}
+	\begin{verbatim}
+	DWORD dwStoredFlags;
 
+dwStoredFlags = EV_BREAK | EV_CTS   | EV_DSR | EV_ERR | EV_RING |\
+                EV_RLSD | EV_RXCHAR | EV_RXFLAG | EV_TXEMPTY ;
+if (!SetCommMask(hComm, dwStoredFlags))
+   // error setting communications mask
+\end{verbatim}
 
 \cite{bai2004windows}
 \cite{carvey2005tracking}
