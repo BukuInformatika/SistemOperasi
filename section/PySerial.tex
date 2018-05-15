@@ -127,3 +127,29 @@
 	
 	\cite{nurjanahhack}
 	\cite{rossum1995python}
+
+\subsection{dua cara menjalankan python}
+  
+Python dapat dijalankan dengan dua cara, yakni:
+1. Mode command-line
+    dengan mode ini, program dapat dilakukan dengan memanggil interpreter, kemudian memberi statement Python dan interpreter akan menampilkan hasil, sebagai contoh:
+bash-2.05a$ python
+Python 2.1.3 (#1, Apr 20 2002, 10:14:34)
+[GCC 2.95.4 20011002 (Debian prerelease)] on linux2 type "copyright", "credits" or "license" for more information.
+>>> print 1+1
+2
+baris pertama dalam contoh diatas adalah perintah untuk memanggil interpreter python. dua baris kemudian merupakan pesan dari interpreter yang menunjukan versi dan informasi copyright, credit, dan lisensinya. Sedangkan baris keempat merupakan prompt interpreter yang menunjukan bahwa interpreter siap menerima input. dalam contoh diatas diberi input print 1+1, interpreter menghasilkan 2.
+2. Mode script
+   mode ini dilakukan dengan cara menuliskan keseluruhan program dalam file, kemudian 
+ interpreter akan mengeksekusi seluruh isi dalam file. File seperti ini dinamakan script. sebagai contoh, sebuah file yang ditulis dengan text editor dan diberi nama script01.py memiliki isi sebagai berikut:
+print 1+1
+Dengan perjanjian bahwa file yang berisi program Python diberi nama dengan ekstensi .py. Eksekusi dari program dengan mode ini dapat dilakukan dengan cara berikut:
+$ python script01.py
+2
+contoh:
+# -------------
+# Program Sederhana
+#	by Ema & Wawan
+#--------------
+print "I Like Python"
+Catatan: Python tidak membutuhkan titik koma (semicolon) dibelakang statement. Semicolon disini sifatnya optional sehingga bisa digunakan, tetapi juga boleh tidak dipakai.
