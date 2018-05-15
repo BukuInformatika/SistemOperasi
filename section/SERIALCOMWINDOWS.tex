@@ -138,10 +138,20 @@
 }
 \end{verbatim}	
 
-\subsection{Serial Status}
-	\begin{enumerate}
-		\item Ada dua metode untuk mengambil status port komunikasi. Yang pertama adalah dengan mengatur event mask yang menyebabkan pemberitahuan aplikasi ketika peristiwa yang diinginkan terjadi. Fungsi SetCommMask mengatur masker kejadian ini, dan fungsi WaitCommEvent menunggu kejadian yang diinginkan terjadi. Metode kedua untuk mengambil status port komunikasi adalah secara berkala memanggil beberapa fungsi status yang berbeda. Polling, tentu saja, tidak efisien dan tidak direkomendasikan. Berikut ini contoh fungsi SetCommMask:
-	\end{enumerate}
+	\subsection{Serial Status}
+		\begin{enumerate}
+			\item Ada dua metode untuk mengambil status port komunikasi. Yang pertama adalah dengan mengatur event mask yang menyebabkan pemberitahuan aplikasi ketika peristiwa yang diinginkan terjadi. Fungsi SetCommMask mengatur masker kejadian ini, dan fungsi WaitCommEvent menunggu kejadian yang diinginkan terjadi. Metode kedua untuk mengambil status port komunikasi adalah secara berkala memanggil beberapa fungsi status yang berbeda. Polling, tentu saja, tidak efisien dan tidak direkomendasikan.
+			\subsection{Communications Events}
+				\begin{enumerate}
+				\item Komunikasi dapat terjadi kapan saja selama menggunakan port komunikasi. Dua langkah yang terlibat dalam menerima pemberitahuan acara komunikasi adalah sebagai berikut:
+
+				SetCommMask menetapkan peristiwa yang diinginkan yang menyebabkan pemberitahuan.
+				WaitCommEvent menerbitkan pemeriksaan status. Pemeriksaan status dapat berupa operasi tumpang-tindih atau non-tumpang tindih, seperti halnya operasi baca dan tulis.
+				Catatan: Peristiwa kata dalam konteks ini merujuk pada acara komunikasi saja. Itu tidak mengacu pada objek peristiwa yang digunakan untuk sinkronisasi.
+
+				Berikut ini contoh fungsi SetCommMask:
+				\end{enumerate}
+			\end{enumerate}
 	\begin{verbatim}
 	DWORD dwStoredFlags;
 
