@@ -30,6 +30,16 @@
 			\item Hanya membutuhkan jumlah kabel yang sedikit, menggunakan 3 kabel saja pun bisa yaitu saluran Ground, saluran Transmit Data, saluran Receive Data.
 			\item Populernya penggunaan mikrokontroler dan kebanyakan mikrokontroler dilengkapi dengan Serial Communication Interface (SCI) yang bisa dipaki untuk melakukan komunikasi dengan port serial pada komputer.
 		\end{itemize}
+
+	\subsection{Interprocess Communication}
+	komunikasi antar proses untuk mengirim data dari satu proses ke proses yang lain, baik antar proses dalam satu komputer maupun proses dalam komputer yang berbeda
+	karakteristik dari Interprocess Communincation yaitu:
+		\begin{enumerate}
+			\item komunikasi Synchronous dan asynchronous
+			\item Message destinations
+			\item Reliability
+			\item Ordering
+		\end{enumerate}
 		
 	\subsection{Koneksi Linux ke Serial Port}
 	Untuk melakukan setting pada suatu perangkat, terkadang harus masuk terlebuh dahulu ke dalam console box. Biasanya akan menggunakan hyperterminal, namun software bawaan seperti itu tidak terdapat pada linux pada saat linux terinstall. Maka dari itu terdapat sebuah software yang dapat digunakan pada linux untuk melakukan komunikasi serial yaitu minicom untuk menggantikan hyperterminal.
@@ -96,6 +106,8 @@
 	Lalu lakukan konfigurasi yang diperlukan sesuai kebutuhan yang diperlukan. Setelah konfigurasi selesai kembali ke menu utama dan pilih Save Setup as dfl. Kemudian pilih Exit, dan akan kembali ke terminal linux sebelumnya, kemudian ketikan perintah 
 	
 	minicom
-	
 	Maka Perangkat akan terkoneksi sesuai keinginan.
-		
+
+	
+
+
