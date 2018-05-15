@@ -1,0 +1,141 @@
+\section{Serial Com Windows}
+	\subsection{Membuka Port}
+		\begin{enumerate} 
+			Dokumentasi SDK Platform menyatakan bahwa ketika membuka port komunikasi, panggilan ke CreateFile memiliki persyaratan berikut:
+				\item 1. fdwShareMode harus nol. Port komunikasi tidak dapat dibagikan dengan cara yang sama seperti file yang dibagikan. Aplikasi yang menggunakan TAPI dapat menggunakan fungsi TAPI untuk memfasilitasi berbagi sumber daya antar aplikasi. Untuk aplikasi yang tidak menggunakan TAPI, penanganan warisan atau duplikasi diperlukan untuk berbagi port komunikasi. Berurusan dengan duplikat berada di luar cakupan artikel ini; silakan merujuk ke dokumentasi Platform SDK untuk informasi lebih lanjut.
+				\item 2. fdwCreate harus menentukan bendera OPEN_EXISTING.
+				\item 3. hTemplateFile parameter harus NULL.
+			Satu hal yang perlu diperhatikan tentang nama port adalah bahwa mereka secara tradisional telah COM1, COM2, COM3, atau COM4. Windows API tidak menyediakan mekanisme apa pun untuk menentukan port apa yang ada pada sistem. Beberapa sistem bahkan memiliki lebih banyak port daripada maksimum tradisional empat. Vendor perangkat keras dan pembuat perangkat serial-driver bebas memberi nama port apa pun yang mereka sukai. Untuk alasan ini, yang terbaik adalah pengguna memiliki kemampuan untuk menentukan nama port yang ingin mereka gunakan. Jika port tidak ada, kesalahan akan terjadi (ERROR_FILE_NOT_FOUND) setelah mencoba membuka port, dan pengguna harus diberitahu bahwa port tidak tersedia.
+		\end{enumerate}
+	\begin{figure}[ht]
+		\centerline{\includegraphics[width=1\textwidth]{figures/seria.png}}
+		\caption{Serial Com Windows}
+		\label{seria}
+	\end{figure}
+	Gambar \ref{seria} Contoh gambar.
+		\begin{verbatim}
+			HANDLE hComm;
+			hComm = CreateFile( gszPort,  
+                    GENERIC_READ | GENERIC_WRITE, 
+                    0, 
+                    0, 
+                    OPEN_EXISTING,
+                    FILE_FLAG_OVERLAPPED,
+                    0);
+			if (hComm == INVALID_HANDLE_VALUE)
+				// error opening port; abort
+		\end{verbatim}
+	\subsection{Membaca dan menulis}
+		\begin{enumerate}
+			\item Membaca dari dan menulis ke port komunikasi di Windows sangat mirip dengan file input / output (I / O) di Windows. Bahkan, fungsi yang melengkapi I / O file adalah fungsi yang sama yang digunakan untuk serial I / O. I / O dapat dilakukan dengan salah satu dari dua cara: tumpang tindih atau tidak tumpang tindih. Dokumentasi SDK Platform menggunakan istilah asinkron dan sinkron untuk mengkonotasikan jenis operasi I / O ini. Artikel ini, bagaimanapun, menggunakan istilah yang tumpang tindih dan tidak terabaikan.
+			\item Nonoverlapped I / O akrab bagi kebanyakan pengembang karena ini adalah bentuk tradisional I / O, di mana operasi diminta dan diasumsikan lengkap ketika fungsi kembali. Dalam kasus I / O yang tumpang tindih, sistem dapat kembali ke pemanggil segera bahkan ketika operasi tidak selesai dan akan memberi sinyal kepada pemanggil ketika operasi selesai. Program ini dapat menggunakan waktu antara permintaan I / O dan penyelesaiannya untuk melakukan beberapa pekerjaan latar belakang.
+				\subsubsection{Bacaan}
+					\begin{enumerate}
+						\item Fungsi ReadFile menerbitkan operasi baca. ReadFileEx juga mengeluarkan operasi baca, tetapi karena tidak tersedia pada Windows 95, itu tidak tercakup dalam artikel ini. Berikut adalah potongan kode yang merinci cara mempublikasikan permintaan baca. Perhatikan bahwa fungsi memanggil fungsi untuk memproses data jika ReadFile mengembalikan TRUE. Ini adalah fungsi yang sama yang disebut jika operasi menjadi tumpang tindih. Perhatikan flag fWaitingOnRead yang didefinisikan oleh kode; ini menunjukkan apakah operasi baca tumpang tindih atau tidak. Ini digunakan untuk mencegah penciptaan operasi baca baru jika mereka luar biasa.
+				
+				\begin{verbatim}
+				\item DWORD dwRead;
+					BOOL fWaitingOnRead = FALSE;
+					OVERLAPPED osReader = {0};
+
+						// Create the overlapped event. Must be closed before exiting
+						// to avoid a handle leak.
+						osReader.hEvent = CreateEvent(NULL, TRUE, FALSE, NULL);
+
+						if (osReader.hEvent == NULL)
+						// Error creating overlapped event; abort.
+
+						if (!fWaitingOnRead) {
+						// Issue read operation.
+						if (!ReadFile(hComm, lpBuf, READ_BUF_SIZE, &dwRead, &osReader)) {
+						if (GetLastError() != ERROR_IO_PENDING)     // read not delayed?
+						// Error in communications; report it.
+					else
+						fWaitingOnRead = TRUE;
+				}
+					else {    
+						// read completed immediately
+						HandleASuccessfulRead(lpBuf, dwRead);
+			}
+		}
+				\end{verbatim}
+
+				\begin{enumerate}
+						\item Bagian kedua dari operasi yang tumpang tindih adalah deteksi penyelesaiannya. Pegangan acara dalam struktur OVERLAPPED diteruskan ke fungsi WaitForSingleObject, yang akan menunggu hingga objek diberi isyarat. Setelah acara ditandai, operasi selesai. Ini tidak berarti bahwa itu berhasil diselesaikan, hanya saja itu selesai. Fungsi GetOverlappedResult melaporkan hasil operasi. Jika kesalahan terjadi, GetOverlappedResult mengembalikan FALSE dan GetLastError mengembalikan kode kesalahan. Jika operasi selesai dengan sukses, GetOverlappedResult akan mengembalikan TRUE.
+				\end{enumerate}
+
+
+			
+		\end{enumerate}
+			\subsubsection{Penulisan}
+				\begin{enumerate}
+					\item Pengarsipan data dari port komunikasi sangat mirip dengan membaca, karena menggunakan banyak API yang sama. Cuplikan kode di bawah ini menunjukkan cara menghapus dan menunggu operasi tulis selesai.
+				\end{enumerate}
+				\begin{verbatim}
+				BOOL WriteABuffer(char * lpBuf, DWORD dwToWrite)
+{
+   OVERLAPPED osWrite = {0};
+   DWORD dwWritten;
+   DWORD dwRes;
+   BOOL fRes;
+
+   // Create this write operation's OVERLAPPED structure's hEvent.
+   osWrite.hEvent = CreateEvent(NULL, TRUE, FALSE, NULL);
+   if (osWrite.hEvent == NULL)
+      // error creating overlapped event handle
+      return FALSE;
+
+   // Issue write.
+   if (!WriteFile(hComm, lpBuf, dwToWrite, &dwWritten, &osWrite)) {
+      if (GetLastError() != ERROR_IO_PENDING) { 
+         // WriteFile failed, but isn't delayed. Report error and abort.
+         fRes = FALSE;
+      }
+      else
+         // Write is pending.
+         dwRes = WaitForSingleObject(osWrite.hEvent, INFINITE);
+         switch(dwRes)
+         {
+            // OVERLAPPED structure's event has been signaled. 
+            case WAIT_OBJECT_0:
+                 if (!GetOverlappedResult(hComm, &osWrite, &dwWritten, FALSE))
+                       fRes = FALSE;
+                 else
+                  // Write operation completed successfully.
+                  fRes = TRUE;
+                 break;
+            
+            default:
+                 // An error has occurred in WaitForSingleObject.
+                 // This usually indicates a problem with the
+                // OVERLAPPED structure's event handle.
+                 fRes = FALSE;
+                 break;
+         }
+      }
+   }
+   else
+      // WriteFile completed immediately.
+      fRes = TRUE;
+
+   CloseHandle(osWrite.hEvent);
+   return fRes;
+}
+\end{verbatim}	
+
+
+
+\cite{bai2004windows}
+\cite{carvey2005tracking}
+\cite{boling2003programming}		
+
+\subsection{Bagian-bagian serial port communication windows}
+\begin{enumerate}
+\item \begin{enumerate}
+\item 1. RS-232
+Sebagaimana disebutkan sebelumnya, RS-232 adalah protokol yang dikembangkan dan didefinisikan oleh EIA pada tahun 1960-an yang digunakan dalam komunikasi data serial awal. Karena kesederhanaan dan popularitasnya, RS-232 telah diterapkan secara luas di semua bidang komunikasi data, termasuk industri, komersial, pendidikan, dan bahkan elektronik konsumen. RS-232 termasuk dalam protokol komunikasi full-duplex, yang berarti bahwa pengirim dan penerima dapat bertukar informasi secara bersamaan.
+2. RS-422
+ Komunikasi serial port RS-232 adalah bagian dari protokol tunggal-berakhir, yang berarti bahwa nilai setiap bit biner memiliki tingkat tegangan absolut relatif terhadap tanah. Protokol single-ended ini memiliki kekurangan dalam hal transmisi data. Untuk mengatasi masalah ini, protokol komunikasi serial lain, RS-422, telah muncul. RS-422 menggunakan mode transmisi sinyal diferensial, yang berarti bahwa setiap saat, nilai bit biner memiliki tegangan relatif yang mengalir dari terminal sinyal positif ke terminal sinyal negatif. Tidak seperti kabel transmisssion yang digunakan dengan RS-232, kabel untuk pengiriman dan penerimaan garis digandakan, dan kabel ganda ini dipilin bersama untuk bekerja sebagai satu jalur (baik pengiriman atau saluran penerima) untuk mengurangi gangguan lingkungan lebih lanjut.
+3. RS-485
+RS-485 mirip dengan RS-422 dalam protokol transmisssion sinyal diferensial, tetapi yang pertama memiliki kemampuan untuk membangun sistem komunikasi multipoint yang benar-benar. Ini berarti bahwa beberapa terminal atau komputer, yang dianggap sebagai node, dapat dihubungkan ke bus umum, dan setiap node dapat berfungsi sebagai pengirim atau penerima informasi dari bus ini. Setiap terminal atau komputer yang terhubung ke bus memiliki fungsi kontrol tristate dan alamat unik (atau ID), dan komunikasi antara pengirim dan penerima dibuat berdasarkan ID ini.
+\end{enumerate}
