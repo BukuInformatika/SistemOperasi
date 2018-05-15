@@ -33,8 +33,15 @@ Baud rate dideteksi untuk mengetahui keluaran dari perangkat yang memerlukan bas
 
 \subsection{Framing Data}
 Framing data adalah teknik penyusunan data untuk dikirim melalui komunikasi serial. Pada gambar \ref{serialframe}, Data yang dikirim melalui komunikasi serial biasanya dari 5 sampai 9 bit. Pada arduino, data yang dipakai berukuran 8 bit. Urutan dari pengiriman data biasanya mengikuti endian tertentu. seperti pengiriman most-significant-bit atau least-significant-bit terlebih dahulu yang dikirim.
-\subsubsection{Synchronization Bit}
+\subsubsection{Kit Framing Data}
 Start dan Stop bit biasa dikenal sebagai synchronization bit yang biasanya berukuran 2 atau 3 bit. Bit-bit ini mengawali dan mengakhiri pengiriman data. Start bit selalu diberi ukuran 1 bit sedangkan stop bit dapat diberi 1 atau 2 bit tergantung bagaimana pengguna perangkat keras atau pengkonfigurasi perangkat keras menggunakaannya. Jika tidak memerlukan konfigurasi, nilai stop bit dapat dibiarkan menjadi sebesar 1 bit. seperti pada gambar \ref{serialframe}.
 Posisi idle pada komunikasi serial bernilai 1. Start bit diidentifikasi dengan adanya transisi dari keadaan idle atau diam. yaitu dari 1 ke 0, sedangkan stop bit adalah kebalikan transisi dari keadaan idle untuk dari 0 ke 1.
 Bit Parity dalam framing data bersifat opsional dan dapat diabaikan. Parity bit digunakan untuk transfer data yang dipengaruhi oleh noise. Namun penggunaan bit parity dapat memperlambat kecepatan komunikasi atau transfer. Penggunaan bit parity juga memerlukan sinkronisasi antara transmitter dengan receiver. Untuk mengurangi kemungkinan kesalah dalam interpretasi data dalam perangkat keras.
+
+\subsection{Contoh Pengiriman Data}
+Dengan contoh saat kita mau mengirim kata OK. komunikasi akan memiliki 2 paket data. Kode ASCII untuk ;O' adalah 79 dalam desimal sedangkan huruf 'K' adalah 75. Data yang terkirim lebih dahulu adalah least-significant bit. Karena data dikirim dengan kecepatan 9600 bps, maka setiap bit memerlukan waktu selama 1/9600 = 104 mikrodetik/bit. Dalam arduino, setting baud rate dapat dilakukan dengan kode :
+\begin{verbatim}
+Serial.begin(9600);
+\end{verbatim}
+Kode tersebut menandakan bahwa kecepatan serial adalah 9600 bps atau 9600 bit per detik.
 
