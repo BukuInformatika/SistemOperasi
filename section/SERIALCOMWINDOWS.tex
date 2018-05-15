@@ -127,4 +127,14 @@
 
 \cite{bai2004windows}
 \cite{carvey2005tracking}
-\cite{boling2003programming}			
+\cite{boling2003programming}		
+
+\subsection{Bagian-bagian serial port communication windows}
+\begin{enumerate}
+\item 1. RS-232
+Sebagaimana disebutkan sebelumnya, RS-232 adalah protokol yang dikembangkan dan didefinisikan oleh EIA pada tahun 1960-an yang digunakan dalam komunikasi data serial awal. Karena kesederhanaan dan popularitasnya, RS-232 telah diterapkan secara luas di semua bidang komunikasi data, termasuk industri, komersial, pendidikan, dan bahkan elektronik konsumen. RS-232 termasuk dalam protokol komunikasi full-duplex, yang berarti bahwa pengirim dan penerima dapat bertukar informasi secara bersamaan.
+2. RS-422
+ Komunikasi serial port RS-232 adalah bagian dari protokol tunggal-berakhir, yang berarti bahwa nilai setiap bit biner memiliki tingkat tegangan absolut relatif terhadap tanah. Protokol single-ended ini memiliki kekurangan dalam hal transmisi data. Untuk mengatasi masalah ini, protokol komunikasi serial lain, RS-422, telah muncul. RS-422 menggunakan mode transmisi sinyal diferensial, yang berarti bahwa setiap saat, nilai bit biner memiliki tegangan relatif yang mengalir dari terminal sinyal positif ke terminal sinyal negatif. Tidak seperti kabel transmisssion yang digunakan dengan RS-232, kabel untuk pengiriman dan penerimaan garis digandakan, dan kabel ganda ini dipilin bersama untuk bekerja sebagai satu jalur (baik pengiriman atau saluran penerima) untuk mengurangi gangguan lingkungan lebih lanjut.
+3. RS-485
+RS-485 mirip dengan RS-422 dalam protokol transmisssion sinyal diferensial, tetapi yang pertama memiliki kemampuan untuk membangun sistem komunikasi multipoint yang benar-benar. Ini berarti bahwa beberapa terminal atau komputer, yang dianggap sebagai node, dapat dihubungkan ke bus umum, dan setiap node dapat berfungsi sebagai pengirim atau penerima informasi dari bus ini. Setiap terminal atau komputer yang terhubung ke bus memiliki fungsi kontrol tristate dan alamat unik (atau ID), dan komunikasi antara pengirim dan penerima dibuat berdasarkan ID ini.
+\end{enumerate}
