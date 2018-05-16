@@ -26,7 +26,7 @@
 	
 	Keuntungan menggunakan port serial
 		\begin{itemize}
-			\item Masalah cable loss tidak akan menjadi suatu masalah yang besar pada komunikasi dengan kabel yang panjang, dari pada menggunakan kabel paralel. Port paralel akan mentransmisikan 0 pada tegangan 0 volt dan 1 di tegangan 1 volt, sedangkan port serial akan mentransmisikan 1 di tegangan -3 - -25 volt dan 0 di tegangan +3 - +25 volt.
+			\item Masalah cable loss tidak akan menjadi suatu masalah yang besar pada komunikasi dengan kabel yang panjang, dari pada menggunakan kabel paralel. Port paralel akan mentransmisikan \"0\" pada tegangan 0 volt dan \"1\" di tegangan 1 volt, sedangkan port serial akan mentransmisikan \"1\" di tegangan -3 - -25 volt dan \"0\" di tegangan +3 - +25 volt.
 			\item Hanya membutuhkan jumlah kabel yang sedikit, menggunakan 3 kabel saja pun bisa yaitu saluran Ground, saluran Transmit Data, saluran Receive Data.
 			\item Populernya penggunaan mikrokontroler dan kebanyakan mikrokontroler dilengkapi dengan Serial Communication Interface (SCI) yang bisa dipaki untuk melakukan komunikasi dengan port serial pada komputer.
 		\end{itemize}
@@ -60,17 +60,14 @@
 	\subsection{macam-macam perintah terminal linux}
 	macam macam perintah terminal pada linux:
 		\begin{enumerate}
-			\item pertama, Is. yaitu perintah "dir" pada linux berupa alias dari perintah "Is". untuk perintah ini sering dibuatkan alias "Is --color",
-				agar saat ditampilkan warna-warna sesuai dengan filenya.
-			\item kedua, cd (directory). menggunakan "cd" tanpa nama direktori akan menghantarkan anda ke home direktori.
-			\item ketiga, rm files. yaitu menghapus file.
-			\item keempat, mkdir direktory. yaitu membuat direktory baru, dengan membuat folder baru di dekstop dengan nama folder baru.
+			\item cd (Change Directory) berguna untuk berpindah direktori. Sedangkan menggunakan perintah \"cd\" tanpa nama direktori akan mengantarkan anda kembali ke home direktori linux.
+			\item rm files yaitu berguna untuk melakukan penghapusan sebuah file.
+			\item mkdir berguna untuk membuat sebuah direktori yang baru, dengan membuat sebuah folder yang baru dengan menggunakan nama folder baru.
 		\end{enumerate}
 		
 	\subsection{perbedaan port USB dan port serial}
-	perbedaan metode port serial dengan port USB:
-	perbedaannya adalah pada media penghubungnya, yaitu di port USB tidak menggunakan rangkaian RS232 sebagai media pengirim dan menerima data.
-	sedangkan metode port serial menggunakan rangkaian tambahan, yaitu rangkaian RS232 dan kabel serial sebagai penghubungnya.
+	perbedaan port USB dengan port serial :
+	perbedaannya adalah pada media penghubungannya, yaitu di port USB tidak bisa menggunakan rangkaian RS232 yang bisa digunakan sebagai media pengirim dan menerima data. Sedangkan pada metode port serial akan menggunakan sebuah rangkaian tambahan, yaitu sebuah rangkaian RS232 dan kabel serial yang digunakan sebagai penghubungnya.
 	
 	\subsection{cara menggunakan komukasi serial menggunakan port serial menjadi port USB}
 	cara komunikasi serial menggunakan port serial diubah menjadi port USB yaitu menggunakan sebuah alat konverter yang dinamakan serial to USB conterver
@@ -140,9 +137,10 @@
 	
 	Lalu lakukan konfigurasi yang diperlukan sesuai kebutuhan yang diperlukan. Setelah konfigurasi selesai kembali ke menu utama dan pilih Save Setup as dfl. Kemudian pilih Exit, dan akan kembali ke terminal linux sebelumnya, kemudian ketikan perintah 
 	
-	minicom
+	\"minicom\"
 	Maka Perangkat akan terkoneksi sesuai keinginan.
 
-	
+Dirangkum dari makalah \cite{fasnacht2008serial}
+Dirangkum dari makalah \cite{barabanov1997linux}	
 
 
