@@ -17,18 +17,18 @@
 
 		\end{enumerate}
 		
-		\subsection{I / O tumpang tindih}
+		\subsection{I atau O tumpang tindih}
 		\begin{enumerate}
 		
 
-				\item I / O yang tumpang tindih tidak sesederhana I / O non-tumpang tindih, tetapi memungkinkan lebih banyak fleksibilitas dan efisiensi. Sebuah port terbuka untuk operasi tumpang tindih memungkinkan beberapa utas untuk melakukan operasi I / O pada saat yang bersamaan dan melakukan pekerjaan lain ketika operasi sedang menunggu. Lebih jauh lagi, perilaku operasi yang tumpang tindih memungkinkan satu utas untuk mengeluarkan banyak permintaan yang berbeda dan bekerja di latar belakang sementara operasi masih menunggu.
+				\item I atau O yang tumpang tindih tidak sesederhana I atau O non-tumpang tindih, tetapi memungkinkan lebih banyak fleksibilitas dan efisiensi. Sebuah port terbuka untuk operasi tumpang tindih memungkinkan beberapa utas untuk melakukan operasi I atau O pada saat yang bersamaan dan melakukan pekerjaan lain ketika operasi sedang menunggu. Lebih jauh lagi, perilaku operasi yang tumpang tindih memungkinkan satu utas untuk mengeluarkan banyak permintaan yang berbeda dan bekerja di latar belakang sementara operasi masih menunggu.
 
-				\item I/ O yang tumpang tindih tidak sesederhana I / O non-tumpang tindih, tetapi memungkinkan lebih banyak fleksibilitas dan efisiensi. Sebuah port terbuka untuk operasi tumpang tindih memungkinkan beberapa utas untuk melakukan operasi I / O pada saat yang bersamaan dan melakukan pekerjaan lain ketika operasi sedang menunggu. Lebih jauh lagi, perilaku operasi yang tumpang tindih memungkinkan satu utas untuk mengeluarkan banyak permintaan yang berbeda dan bekerja di latar belakang sementara operasi masih menunggu.
+				\item I atau O yang tumpang tindih tidak sesederhana I atau O non-tumpang tindih, tetapi memungkinkan lebih banyak fleksibilitas dan efisiensi. Sebuah port terbuka untuk operasi tumpang tindih memungkinkan beberapa utas untuk melakukan operasi I atau O pada saat yang bersamaan dan melakukan pekerjaan lain ketika operasi sedang menunggu. Lebih jauh lagi, perilaku operasi yang tumpang tindih memungkinkan satu utas untuk mengeluarkan banyak permintaan yang berbeda dan bekerja di latar belakang sementara operasi masih menunggu.
 
 
-				\item Baik dalam aplikasi single-threaded maupun multithread, beberapa sinkronisasi harus dilakukan antara mengeluarkan permintaan dan memproses hasilnya. Satu utas harus diblokir sampai hasil operasi tersedia. Keuntungannya adalah I / O yang tumpang tindih memungkinkan utas untuk melakukan beberapa pekerjaan antara waktu permintaan dan penyelesaiannya. Jika tidak ada pekerjaan yang dapat dilakukan, maka satu-satunya kasus untuk I / O yang tumpang tindih adalah memungkinkan untuk respon pengguna yang lebih baik.
+				\item Baik dalam aplikasi single-threaded maupun multithread, beberapa sinkronisasi harus dilakukan antara mengeluarkan permintaan dan memproses hasilnya. Satu utas harus diblokir sampai hasil operasi tersedia. Keuntungannya adalah I atau O yang tumpang tindih memungkinkan utas untuk melakukan beberapa pekerjaan antara waktu permintaan dan penyelesaiannya. Jika tidak ada pekerjaan yang dapat dilakukan, maka satu-satunya kasus untuk I atau O yang tumpang tindih adalah memungkinkan untuk respon pengguna yang lebih baik.
 
-				\item I / O yang tumpang tindih adalah jenis operasi yang digunakan sampel MTTTY. Ini menciptakan sebuah thread yang bertanggung jawab untuk membaca data port dan membaca status port. Ini juga melakukan pekerjaan latar belakang secara berkala. Program ini menciptakan untaian lain secara eksklusif untuk menulis data di luar port.
+				\item I atau O yang tumpang tindih adalah jenis operasi yang digunakan sampel MTTTY. Ini menciptakan sebuah thread yang bertanggung jawab untuk membaca data port dan membaca status port. Ini juga melakukan pekerjaan latar belakang secara berkala. Program ini menciptakan untaian lain secara eksklusif untuk menulis data di luar port.
 				
 				\item Catatan Aplikasi terkadang menyalahgunakan sistem multithreading dengan membuat terlalu banyak utas. Meskipun menggunakan beberapa utas dapat menyelesaikan banyak masalah yang sulit, membuat untaian yang berlebihan bukanlah penggunaan yang paling efisien dalam aplikasi. Thread kurang regangan pada sistem daripada proses tetapi masih memerlukan sumber daya sistem seperti waktu CPU dan memori. Aplikasi yang menciptakan untaian berlebihan dapat mempengaruhi kinerja keseluruhan sistem.
 
@@ -55,8 +55,8 @@
 		\end{verbatim}
 	\subsection{Membaca dan menulis}
 		\begin{enumerate}
-			\item Membaca dari dan menulis ke port komunikasi di Windows sangat mirip dengan file input / output  di Windows. Bahkan, fungsi yang melengkapi I / O file adalah fungsi yang sama yang digunakan untuk serial I / O. I / O dapat dilakukan dengan salah satu dari dua cara: tumpang tindih atau tidak tumpang tindih. Dokumentasi SDK Platform menggunakan istilah asinkron dan sinkron untuk mengkonotasikan jenis operasi I / O ini. Artikel ini, bagaimanapun, menggunakan istilah yang tumpang tindih dan tidak terabaikan.
-			\item Nonoverlapped I / O akrab bagi kebanyakan pengembang karena ini adalah bentuk tradisional I / O, di mana operasi diminta dan diasumsikan lengkap ketika fungsi kembali. Dalam kasus I / O yang tumpang tindih, sistem dapat kembali ke pemanggil segera bahkan ketika operasi tidak selesai dan akan memberi sinyal kepada pemanggil ketika operasi selesai. Program ini dapat menggunakan waktu antara permintaan I / O dan penyelesaiannya untuk melakukan beberapa pekerjaan latar belakang.
+			\item Membaca dari dan menulis ke port komunikasi di Windows sangat mirip dengan file input atau output  di Windows. Bahkan, fungsi yang melengkapi I atau O file adalah fungsi yang sama yang digunakan untuk serial I atau O. I atau O dapat dilakukan dengan salah satu dari dua cara: tumpang tindih atau tidak tumpang tindih. Dokumentasi SDK Platform menggunakan istilah asinkron dan sinkron untuk mengkonotasikan jenis operasi I atau O ini. Artikel ini, bagaimanapun, menggunakan istilah yang tumpang tindih dan tidak terabaikan.
+			\item Nonoverlapped I atau O akrab bagi kebanyakan pengembang karena ini adalah bentuk tradisional I atau O, di mana operasi diminta dan diasumsikan lengkap ketika fungsi kembali. Dalam kasus I atau O yang tumpang tindih, sistem dapat kembali ke pemanggil segera bahkan ketika operasi tidak selesai dan akan memberi sinyal kepada pemanggil ketika operasi selesai. Program ini dapat menggunakan waktu antara permintaan I atau O dan penyelesaiannya untuk melakukan beberapa pekerjaan latar belakang.
 		\end{enumerate}
 				\subsubsection{Bacaan}
 					\begin{enumerate}
