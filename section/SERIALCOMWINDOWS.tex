@@ -1,23 +1,35 @@
 \section{Serial Com Windows}
 	\subsection{Membuka Port}
+
 		Dokumentasi SDK Platform menyatakan bahwa ketika membuka port komunikasi, panggilan ke CreateFile memiliki persyaratan berikut:
+
+	Dokumentasi SDK Platform menyatakan bahwa ketika membuka port komunikasi, panggilan ke CreateFile memiliki 
+
 		\begin{enumerate} 
 			Dokumentasi SDK Platform menyatakan bahwa ketika membuka port komunikasi, panggilan ke CreateFile memiliki persyaratan berikut:
 				\item  fdwShareMode harus nol. Port komunikasi tidak dapat dibagikan dengan cara yang sama seperti file yang dibagikan. Aplikasi yang menggunakan TAPI dapat menggunakan fungsi TAPI untuk memfasilitasi berbagi sumber daya antar aplikasi. Untuk aplikasi yang tidak menggunakan TAPI, penanganan warisan atau duplikasi diperlukan untuk berbagi port komunikasi. Berurusan dengan duplikat berada di luar cakupan artikel ini, silakan merujuk ke dokumentasi Platform SDK untuk informasi lebih lanjut.
 				\item  fdwCreate harus menentukan bendera OPENEXISTING.
 				\item  hTemplateFile parameter harus NULL.
-			Satu hal yang perlu diperhatikan tentang nama port adalah bahwa mereka secara tradisional telah COM1, COM2, COM3, atau COM4. Windows API tidak menyediakan mekanisme apa pun untuk menentukan port apa yang ada pada sistem. Beberapa sistem bahkan memiliki lebih banyak port daripada maksimum tradisional empat. Vendor perangkat keras dan pembuat perangkat serial-driver bebas memberi nama port apa pun yang mereka sukai. Untuk alasan ini, yang terbaik adalah pengguna memiliki kemampuan untuk menentukan nama port yang ingin mereka gunakan. Jika port tidak ada, kesalahan akan terjadi setelah mencoba membuka port, dan pengguna harus diberitahu bahwa port tidak tersedia.
+
+			\item Satu hal yang perlu diperhatikan tentang nama port adalah bahwa mereka secara tradisional telah COM1, COM2, COM3, atau COM4. Windows API tidak menyediakan mekanisme apa pun untuk menentukan port apa yang ada pada sistem. Beberapa sistem bahkan memiliki lebih banyak port daripada maksimum tradisional empat. Vendor perangkat keras dan pembuat perangkat serial-driver bebas memberi nama port apa pun yang mereka sukai. Untuk alasan ini, yang terbaik adalah pengguna memiliki kemampuan untuk menentukan nama port yang ingin mereka gunakan. Jika port tidak ada, kesalahan akan terjadi setelah mencoba membuka port, dan pengguna harus diberitahu bahwa port tidak tersedia.
+
+			\item Satu hal yang perlu diperhatikan tentang nama port adalah bahwa mereka secara tradisional telah COM1, COM2, COM3, atau COM4. Windows API tidak menyediakan mekanisme apa pun untuk menentukan port apa yang ada pada sistem. Beberapa sistem bahkan memiliki lebih banyak port daripada maksimum tradisional empat. Vendor perangkat keras dan pembuat perangkat serial-driver bebas memberi nama port apa pun yang mereka sukai. Untuk alasan ini, yang terbaik adalah pengguna memiliki kemampuan untuk menentukan nama port yang ingin mereka gunakan. Jika port tidak ada, kesalahan akan terjadisetelah mencoba membuka port, dan pengguna harus diberitahu bahwa port tidak tersedia.
+
 		\end{enumerate}
 		\subsection{I / O tumpang tindih}
 		\begin{enumerate}
 		
-				I / O yang tumpang tindih tidak sesederhana I / O non-tumpang tindih, tetapi memungkinkan lebih banyak fleksibilitas dan efisiensi. Sebuah port terbuka untuk operasi tumpang tindih memungkinkan beberapa utas untuk melakukan operasi I / O pada saat yang bersamaan dan melakukan pekerjaan lain ketika operasi sedang menunggu. Lebih jauh lagi, perilaku operasi yang tumpang tindih memungkinkan satu utas untuk mengeluarkan banyak permintaan yang berbeda dan bekerja di latar belakang sementara operasi masih menunggu.
 
-				Baik dalam aplikasi single-threaded maupun multithread, beberapa sinkronisasi harus dilakukan antara mengeluarkan permintaan dan memproses hasilnya. Satu utas harus diblokir sampai hasil operasi tersedia. Keuntungannya adalah I / O yang tumpang tindih memungkinkan utas untuk melakukan beberapa pekerjaan antara waktu permintaan dan penyelesaiannya. Jika tidak ada pekerjaan yang dapat dilakukan, maka satu-satunya kasus untuk I / O yang tumpang tindih adalah memungkinkan untuk respon pengguna yang lebih baik.
+				]\item I / O yang tumpang tindih tidak sesederhana I / O non-tumpang tindih, tetapi memungkinkan lebih banyak fleksibilitas dan efisiensi. Sebuah port terbuka untuk operasi tumpang tindih memungkinkan beberapa utas untuk melakukan operasi I / O pada saat yang bersamaan dan melakukan pekerjaan lain ketika operasi sedang menunggu. Lebih jauh lagi, perilaku operasi yang tumpang tindih memungkinkan satu utas untuk mengeluarkan banyak permintaan yang berbeda dan bekerja di latar belakang sementara operasi masih menunggu.
 
-				I / O yang tumpang tindih adalah jenis operasi yang digunakan sampel MTTTY. Ini menciptakan sebuah thread yang bertanggung jawab untuk membaca data port dan membaca status port. Ini juga melakukan pekerjaan latar belakang secara berkala. Program ini menciptakan untaian lain secara eksklusif untuk menulis data di luar port.
+				\item I/ O yang tumpang tindih tidak sesederhana I / O non-tumpang tindih, tetapi memungkinkan lebih banyak fleksibilitas dan efisiensi. Sebuah port terbuka untuk operasi tumpang tindih memungkinkan beberapa utas untuk melakukan operasi I / O pada saat yang bersamaan dan melakukan pekerjaan lain ketika operasi sedang menunggu. Lebih jauh lagi, perilaku operasi yang tumpang tindih memungkinkan satu utas untuk mengeluarkan banyak permintaan yang berbeda dan bekerja di latar belakang sementara operasi masih menunggu.
+
+
+				\item Baik dalam aplikasi single-threaded maupun multithread, beberapa sinkronisasi harus dilakukan antara mengeluarkan permintaan dan memproses hasilnya. Satu utas harus diblokir sampai hasil operasi tersedia. Keuntungannya adalah I / O yang tumpang tindih memungkinkan utas untuk melakukan beberapa pekerjaan antara waktu permintaan dan penyelesaiannya. Jika tidak ada pekerjaan yang dapat dilakukan, maka satu-satunya kasus untuk I / O yang tumpang tindih adalah memungkinkan untuk respon pengguna yang lebih baik.
+
+				\item I / O yang tumpang tindih adalah jenis operasi yang digunakan sampel MTTTY. Ini menciptakan sebuah thread yang bertanggung jawab untuk membaca data port dan membaca status port. Ini juga melakukan pekerjaan latar belakang secara berkala. Program ini menciptakan untaian lain secara eksklusif untuk menulis data di luar port.
 				
-				Catatan Aplikasi terkadang menyalahgunakan sistem multithreading dengan membuat terlalu banyak utas. Meskipun menggunakan beberapa utas dapat menyelesaikan banyak masalah yang sulit, membuat untaian yang berlebihan bukanlah penggunaan yang paling efisien dalam aplikasi. Thread kurang regangan pada sistem daripada proses tetapi masih memerlukan sumber daya sistem seperti waktu CPU dan memori. Aplikasi yang menciptakan untaian berlebihan dapat mempengaruhi kinerja keseluruhan sistem.
+				\item Catatan Aplikasi terkadang menyalahgunakan sistem multithreading dengan membuat terlalu banyak utas. Meskipun menggunakan beberapa utas dapat menyelesaikan banyak masalah yang sulit, membuat untaian yang berlebihan bukanlah penggunaan yang paling efisien dalam aplikasi. Thread kurang regangan pada sistem daripada proses tetapi masih memerlukan sumber daya sistem seperti waktu CPU dan memori. Aplikasi yang menciptakan untaian berlebihan dapat mempengaruhi kinerja keseluruhan sistem.
 
 		\end{enumerate}
 
@@ -44,9 +56,11 @@
 		\begin{enumerate}
 			\item Membaca dari dan menulis ke port komunikasi di Windows sangat mirip dengan file input / output  di Windows. Bahkan, fungsi yang melengkapi I / O file adalah fungsi yang sama yang digunakan untuk serial I / O. I / O dapat dilakukan dengan salah satu dari dua cara: tumpang tindih atau tidak tumpang tindih. Dokumentasi SDK Platform menggunakan istilah asinkron dan sinkron untuk mengkonotasikan jenis operasi I / O ini. Artikel ini, bagaimanapun, menggunakan istilah yang tumpang tindih dan tidak terabaikan.
 			\item Nonoverlapped I / O akrab bagi kebanyakan pengembang karena ini adalah bentuk tradisional I / O, di mana operasi diminta dan diasumsikan lengkap ketika fungsi kembali. Dalam kasus I / O yang tumpang tindih, sistem dapat kembali ke pemanggil segera bahkan ketika operasi tidak selesai dan akan memberi sinyal kepada pemanggil ketika operasi selesai. Program ini dapat menggunakan waktu antara permintaan I / O dan penyelesaiannya untuk melakukan beberapa pekerjaan latar belakang.
+		\end{enumerate}
 				\subsubsection{Bacaan}
 					\begin{enumerate}
 						\item Fungsi ReadFile menerbitkan operasi baca. ReadFileEx juga mengeluarkan operasi baca, tetapi karena tidak tersedia pada Windows 95, itu tidak tercakup dalam artikel ini. Berikut adalah potongan kode yang merinci cara mempublikasikan permintaan baca. Perhatikan bahwa fungsi memanggil fungsi untuk memproses data jika ReadFile mengembalikan TRUE. Ini adalah fungsi yang sama yang disebut jika operasi menjadi tumpang tindih. Perhatikan flag fWaitingOnRead yang didefinisikan oleh kode; ini menunjukkan apakah operasi baca tumpang tindih atau tidak. Ini digunakan untuk mencegah penciptaan operasi baca baru jika mereka luar biasa.
+					\end{enumerate}
 				
 				\begin{verbatim}
 				\item DWORD dwRead;
@@ -149,9 +163,10 @@
 				\begin{enumerate}
 				\item Komunikasi dapat terjadi kapan saja selama menggunakan port komunikasi. Dua langkah yang terlibat dalam menerima pemberitahuan acara komunikasi adalah sebagai berikut:
 
-				SetCommMask menetapkan peristiwa yang diinginkan yang menyebabkan pemberitahuan.
-				WaitCommEvent menerbitkan pemeriksaan status. Pemeriksaan status dapat berupa operasi tumpang-tindih atau non-tumpang tindih, seperti halnya operasi baca dan tulis.
-				Catatan: Peristiwa kata dalam konteks ini merujuk pada acara komunikasi saja. Itu tidak mengacu pada objek peristiwa yang digunakan untuk sinkronisasi.
+				\item SetCommMask menetapkan peristiwa yang diinginkan yang menyebabkan pemberitahuan.
+			\item WaitCommEvent menerbitkan pemeriksaan status. Pemeriksaan status dapat berupa operasi tumpang-tindih atau non-tumpang tindih, seperti halnya operasi baca dan tulis.
+				\item Catatan: Peristiwa kata dalam konteks ini merujuk pada acara komunikasi saja. Itu tidak mengacu pada objek peristiwa yang digunakan untuk sinkronisasi.
+
 
 				\end{enumerate}
 			
@@ -167,9 +182,9 @@ if (!SetCommMask(hComm, dwStoredFlags))
 	\begin{enumerate}
 		\item Kontrol aliran dalam komunikasi serial menyediakan mekanisme untuk menangguhkan komunikasi sementara salah satu perangkat sibuk atau karena alasan tertentu tidak dapat melakukan komunikasi apa pun. Secara tradisional ada dua jenis kontrol aliran: perangkat keras dan perangkat lunak.
 
-Masalah umum dengan komunikasi serial adalah operasi tulis yang sebenarnya tidak menulis data ke perangkat. Seringkali, masalah terletak pada kontrol aliran yang digunakan ketika program tidak menentukannya. Pemeriksaan dekat dari struktur DCB mengungkapkan bahwa satu atau lebih dari anggota berikut mungkin BENAR: fOutxCtsFlow, fOutxDsrFlow, atau fOutX. Mekanisme lain untuk mengungkapkan bahwa kontrol aliran diaktifkan adalah memanggil ClearCommError dan memeriksa struktur COMSTAT. Ini akan mengungkapkan ketika transmisi ditangguhkan karena kontrol aliran.
+\item Masalah umum dengan komunikasi serial adalah operasi tulis yang sebenarnya tidak menulis data ke perangkat. Seringkali, masalah terletak pada kontrol aliran yang digunakan ketika program tidak menentukannya. Pemeriksaan dekat dari struktur DCB mengungkapkan bahwa satu atau lebih dari anggota berikut mungkin BENAR: fOutxCtsFlow, fOutxDsrFlow, atau fOutX. Mekanisme lain untuk mengungkapkan bahwa kontrol aliran diaktifkan adalah memanggil ClearCommError dan memeriksa struktur COMSTAT. Ini akan mengungkapkan ketika transmisi ditangguhkan karena kontrol aliran.
 
-Sebelum membahas jenis-jenis pengendalian aliran, pemahaman yang baik tentang beberapa istilah sudah teratur. Komunikasi serial terjadi antara dua perangkat. Secara tradisional, ada PC dan modem atau printer. PC diberi label Data Terminal Equipment (DTE). DTE kadang-kadang disebut tuan rumah. Modem, printer, atau peralatan periferal lainnya diidentifikasi sebagai Peralatan Komunikasi Data (DCE). DCE kadang-kadang disebut sebagai perangkat.
+\item Sebelum membahas jenis-jenis pengendalian aliran, pemahaman yang baik tentang beberapa istilah sudah teratur. Komunikasi serial terjadi antara dua perangkat. Secara tradisional, ada PC dan modem atau printer. PC diberi label Data Terminal Equipment (DTE). DTE kadang-kadang disebut tuan rumah. Modem, printer, atau peralatan periferal lainnya diidentifikasi sebagai Peralatan Komunikasi Data (DCE). DCE kadang-kadang disebut sebagai perangkat.
 \end{enumerate}
 
 \cite{bai2004windows}
