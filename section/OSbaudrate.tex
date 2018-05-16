@@ -1,0 +1,57 @@
+%Nama Kelompok: Sistem_Operasi_BaudRate
+%Kelas: D4 TI 1B
+%Anggota : 
+%Kevin Natanael Nainggolan(1174059) 
+%Luthfi Muhammad Nabil(1174035)
+%Salwaa Tania(1174047)
+%Surya Pandu Prananda(1174036)
+
+\section{Baud Rate}
+
+\subsection {Pengertian Baud Rate}
+	Baud rate merupakan jumlah terjadi nya suatu perubahan status antara status nol dan status satu dalam waktu satu detik . Contoh nya ialah , suatu saluran memiliki sebuah baud rate 1000 , itu berarti saluran itu mampu mengirimkan setiap detik terjadi 1000 kali perubahan status  .
+	
+\subsection{Konsep Baud Rate}
+Komunikasi secara berturut-turut sudah tidak asing lagi di era teknologi ini, salah satunya dikarenakan jumlah penghantar yang digunakan bisa lebih efektif daripada melakukannya secara sejajar. Mengapa demikian? Karena kata Berturut-turut berarti mengirim satu bit data dan selanjutnya yang diikuti oleh bit-bit data yang lain pada jalur yang sama. Karena itulah kita dapat meringkas penggunaan kabel. Dikarenakan jalur yang dilalui bersamaan, maka kecepatan komunikasi berturut-turut tidak secepat kecepatan komunikasi sejajar. Komunikasi sejajar, dapat mengirim data secara bersamaan melalui beberapa jalur. Namun, untuk proses secara keseluruhan, sistem komunikasi berturut-turut memenuhi berbagai aplikasi microcontroler. Selain itu, sistem komunikasi berturut-turut sering digunakan pada modem, USB, RS-232, dan teman-temannya.Hal yang sangat penting dalam menghubungkan dua perangkat melalui komunikasi berturut-turut adalah memastikan bahwa kedua perangkat berkomunikasi dengan bentuk yang sama, terdapat beberapa parameter yang digunakan untuk membangun komunikasi secara berturut-turut, diantaranya adalah Baud Rate, paket data, parity bit, dan synchronization bit .
+
+Baud rate mengindikasikan seberapa cepat data dikirim melalui komunikasi berturut-turut.Satuan baud rate itu bit per second atau disingkat bps, walaupun untuk kasus tertentu dalam komunikasi sejajar, nilai bps bisa berbeda dengan nilai baud rate. Dugaan saat ini kita berpusat pada komunikasi berturut-turut, dimana setiap detik menyatakan transisi satu bit keadaan. Apabila hal ini terpenuhi, maka nilai baud rate akan sama dengan nilai bit per secondnya. Bit per second ini mengartikan bahwa berapa bit data dapat ditransfer setiap detiknya. Jika kita membalikan nilai bps ini, kita dapat memperoleh keterangan berapa lama waktu yang dipakai saat mengirim 1 bit. Nilai baud rate dapat diatur dengan standar kecepatan, diantaranya adalah sebagai berikut :
+\begin {itemize}
+	\item 1.200bps
+	\item 2.400bps 
+	\item 4.800bps 
+	\item 9.600bps 
+	\item 19.200bps	
+	\item 38.400bps 
+	\item 57.600bps
+	\item 115.200bps
+\end {itemize}	
+	Kecepata yang paling umum digunakan 9.600 bps. Ini adalah nilai yang mana kecepatan komunikasi bukalah suatu hal yang kritis untuk dipertimbangkan. Seperti contoh, jika kita ingin mengetahui nilai dari sensor warna. Mendapatkan data warna dari suatu sensor tidaklah memerlukan kecepatan komunikasi yang terlalu cepat. Agar  error tidak terjadi, kita menggunakan kecepatan standar 9.600 bps.
+
+\begin{figure}[ht]
+	\centerline{\includegraphics[width=1\textwidth]{figures/serialframe.png}}
+	\caption{Serial Frame}
+	\label{serialframe}
+\end{figure}
+\subsection{ Hubungan baud rate dengan bit rate}
+Baud rate yang tidak pernah bisa lebih tinggi dari channel bandwidth mentah , yang diukur dalam satuan Hz . Tingkat baudrate ini seringkali salah diguna kan secara bergantian . Hubungan antara baud rate dan bit rate tergantung pada kecanggihan skema modulasi yang digunakan untuk memanipulasi carrier . Bit rate dan baud rate bisa sama jika setiap bit diwakili oleh transisi sinyal. Bit rate biasanya lebih tinggi sedangkan baud rate sebagai transisi sinyal tunggal dapat mewakili beberapa bit .
+\subsection{Fungsi Baud Rate}
+Baud rate dideteksi untuk mengetahui keluaran dari perangkat yang memerlukan basis serial untuk mengecek kecepatan data dan data itu sendiri. \cite{anderson1973method} Secara singkat, mendeteksi baud rate terdiri dari menentukan kecepatan transmisi dari perangkat yang mendapatkan sinyal karena perangkat penerima dapat dengan tepat mendecode sinyal dan mengkonversikannya ke perangkat. Baud rate memberitahu kecepatan data yang dapat dikirim melalui komunikasi serial. Dalam bps sendiri, berarti diketahui berapa kecepatan data yang dialirkan. Biasanya baud rate yang dipakai adalah 9600. Semakin besar baud rate yang dipakai, semakin tinggi kecepatan transfer data. Tetapi makin tinggi kecepatan maka makin beresiko mengalami error data. Untuk itu, disarankan untuk memakai baud rate standar atau dibawah 115.201.
+
+\subsection{Perbedaan Baud Rate Dengan Bit Rate }
+Kedua nya ini digunakan untuk mengukur kecepatan dalam konektivitas . Baud rate adalah ukuran berapa banyak simbol yang dikirimkan setiap sinyal . Simbol adalah setiap perubahan bentuk gelombang atau pulsa elektrik yang digunakan untuk mentransmisikan data sepanjang medium . Di sisi lain , bitrate adalah ukuran jumlah bit yang ditransmisikan . Dahulu , baud rate dan bit rate di guna kan secara bergantian karena teknik modulasi yang lebih lama dan  hanya memungkin kan satu bit untuk di masuk kan ke dalam setiap simbol . namun sekarang , setiap simbol dapat berisi lebih dari bit , sehingga bitrate menjadi jauh lebih tinggi dari pada baud rate . Dengan kasus yang seperti ini , tidak lagi akurat untuk mengguna kan bit rate dan baud rate secara ber gantian karena tidak lagi sama . Bit rate kotor sama dengan baud rate di kali kan dengan jumlah bit yang terdapat pada masing - masing simbol .
+Karena baud rate tidak membedakan apakah informasi yang ditransmisikan adalah data atau hanya memberi isyarat informasi yang diguna kan oleh perangkat keras untuk melakukan sinkronisasi, menentukan jalan nya, dan banyak hal lain yang dilakukan pada sinkronisasi . Tingkat baud rate mencakup overhead . Jadi jika setiap simbol mengandung 4 bi t, bit rate bersih sedikit kurang dari empat kali dari baud rate . Perbedaan nya biasa nya sangat kecil dan seharus nya tidak mempengaruhi transmisi data yang terlalu banyak.
+
+\subsection{Framing Data}
+Framing data adalah teknik penyusunan data untuk dikirim melalui komunikasi serial. Pada gambar \ref{serialframe}, Data yang dikirim melalui komunikasi serial biasanya dari 5 sampai 9 bit. Pada arduino, data yang dipakai berukuran 8 bit. Urutan dari pengiriman data biasanya mengikuti endian tertentu. seperti pengiriman most-significant-bit atau least-significant-bit terlebih dahulu yang dikirim. Framing data digunakan juga pada pengiriman data untuk mengframe data.
+\subsubsection{Kit Framing Data}
+Start dan Stop bit biasa dikenal sebagai synchronization bit yang biasanya berukuran 2 atau 3 bit. Bit-bit ini mengawali dan mengakhiri pengiriman data. Start bit selalu diberi ukuran 1 bit sedangkan stop bit dapat diberi 1 atau 2 bit tergantung bagaimana pengguna perangkat keras atau pengkonfigurasi perangkat keras menggunakaannya. Jika tidak memerlukan konfigurasi, nilai stop bit dapat dibiarkan menjadi sebesar 1 bit. seperti pada gambar \ref{serialframe}.
+Posisi idle pada komunikasi serial bernilai 1. Start bit diidentifikasi dengan adanya transisi dari keadaan idle atau diam. yaitu dari 1 ke 0, sedangkan stop bit adalah kebalikan transisi dari keadaan idle untuk dari 0 ke 1.
+Bit Parity dalam framing data bersifat opsional dan dapat diabaikan. Parity bit di guna kan untuk transfer data yang di pengaruhi oleh noise . Namun penggunaan bit parity dapat memperlambat kecepatan komunikasi atau transfer . Penggunaan bit parity juga dibutuhkan sebuah sinkronisasi antara transmitter dengan receiver karena dilakukan untuk mengurangi kemungkinan kesalah dalam interpretasi data dalam perangkat keras .
+
+\subsection{Contoh Pengiriman Data}
+Dengan contoh saat kita mau mengirim kata OK. komunikasi akan memiliki 2 paket data. Pada Kode ASCII , untuk ;O' ialah 79 dalam bentuk desimal , sedang kan huruf 'K' yaitu 75 . Data yang terkirim lebih dahulu adalah least - significant bit . Karena data di kirim dengan kecepatan 9600 bps , maka setiap bit memerlukan waktu selama 1/9600 = 104 mikrodetik / bit . Dalam arduino , setting baud rate dapat di lakukan dengan kode :
+\begin{verbatim}
+Serial.begin(9600);
+\end{verbatim}
+Kode tersebut menandakan bahwa kecepatan serial adalah 9600 bps atau 9600 bit per detik.
+
