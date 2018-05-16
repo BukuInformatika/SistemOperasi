@@ -2,9 +2,9 @@
 	\subsection{Membuka Port}
 		\begin{enumerate} 
 			Dokumentasi SDK Platform menyatakan bahwa ketika membuka port komunikasi, panggilan ke CreateFile memiliki persyaratan berikut:
-				\item 1. fdwShareMode harus nol. Port komunikasi tidak dapat dibagikan dengan cara yang sama seperti file yang dibagikan. Aplikasi yang menggunakan TAPI dapat menggunakan fungsi TAPI untuk memfasilitasi berbagi sumber daya antar aplikasi. Untuk aplikasi yang tidak menggunakan TAPI, penanganan warisan atau duplikasi diperlukan untuk berbagi port komunikasi. Berurusan dengan duplikat berada di luar cakupan artikel ini; silakan merujuk ke dokumentasi Platform SDK untuk informasi lebih lanjut.
-				\item 2. fdwCreate harus menentukan bendera OPEN_EXISTING.
-				\item 3. hTemplateFile parameter harus NULL.
+				\item  fdwShareMode harus nol. Port komunikasi tidak dapat dibagikan dengan cara yang sama seperti file yang dibagikan. Aplikasi yang menggunakan TAPI dapat menggunakan fungsi TAPI untuk memfasilitasi berbagi sumber daya antar aplikasi. Untuk aplikasi yang tidak menggunakan TAPI, penanganan warisan atau duplikasi diperlukan untuk berbagi port komunikasi. Berurusan dengan duplikat berada di luar cakupan artikel ini; silakan merujuk ke dokumentasi Platform SDK untuk informasi lebih lanjut.
+				\item  fdwCreate harus menentukan bendera OPEN_EXISTING.
+				\item  hTemplateFile parameter harus NULL.
 			Satu hal yang perlu diperhatikan tentang nama port adalah bahwa mereka secara tradisional telah COM1, COM2, COM3, atau COM4. Windows API tidak menyediakan mekanisme apa pun untuk menentukan port apa yang ada pada sistem. Beberapa sistem bahkan memiliki lebih banyak port daripada maksimum tradisional empat. Vendor perangkat keras dan pembuat perangkat serial-driver bebas memberi nama port apa pun yang mereka sukai. Untuk alasan ini, yang terbaik adalah pengguna memiliki kemampuan untuk menentukan nama port yang ingin mereka gunakan. Jika port tidak ada, kesalahan akan terjadi (ERROR_FILE_NOT_FOUND) setelah mencoba membuka port, dan pengguna harus diberitahu bahwa port tidak tersedia.
 		\end{enumerate}
 		\begin{enumerate}
@@ -39,7 +39,7 @@
 		\end{verbatim}
 	\subsection{Membaca dan menulis}
 		\begin{enumerate}
-			\item Membaca dari dan menulis ke port komunikasi di Windows sangat mirip dengan file input / output (I / O) di Windows. Bahkan, fungsi yang melengkapi I / O file adalah fungsi yang sama yang digunakan untuk serial I / O. I / O dapat dilakukan dengan salah satu dari dua cara: tumpang tindih atau tidak tumpang tindih. Dokumentasi SDK Platform menggunakan istilah asinkron dan sinkron untuk mengkonotasikan jenis operasi I / O ini. Artikel ini, bagaimanapun, menggunakan istilah yang tumpang tindih dan tidak terabaikan.
+			\item Membaca dari dan menulis ke port komunikasi di Windows sangat mirip dengan file input / output  di Windows. Bahkan, fungsi yang melengkapi I / O file adalah fungsi yang sama yang digunakan untuk serial I / O. I / O dapat dilakukan dengan salah satu dari dua cara: tumpang tindih atau tidak tumpang tindih. Dokumentasi SDK Platform menggunakan istilah asinkron dan sinkron untuk mengkonotasikan jenis operasi I / O ini. Artikel ini, bagaimanapun, menggunakan istilah yang tumpang tindih dan tidak terabaikan.
 			\item Nonoverlapped I / O akrab bagi kebanyakan pengembang karena ini adalah bentuk tradisional I / O, di mana operasi diminta dan diasumsikan lengkap ketika fungsi kembali. Dalam kasus I / O yang tumpang tindih, sistem dapat kembali ke pemanggil segera bahkan ketika operasi tidak selesai dan akan memberi sinyal kepada pemanggil ketika operasi selesai. Program ini dapat menggunakan waktu antara permintaan I / O dan penyelesaiannya untuk melakukan beberapa pekerjaan latar belakang.
 				\subsubsection{Bacaan}
 					\begin{enumerate}
@@ -76,7 +76,7 @@
 						\item Bagian kedua dari operasi yang tumpang tindih adalah deteksi penyelesaiannya. Pegangan acara dalam struktur OVERLAPPED diteruskan ke fungsi WaitForSingleObject, yang akan menunggu hingga objek diberi isyarat. Setelah acara ditandai, operasi selesai. Ini tidak berarti bahwa itu berhasil diselesaikan, hanya saja itu selesai. Fungsi GetOverlappedResult melaporkan hasil operasi. Jika kesalahan terjadi, GetOverlappedResult mengembalikan FALSE dan GetLastError mengembalikan kode kesalahan. Jika operasi selesai dengan sukses, GetOverlappedResult akan mengembalikan TRUE.
 
 						
-						Catatan GetOverlappedResult dapat mendeteksi penyelesaian operasi, serta mengembalikan status kegagalan operasi. GetOverlappedResult mengembalikan FALSE dan GetLastError mengembalikan ERROR_IO_INCOMPLETE ketika operasi tidak selesai. Selain itu, GetOverlappedResult dapat dibuat untuk memblokir hingga operasi selesai. Ini secara efektif mengubah operasi yang tumpang tindih menjadi operasi non-tumpang tindih dan dicapai dengan melewatkan TRUE sebagai parameter bWait.
+						Catatan GetOverlappedResult dapat mendeteksi penyelesaian operasi, serta mengembalikan status kegagalan operasi. GetOverlappedResult mengembalikan FALSE dan GetLastError mengembalikan ERRORIOINCOMPLETE ketika operasi tidak selesai. Selain itu, GetOverlappedResult dapat dibuat untuk memblokir hingga operasi selesai. Ini secara efektif mengubah operasi yang tumpang tindih menjadi operasi non-tumpang tindih dan dicapai dengan melewatkan TRUE sebagai parameter bWait.
 				\end{enumerate}
 
 
