@@ -11,6 +11,9 @@
 \subsection { sistem postgresql }
 PostgreSQL mengelola concurrency menggunakan sistem yang dikenal dengan sebutan Multi - Version Concurrency Control ( MVCC ) , yang memberikan setiap user nya suatu “ snapshot ” dari database . Sehingga , perubahan harus dilakukan tanpa terlihat oleh pengguna lain sampai transaksi berkomitmen . Hal ini diutamakan untuk menghilangkan kebutuhan kunci membaca , dan untuk memastikan database yang mempertahankan ASAM prinsip secara efisien .
 
+\subsection { Kelebihan postgresql }
+PostgreSQL mempunyai arsitektur multiproses ( forking ) yang artinya memiliki stabilitas yang lebih tinggi . Karena , satu proses anak yang mati tidak akan menyebabkan seluruh daemon mati meskipun nyatanya , dahulu hal yang seperti ini sering terjadi. PostgreSQL ini juga mempunyai lisensi GPL ( General Public License ) . Dan oleh sebab itu PostgreSQL bisa digunakan , dimodifikasi dan didistribusikan oleh setiap orang tanpa harus membayar lisensi ( free of charge ) baik untuk keperluan pribadi , pendidikan dan komersil .
+
 \subsection{Integrasi Python Dengan PostgreSQL} 
 Integrasi Python dengan PostgreSQL bisa dibilang sama dengan integrasi Python dengan bahasa lainnya.  Karena kita tinggal mendownload hal yang dibutuhkan dan membuat kode untuk dikoneksikan ke database. Salah satunya juga yaitu mengkoneksikan PostgreSQL dimana kita harus instalasi PostgreSQL itu sendiri. Berikut hal yang perlu disiapkan sebelum mengkoneksikan : 
 \begin{itemize}
