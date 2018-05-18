@@ -17,3 +17,34 @@
 			\item Implikasi lain dari desain tanpa server adalah bahwa beberapa proses mungkin tidak dapat menulis ke file database. Dalam basis data berbasis server, beberapa penulis akan terhubung ke daemon yang sama, yang mampu menangani kunci secara internal. Di sisi lain, SQLite harus bergantung pada kunci sistem file. Ini memiliki sedikit pengetahuan tentang proses lain yang mengakses database pada saat yang bersamaan. Oleh karena itu, SQLite bukan pilihan yang lebih disukai untuk penyebaran intensif. Namun, untuk pertanyaan sederhana dengan sedikit konkurensi, keuntungan kinerja SQLite dari menghindari overhead yang meneruskan datanya ke proses lain.
 			\item SQLite menggunakan PostgreSQL sebagai platform referensi. Apa yang akan dilakukan PostgreSQL digunakan untuk memahami standar SQL. Salah satu ketidakberesan utama adalah bahwa, dengan pengecualian kunci primer, SQLite tidak memaksakan jenis pemeriksaan; jenis nilai bersifat dinamis dan tidak dibatasi oleh skema (meskipun skema akan memicu konversi saat menyimpan, jika konversi semacam itu berpotensi reversibel). SQLite berusaha mengikuti Aturan Postel.
 		\end{enumerate}
+		
+		\subsection{Syntax Perintah Insert}
+\begin{verbatim}
+
+INSERT INTO nama_tabel [(kolom1, kolom2, kolom3, … kolomn)]
+VALUES (nilai1, nilai2, nilai3,… nilaiN);
+Kolom1, kolom2, kolom3 merupakan nama kolom yang ada didalam tabel sqlite yang akan kamu tambahkan data kedalam masing masing kolom tersebut.
+
+INSERT INTO nama_tabel VALUES (nilai1, nilai2, nilai3,… nilaiN);
+Contoh Perintah Insert Di SQLite
+
+
+INSERT INTO siswa (id, nama, umur, alamat)
+VALUES (1, 'Firdan Ardiansyah',27,'JL. KH. Atim II');
+INSERT INTO siswa (id, nama, umur, alamat)
+VALUES (2, 'Muhammad Ammar',25,'BTN. Palaton');
+INSERT INTO siswa (id, nama, umur, alamat)
+VALUES (3, 'Bilal Ardiansyah',23,'BTN. Depag');
+INSERT INTO siswa (id, nama, umur, alamat)
+VALUES (4, 'Rafi Syabani',25,'BTN. Sumur Buang');
+
+INSERT INTO siswa VALUES (5, 'Muhammad Bintang',23,'Pandeglang'); 
+Melihat Data Didalam Tabel Siswa
+\end{verbatim}
+
+
+	\subsection{Melihat Data}
+		\begin{verbatim}
+SELECT * FROM siswa;
+		\end{verbatim}
+		
