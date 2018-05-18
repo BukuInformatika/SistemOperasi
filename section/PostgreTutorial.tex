@@ -14,6 +14,9 @@ PostgreSQL mengelola concurrency menggunakan sistem yang dikenal dengan sebutan 
 \subsection { Kelebihan postgresql }
 PostgreSQL mempunyai arsitektur multiproses ( forking ) yang artinya memiliki stabilitas yang lebih tinggi . Karena , satu proses anak yang mati tidak akan menyebabkan seluruh daemon mati meskipun nyatanya , dahulu hal yang seperti ini sering terjadi. PostgreSQL ini juga mempunyai lisensi GPL ( General Public License ) . Dan oleh sebab itu PostgreSQL bisa digunakan , dimodifikasi dan didistribusikan oleh setiap orang tanpa harus membayar lisensi ( free of charge ) baik untuk keperluan pribadi , pendidikan dan komersil .
 
+\subsection { Jenis data }
+Berbagai jenis asli data yang di dukung. Termasuk juga panjang variabel array ( jenis termasuk teks dan komposit ) sampai dengan ukuran total 1 gigabytes. ada juga Geometris primitif , alamat IPv4 dan IPv6. Lalu blok CIDR dan alamat MAC, UUID (per 8.3) dan XML yang mendukung XPath query.
+
 \subsection{Integrasi Python Dengan PostgreSQL} 
 Integrasi Python dengan PostgreSQL bisa dibilang sama dengan integrasi Python dengan bahasa lainnya.  Karena kita tinggal mendownload hal yang dibutuhkan dan membuat kode untuk dikoneksikan ke database. Salah satunya juga yaitu mengkoneksikan PostgreSQL dimana kita harus instalasi PostgreSQL itu sendiri. Berikut hal yang perlu disiapkan sebelum mengkoneksikan : 
 \begin{itemize}
