@@ -21,7 +21,10 @@ Insert data pada umumnya memiliki sistem yang sama, bahasa yang sama. di Postgre
 \begin{verbatim}
 insert into db_postgre(kol1, kol2, kol3) values('kol1', 'kol2', 'kolek');
 \end{verbatim}
-Tetapi PostgreSQL memiliki aturan ketat mengenai cara insert database. Jadi tidak sembarang teknik menginsert dapat digunakan dalam metode insert data ke postgres.
+Tetapi PostgreSQL memiliki aturan ketat mengenai cara insert database. Jadi tidak sembarang teknik menginsert dapat digunakan dalam metode insert data ke postgres. Pada postgre, pemanggilan connection berbeda syntax dengan pemanggilan pada bahasa lain. contohnya adalah sebagai berikut : 
+\begin{verbatim}
+conn=MySQLdb.connect(hos, use, pas, dbname)
+\end{verbatim}
 
 \subsection{Pengujian}
 Menguji POSTGRESQL pada platform UNIX sebagai berikut: 
