@@ -21,10 +21,27 @@
 	
 	\subsection{Cara Penggunaan Query INSERT...VALUES}
 	Disini kita akan membahas perintah INSERT yang paling sederhana, yakni:
+	
 	\begin{verbatim}
 		INSERT INTO nama_table VALUES (nilai_kolom1, nilai_kolom2,...);
 	\end{verbatim}
+	
 	nama_table merupakan nama tabel yang akan kita input, dan nilai_kolom1 merupakan nilai yang akan kita imputkan ke dalam tabel tersebut, dan juga seterusnya untuk nilai kolom. Di nilai kolom haris berada dalam tanda kurung dan dipisah oleh tanda koma.
 	
-	Dibawah adalah contoh memasukkan sebaris data :
+	Gambar dibawah adalah contoh memasukkan sebaris data :
+	
+	\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.5\textwidth]{figures/insert.png}}
+			\caption{Insert}
+			\label{insert}
+			\end{figure}
+			
+	Kita juga bisa langsung memasukkan dua baris data ataupun lebih secara langsung hanya dengan satu perintah query INSERT, kita hanya butuh untuk memasukkan data di baris selanjutnya di belakang perintah, dengan bentuk seperti ini :
+	
+	\begin{verbatim}
+		INSERT INTO nama_table VALUES (nilai_kolom1a, nilai_kolom2a,...), 
+		(nilai_kolom1b, nilai_kolom2b,...);
+	\end{verbatim}
+	
+	Gambar dibawah ini adalah contoh penambahan data dua baris sekaligus :
 	
