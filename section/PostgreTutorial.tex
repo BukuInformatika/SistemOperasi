@@ -21,7 +21,7 @@ insert into db_postgre(kol1, kol2, kol3) values('kol1', 'kol2', 'kolek');
 Tetapi PostgreSQL memiliki aturan ketat mengenai cara insert database. Jadi tidak sembarang teknik menginsert dapat digunakan dalam metode insert data ke postgres.
 
 \subsection{Pegnujian}
-menguji POSTGRESQL pada platform UNIX sebagai berikut: 
+Menguji POSTGRESQL pada platform UNIX sebagai berikut: 
 beberapa kompilasi ini membutuhkan gcc
 \begin {itemize} 
 	\item aix - IBM pada AIX 3.2.5 atau 4.x
@@ -41,3 +41,6 @@ beberapa kompilasi ini membutuhkan gcc
 	\item svr4 - Intel x86 pada Intel SVR4 dan MIPS
 	\item ultrix4 - DEC MIPS di Ultrix 4.4
 \end {itemize}
+
+Port selain sistem operasi Unix yang tersedia dan memungkinkan. 
+Untuk mengkompilasi libpq C library, psql, dan interface lain dan binari untuk dijalankan pada MS Platform Windows. Dalam hal ini, klien berjalan di MS Windows, dan berkomunikasi melalui TCP / IP ke server yang berjalan di salah satu platform Unix kami yang didukung.
