@@ -68,4 +68,20 @@ SELECT * FROM siswa;
 			\item Program baris perintah yang berdiri sendiri disediakan dalam distribusi SQLite. Ini dapat digunakan untuk membuat database, menentukan tabel, menyisipkan dan mengubah baris, menjalankan kueri dan mengelola file database SQLite. Ini juga berfungsi sebagai contoh untuk menulis aplikasi yang menggunakan pustaka SQLite.
 			\item SQLite menggunakan pengujian regresi otomatis sebelum setiap rilis. Lebih dari 2 juta tes dijalankan sebagai bagian dari verifikasi rilis. Dimulai dengan rilis 10 Agustus 2009 dari SQLite 3.6.17, rilis SQLite memiliki cakupan cabang cakupan 100%, salah satu komponen cakupan kode. Tes dan tes menggunakan domain publik dan kepemilikan parsial.
 		\end{enumerate}
-		
+	\subsection{SQLite Serverless}
+		\begin{enumerate}
+			\item Sebagian besar mesin database SQL diimplementasikan sebagai proses server terpisah. Program yang ingin mengakses database berkomunikasi dengan server menggunakan beberapa jenis komunikasi interprocess (biasanya TCP / IP) untuk mengirim permintaan ke server dan menerima hasilnya kembali. SQLite tidak berfungsi dengan cara ini. Dengan SQLite, proses yang ingin mengakses database membaca dan menulis langsung dari file database pada disk. Tidak ada proses server menengah.
+			\item Ada kelebihan dan kekurangan menjadi serverless. Keuntungan utama adalah tidak ada proses server terpisah untuk menginstal, mengkonfigurasi, mengkonfigurasi, menginisialisasi, mengelola, dan memecahkan masalah. Ini adalah salah satu alasan mengapa SQLite adalah mesin database "konfigurasi-nol". Program yang menggunakan SQLite tidak memerlukan dukungan administratif untuk menyiapkan mesin basis data sebelum dijalankan. Setiap program yang dapat mengakses disk dapat menggunakan database SQLite.
+			\item Di sisi lain, mesin database yang menggunakan server dapat memberikan perlindungan yang lebih baik dari bug di aplikasi klien - pointer liar pada klien tidak dapat merusak memori di server. Dan karena server adalah proses persisten tunggal, ia mampu mengontrol akses basis data dengan lebih presisi, memungkinkan penguncian yang lebih baik dan konkurensi yang lebih baik.
+			\item Sebagian besar mesin klien / server database berbasis SQL. Dari mereka tanpa server, SQLite adalah satu-satunya yang diketahui dari penulis ini yang memungkinkan beberapa aplikasi untuk mengakses database yang sama pada saat yang bersamaan.
+		\end{enumerate}
+	\subsection{Neo Serverless vs Classic Serverless}
+		\begin{enumerate}
+			\item Baru-baru ini, orang mulai menggunakan kata serverless berarti sesuatu yang sangat berbeda dari makna yang dimaksudkan dalam dokumen ini. 
+			\item Berikut dua definisi yang mungkin tanpa server:
+			\item Classic Serverless: Mesin database berjalan dalam proses, thread, dan ruang alamat yang sama dengan aplikasi. Tidak ada pesan yang lewat atau aktivitas jaringan.
+			\item Neo-Serverless: Mesin database berjalan di ruang nama aplikasi terpisah, mungkin pada mesin yang terpisah, tetapi database disediakan sebagai layanan turn-key oleh penyedia hosting, yang tidak memerlukan manajemen atau administrasi dari pemilik aplikasi, dan sangat mudah digunakan bahwa pengembang dapat mengasumsikan database sebagai serverless bahkan jika server benar-benar menggunakan di bawah selimut.
+			\item SQLite adalah contoh mesin database tanpa server klasik. Dengan SQLite, tidak ada proses, thread, mesin, atau mekanisme lain (selain OS host komputer dan sistem file) untuk membantu menyediakan layanan atau implementasi database. Sama sekali tidak ada server.
+			\item Microsoft Azure Cosmo DB dan Amazon S3 adalah contoh dari database neo-serverless. Database ini diimplementasikan oleh proses server yang berjalan secara terpisah di cloud. Tetapi server dikelola dan dikelola oleh ISP, bukan oleh pengembang aplikasi. Pengembang aplikasi hanya menggunakan layanan ini. Pengembang tidak harus menyediakan, mengkonfigurasi, atau mengelola instance server basis data, karena semua pekerjaan ditangani secara otomatis oleh penyedia layanan. Server database memang ada, mereka hanya tersembunyi dari para pengembang.
+			\item Penting untuk memahami dua definisi yang berbeda ini untuk serverless. Ketika sebuah database mengklaim sebagai serverless, pastikan untuk mengetahui apakah itu berarti serverless klasik atau neo-serverless.
+		\end{enumerate}
