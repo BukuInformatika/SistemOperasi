@@ -45,3 +45,18 @@
 	
 	Gambar dibawah ini adalah contoh penambahan data dua baris sekaligus :
 	
+	\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.5\textwidth]{figures/insert2.png}}
+			\caption{Insert Dua Data}
+			\label{insert2}
+			\end{figure}
+	
+	command INSERT..VALUES diatas bagus digunakan apabila kita tau urutan - urutan kolom yang ada dalam tabel tersebut, kita diharuskan untuk menafsirkan urutan kolom yang ingin kita isi dengan cara menuliskan query INSERT..VALUES.
+	
+	\subsection{Cara Penggunaan Query INSERT(nama_kolom)...VALUES}
+	Apabila kita berada di dalam situasi dimana kita tidak mengetahui urutan kolom yang akan kita isi, ataupun hanya ingin mengisi sebagian saja. Kita dapat menggunakan perintah seperti dibawah ini :
+		\begin{verbatim}
+			INSERT INTO nama_table (kolom1,kolom2,...) VALUES (nilai_kolom1,nilai_kolom2,...);
+		\end{verbatim}
+		
+	Gambar dibawah ini adalah contoh dari perintah diatas :
