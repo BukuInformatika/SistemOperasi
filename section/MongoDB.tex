@@ -36,6 +36,11 @@ Database MongoDB ini tidak memakai bahasa yang biasa nya digunakan RDBMS ( SQL a
 3. Efisien ( Efficient ) :yaitu Encoding data untuk BSON dan decoding data dari BSON bisa dilakukan dengan sangat cepat dalam bahasa karena menggunakan jenis C data . 
 
 	Bahasa BSON ini memiliki struktur bahasa yang hampir sama seperti bahasa JavaScript . Maka , ketika pengguna sudah terbiasa menggunakan JavaScript , tidak akan sulit baginya untuk menggunakan MongoDB ini .
+	
+\subsection { Tiga Element inti pada MongoDB }
+Agar kita bisa mengerti kapabilitas MongoDB , kita perlu mempelajari element inti yang menyusun suatu database dalam MongoDB . Pada kenyataan nya , model penyimpanan data dalam MongoDB di organisasikan dalam sekelompok komponen yang terdiri dari tiga komponen . Berikut adalah komponen - komponen yang ada di dalam MongoDB :  
+
+1. Database : ialah element pada top level . Pada database relasional , suatu database biasanya terdiri dari table dan views . Dalam MongoDB , suatu database ialah wadah secara fisik yang mencakup suatu struktur yang disebut collection . Setiap database memiliki sekelompok file tersendiri di dalam filesystem media penyimpanan . biasanya , satu server MongoDB terdiri atas beberapa database .
 
 \subsection {Menggunakan MongoDB pada Mongolab}
 Langkah - Langkahnya Sebagai berikut :
