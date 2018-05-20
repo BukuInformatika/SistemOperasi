@@ -43,4 +43,17 @@ beberapa kompilasi ini membutuhkan gcc
 \end {itemize}
 
 Port selain sistem operasi Unix yang tersedia dan memungkinkan. 
-Untuk mengkompilasi libpq C library, psql, dan interface lain dan binari untuk dijalankan pada MS Platform Windows. Dalam hal ini, klien berjalan di MS Windows, dan berkomunikasi melalui TCP / IP ke server yang berjalan di salah satu platform Unix kami yang didukung.
+Untuk mengkompilasi libpq C library, psql, dan interface lain dan binari untuk dijalankan pada MS Platform Windows. Dalam hal ini, klien berjalan di MS Windows, dan berkomunikasi melalui TCP / IP ke server yang berjalan di salah satu platform Unix kami yang didukung.Sebuah file win31.mak termasuk dalam distribusi untuk membuat libpq librq Win32 dan psql. 
+Server database sekarang bekerja pada Windows NT menggunakan pustaka porting Cygnus Unix / NT
+
+\subsection {Bahasa Pemrograman yang tersedia}
+Bahasa yang tersedia untuk berkomunikasi dengan POSTGRESQL ada
+ \begin {itemize}
+	\item C atau libpq
+	\item C ++ atau libpq ++
+	\item Embedded C atau ecpg
+	\item Java atau jdbc
+	\item Perl atau perl5
+	\item ODBC atau odbc
+	\item Python atau PyGreSQL
+\end {itemize}
