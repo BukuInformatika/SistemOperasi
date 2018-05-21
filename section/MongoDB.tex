@@ -42,6 +42,10 @@ Agar kita bisa mengerti kapabilitas MongoDB , kita perlu mempelajari element int
 
 1. Database : ialah element pada top level . Pada database relasional , suatu database biasanya terdiri dari table dan views . Dalam MongoDB , suatu database ialah wadah secara fisik yang mencakup suatu struktur yang disebut collection . Setiap database memiliki sekelompok file tersendiri di dalam filesystem media penyimpanan . biasanya , satu server MongoDB terdiri atas beberapa database .
 
+2. Collection : ialah sekelompok document MongoDB . Collection bisa dipadankan dengan table dalam RDBMS . Sejumlah collection bisa berada dalam satu database tapi harus memiliki nama yang berbeda - beda . Normalnya , collection - collection yang tergabung dalam satu database memiliki hubungan tertentu , meskipun tidak dituntut harus dibuat dengan suatu skema tertentu seperti hal nya table dalam RDBMS . 
+
+3. Documents : ialah satuan atau unit data terkecil dalam MongoDB . Pada dasar nya tersusun atas sekelompok pasangan key - value . Tidak seperti record pada RDBMS , document memiliki skema yang dinamis , maksudnya ialah document yang berada dalam satu collection tidak harus memiliki sekelompok field yang sama . 
+
 \subsection {Menggunakan MongoDB pada Mongolab}
 Langkah - Langkahnya Sebagai berikut :
 
