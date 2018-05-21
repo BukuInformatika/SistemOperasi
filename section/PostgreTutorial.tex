@@ -56,4 +56,11 @@ Bahasa yang tersedia untuk berkomunikasi dengan POSTGRESQL ada
 	\item Perl atau perl5
 	\item ODBC atau odbc
 	\item Python atau PyGreSQL
+	\item TCL atau libpgtcl
+	\item C Easy API atau libpgeasy
+	\item Embedded HTML atau PHP
 \end {itemize}
+
+\subsection {Akses selain host asli}
+Cara untuk mencegah host lain mengakses
+database POSTGRESQL, Secara default, POSTGRESQL hanya mengizinkan koneksi dari komputer lokal menggunakan soket domain Unix. Mesin lain tidak akan dapat terhubung kecuali Anda menambahkan flag -i ke postmaster, dan mengaktifkan hostbased otentikasi. Ini akan memungkinkan TCP / IP koneksi.
