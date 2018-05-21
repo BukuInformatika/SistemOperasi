@@ -17,7 +17,11 @@ PostgreSQL mempunyai arsitektur multiproses ( forking ) yang artinya memiliki st
 PostgreSQL ini mempunyai kemampuan untuk menampung data spasial . Sehingga , postgresql ini dapat di gunakan untuk pembuatan sebuah situs yang berbasis WebGIS , untuk melakukan pemetaan dan lain sebagainya . PostgreSQL ini juga mendukung banyak jenis bahasa pemrograman , misalkan bahasa C, C++, Java, PHP, SQL dan lain - lain .
 
 \subsection {kelemahan Postgresql}
-PostgreSQL ini kurang begitu populer dan cocok bekerja di lingkungan web jika di bandingkan dengan mysql . Kurangnya ketersediaan fungsi built - in. Replikasi di postgresql ini sendiri belum disertai dalam distribusi standar. PostgreSQL ini juga terbatas, hanya dapat melakukan penambahan kolom , penggantian nama kolom dan penggantian nama tabel.
+PostgreSQL ini kurang begitu populer dan cocok bekerja di lingkungan web jika di bandingkan dengan mysql . Kurangnya ketersediaan fungsi built - in. Replikasi di postgresql ini sendiri belum disertai dalam distribusi standar. PostgreSQL ini juga terbatas, hanya dapat melakukan penambahan kolom , penggantian nama kolom dan penggantian nama tabel. 
+
+\subsection { Tools }
+Ada beberapa tools postgresql . contohnya yaitu pgdump. pgdump digunakan untuk konversi objek database menjadi script SQL. lalu ada juga pgaccess yang bisa di gunakan untuk melakukan drag and drop . Library untuk ODBC dan JDBC juga sekarang telah ada , jadi bahasa lainntya bisa mendukung keduanya untuk mengakses postgresql . 
+
 
 \subsection { Jenis data }
 Berbagai jenis asli data yang di dukung. Termasuk juga panjang variabel array ( jenis termasuk teks dan komposit ) sampai dengan ukuran total 1 gigabytes. ada juga Geometris primitif , alamat IPv4 dan IPv6. Lalu blok CIDR dan alamat MAC, UUID (per 8.3) dan XML yang mendukung XPath query.
