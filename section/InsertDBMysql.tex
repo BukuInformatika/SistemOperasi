@@ -1,6 +1,6 @@
 \section{Cara Insert Database Mysql}
 
-	\subsection{Database Mysql}}
+	\subsection{Database Mysql}
 	Basis data merupakan istilah yang mengacu kepada kumpulan data yang saling berhubungan satu sama lain, dan perangkat lunak harus mengacu pada sistem manajemen basis data DBMS. Jika konteksnya jelas, banyak administrator dan programer menggunakan istilah basis data untuk kedua makna, dan juga  merupakan sekumpulan data yang membentuk file yang saling berhubungan dengan format tertentu untuk membentuk data atau informasi baru. Atau database adalah kumpulan data yang saling berhubungan satu sama lain yang diatur berdasarkan skema atau struktur tertentu. Di komputer, basis data disimpan di perangkat penyimpanan perangkat keras, dan dengan perangkat lunak tertentu yang dimanipulasi oleh minat atau minat tertentu. 
 	Hubungan atau hubungan data biasanya ditunjukkan oleh kunci dari setiap file. MySQL adalah sistem manajemen basis data perangkat lunak atau perangkat lunak SQL atau DBMS Multithread dan multi user. mysql sebenarnya merupakan turunan dari salah satu konsep utama dalam database untuk seleksi atau seleksi dan entri data yang memungkinkan operasi data dilakukan dengan mudah dan otomatis.
 	Mysql tag adalah database sumber terbuka paling populer di dunia, dan sebenarnya merupakan turunan dari salah satu konsep utama dalam database yang sudah ada di sql. konsep operasi pada database terutama sql adalah untuk menseleksi atau seleksi dan entri data yang memungkinkan pengoperasian data dilakukan secara otomatis dengan mudah. Kelebihan dari mysql yaitu sangat stabil dalam pengoperasiannya, memiliki sistem keamanan yang baik, Mendukung transaksi dan memiliki banyak dukungan dari masyarakat, Sangat fleksibel dengan berbagai program, sangat cepat.
@@ -46,7 +46,7 @@
 		INSERT INTO nama_table VALUES (nilai_kolom1, nilai_kolom2,...);
 	\end{verbatim}
 	
-	nama_table merupakan nama tabel yang akan kita input, dan nilai_kolom1 merupakan nilai yang akan kita imputkan ke dalam tabel tersebut, dan juga seterusnya untuk nilai kolom. Di nilai kolom haris berada dalam tanda kurung dan dipisah oleh tanda koma.
+	nama table merupakan nama tabel yang akan kita input, dan nilai kolom1 merupakan nilai yang akan kita imputkan ke dalam tabel tersebut, dan juga seterusnya untuk nilai kolom. Di nilai kolom haris berada dalam tanda kurung dan dipisah oleh tanda koma.
 	
 	Gambar dibawah adalah contoh memasukkan sebaris data :
 	
@@ -71,9 +71,9 @@
 			\label{insert2}
 			\end{figure}
 	
-	command INSERT..VALUES diatas bagus digunakan apabila kita tau urutan - urutan kolom yang ada dalam tabel tersebut, kita diharuskan untuk menafsirkan urutan kolom yang ingin kita isi dengan cara menuliskan query INSERT..VALUES.
+	command INSERT..VALUES diatas bagus digunakan apabila kita tau urutan urutan kolom yang ada dalam tabel tersebut, kita diharuskan untuk menafsirkan urutan kolom yang ingin kita isi dengan cara menuliskan query INSERT..VALUES.
 	
-	\subsection{Cara Penggunaan Query INSERT(nama_kolom)...VALUES}
+	\subsection{Cara Penggunaan Query INSERT nama kolom ...VALUES}
 	Apabila kita berada di dalam situasi dimana kita tidak mengetahui urutan kolom yang akan kita isi, ataupun hanya ingin mengisi sebagian saja. Kita dapat menggunakan perintah seperti dibawah ini :
 		\begin{verbatim}
 			INSERT INTO nama_table (kolom1,kolom2,...) VALUES (nilai_kolom1,nilai_kolom2,...);
@@ -97,7 +97,7 @@
 			\label{insert4}
 			\end{figure}
 	
-	Di dalam query saat pembuatan table mata_kuliah, kolom jumlah_SKS ditafsirkan memiliki nilai default 2, ajdi jika kolom ini tidak diisi pun , akan tetap menggunakan nilai defaultnya yaitu 2.
+	Di dalam query saat pembuatan table mata_kuliah, kolom jumlah SKS ditafsirkan memiliki nilai default 2, ajdi jika kolom ini tidak diisi pun , akan tetap menggunakan nilai defaultnya yaitu 2.
 	
 		\begin{figure}[ht]
 			\centerline{\includegraphics[width=0.5\textwidth]{figures/insert5.png}}
@@ -105,10 +105,10 @@
 			\label{insert5}
 			\end{figure}
 			
-	Pada gambar diatas hanya diisikan 3 kolom, tanpa memasukkan kolom jumlah_sks, tetapi karna kolom tersebut susah mempunyai nilai default 2, jadi akan tetap terisi.
+	Pada gambar diatas hanya diisikan 3 kolom, tanpa memasukkan kolom jumlah sks, tetapi karna kolom tersebut susah mempunyai nilai default 2, jadi akan tetap terisi.
 	
 	\subsection{Cara Penggunaan Query INSERT IGNORE...VALUES}
-	Saat mendefinisikan tabel, seharusnya mempunyai satu kolom untuk primary key yang unik. Di tabel mata_kuliah kita telah menjadikan kode_matkul sebagai primary key, jadi jika kita memncoba menginputkan nilai baru yang sama makan akan terjadi error dan command akan dibatalkan.
+	Saat mendefinisikan tabel, seharusnya mempunyai satu kolom untuk primary key yang unik. Di tabel mata kuliah kita telah menjadikan kode matkul sebagai primary key, jadi jika kita memncoba menginputkan nilai baru yang sama makan akan terjadi error dan command akan dibatalkan.
 	
 	Sebagai contoh dapat dilihat pada gamabr dibawah ini :
 	
