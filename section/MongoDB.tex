@@ -7,9 +7,9 @@
 
 \section {Insert Database MongoDB}
 
-\subsection {MongoDB}}
-\subsubsection {Pengertian MongoDB}}
-MongoDB (dari " humongous ") adalah platform lintas platform untuk sistem database yang berorientasi  dokumen. 
+\subsection {MongoDB}
+\subsubsection {Pengertian MongoDB}
+MongoDB adalah platform lintas platform untuk sistem database yang berorientasi  dokumen. 
 MongoDB diklasifikasikan sebagai database NoSQL dengan menghindari struktur basis data relasional berbasis tabel tradisional yang mendukung JSON sebagai dokumen dinamis (MongoDB menyebutnya dalam format BSON), membuatnya lebih mudah dan lebih cepat untuk mengintegrasikan beberapa data aplikasi. 
 Dirilis di bawah Lisensi Publik Umum GNU Affero dan kombinasi lisensi Apache, MongoDB adalah perangkat lunak bebas dan sumber terbuka.
 
@@ -75,7 +75,7 @@ untuk tampilan tabel perlu di atur untuk tempilan tabelnya dengan menklik kata e
 
 GridFS, menggunakan spesifikasi untuk menyimpan data yang sangat besar
 
-\subsection {Kekurangan Maria DB}
+\subsection {Kekurangan MongoDB}
 1.	Yang pertama kali kekurangan Maria DB adalah MongoDB harus diinstal pada server, dan jika Anda menggunakan PHP, Anda juga harus me-refresh server Anda. Driver mongoDB Anda dapat digunakan oleh PHP.
 
 2.	Dan yang kedua adalah MARIA DB Ini belum didukung oleh hosting, tetapi dapat ditipu menggunakan MongoQQ (gratis hingga 16 MB gratis)
@@ -94,4 +94,43 @@ GridFS, menggunakan spesifikasi untuk menyimpan data yang sangat besar
 \item
 	Setelah menentukan lokasi instalasi MongoDB maka anda akan masuk ke halaman porses menginstall, anda hanya perlu menunggu beberapa waktu untuk proses install yang sedang berjalan. setelah proses instalasi berhasil kemudia klik finish. Dengan mengklik finish maka anda telah selesai melakukan instlasi MongoDB pada OS Windows.
 \end {enumerate}
+
+
+\section {Beberapa contoh codingan perintan untuk CRUD}
+\subsection {Insert Data}
+\begin{verbatim} 
+> db.mahasiswa.insert(
+{
+nama:"Alit Afra Panggabean", 
+ipk:3.9,
+jurusan:"TI"
+}
+)
+
+> db.mahasiswa.insert({nama:"Muhammad Afra Fajar"});
+> db.mahasiswa.insert({nama:"Puteri Harahap",jurusan:"Logistik"});
+
+\end{verbatim}
+
+\subsection {Mengupdate Data}
+\begin{verbatim} 
+> db.mahasiswa.update({nama:"Alit"},{$set:{ipk:3.9}})
+> db.mahasiswa.find({nama:"Sultan"}).pretty();
+{
+        "_id" : ObjectId("53130ee0999a7b243bad3b5b"),
+        "ipk" : 3.9,
+        "jurusan" : "TI",
+        "nama" : "Alit"
+}
+
+\end{verbatim}
+
+\subsection {Menghapus Data}
+\begin{verbatim} 
+
+ db.mahasiswa.remove({nama:"Sultan"})
+ 
+\end{verbatim}
+
+
 
