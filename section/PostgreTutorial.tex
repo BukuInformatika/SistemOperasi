@@ -24,17 +24,17 @@ beberapa kompilasi ini membutuhkan gcc
 \begin {itemize} 
 	\item aix - IBM pada AIX 3.2.5 atau 4.x
 	\item alpha - DEC Alpha AXP pada Digital Unix 2.0, 3.2, 4.0
-	\item BSD44derived - OS yang berasal dari 4.4-lite BSD (NetBSD, FreeBSD)
+	\item BSD44_derived - OS yang berasal dari 4.4-lite BSD (NetBSD, FreeBSD)
 	\item bsdi - BSD / OS 2.x, 3.x, 4.x
 	\item dgux - DG / UX 5.4R4.11
 	\item hpux - HP PA-RISC pada HP-UX 9. *, 10. *
-	\item i386solaris - i386
+	\item i386_solaris - i386
 	\item Irix5 - SGI MIPS
 	\item MIPS pada IRIX 5.3
 	\item linux - Intel i86 Alpha SPARC PPC M68k
 	\item sco - SCO 3.2v5
 	\item Unixware
-	\item sparcsolaris - SUN SPARC pada Solaris 2.4, 2.5, 2.5.1
+	\item sparc_solaris - SUN SPARC pada Solaris 2.4, 2.5, 2.5.1
 	\item sunos4 - SUN SPARC pada SunOS 4.1.3
 	\item svr4 - Intel x86 pada Intel SVR4 dan MIPS
 	\item ultrix4 - DEC MIPS di Ultrix 4.4
@@ -72,8 +72,7 @@ Bahasa yang tersedia untuk berkomunikasi dengan POSTGRESQL ada
 \end {itemize}
 
 \subsubsection{Akses selain host asli}
-Cara untuk mencegah host lain mengakses
-database POSTGRESQL, Secara default, POSTGRESQL hanya mengizinkan koneksi dari komputer lokal menggunakan soket domain Unix. Mesin lain tidak akan dapat terhubung kecuali Anda menambahkan flag -i ke postmaster, dan mengaktifkan hostbased otentikasi. Ini akan memungkinkan TCP / IP koneksi. Perangkat lunak POSTGRESQL didistribusikan dalam beberapa format:
+Cara untuk mencegah host lain mengakses database POSTGRESQL, Secara default, POSTGRESQL hanya mengizinkan koneksi dari komputer lokal menggunakan soket domain Unix. Mesin lain tidak akan dapat terhubung kecuali Anda menambahkan flag -i ke postmaster, dan mengaktifkan hostbased otentikasi. Ini akan memungkinkan TCP / IP koneksi. Perangkat lunak POSTGRESQL didistribusikan dalam beberapa format:
 \begin {itemize}
 	\item File -Tar-gzip dengan ekstensi file .tar.gz
 	\item File pra-paket dengan ekstensi file .rpm
