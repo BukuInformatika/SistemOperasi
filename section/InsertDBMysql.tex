@@ -86,3 +86,27 @@
 			\end{figure}
 			
 	Pada gambar diatas hanya diisikan 3 kolom, tanpa memasukkan kolom jumlah_sks, tetapi karna kolom tersebut susah mempunyai nilai default 2, jadi akan tetap terisi.
+	
+	\subsection{Cara Penggunaan Query INSERT IGNORE...VALUES}
+	Saat mendefinisikan tabel, seharusnya mempunyai satu kolom untuk primary key yang unik. Di tabel mata_kuliah kita telah menjadikan kode_matkul sebagai primary key, jadi jika kita memncoba menginputkan nilai baru yang sama makan akan terjadi error dan command akan dibatalkan.
+	
+	Sebagai contoh dapat dilihat pada gamabr dibawah ini :
+	
+		\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.5\textwidth]{figures/insert6.png}}
+			\caption{Insert Ignore}
+			\label{insert6}
+			\end{figure}
+			
+	Pada gambar diatas dapat dilihat bahwa nilai \"CITRA\" terjadi duplikasi dan akan terjadi error, dan tidak akan menjalankan penginputan \"STATS\", walaupun sebenarnya belum tersedia dalam tabel.
+	
+	Untuk memaksa penginputan \"STATS\" tersebut  maka kita dapat menambahkan command IGNORE, agar query tetap berjalan walau ada error. Seperti dibawah ini :
+	
+		\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.5\textwidth]{figures/insert7.png}}
+			\caption{Insert Ignore}
+			\label{insert7}
+			\end{figure}
+	
+\cite{sofwan2003belajar}
+\cite{kadir2010mudah}
