@@ -5,106 +5,118 @@
 %Muhammad Afra Faris(1174041)
 %Khadijah Hasanah Puteri Harahap(1174044)
 
-\section {Insert Database MongoDB}
-
-\subsection {MongoDB}
+\section{Insert Database MongoDB}
+\subsection{MongoDB}
 \subsubsection {Pengertian MongoDB}
 MongoDB adalah platform lintas platform untuk sistem database yang berorientasi  dokumen. 
 MongoDB diklasifikasikan sebagai database NoSQL dengan menghindari struktur basis data relasional berbasis tabel tradisional yang mendukung JSON sebagai dokumen dinamis (MongoDB menyebutnya dalam format BSON), membuatnya lebih mudah dan lebih cepat untuk mengintegrasikan beberapa data aplikasi. 
 Dirilis di bawah Lisensi Publik Umum GNU Affero dan kombinasi lisensi Apache, MongoDB adalah perangkat lunak bebas dan sumber terbuka.
 
 	\begin{figure}[ht]
-	\centerline{\includegraphics[width=1\textwidth]{figures/mongodb-1.jpg}}
+	\centerline{\includegraphics[width=1\textwidth]{figures/mongodb-1.JPEG}}
 	\caption{Gambar Lambang MongoDB}
 	\label{Gambar}
 	\end{figure}
       
       Gambar \ref{Gambar} Contoh gambar lambang MongoDB.
 
-\subsection {Sejarah MongoDB}
-Perusahaan ini dibangun pada Oktober 2007 oleh sebuah perusahaan New York City, 10gen (sekarang MongoDB Inc.) sebagai bagian dari platform yang direncanakan sebagai produk layanan.
+\subsection{Sejarah MongoDB}
+Perusahaan ini dibangun pada Oktober 2007 oleh sebuah perusahaan New York City, 10gen. sebagai bagian dari platform yang direncanakan sebagai produk layanan.
 MongoDB telah diadopsi sebagai perangkat lunak backend melalui banyak situs web dan layanan, termasuk Craigslist, eBay, Square, SourceForge, dan The New York Times. MongoDB adalah sistem basis data NoSQL yang paling populer. 
 Perusahaan telah mengembangkan model pengembangan open source pada tahun 2009, dengan 10gen menawarkan dukungan komersial dan layanan lainnya.
 
-\subsection {Bahasa MongoDB)
-Database MongoDB ini tidak memakai bahasa yang biasa nya digunakan RDBMS ( SQL atau PL / SQL ) . MongoDB memakai bahasa BSON , dimana BSON adalah singkatan dari Binary JSON . Seperti JSON , BSON juga mendukung embedding dokumen dan dokumen lainnya dalam array dan array . Di dalam BSON ini , juga terdapat ekstensi yang memungkinkan untuk merepresentasi tipe data yang bukan merupakan bagian dari spec JSON . Contoh nya ialah BSON memiliki jenis tanggal dan jenis BinData. BSON dirancang untuk memiliki tiga karakteristik . Berikut adalah tiga karakteristik dari BSON : 
-
-1. Ringan ( Lightweight ) yaitu Menjaga overhead spasial untuk minimum penting untuk format representasi data , terlebih lagi ketika digunakan melalui sebuah jaringan .
-
-2. Dapat dilalui dengan mudah ( Traversable ) yaitu BSON di rancang untuk dapat dilalui dengan mudah . ini adalah properti penting dalam peran nya sebagai representasi data utama untuk MongoDB ini . 
-
-3. Efisien ( Efficient ) :yaitu Encoding data untuk BSON dan decoding data dari BSON bisa dilakukan dengan sangat cepat dalam bahasa karena menggunakan jenis C data . 
+\subsection{Bahasa MongoDB}
+Database MongoDB ini tidak memakai bahasa yang biasa nya digunakan RDBMS SQL atau PL / SQL. MongoDB memakai bahasa BSON , dimana BSON adalah singkatan dari Binary JSON . Seperti JSON , BSON juga mendukung embedding dokumen dan dokumen lainnya dalam array dan array . Di dalam BSON ini , juga terdapat ekstensi yang memungkinkan untuk merepresentasi tipe data yang bukan merupakan bagian dari spec JSON . Contoh nya ialah BSON memiliki jenis tanggal dan jenis BinData. BSON dirancang untuk memiliki tiga karakteristik . Berikut adalah tiga karakteristik dari BSON 
+\begin{enumerate}
+\item 
+	Ringan Lightweight yaitu Menjaga overhead spasial untuk minimum penting untuk format representasi data , terlebih lagi ketika digunakan melalui sebuah jaringan .
+\item
+	Dapat dilalui dengan mudah yaitu BSON di rancang untuk dapat dilalui dengan mudah . ini adalah properti penting dalam peran nya sebagai representasi data utama untuk MongoDB ini . 
+\item
+	Efisien Efficient yaitu Encoding data untuk BSON dan decoding data dari BSON bisa dilakukan dengan sangat cepat dalam bahasa karena menggunakan jenis C data . 
 
 	Bahasa BSON ini memiliki struktur bahasa yang hampir sama seperti bahasa JavaScript . Maka , ketika pengguna sudah terbiasa menggunakan JavaScript , tidak akan sulit baginya untuk menggunakan MongoDB ini .
-	
-\subsection { Tiga Element inti pada MongoDB }
+\end{enumerate}
+
+\subsection{Tiga Element inti pada MongoDB}
 Agar kita bisa mengerti kapabilitas MongoDB , kita perlu mempelajari element inti yang menyusun suatu database dalam MongoDB . Pada kenyataan nya , model penyimpanan data dalam MongoDB di organisasikan dalam sekelompok komponen yang terdiri dari tiga komponen . Berikut adalah komponen - komponen yang ada di dalam MongoDB :  
-
-1. Database : ialah element pada top level . Pada database relasional , suatu database biasanya terdiri dari table dan views . Dalam MongoDB , suatu database ialah wadah secara fisik yang mencakup suatu struktur yang disebut collection . Setiap database memiliki sekelompok file tersendiri di dalam filesystem media penyimpanan . biasanya , satu server MongoDB terdiri atas beberapa database .
-
-2. Collection : ialah sekelompok document MongoDB . Collection bisa dipadankan dengan table dalam RDBMS . Sejumlah collection bisa berada dalam satu database tapi harus memiliki nama yang berbeda - beda . Normalnya , collection - collection yang tergabung dalam satu database memiliki hubungan tertentu , meskipun tidak dituntut harus dibuat dengan suatu skema tertentu seperti hal nya table dalam RDBMS . 
-
-3. Documents : ialah satuan atau unit data terkecil dalam MongoDB . Pada dasar nya tersusun atas sekelompok pasangan key - value . Tidak seperti record pada RDBMS , document memiliki skema yang dinamis , maksudnya ialah document yang berada dalam satu collection tidak harus memiliki sekelompok field yang sama . 
-
-\subsection {Menggunakan MongoDB pada Mongolab}
+\begin{enumerate}
+\item
+	Database ialah element pada top level . Pada database relasional , suatu database biasanya terdiri dari table dan views . Dalam MongoDB , suatu database ialah wadah secara fisik yang mencakup suatu struktur yang disebut collection . Setiap database memiliki sekelompok file tersendiri di dalam filesystem media penyimpanan . biasanya , satu server MongoDB terdiri atas beberapa database .
+\item
+	Collection ialah sekelompok document MongoDB . Collection bisa dipadankan dengan table dalam RDBMS . Sejumlah collection bisa berada dalam satu database tapi harus memiliki nama yang berbeda - beda . Normalnya , collection - collection yang tergabung dalam satu database memiliki hubungan tertentu , meskipun tidak dituntut harus dibuat dengan suatu skema tertentu seperti hal nya table dalam RDBMS . 
+\item
+	Documents ialah satuan atau unit data terkecil dalam MongoDB . Pada dasar nya tersusun atas sekelompok pasangan key - value . Tidak seperti record pada RDBMS , document memiliki skema yang dinamis , maksudnya ialah document yang berada dalam satu collection tidak harus memiliki sekelompok field yang sama . 
+\end{enumerate}
+	
+\subsection{Menggunakan MongoDB pada Mongolab}
 Langkah - Langkahnya Sebagai berikut :
-
-1. Login ke Account MongoLab.
-
-2. Klik Create New
-3. Tentukan penyedia layanan cloud yang ada dipilihan beserta region servernya
-
-4. Pada menu Plan pilih tab Single Node untuk memilih kapasitas dan harga penyimpanannya mulai dari Gratis sampai Menengah.Sedangkan Replica Set Cluster untuk kapasistas dan harga penyimpanan dari Menengah sampai Kelas atas.(Pilihanku free pada tab single Node)
-
-5. Pada Database isikan nama Databasenya. (nama databaseku akademik).
-
-6. Klik Tombol Create New MongoDB Deployment.
-
-7. Double klik database yang sudah di buat tadi .
-
-8. Pada menu collections terdapat add collections untuk menambah tabel.
-
-9. Isikan nama tabel pada dialog box yang muncul.setelah itu klik Create. (nama tabelku matkul).
-
-10. Muncul tampilan baru dimana terdapat tombol add docummnet yang digunakan untuk mengisi data pada tabel yang sudah kita buat tadi.
-
-11. Isikan data dimana untuk membedakan antara data dengan nama kolom tabel adalah dengan mengunakan symbol titik dua ":".
-12. Setelah selesai klik save atau bisa save and go back untuk menyimpan data lalu kembali kehalaman sebelumnya.
-
-13. Pada menu DISPLAY MODE terdapat dua pilihan yaitu list dan tabel. 
-
+\begin{enumerate}
+\item 
+	Login ke Account MongoLab.
+\item
+	Klik Create New
+\item
+	Tentukan penyedia layanan cloud yang ada dipilihan beserta region servernya
+\item
+	Pada menu Plan pilih tab Single Node untuk memilih kapasitas dan harga penyimpanannya mulai dari Gratis sampai Menengah.Sedangkan Replica Set Cluster untuk kapasistas dan harga penyimpanan dari Menengah sampai Kelas atas.(Pilihanku free pada tab single Node)
+\item
+	Pada Database isikan nama Databasenya. (nama databaseku akademik).
+\item
+	Klik Tombol Create New MongoDB Deployment.
+\item
+	Double klik database yang sudah di buat tadi .
+\item
+	Pada menu collections terdapat add collections untuk menambah tabel.
+\item
+	Isikan nama tabel pada dialog box yang muncul.setelah itu klik Create. (nama tabelku matkul).
+\item
+	Muncul tampilan baru dimana terdapat tombol add docummnet yang digunakan untuk mengisi data pada tabel yang sudah kita buat tadi.
+\item
+Isikan data dimana untuk membedakan antara data dengan nama kolom tabel adalah dengan mengunakan symbol titik dua.
+\item
+	Setelah selesai klik save atau bisa save and go back untuk menyimpan data lalu kembali kehalaman sebelumnya.
+\item
+	Pada menu DISPLAY MODE terdapat dua pilihan yaitu list dan tabel. 
+\item
 untuk tampilan tabel perlu di atur untuk tempilan tabelnya dengan menklik kata edit teble view.
+\item
+Terdapat panduan berisi contoh mengatur tampilan tabelnya.
+\end{enumerate}
 
-14. Terdapat panduan berisi contoh mengatur tampilan tabelnya.
-
-\subsection {kelebihan mongodb}
-
+\subsection{kelebihan mongodb}
+\begin{enumerate}
+\item
 1. Kerangka untuk MongodDB MySQL berasal dari simplistream dan format media adalah format JSON.
-
+\item
 2. Replikasi, data cadangan real-time adalah fitur yang sangat penting. MongoDB cocok untuk rilis berita atau blog, tetapi masih tidak cocok untuk digunakan dengan sistem informasi keuangan karena MongoDB tidak mendukung transaksi SQL.
-
+\item
 3. Auto-curtail adalah fitur yang memuntahkan database besar dalam beberapa bagian untuk meningkatkan kinerja basis data. Sangat penting untuk menggunakan diri sendiri ketika pers memiliki database dalam jutaan baris, yang membantu membagi tirai.
-
-4.MongoDB mencoba yang berikut: C, C ++, C #, Erlang, Haskell, Java, JavaScript, .NET (C # F #, PowerShell), Lippe, Perl, PHP, Python, Ruby, dan Scala
-
+\item
+4.MongoDB mencoba yang berikut: C, C ++, C \#, Erlang, Haskell, Java, JavaScript, .NET (C \# F \#, PowerShell), Lippe, Perl, PHP, Python, Ruby, dan Scala
+\item
 5.Cross-platform, dapat digunakan di Windows, Linux, OS X dan Solaris
-
+\item
 6.CRUD Viewer (Create, Read, Work, Remove) terasa banyak cahaya
-
-7.Map / Reduce, kami akan sangat membantu dalam melakukan operasi agregasi. Di mana semua entri dari koleksi dan outputnya juga akan menjadi koleksi. Anda dapat menggunakan MySQL untuk meminta pertanyaan oleh GROUP BY
-
+\item
+7.Map atau Reduce, kami akan sangat membantu dalam melakukan operasi agregasi. Di mana semua entri dari koleksi dan outputnya juga akan menjadi koleksi. Anda dapat menggunakan MySQL untuk meminta pertanyaan oleh GROUP BY
+\item
 GridFS, menggunakan spesifikasi untuk menyimpan data yang sangat besar
+\end{enumerate}
 
-\subsection {Kekurangan MongoDB}
+\subsection{Kekurangan MongoDB}
+\begin{enumerate}
+\item
 1.	Yang pertama kali kekurangan Maria DB adalah MongoDB harus diinstal pada server, dan jika Anda menggunakan PHP, Anda juga harus me-refresh server Anda. Driver mongoDB Anda dapat digunakan oleh PHP.
-
+\item
 2.	Dan yang kedua adalah MARIA DB Ini belum didukung oleh hosting, tetapi dapat ditipu menggunakan MongoQQ (gratis hingga 16 MB gratis)
+\end{enumerate}
 
-\subsection {cara instal mongodb}
+\subsection{cara instal mongodb}
 	Pada dasarnya mongodb ialah basisdata yang bersifat open source yang berbasis dokumen dimana mongodb awalnya tersebut dibuat dengan menggunakan bahasa C++. Namun pada masa sekarang ini mongodb itu sendiri telah dikembangkan sejak tahun 2007. mongodb memiliki kelebihan yaitu performa yang dimiliki 4 kali lebih cepat dari pada mysql dan mongodb juga termasuk tidak sulit untuk dapat diaplikasikan.
 	
-\subsection {Menginstal MongoDB di windows}
-\begin {enumerate}
+\subsection{Menginstal MongoDB di windows}
+\begin{enumerate}
 \item
 	Dalam proses ingin menginstal MogngoDB anda harus tau terlebih dahulu jenis windows PC atau laptop anda dan kemudian memeriksa PC atau Laptop tipe yang 32 bit atau yang 64 bit, kemudian anda melakukan donwload aplikasi atau instaler nya di beberapa link yang tersedia di internet. setelah melakukan download instaler nya maka coba lah untuk melakukan instalasi dengan cara mengklik kanan pada instaler tersebut dan mengklik run as administrator atau juga bisa melakukan double klik pada instaler tersebut.
 \item
@@ -113,11 +125,11 @@ GridFS, menggunakan spesifikasi untuk menyimpan data yang sangat besar
 	Setelah menekan tombol install maka anda akan ditampilkan halaman yang menampilkan pilihan untuk memilih jenis pengaturan, dan sebaiknya anda memilih costum saja karena apabila anda memilih costum maka anda akan dapat menentukan sendiri lokasi instalasi MongoDB atau biasa disebut memillih secara manual lokasi instalasi. Dengan anda menentukan sendiri lokasi instalasi MongoDB maka nantinya anda akan mengetahui lokasi dan dapat memudahkan anda dalam mencari lokasi instalasi MongoDB.
 \item
 	Setelah menentukan lokasi instalasi MongoDB maka anda akan masuk ke halaman porses menginstall, anda hanya perlu menunggu beberapa waktu untuk proses install yang sedang berjalan. setelah proses instalasi berhasil kemudia klik finish. Dengan mengklik finish maka anda telah selesai melakukan instlasi MongoDB pada OS Windows.
-\end {enumerate}
+\end{enumerate}
 
 
-\section {Beberapa contoh codingan perintan untuk CRUD}
-\subsection {Insert Data}
+\section{Beberapa contoh codingan perintan untuk CRUD}
+\subsection{Insert Data}
 \begin{verbatim} 
 > db.mahasiswa.insert(
 {
@@ -132,7 +144,7 @@ jurusan:"TI"
 
 \end{verbatim}
 
-\subsection {Mengupdate Data}
+\subsection{Mengupdate Data}
 \begin{verbatim} 
 > db.mahasiswa.update({nama:"Alit"},{$set:{ipk:3.9}})
 > db.mahasiswa.find({nama:"Sultan"}).pretty();
@@ -145,7 +157,7 @@ jurusan:"TI"
 
 \end{verbatim}
 
-\subsection {Menghapus Data}
+\subsection{Menghapus Data}
 \begin{verbatim} 
 
  db.mahasiswa.remove({nama:"Sultan"})
