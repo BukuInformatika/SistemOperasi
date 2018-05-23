@@ -1,0 +1,33 @@
+\section {Semaphore Programming}
+\subsection {Definisi}
+		\begin{enumerate}
+			\item Dalam ilmu komputer, semaphore adalah variabel atau tipe data abstrak yang digunakan untuk mengontrol akses ke sumber daya umum dengan beberapa proses dalam sistem konkuren seperti sistem operasi multitasking.
+			\item Semaphore sepele adalah variabel biasa yang diubah (misalnya, bertambah atau dikurangi, atau toggle) tergantung pada kondisi yang ditentukan oleh programmer.
+			\item Cara yang berguna untuk memikirkan semaphore seperti yang digunakan dalam sistem dunia nyata adalah sebagai catatan berapa banyak unit sumber daya tertentu yang tersedia, ditambah dengan operasi untuk menyesuaikan catatan itu dengan aman (yaitu untuk menghindari kondisi balapan) karena unit diperlukan atau menjadi gratis, dan, jika perlu, tunggu hingga unit sumber daya tersedia.
+			\item Semaphores adalah alat yang berguna dalam pencegahan kondisi balapan; namun, penggunaannya sama sekali bukan jaminan bahwa suatu program bebas dari masalah ini. Semaphore yang memungkinkan perhitungan sumber daya secara acak disebut menghitung semaphore, sementara semaphore yang dibatasi pada nilai 0 dan 1 (atau terkunci / tidak terkunci, tidak tersedia / tersedia) disebut semaphore biner dan digunakan untuk mengimplementasikan kunci.
+			\item Konsep semafor diciptakan oleh ilmuwan komputer Belanda Edsger Dijkstra pada tahun 1962 atau 1963, [1] ketika Dijkstra dan timnya mengembangkan sistem operasi untuk Electrologica X8. Sistem itu akhirnya dikenal sebagai THE multiprogramming system.
+		\end[enumerate}
+
+\subsection {Analogi perpustakaan}
+	\begin{enumerate}
+		\item Misalkan perpustakaan memiliki 10 ruang belajar yang identik, untuk digunakan oleh satu siswa pada satu waktu. Siswa harus meminta kamar dari meja depan jika mereka ingin menggunakan ruang belajar. Jika tidak ada ruang bebas, siswa menunggu di meja sampai seseorang melepaskan ruangan. Ketika seorang siswa telah selesai menggunakan sebuah ruangan, siswa tersebut harus kembali ke meja dan menunjukkan bahwa satu kamar telah menjadi gratis.
+		\item Dalam penerapan yang paling sederhana, petugas di meja depan hanya mengetahui jumlah kamar gratis yang tersedia, yang mereka hanya tahu dengan benar jika semua siswa benar-benar menggunakan kamar mereka sementara mereka sudah mendaftar untuk mereka dan mengembalikannya ketika sudah selesai . Ketika seorang siswa meminta sebuah ruangan, petugas mengurangi jumlah ini. Ketika seorang siswa mengeluarkan sebuah ruangan, petugas itu meningkatkan angka ini. Kamar dapat digunakan selama yang diinginkan, sehingga tidak mungkin memesan kamar terlebih dahulu.
+		\item Dalam skenario ini, pemegang meja depan mewakili penghitungan semafor, ruangan adalah sumber daya, dan siswa mewakili proses / utas. Nilai semaphore dalam skenario ini awalnya 10, dengan semua kamar kosong. Ketika seorang siswa meminta kamar, mereka diberikan akses, dan nilai semaphore diubah menjadi 9. Setelah siswa berikutnya datang, itu turun menjadi 8, lalu 7 dan seterusnya. Jika seseorang meminta sebuah ruangan dan nilai yang dihasilkan dari semaphore akan menjadi negatif, mereka dipaksa untuk menunggu sampai sebuah ruangan dibebaskan (ketika hitungannya bertambah dari 0). Jika salah satu kamar dirilis, tetapi ada beberapa siswa yang menunggu, maka metode apa pun dapat digunakan untuk memilih orang yang akan menempati ruangan (seperti FIFO atau membalik koin). Dan tentu saja, seorang siswa perlu memberi tahu petugas tentang melepaskan kamar mereka hanya setelah benar-benar meninggalkannya, jika tidak, akan ada situasi canggung ketika siswa tersebut sedang dalam proses meninggalkan ruangan (mereka mengepak buku teks, dll.) dan siswa lain memasuki ruangan sebelum mereka meninggalkannya.
+	\end{enumerate}
+\subsection {Pengamatan penting}
+	\begin{enumerate}
+		\item Ketika digunakan untuk mengontrol akses ke kumpulan sumber daya, semaphore hanya melacak berapa banyak sumber daya yang gratis; itu tidak melacak sumber daya mana yang gratis. Beberapa mekanisme lain (mungkin melibatkan lebih banyak semaphores) mungkin diperlukan untuk memilih sumber daya bebas tertentu.
+		\item Paradigma ini sangat kuat karena hitungan semaphore dapat berfungsi sebagai pemicu yang berguna untuk sejumlah tindakan yang berbeda. Pustakawan di atas dapat mematikan lampu di ruang belajar ketika tidak ada siswa yang tersisa, atau dapat menempatkan tanda yang mengatakan bahwa ruangan sangat sibuk ketika sebagian besar kamar ditempati.
+		\item Keberhasilan protokol mengharuskan aplikasi mengikutinya dengan benar. Keadilan dan keamanan cenderung dikompromikan (yang secara praktis berarti suatu program dapat berperilaku lambat, bertindak tidak menentu, hang atau crash) jika bahkan satu proses pun bertindak salah. Ini termasuk :
+				\begin{itemize}
+					\item meminta sumber daya dan lupa untuk melepaskannya;
+					\item melepaskan sumber daya yang tidak pernah diminta;
+					\item memegang sumber daya untuk waktu yang lama tanpa membutuhkannya;
+					\item menggunakan sumber daya tanpa memintanya terlebih dahulu (atau setelah merilisnya).
+				\end{itemize}
+		\item Bahkan jika semua proses mengikuti aturan ini, kebuntuan multi-sumber masih mungkin terjadi ketika ada sumber daya yang berbeda dikelola oleh semaphores berbeda dan ketika proses perlu menggunakan lebih dari satu sumber daya pada suatu waktu, seperti yang digambarkan oleh masalah filsuf makan
+	\end{enumerate}
+\cite{andrews2004programming}
+\cite{higginbotham1991system}
+\cite{hoare1972towards}
+\cite{higginbotham1991system}

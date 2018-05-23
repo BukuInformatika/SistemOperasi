@@ -1,0 +1,113 @@
+\section{Cara Menghubungkan Python Dengan PostgreSQL}
+
+\subsection{Definisi PostgreSQL}
+\begin{figure}[ht]
+	\centerline{\includegraphics[width=1\textwidth]{figures/PostgreSQL.jpg}}
+	\caption{PostgreSQL}
+	\label{postgres}
+\end{figure}
+\cite{momjian2001postgresql}PostgreSQL(Gambar \ref{postgres}) adalah database server dengan basis open source yang paling maju. PostgreSQL sendiri sudah dipakai oleh banyak kalangan di luar negeri karena faktor keamanan yang cukup terjamin. Seperti database server lainnya, PostgreSQL memakai bahasa pada umumnya yaitu standard SQL tetapi beberapa syntax diubah untuk kepentingan keamanan.Dalam PostgreSQL dapat menyimpan titik geografis dari aplikasi Sistem Informasi Geografis yang membuat bahasa ini popular dalam kalangan programmer Sistem Informasi Geografis. Selain titik geografis, PostgreSQL dapat menyimpan objek geometric diantaranya titik, garis, dan area. Selain itu, PostgreSQL dapat beroperasi seperti layaknya bahasa lainnya seperti manipulasi data atau membuat table. Hal tersebut memungkinkan PostgreSQL menjadi bahasa sql terbaik untuk digunakan pada Sistem Informasi Geografis karena sifatnya yang Spatially-enabled. Untuk mengunduh PostgreSQL dapat langsung dicari dan diunduh di website resminya yaitu di www.postgresql.org, cara instalasinya dapat terbilang cukup rumit karena untuk instalasi memakan banyak waktu dan tidak direkomendasikan untuk pemula, diantaranya harus memasuki regedit pada windows. 
+
+\subsection { sistem postgresql }
+PostgreSQL mengelola concurrency menggunakan sistem yang dikenal dengan sebutan Multi - Version Concurrency Control ( MVCC ) , yang memberikan setiap user nya suatu “ snapshot ” dari database . Sehingga , perubahan harus dilakukan tanpa terlihat oleh pengguna lain sampai transaksi berkomitmen . Hal ini diutamakan untuk menghilangkan kebutuhan kunci membaca , dan untuk memastikan database yang mempertahankan ASAM prinsip secara efisien .
+
+\subsection { Kelebihan postgresql }
+PostgreSQL mempunyai arsitektur multiproses yang artinya memiliki stabilitas yang lebih tinggi . Karena , satu proses anak yang mati tidak akan menyebabkan seluruh daemon mati meskipun nyatanya , dahulu hal yang seperti ini sering terjadi. PostgreSQL ini juga mempunyai lisensi GPL  . Karena hal tersebut,  PostgreSQL dapat digunakan oleh semua orang tanpa harus membayar sepeserpun untuk lisensi  baik untuk keperluan apapun.
+
+PostgreSQL ini mempunyai kemampuan untuk menampung data spasial . Sehingga , postgresql ini dapat di gunakan untuk pembuatan sebuah situs yang berbasis WebGIS , untuk melakukan pemetaan dan lain sebagainya . PostgreSQL ini juga mendukung banyak jenis bahasa pemrograman , misalkan bahasa C, C++, Java, PHP, SQL dan lain - lain .
+
+\subsection {kelemahan Postgresql}
+PostgreSQL ini kurang begitu populer dan cocok bekerja di lingkungan web jika di bandingkan dengan mysql . Kurangnya ketersediaan fungsi built - in. Replikasi di postgresql ini sendiri belum disertai dalam distribusi standar. PostgreSQL ini juga terbatas, hanya dapat melakukan penambahan kolom , penggantian nama kolom dan penggantian nama tabel. 
+
+\subsection { Tools }
+Ada beberapa tools postgresql . contohnya yaitu pgdump. pgdump digunakan untuk konversi objek database menjadi script SQL. lalu ada juga pgaccess yang bisa di gunakan untuk melakukan drag and drop . Library untuk ODBC dan JDBC juga sekarang telah ada , jadi bahasa lainntya bisa mendukung keduanya untuk mengakses postgresql . 
+
+
+\subsection { Jenis data }
+Berbagai jenis asli data yang di dukung. Termasuk juga panjang variabel array ( jenis termasuk teks dan komposit ) sampai dengan ukuran total 1 gigabytes. ada juga Geometris primitif , alamat IPv4 dan IPv6. Lalu blok CIDR dan alamat MAC, UUID (per 8.3) dan XML yang mendukung XPath query.
+
+\subsection{Integrasi Python Dengan PostgreSQL} 
+Integrasi Python dengan PostgreSQL bisa dibilang sama dengan integrasi Python dengan bahasa lainnya.  Karena kita tinggal mendownload hal yang dibutuhkan dan membuat kode untuk dikoneksikan ke database. Salah satunya juga yaitu mengkoneksikan PostgreSQL dimana kita harus instalasi PostgreSQL itu sendiri. Berikut hal yang perlu disiapkan sebelum mengkoneksikan : 
+\begin{itemize}
+\item Connector Python to PostgreSQL : Fungsi connector yaitu penghubung antara python dengan postgresqlnya sendiri. 
+\item Python (Semua Versi) : Sebelum mendownload piranti yang lain, pastikan python sudah terinstall di komputer
+\item PostgreSQL DB : Sebagai media yang menyimpan data, aplikasi ini harus sudah terinstal juga di computer anda.
+\end{itemize}
+
+\subsection{Insert Data Di PostgreSQL}
+Insert data pada umumnya memiliki sistem yang sama, bahasa yang sama. di PostgreSQL sendiri sama seperti bahasa yang umum yaitu MySQL yang memiliki syntax Insert seperti berikut
+\begin{verbatim}
+insert into db_postgre(kol1, kol2, kol3) values('kol1', 'kol2', 'kolek');
+\end{verbatim}
+Tetapi PostgreSQL memiliki aturan ketat mengenai cara insert database. Jadi tidak sembarang teknik menginsert dapat digunakan dalam metode insert data ke postgres. Pada postgre, pemanggilan connection berbeda syntax dengan pemanggilan pada bahasa lain. contohnya adalah sebagai berikut : 
+
+\begin{verbatim}
+PostgreSQL
+conn=psycopg2.connect("dbname='"+dbname+"' user='"+use+"' password='"+pas+"'")
+MySQL
+conn=MySQLdb.connect(hos, use, pas, dbname)
+\end{verbatim}
+
+\subsection{Pengujian}
+Menguji POSTGRESQL pada platform UNIX sebagai berikut: 
+beberapa kompilasi ini membutuhkan gcc
+\begin {itemize} 
+	\item aix - IBM pada AIX 3.2.5 atau 4.x
+	\item alpha - DEC Alpha AXP pada Digital Unix 2.0, 3.2, 4.0
+	\item BSD44derived - OS yang berasal dari 4.4-lite BSD (NetBSD, FreeBSD)
+	\item bsdi - BSD / OS 2.x, 3.x, 4.x
+	\item dgux - DG / UX 5.4R4.11
+	\item hpux - HP PA-RISC pada HP-UX 9. *, 10. *
+	\item i386solaris - i386
+	\item Irix5 - SGI MIPS
+	\item MIPS pada IRIX 5.3
+	\item linux - Intel i86 Alpha SPARC PPC M68k
+	\item sco - SCO 3.2v5
+	\item Unixware
+	\item sparcsolaris - SUN SPARC pada Solaris 2.4, 2.5, 2.5.1
+	\item sunos4 - SUN SPARC pada SunOS 4.1.3
+	\item svr4 - Intel x86 pada Intel SVR4 dan MIPS
+	\item ultrix4 - DEC MIPS di Ultrix 4.4
+\end {itemize}
+
+Port selain sistem operasi Unix yang tersedia dan memungkinkan. 
+Untuk mengkompilasi libpq C library, psql, dan interface lain dan binari untuk dijalankan pada MS Platform Windows. Dalam hal ini, klien berjalan di MS Windows, dan berkomunikasi melalui TCP / IP ke server yang berjalan di salah satu platform Unix kami yang didukung.Sebuah file win31.mak termasuk dalam distribusi untuk membuat libpq librq Win32 dan psql. 
+Server database sekarang bekerja pada Windows NT menggunakan pustaka porting Cygnus Unix / NT
+
+\subsection {Bahasa Pemrograman yang tersedia}
+Bahasa yang tersedia untuk berkomunikasi dengan POSTGRESQL ada
+ \begin {itemize}
+	\item C atau libpq
+	\item C ++ atau libpq ++
+	\item Embedded C atau ecpg
+	\item Java atau jdbc
+	\item Perl atau perl5
+	\item ODBC atau odbc
+	\item Python atau PyGreSQL
+	\item TCL atau libpgtcl
+	\item C Easy API atau libpgeasy
+	\item Embedded HTML atau PHP
+\end {itemize}
+
+\subsection{Instalasi} 
+\begin {itemize}
+	\item Dapatkan POSTGRESQL
+	\item Membuat POSTGRESQL user
+	\item Konfigurasi
+	\item Kompilasi
+	\item Instalasi
+	\item Inisialisasi
+	\item Memulai Server
+	\item Membuat Database
+\end {itemize}
+
+\subsubsection{Akses selain host asli}
+Cara untuk mencegah host lain mengakses database POSTGRESQL, Secara default, POSTGRESQL hanya mengizinkan koneksi dari komputer lokal menggunakan soket domain Unix. Mesin lain tidak akan dapat terhubung kecuali Anda menambahkan flag -i ke postmaster, dan mengaktifkan hostbased otentikasi. Ini akan memungkinkan TCP / IP koneksi. Perangkat lunak POSTGRESQL didistribusikan dalam beberapa format:
+\begin {itemize}
+	\item File -Tar-gzip dengan ekstensi file .tar.gz
+	\item File pra-paket dengan ekstensi file .rpm
+	\item Format lain yang sudah dikemas
+	\item CD ROM
+\end {itemize}
+Karena begitu banyak format yang ada, apendiks ini hanya akan membahas langkah-langkah umum yang perlu dipasang POSTGRESQL. Setiap distribusi dilengkapi dengan file INSTALL atau README dengan lebih spesifik instruksi.
+
