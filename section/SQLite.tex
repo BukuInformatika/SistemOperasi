@@ -74,6 +74,7 @@ SELECT * FROM siswa;
 			\item Ada kelebihan dan kekurangan menjadi serverless. Keuntungan utama adalah tidak ada proses server terpisah untuk menginstal, mengkonfigurasi, mengkonfigurasi, menginisialisasi, mengelola, dan memecahkan masalah. Ini adalah salah satu alasan mengapa SQLite adalah mesin database "konfigurasi-nol". Program yang menggunakan SQLite tidak memerlukan dukungan administratif untuk menyiapkan mesin basis data sebelum dijalankan. Setiap program yang dapat mengakses disk dapat menggunakan database SQLite.
 			\item Di sisi lain, mesin database yang menggunakan server dapat memberikan perlindungan yang lebih baik dari bug di aplikasi klien - pointer liar pada klien tidak dapat merusak memori di server. Dan karena server adalah proses persisten tunggal, ia mampu mengontrol akses basis data dengan lebih presisi, memungkinkan penguncian yang lebih baik dan konkurensi yang lebih baik.
 			\item Sebagian besar mesin klien / server database berbasis SQL. Dari mereka tanpa server, SQLite adalah satu-satunya yang diketahui dari penulis ini yang memungkinkan beberapa aplikasi untuk mengakses database yang sama pada saat yang bersamaan.
+			\item Biasanya, RDBMS seperti MySQL, PostgreSQL, dll, membutuhkan proses server terpisah untuk beroperasi. Aplikasi yang ingin mengakses server database menggunakan protokol TCP / IP untuk mengirim dan menerima permintaan. Ini disebut arsitektur client / server.
 		\end{enumerate}
 	\subsection{Neo Serverless vs Classic Serverless}
 		\begin{enumerate}
