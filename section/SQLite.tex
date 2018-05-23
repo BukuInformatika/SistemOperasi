@@ -122,14 +122,17 @@ SELECT * FROM siswa;
 \begin{enumerate}
 \itemSisipan Bahasa Query Sqlite
 \item Pernyataan INSERT hadir dalam tiga bentuk dasar.
-\item INSERT INTO table VALUES
+\item INSERT INTO table VALUES (...);
 Bentuk pertama (dengan kata kunci VALUES) membuat satu atau lebih baris baru dalam tabel yang ada. Jika daftar nama kolom setelah nama tabel dihilangkan, maka jumlah nilai yang dimasukkan ke setiap baris harus sama dengan jumlah kolom dalam tabel. Dalam hal ini, hasil evaluasi ekspresi paling kiri dari setiap istilah daftar VALUES dimasukkan ke dalam kolom paling kiri dari setiap baris baru, dan seterusnya untuk setiap ekspresi berikutnya. Jika daftar kolom-nama ditentukan, maka jumlah nilai dalam setiap jangka waktu daftar VALUE harus sesuai dengan jumlah kolom yang ditentukan. Setiap kolom bernama dari baris baru diisi dengan hasil mengevaluasi ekspresi VALUES yang sesuai. Kolom tabel yang tidak muncul dalam daftar kolom diisi dengan nilai kolom default (ditetapkan sebagai bagian dari pernyataan CREATE TABLE), atau dengan NULL jika tidak ada nilai default yang ditentukan.
-\item INSERT INTO table SELECT 
+2. INSERT INTO table SELECT 
 Bentuk kedua dari pernyataan INSERT berisi pernyataan SELECT bukannya klausa VALUES. Entri baru dimasukkan ke dalam tabel untuk setiap baris data yang dikembalikan dengan mengeksekusi pernyataan SELECT. Jika daftar kolom ditentukan, jumlah kolom dalam hasil SELECT harus sama dengan jumlah item dalam daftar-kolom. Jika tidak, jika tidak ada daftar kolom yang ditentukan, jumlah kolom dalam hasil SELECT harus sama dengan jumlah kolom dalam tabel. Setiap pernyataan SELECT, termasuk pernyataan gabungan SELECT dan SELECT dengan klausa ORDER BY dan atau LIMIT, dapat digunakan dalam pernyataan INSERT dari formulir ini.
 \item INSERT INTO table DEFAULT VALUES
 Bentuk ketiga dari pernyataan INSERT adalah dengan NILAI DEFAULT. Pernyataan INSERT DEFAULT VALUES menyisipkan satu baris baru ke dalam tabel bernama. Setiap kolom dari baris baru diisi dengan nilai default-nya, atau dengan NULL jika tidak ada nilai default yang ditetapkan sebagai bagian dari definisi kolom dalam pernyataan CREATE TABLE.
 \end{enumerate}
-
+\subsection{SQL and relational model}
+\begin{enumerate}
+\item SQL dan Relational Model Bab ini menyajikan akar teoritis dari SQL, dan memeriksa kekuatan dan keanggunan di belakang SQL. Ini mempersiapkan Anda untuk berurusan dengan SQL tidak dalam isolasi tetapi dalam konteks model relasional. Jika tidak ada yang lain, ini akan memberi Anda apresiasi untuk seberapa elegan, kuat, dan kompleksnya sebuah database relasional. Anda mungkin dikejutkan oleh apa yang bahkan dimiliki oleh database relasional yang paling dasar sekalipun. Anda tidak perlu membaca bab ini untuk memahami SQL; itu hanya memberikan latar belakang teoretis dan historis. Untuk tujuan ini, saya menyajikan aspek teoritis dalam beberapa makalah dan artikel yang berpengaruh yang ditulis oleh Codd antara 1970 dan 1985 yang mendefinisikan esensi dari model relasional, bersama dengan ide dan karya kontributor lain ke lapangan. Dua makalah Codd yang disebutkan di sini tersedia online, dan terdaftar di bagian Referensi di akhir bab ini. Sekali lagi, yang lain berkontribusi pada pengembangan model relasional, tetapi bab ini terutama akan diambil dari karya Codd.
+\end{enumerate}
 
 \cite{owens2010sqlite}
 \cite{newman2004sqlite}
