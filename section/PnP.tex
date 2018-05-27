@@ -41,8 +41,40 @@ Itu Sisa dari makalah ini disusun sebagai berikut. Pada bagian berikutnya, kita 
 \section{nano modular format}
 Standar Cubesat, terutama merupakan sebuah amplop spesifikasi, mengakui banyak implementasi kreatif kemungkinan. Beberapa pelaksana fashion mereka sendiri struktur sasis dari bahan baku. Setidaknya satu Kit Cubesat telah tersedia secara komersial, 1 dan sejumlah kelompok telah mempelajari formulir PC104 faktor dan bus sebagai backplane umum yang mungkin, dengan beberapa vendor menawarkan modul yang kompatibel dengan masing-masing lain. Bahkan opsi ini, sekaligus mengurangi keseluruhan upaya yang diperlukan untuk membuat Cubesat dari awal, membutuhkan kustomisasi intensif, dan integrasi perangkat lunak, listrik, dan elemen mekanik bahkan dengan komponen-komponen ini dapat dilibatkan. Dengan demikian, kami merasa bahwa perkembangan struktur Cubesat yang terpisah konsep akan menyederhanakan pengembangan dan mempromosikan interchangeability komponen dan penggunaan kembali. Kami menjelajahinya sejumlah konsep desain, menekankan sebagai kriteria modularitas, memaksimalkan volume interior yang dapat digunakan, dan kemudahan perakitan dan integrasi.
 
+  \begin{figure}[ht]
+\centerline{\includegraphics[width=0.5\textwidth]{figures/Aninitialconceptdesigntop.jpg}}
+  \caption{Contoh Initial Concept Desain Top Side}
+  \label{Aninitialconceptdesigntop}
+  \end{figure}
+
+  \begin{figure}[ht]
+\centerline{\includegraphics[width=0.5\textwidth]{figures/Aninitialconceptdesignside.jpg}}
+  \caption{Contoh Initial Concept Desain Side}
+  \label{Aninitialconceptdesignside}
+  \end{figure}
+
 Konsep awal untuk struktur ditunjukkan pada Gambar 1 (panel atas) dan Gambar 2 (panel samping). Akhirnya, konsep ini berevolusi ke susunan simetris dari panel atau aspek berengsel yang ditunjukkan pada Gambar 3. Faset dirancang untuk mengakomodasi komponen plug-andplay yang sangat kecil, masing-masing segi memiliki target volume 70mm × 70mm × 12.5mm (dalam kasus sebuah 1U CubeSat). Kami menyebut aspek pendekatan ini format nano-modular (NMF) dan telah mengadopsi nomenklatur yang mirip dengan yang digunakan untuk mengekspresikan ukuran dalam CubeSats (mis., 1U, 2U, 3U). Sebagai contoh, Cubesat 1U pada Gambar 5 terdiri dari enam, 1 × 1 NMF aspek. Komponen generik yang dibangun dalam aspek 1 × 1 NMF ditunjukkan pada Gambar 4.
 
 Seperti yang dinyatakan sebelumnya, target dimensi interior dari segi 1 × 1 NMF adalah 70mm × 70mm × 12.5mm. Awalnya diharapkan bahwa satu set enam modul dimensi ini akan membentuk perakitan tertutup berengsel (selesai 1U CubeSat sans rel, yang dilampirkan dalam perakitan akhir sebelum dimasukkan ke dalam dispenser peluncuran) seperti yang ditunjukkan pada Gambar 5. Bahkan, berdasarkan ukuran faset ini, susunan enam aspek membentuk cangkang berongga, memiliki ruang yang mampu menampung kubus 5cm di pusat sebagai volume cadangan, bersama dengan semacam Raceway antara kulit dalam dan luar ini mengakomodasi pemasangan kabel. Dalam gambar ini, volume cadangan interior telah telah diklaim oleh salah satu nanomodules, yang bisa misalnya sesuai dengan kasus yang kecil mengontrol modul gyroscope saat yang mungkin diperlukan penempatan torquing aktuator motor dekat massa pusat dari CubeSat.
 
-Lebih umum, bagaimanapun, adalah mungkin untuk mendefinisikan amplop simetrik maksimal (MSE), seperti yang ditunjukkan pada Gambar Gambar 7. "MSE" dalam kasus ini hanya didefinisikan sebagai amplop dari bentuk terbesar yang dapat digunakan untuk setiap nanomodule sehingga tidak ada gangguan terjadi ketika enam modul identik dilipat bersama untuk membentuk struktur yang ditunjukkan pada Gambar 3.
+  \begin{figure}[ht]
+\centerline{\includegraphics[width=0.5\textwidth]{figures/Thefinaldesign.jpg}}
+  \caption{Bentuk Desain Akhir}
+  \label{Thefinaldesign}
+  \end{figure}
+
+   \begin{figure}[ht]
+\centerline{\includegraphics[width=0.5\textwidth]{figures/Ananomodule.jpg}}
+  \caption{Bentuk Nano Modul}
+  \label{Ananomodule}
+  \end{figure}
+
+   \begin{figure}[ht]
+\centerline{\includegraphics[width=0.5\textwidth]{figures/ViewofCubeSat.png}}
+  \caption{Tampilan dari CubeSat}
+  \label{ViewofCubeSat}
+  \end{figure}
+
+Lebih umum, bagaimanapun, adalah mungkin untuk mendefinisikan amplop simetrik maksimal (MSE), seperti yang ditunjukkan pada Gambar Gambar 7. MSE dalam kasus ini hanya didefinisikan sebagai amplop dari bentuk terbesar yang dapat digunakan untuk setiap nanomodule sehingga tidak ada gangguan terjadi ketika enam modul identik dilipat bersama untuk membentuk struktur yang ditunjukkan pada Gambar 3.
+
+Pendekatan modularisasi yang didirikan oleh NMF memiliki dua keunggulan utama. Panel telah dirancang sedemikian rupa sehingga masing-masing dapat dikembangkan sebagai nanomodule terpisah (terintegrasi dan dirakit secara individual), kemudian disatukan dan terintegrasi untuk membentuk pesawat ruang angkasa, analog dengan cara tikus, keyboard dan komponen USB yang disatukan untuk membentuk komputer pribadi. Selain itu, struktur modular memberikan kemampuan untuk membangun struktur satelit yang lebih besar dari panel yang lebih kecil.
