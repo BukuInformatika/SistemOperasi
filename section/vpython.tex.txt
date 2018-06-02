@@ -1,0 +1,19 @@
+%Kelompok5OS
+%Dika Sukma Pradana
+%Iqbal Hambali
+%Evietania Sujadi
+%Liyana Majdah Rahma
+
+VPhython
+
+\section {VPhython}
+\subsection {A. Mengenal VPhython}
+VPython adalah bahasa pemrograman Python ditambah modul grafis 3D yang disebut Visual. VPython memungkinkan pengguna untuk membuat objek seperti bola dan kerucut dalam ruang 3D dan menampilkan objek-objek ini di jendela. Hal ini mempermudah pembuatan visualisasi sederhana, memungkinkan pemrogram untuk lebih fokus pada aspek komputasi dari program mereka. Kesederhanaan VPython telah menjadikannya alat untuk ilustrasi fisika sederhana, terutama dalam lingkungan pendidikan.Vpython merupakan lingkungan pemrograman yang memungkinkan bagi  pemula untuk menulis program yang menghasilkan navigasi animasi 3D real-time. 
+
+\subsection {B. Kegunaan Vphython}
+
+\begin{enumerate}
+\item Kegunaan Vphython
+	VPhython adalah alat render sederhana untuk objek 3D dan grafik. Penggunaan utamanya dalam pendidikan, tetapi juga digunakan dalam pengaturan komersial atau penelitian. VPython pertama kali digunakan dalam mata kuliah pengantar fisika di Carnegie Mellon dan kemudian menyebar ke universitas lain dan akhirnya sekolah menengah atas, terutama yang berhubungan dengan Materi & Kurikulum Interaksi.
+	Perkembangan terkait karena David Scherer dan Bruce Sherwood adalah GlowScript, yang memungkinkan untuk menulis dan menjalankan program VPython di browser, termasuk di perangkat seluler, berkat kompilasi RapydScript Python-ke-JavaScript, yang dibuat oleh Alexander Tsepkov. Program dapat ditulis, dijalankan, dan disimpan di glowscript.org, dan kode dikompilasi-ke-JavaScript dapat diekspor dan disematkan di halaman web seseorang. John Coady telah membuat versi ivisual untuk digunakan dalam IPython, sekarang lingkungan Jupyter, menggunakan pustaka grafis GlowScript WebGL untuk merender output 3D dalam notebook IPython / Jupyter. Rhett Allain di blog Wired-nya menunjukkan contoh penggunaan Trinket untuk menyematkan kode sumber VPython yang dapat diedit dan eksekusi 3D di halaman webnya sendiri.
+\end{enumerate}
