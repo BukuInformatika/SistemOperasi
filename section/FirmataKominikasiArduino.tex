@@ -17,3 +17,31 @@
 				Saat koneksi antara MATLAB dan arduino pertama kali dibangun, disitu MATLAB mengupload pustaka dari firmata ke dalam arduino. Jadi kita harus menginstalasi nya terlebih dahulu.
 			\item Koneksikan MATLAB dan Arduino.
 				Sesudah menginstalasi pustaka tersebut telah selesai, hubungkan Arduino dan MATLAB menggunakan kabel serial USB. Lalu, check PORT yang Arduino gunakan untuk berhubungan ato berkomunikasi dengan MATLAB. Langkah ini dapat kita cari di dalam Device Manager jika kita menggunakan sistem operasi windows, setelah itu carilah di section PORT(COM&LPT), seperti yang di tunjukkan pada gambar dibawah ini.
+				
+				\begin{figure}[ht]
+					\centerline{\includegraphics[width=0.5\textwidth]{figures/knksi.png}}
+					\caption{Cari PORT yang dipakai Arduino}
+					\label{knksi}
+			\end{figure}
+				
+				Setelah itu, ketikkanlah sintaks atau script ini di Command Window dari MATLAB :
+				
+				\begin{verbatim}
+				>> a = arduino
+				\end{verbatim}	
+				
+				Setelah kita menunggu sebentar, MATLAB akan Memberikan respon seperti ini :
+				
+				\begin{verbatim}
+				a = 
+ 
+					arduino with properties:
+ 
+								Port: 'COM33'
+								Board: 'Uno'
+							AvailableAnalogPins: [0, 1, 2, 3, 4, 5]
+						AvailableDigitalPins: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+							Libraries: {'I2C', 'SPI', 'Servo'}
+				\end{verbatim}
+				
+				Berdasarkan keterangan yang dipaparkan diatas, dapat kita lihat bahwa jenis arduino yang sedang kita gunakan adalah Arduino UNO, dengan port nya yaitu COM33. Semua pin dan pustaka yang tersedia pun ditampilkan juga di layar. Jangan heran jika komputer anda menunjukkan hasil keterangan yang berbeda, karen semua tergantung jenis papan Arduino anda dan PORT atau COM yang kalian gunakan.
