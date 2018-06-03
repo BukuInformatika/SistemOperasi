@@ -14,3 +14,21 @@ VPython adalah bahasa pemrograman Python ditambah modul grafis 3D yang disebut V
 
 	VPhython adalah alat render sederhana untuk objek 3D dan grafik. Penggunaan utamanya dalam pendidikan, tetapi juga digunakan dalam pengaturan komersial atau penelitian. VPython pertama kali digunakan dalam mata kuliah pengantar fisika di Carnegie Mellon dan kemudian menyebar ke universitas lain dan akhirnya sekolah menengah atas, terutama yang berhubungan dengan Materi & Kurikulum Interaksi.
 	Perkembangan terkait karena David Scherer dan Bruce Sherwood adalah GlowScript, yang memungkinkan untuk menulis dan menjalankan program VPython di browser, termasuk di perangkat seluler, berkat kompilasi RapydScript Python-ke-JavaScript, yang dibuat oleh Alexander Tsepkov. Program dapat ditulis, dijalankan, dan disimpan di glowscript.org, dan kode dikompilasi-ke-JavaScript dapat diekspor dan disematkan di halaman web seseorang. John Coady telah membuat versi ivisual untuk digunakan dalam IPython, sekarang lingkungan Jupyter, menggunakan pustaka grafis GlowScript WebGL untuk merender output 3D dalam notebook IPython / Jupyter. Rhett Allain di blog Wired-nya menunjukkan contoh penggunaan Trinket untuk menyematkan kode sumber VPython yang dapat diedit dan eksekusi 3D di halaman webnya sendiri.
+	
+\subsection {Kelebihan VPhython}
+
+	\begin {enumerate}
+		\item Tidak ada langkah kompilasi dan tautan (tautan) sehingga perubahan kecepatan dalam sistem yang dibuat ditambah aplikasi.
+		\item Tidak ada deklarasi tipe data yang rumit sehingga program menjadi lebih sederhana, lebih pendek, dan lebih fleksibel.
+		\item Manajemen memori otomatis adalah kumpulan sampah memori sehingga dapat menghindari enkripsi kode.
+		\item Jenis data dan tingkat operasi yang tinggi adalah kecepatan dari sistem yang dibuat menggunakan jenis objek yang ada.
+	\end {enumerate}
+
+\subsection {Kekurangan VPhython}
+
+	\begin {enumerate}
+		\item Beberapa tugas berada di luar jangkauan python, seperti bahasa pemrograman dinamis lainnya, python tidak secepat atau seefisien statis, tidak seperti bahasa pemrograman kompilasi bahasa C yang serupa.
+		\item Karena python adalah seorang interpreter, python bukanlah alat terbaik untuk memperkenalkan komponen kinerja yang penting.
+		\item Python tidak dapat digunakan sebagai dasar untuk mengimplementasikan bahasa pemrograman untuk beberapa komponen, tetapi berfungsi dengan baik ketika bagian depan skrip mencarinya.
+		\item Python memberikan efisiensi dan fleksibilitas dari tradeoff dengan tidak memberikannya secara luas. Python mempersiapkan bahasa pemrograman optimasi untuk kegunaan, bersama dengan alat yang diperlukan untuk mengintegrasikannya dengan bahasa pemrograman lainnya.
+	\end {enumerate}
