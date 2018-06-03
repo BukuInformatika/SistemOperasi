@@ -27,6 +27,17 @@
 	
 	\ref{firmatates}
 	
+	\subsubsection{Methods}
+		\begin{verbatim}
+			begin(); //start the library
+			begin(long); //start the library and override the default baud rate
+			begin(Stream &s); // start the library using a [Stream](http://www.arduino.cc/en/Reference/Stream) other than Serial (eg Serial1 or EthernetClient)
+			printVersion(); //send the protocol version to the host computer
+			blinkVersion(): //blink the protocol version on the build in LED (typically pin 13)
+			printFirmwareVersion(); //send the firmware name and version to the host computer
+			setFirmwareVersion(byte major, byte minor); //set the firmware name and version, using the sketch's filename, minus the '.ino'
+			setFirmwareNameAndVersion(const char *name, byte major, byte minor); //set both the name and version of the firmware
+		\end{verbatim}
 	
 	\subsection{LabVIEW}
 	LabVIEW memiliki fungsi yang sama seperti firmata tetapi lebih mudah, mudah dalam arti pemrograman tidak lagi dilakukan di kedua sisi,
@@ -46,4 +57,5 @@
 	Menginstal Firmata di LabVIEW disebut dengan LabVIEW Interface For Arduino (LVIFA). fungsingnya yaitu dapat membaca sinyal analog potensio,
 	pembaca sensor seperti thermistor,LDR, joystick.
 	
-	
+	Dirangkum dari jurnal \cite{steiner2009firmata}
+	Dirangkum dari jurnal \cite{majocchi2012arduino}
