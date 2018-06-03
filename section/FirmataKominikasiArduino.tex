@@ -44,4 +44,21 @@
 							Libraries: {'I2C', 'SPI', 'Servo'}
 				\end{verbatim}
 				
-				Berdasarkan keterangan yang dipaparkan diatas, dapat kita lihat bahwa jenis arduino yang sedang kita gunakan adalah Arduino UNO, dengan port nya yaitu COM33. Semua pin dan pustaka yang tersedia pun ditampilkan juga di layar. Jangan heran jika komputer anda menunjukkan hasil keterangan yang berbeda, karen semua tergantung jenis papan Arduino anda dan PORT atau COM yang kalian gunakan.
+				Berdasarkan keterangan yang dipaparkan diatas, dapat kita lihat bahwa jenis arduino yang sedang kita gunakan adalah Arduino UNO, dengan port nya yaitu COM33. Semua pin dan pustaka yang tersedia pun ditampilkan juga di layar. Jangan heran jika komputer anda menunjukkan hasil keterangan yang berbeda, karen semua tergantung jenis papan Arduino anda dan PORT atau COM yang kalian gunakan. Jika kalian sama seperti diatas, kalian dapat mengetikkan script dibawah ini agar lebih cepat.
+				
+				\begin{verbatim}
+					>> a = arduino('com33', 'uno');
+				\end{verbatim}
+				
+				Sekarang kita memakai papan Arduino UNO. Jenis ini telah mempunyai LED  yang telah terpasang di dalamnya. Jika ingin melakuakan testing, gunakan script di bawah ini dan amati lampu LEDnya.
+				
+				\begin{verbatim}
+					>> % menyalakan LED
+					>> writeDigitalPin(a,13,1)
+					>> % memadamkan LED
+					>> writeDigitalPin(a,13,0)
+				\end{verbatim}
+				
+				Kalau sukses kita bisa ke step selanjutnya.
+				
+\cite{steiner2009firmata}
