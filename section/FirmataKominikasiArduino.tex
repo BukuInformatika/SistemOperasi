@@ -22,7 +22,7 @@
 					\centerline{\includegraphics[width=0.5\textwidth]{figures/knksi.png}}
 					\caption{Cari PORT yang dipakai Arduino}
 					\label{knksi}
-			\end{figure}
+				\end{figure}
 				
 				Setelah itu, ketikkanlah sintaks atau script ini di Command Window dari MATLAB :
 				
@@ -61,4 +61,23 @@
 				
 				Kalau sukses kita bisa ke step selanjutnya.
 				
+			\item Membaca Data dari Arduino.
+				Saat praktek, data yang biasa kita dapatkan dari arduino adalah data - data yang didapat dari saat kita menggunakan sensor, bisa digital atau juta analog. Kalian bebas menggunakan yang mana saja, dan kita akan mengirimkan nilai nilai yang terbaca oleh arduino ke MATLAB. Disini yang digunakan adalah potensiometer yang akan mewakili penggunaan sensor analog. Menggunakan ini, akan memudahkan kita dalam mengubah nilai input ke Arduino. Rangkailah seperti gambar di bawah ini. Kaki bagian tengah disambungkan ke pin A0, dan kedua kakinya disambungkan ke GND dan pin 5V.
+				
+				\begin{figure}[ht]
+					\centerline{\includegraphics[width=0.5\textwidth]{figures/arduino.png}}
+					\caption{Gambar Rangkaian}
+					\label{arduino}
+				\end{figure}
+				
+				Kalian bebas memutarnya. Lalu bacalah hasil datanya dengan script readVoltage:
+				
+				\begin{verbatim}
+					>> data = readVoltage(a, 0)
+ 
+					data =
+				\end{verbatim}
+				
+		\end{enumerate}
+		
 \cite{steiner2009firmata}
