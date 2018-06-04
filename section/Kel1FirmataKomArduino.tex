@@ -31,12 +31,38 @@
 		\begin{verbatim}
 			begin(); //start the library
 			begin(long); //start the library and override the default baud rate
-			begin(Stream &s); // start the library using a [Stream](http://www.arduino.cc/en/Reference/Stream) other than Serial (eg Serial1 or EthernetClient)
-			printVersion(); //send the protocol version to the host computer
-			blinkVersion(): //blink the protocol version on the build in LED (typically pin 13)
-			printFirmwareVersion(); //send the firmware name and version to the host computer
-			setFirmwareVersion(byte major, byte minor); //set the firmware name and version, using the sketch's filename, minus the '.ino'
-			setFirmwareNameAndVersion(const char *name, byte major, byte minor); //set both the name and version of the firmware
+			begin(Stream s); 
+			printVersion(); 
+			blinkVersion(): 
+			printFirmwareVersion(); 
+			setFirmwareVersion(byte major, byte minor); 
+			setFirmwareNameAndVersion(const char *name, byte major, byte minor); 
+		\end{verbatim}
+		
+		\begin{itemize}
+			\item Sending Messages
+				\begin{verbatim}
+					sendAnalog(byte pin, int value); //send an analog message
+					sendDigitalPort(byte portNumber, int portData); //send an 8-bit port in a single digital message
+					sendString(const char* string); 
+					sendString(byte command, byte bytec, byte bytev); 
+					sendSysex(byte command, byte bytec, byte bytev); 
+					write(byte c); 
+				\end{verbatim}
+			\item Receiving Messages
+				\begin{verbatim}
+					available(); 
+					processInput(); 
+					attach(byte command, callbackFunction myFunction); 
+					detach(byte command); 
+				\end{verbatim}
+		\end{itemize}
+	
+	\subsubsection{Utility Methods}
+		\begin{verbatim}
+			sendValueAsTwo7bitBytes(int value); 
+			startSysex(void); 
+			endSysex(void); 
 		\end{verbatim}
 	
 	\subsection{LabVIEW}
@@ -50,8 +76,7 @@
 	MATLAB adalah salah satu software yang sepenuhnya mengambil kontrol pda arduino fungsinya akan menghemat waktu dalam mengintegrasi MATLAB arduino.
 	
 	\subsection{Interaksi Arduino dan LabVIEW}
-	Interaksi Arduino dan LabVIEW yaitu kerena masing masing memiliki kelebihan dan kekurangan, apabila digabungkan keduanya akan saling menambahkan,
-	sebaliknya kekurangan kekurangannya keduanya akan saling meniadakan.
+	Interaksi antara Arduino dengan LabVIEW dikarenakan masing-masing mempunyai kelebihan dan kekurangan masing-masing, apabila keduanya digabungkan akan saling menambahkan, namun akan sebaliknya kekurangan yaitu kekurangannya keduanya akan saling mentiadakan.
 	
 	\subsection{Menginstall Firmata}
 	Menginstal Firmata di LabVIEW disebut dengan LabVIEW Interface For Arduino (LVIFA). fungsingnya yaitu dapat membaca sinyal analog potensio,
