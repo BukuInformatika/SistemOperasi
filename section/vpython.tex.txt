@@ -32,3 +32,13 @@ VPython adalah bahasa pemrograman Python ditambah modul grafis 3D yang disebut V
 		\item Python tidak dapat digunakan sebagai dasar untuk mengimplementasikan bahasa pemrograman untuk beberapa komponen, tetapi berfungsi dengan baik ketika bagian depan skrip mencarinya.
 		\item Python memberikan efisiensi dan fleksibilitas dari tradeoff dengan tidak memberikannya secara luas. Python mempersiapkan bahasa pemrograman optimasi untuk kegunaan, bersama dengan alat yang diperlukan untuk mengintegrasikannya dengan bahasa pemrograman lainnya.
 	\end {enumerate}
+
+	\subsection { Variabel dan Tipe Data Pada vphython}
+	
+	\begin {enumerate}
+		\item Variabel adalah memori yang dicadangkan untuk menyimpan nilai-nilai. Artinya dengan variabel, kita dapat menyimpan nilai dalam program yang nantinya akan kita tampilkan. Namun variabel hanya bersifat sementara. Yaitu hanya menyimpan ketika program dijalankan. Jika sudah ditutup, maka nilai didalam variabel tersebut akan terhapus otomatis.
+		 Jenis Variabel Pada Python tidak serumit bahasa pemrograman lain. Karena pada bahasa pemrograman python, jenis variabel tidak ditentukan dengan tipe data yang ada. variabel pada python hanya kita buat dengan tulisan sesuai dengan selera kita. Jadi tidak perlu memusingkan diri dengan masalah variabel.
+		\item Tipe Data adalah jenis nilai yang dapat ditampung variabel, dan memiliki jenis-jenis tertentu. Artinya tipe data merupakan tipe / jenis dari suatu value, yang nantinya akan disimpan ke dalam variabel.Dari pengertian ini, kita bisa mengetahui bahwa variabel dan tipe data adalah hal yang bersangkutan. Untuk bahasa pemrograman lain memang benar. Tapi untuk python itu tidak sepenuhnya benar.  
+		 Tipe Data di Python memiliki berbagai jenis. Antara lain huruf, karakter, angka, boolean dan list (kelompok). tipe data tersebut nantinya disimpan ke dalam variabel di program python sesuai dengan jenisnya. 
+
+
