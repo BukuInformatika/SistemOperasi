@@ -77,7 +77,22 @@
  
 					data =
 				\end{verbatim}
+				Nilai yang sudah didapatkan tadi terkonversi menjadi tegangan 0 - 5V. ADC yang befungsi untuk mengubah sinyal analog menjadi data digital beresolusi 10 bit. Karena itu, data yang didapatkan adalah kira - kira 2^10 = 1024 kemungkinan. Atau dapat juga dihitung seperti berikut ini:
 				
+				\begin{figure}[ht]
+					\centerline{\includegraphics[width=0.5\textwidth]{figures/rumus.png}}
+					\caption{Rumus}
+					\label{rumus}
+				\end{figure}
+				
+				\begin{verbatim}
+					>> outputAnalog = floor((data*1023)/5)
+ 
+					outputAnalog =
+						669
+				\end{verbatim}
+				
+				Nilai yang telah kita dapatkan sebelumnya yang sebesar 3.2715 merupakan sebuah data. tegangan referensi kita adalah 5V, dan sintaks floor digunakan untuk membulatkan. Kita dapat melakuakn lebih praktis juka menggunakan sensor yang sebenarnya.
 		\end{enumerate}
 		
 \cite{steiner2009firmata}
