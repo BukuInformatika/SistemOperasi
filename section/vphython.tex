@@ -41,5 +41,23 @@
 			\item Tipe Data adalah jenis nilai yang dapat ditampung variabel, dan memiliki jenis-jenis tertentu. Artinya tipe data merupakan tipe / jenis dari suatu value, yang nantinya akan disimpan ke dalam variabel.Dari pengertian ini, kita bisa mengetahui bahwa variabel dan tipe data adalah hal yang bersangkutan. Untuk bahasa pemrograman lain memang benar. Tapi untuk python itu tidak sepenuhnya benar.  
 			\item Tipe Data di Python memiliki berbagai jenis. Antara lain huruf, karakter, angka, boolean dan list (kelompok). tipe data tersebut nantinya disimpan ke dalam variabel di program python sesuai dengan jenisnya. 
 		\end{enumerate}
-	
+		\begin{verbatim}
+			from visual import * #import the visual module
 
+			rod = cylinder(pos=(0,2,1), axis=(5,0,0), radius=1)
+		\end{verbatim}
+		\begin{figure}[ht]
+					\centerline{\includegraphics[width=1\textwidth]{figures/OSS.jpg}}
+				\caption{Coding}
+			\label{Vphython}
+		\end{figure}
+	Gambar \ref{Vphython} Gambar.
+		\begin{verbatim}
+			from visual.graph import * # import graphing features
+			from numpy import arange, cos, exp
+
+			funct1 = gcurve(color=color.cyan) # a connected curve object
+
+			for x in arange(0., 8.1, 0.1): # x goes from 0 to 8
+			funct1.plot(pos=(x,5.*cos(2.*x)*exp(-0.2*x))) # plot
+		\end{verbatim}
