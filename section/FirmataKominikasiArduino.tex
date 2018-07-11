@@ -18,7 +18,7 @@
 			\item Instalasi Pustaka Arduino.
 				Saat koneksi antara MATLAB dan arduino pertama kali dibangun, disitu MATLAB mengupload pustaka dari firmata ke dalam arduino. Jadi kita harus menginstalasi nya terlebih dahulu.
 			\item Koneksikan MATLAB dan Arduino.
-				Sesudah menginstalasi pustaka tersebut telah selesai, hubungkan Arduino dan MATLAB menggunakan kabel serial USB. Lalu, check PORT yang Arduino gunakan untuk berhubungan ato berkomunikasi dengan MATLAB. Langkah ini dapat kita cari di dalam Device Manager jika kita menggunakan sistem operasi windows, setelah itu carilah di section PORT(COM&LPT), seperti yang di tunjukkan pada gambar dibawah ini.
+				Sesudah menginstalasi pustaka tersebut telah selesai, hubungkan Arduino dan MATLAB menggunakan kabel serial USB. Lalu, check PORT yang Arduino gunakan untuk berhubungan ato berkomunikasi dengan MATLAB. Langkah ini dapat kita cari di dalam Device Manager jika kita menggunakan sistem operasi windows, setelah itu carilah di section PORT COM LPT , seperti yang di tunjukkan pada gambar dibawah ini.
 				
 				\begin{figure}[ht]
 					\centerline{\includegraphics[width=0.5\textwidth]{figures/knksi.png}}
@@ -79,7 +79,7 @@
  
 					data =
 				\end{verbatim}
-				Nilai yang sudah didapatkan tadi terkonversi menjadi tegangan 0 - 5V. ADC yang befungsi untuk mengubah sinyal analog menjadi data digital beresolusi 10 bit. Karena itu, data yang didapatkan adalah kira - kira 2^10 = 1024 kemungkinan. Atau dapat juga dihitung seperti berikut ini:
+				Nilai yang sudah didapatkan tadi terkonversi menjadi tegangan 0 - 5V. ADC yang befungsi untuk mengubah sinyal analog menjadi data digital beresolusi 10 bit. Karena itu, data yang didapatkan adalah kira - kira 2 pangkat 10 = 1024 kemungkinan. Atau dapat juga dihitung seperti berikut ini:
 				
 				\begin{figure}[ht]
 					\centerline{\includegraphics[width=0.5\textwidth]{figures/rumus.png}}
