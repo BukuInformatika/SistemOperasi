@@ -11,11 +11,14 @@
 	\subsection{Proses}	
 	Proses adalah sebuah  program yang sedang dieksekusi. Sedangkan program idalah merupakan kumpulan-kumpulan  dari suatu  instruksi yang sudah ditulis ke dalam bahasa yang dapat  dimengerti oleh sistem operasi.Proses berisi tentang sebuah instruksi dan sebuah data. program counter dan seluruh register pemroses, stack ini  berisi data sementara contohnya seperti alamat pengiriman, parameter rutin dan variabel lokal. Sistem operasi diharuskan untuk mengelola semua proses di dalam sistem tersebut dan mengalokasikan sumber daya ke sebuah  proses-proses sesuai dengan kebijaksanaan untuk memenuhi sasaran sistem
 	
-	\subsection{Istilah yang berkaitan dengan proses}
+	\subsection{Istilah yang berkaitan dengan proses dalam sistem operasi}
 		\begin{itemize}
 			\item Multiprogramming
-			Multiprogramming (multitasking) adalah  istilah teknologi informasi dengan mengunakan bahasa inggris yang baik  mengacup kepada sebuah metode dimana banyak sebuah pekerjaan atau yang dikenal juga sebagai proses  dengan diolah dengan menggunakan sumber daya CPU yang sama.
-			Contohnya sistem operasi jenis ini antaranya linux dan windows.
+			Multiprogramming adalah  istilah teknologi informasi dengan mengunakan bahasa inggris yang baik  mengacup kepada sebuah metode dimana banyak sebuah pekerjaan atau yang dikenal juga sebagai proses  dengan diolah dengan menggunakan sumber daya CPU yang sama. Dalam sistem ini sebuah program dijalankan dalam CPU sampai terjadi interupsi. pada saat proses interupsi terjadi maka program yang dimuat dalam memori akan di jalannkan sampai proses interupsi.ketika proses interupsi selesai maka kontrol dikembalikan pada program yang sebelumnya.
+			Contohnya proses ketika membuka program aplikasi yang berbeda dalam satu waktu.
+			\item Time-Sharing adalah suatu metode yang digunakan dalam sistem operasi yang memungkinkan sejumlah pemakai dapat berinteraksi dengan proses, setiap proses akan ditangani oleh CPU secara bergantian dalam jumlah waktu yang sama.
+			\item Multitasking adalah suatu proses yang memungkinkan seorang pengguna dapat menjalankan sejumlah program secara bersamaan.
+			contohnya membuka word dan excel secara bersamaan.
 			\item Multiprocessing
 			kemampuan komputer untuk melakukan beberapa proses dengan waktu yang bersamaan, dibantu dengan keberadaan teknologi yang berbasis multiprocessor.
 			Contohnya seperti computer server.
