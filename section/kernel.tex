@@ -1,0 +1,10 @@
+\section{Arsitektur Sistem Operasi Linux}
+\subsection{Kernel}
+	Kernel Linux merupakan kernel yang digunakan dalam sistem operasi GNU/Linux. Kernel ini merupakan turunan dari sistem operasi UNIX, yang mana di rilis menggunakan lisensi GNU \textit{General Public License} (GPL) dan dikembangkan oleh programmer di selururh dunia karena sifatnya yang \textit{open source}. Kernel ini merupakan inti dari sistem operasi komputer dengan memiliki kontrol penuh atas segala dalam sistem tersebut. Kernel ini menghubungkan antara perangkat lunak dan perangkat keras, salah satu program pertama yang memuat fungsi kernel ini yaitu dimuat didalam start-up setelah proses bootloader.
+\begin{figure}[!htbp]
+\centerline{\includegraphics[width=0.75\textwidth]{Figures/Kernel_Layout.png}}
+\caption{Kernel connect}
+\label{kernel}
+\end{figure}
+
+\lstinputlisting[caption=contoh dasar kode program kerne membuat hello world,label={lst:kode dasar}]{src/contoh.tex}
