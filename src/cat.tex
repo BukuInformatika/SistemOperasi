@@ -1,0 +1,1 @@
+cat <file_system_yang_dimaksud>
