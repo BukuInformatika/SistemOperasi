@@ -88,6 +88,25 @@ ls
 \end{verbatim}
 \end{enumerate}
 
+\subsubsection{Pipeline}
+Pipeline (|) merupakan fasilitas di shell UNIX yang berfungsi untuk memberikan input dari suatu proses dari output proses
+yang lain. Misalkan sebagai contoh :
+sebelum menggunakan pipeline
+\begin{verbatim}
+askahar@pc:~$ find *
+contoh
+test
+\end{verbatim}
+
+menggunakan pipeline :
+\begin{verbatim}
+askahar@pc:~$ find * | grep test
+test
+askahar@pc:~$
+\end{verbatim}
+Jadi, jika kita tarik kesimpulan dari perintah diatas bahwa output dari perintah find menjadi input dari perintah grep yang kemudian hanya mengambil kata \"test\" dari output find.
+
+
 \subsection{Commands and Utilities}
 Terdapat berbagai perintah dan utilitas yang kalian dapat gunakan, ada lebih dari 250 perintah standar plus dengan yang disediakan melalui \textit{software} dari pihak ke-3. 
 
