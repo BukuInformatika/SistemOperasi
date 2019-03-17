@@ -44,6 +44,24 @@ kamu akan mendapatkan beberapa file untuk versi kernel yang berbeda seperti :
 \end{enumerate}
 Ketika direktori /boot kehabisan ruang penyimpanan, kamu dapat menghapus versi lama dari file-file atau package yang lama. Tapi harus berhati-hati ketika melakukan pemeliharaan di dalam direktori ini karena ditakutkan akan menghapus kernel yang digunakan secara tidak sengaja.
 
+\subsection{Komponen Kernel}
+Dalam cabang kernel \textbf{/usr/src/linux}, komponen kernel disimpan didalam berbagai subdirektori yaitu :
+ \begin{table}[h]
+		\caption{Komponen Kernel}
+		\label{Komponen kernel}
+			\begin{tabular}{|c|l|}
+			\hline
+			Subdirektori&Keterangan\\
+			\hline
+			./drivers& Berisi kode untuk jenis hardware pendukung\\
+			\hline
+			./fs& Berisi kode filesystem pendukung\\
+			\hline
+			./net& Berisi kode jaringan pendukung\\
+			\hline
+		\end{tabular}
+		\end{table}
+
 \subsection{Shell}
 \subsubsection{Pengertian}
 Shell menyediakan sebuah antarmuka untuk sistem unix, untuk mengumpulkan masukan yang diinputkan dan menjalankan program berdasarkan apa yang kita input. Ketika program dieksekusi , maka akan menampilkan \textit{output} sebuah program. 
@@ -211,3 +229,17 @@ Pada direktori root linux terdapat beberapa direktori standar yang biasa ada pad
 			\hline
 		\end{tabular}
 		\end{table}
+
+\section{System Startup}
+Untuk menyesuaikan proses booting melibatkan bagaimana kita memahami tentang script startup. Masalah umum yang muncul diberbagai titik selama proses booting serta beberapa teknik \textit{recovery}. Berfokus pada awal disk ram pada tahap proses booting, memungkinkan untuk dapat membuat keputusan sebagai disk ram yang baru dibuat.
+\subsection{Menyesuaikan Proses Boot}
+\begin{enumerate}
+\item Overview of init
+Untuk mencegah proses dijalankan pengguna dari campur dengan kernel dua wilayah yang berbeda memori untuk didefinisikan. Hal ini disebut sebagai \" kernel space memory\" dan \"user space memory\". Proses init merupakan program pertama untuk menjalankan dalam \textit{user space memory}.
+ init merupakan the parent dari semua proses, perintah untuk memanggil konfigurasi init yaitu 
+\begin{verbatim}
+$ /etc/initlab
+\end{verbatim}
+\item RunLevels
+Runlevels menentukan proses yang harus dijalankan secara bersama-sama.  semua proses yang dapat mulai atau berhenti di runlevel diberikan kendali oleh script \textbf{init script} atau \textbf{rc script} di dalam direktori /etc/rc.d/init.d
+\end{enumerate}
