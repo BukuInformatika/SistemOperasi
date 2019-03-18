@@ -128,7 +128,7 @@ Jadi, jika kita tarik kesimpulan dari perintah diatas bahwa output dari perintah
 \subsection{Commands and Utilities}
 Terdapat berbagai perintah dan utilitas yang kalian dapat gunakan, ada lebih dari 250 perintah standar plus dengan yang disediakan melalui \textit{software} dari pihak ke-3. 
 
-Beberapa perintah yang biasa digunakan sebagai berikut :
+Beberapa perintah yang biasa digunakan sebagai berikut pada tabel \ref{commands}:
 
 \begin{table}[h]
 		\caption{Perintah dasar Unix}
@@ -193,7 +193,7 @@ Beberapa perintah yang biasa digunakan sebagai berikut :
 		\end{table}
 
 \subsection{Struktur direktori Linux}
-Pada direktori root linux terdapat beberapa direktori standar yang biasa ada pada banyak distro linux, direktori tersebut sebagai berikut :
+Pada direktori root linux terdapat beberapa direktori standar yang biasa ada pada banyak distro linux, direktori tersebut sebagai berikut pada tabel \ref{direktori} :
 \begin{table}[h]
 		\caption{Direktori Linux}
 		\label{direktori}
@@ -243,3 +243,23 @@ $ /etc/initlab
 \item RunLevels
 Runlevels menentukan proses yang harus dijalankan secara bersama-sama.  semua proses yang dapat mulai atau berhenti di runlevel diberikan kendali oleh script \textbf{init script} atau \textbf{rc script} di dalam direktori /etc/rc.d/init.d
 \end{enumerate}
+
+\subsection{System Recovery}
+Ketika sistem crash dan gagal untuk merestart diperlukan untuk mengubah proses boot normal, Bagian ini menjelaskan beberapa solusi yang sesuai untuk masalah-masalah yang dapat terjadi pada tahap berikutnya dari proses boot pada tabel \ref{recovery}
+\begin{table}[h]
+		\caption{System recovery}
+		\label{recovery}
+			\begin{tabular}{|c|l|l|}
+			\hline
+			\textbf{Booting Stage}&\textbf{Tipe Error}&\textbf{Solusi yang disarankan}\\
+			\hline
+			INIT&Corrupt root filesystem atau a faulty /etc/fstab entry&menggunakan root login prompt\\
+				&kernel module fails to load atau an RC Script fails&override INIT atau menggunakan alternative runlevel\\
+			\hline
+			KERNEL&kernel panic& 	\\
+				&hardware initialisation errors&melewati parameter bootloader parameter misalnya acpi=off\\
+			\hline
+			BOOT LOADER&Not installed or broken&menggunakan rescue disk atau boot disk\\
+			\hline
+\end{tabular}
+\end{table}
