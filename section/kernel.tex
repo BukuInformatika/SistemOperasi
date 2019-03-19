@@ -263,3 +263,16 @@ Ketika sistem crash dan gagal untuk merestart diperlukan untuk mengubah proses b
 			\hline
 \end{tabular}
 \end{table}
+
+\subsection{Overriding the INIT stage}
+Hal ini diperlukan ketika proses boot gagal karena script init rusak, Setelah kernel ini berhasil menempatkan root filesystem ini akan mencoba untuk menjalankan /sbin/init. Tapi kerenl dapat diinstruksikan untuk menjalankan shell yang memungkinkan untuk memliki akases ke sistem sebelum services dimulai.
+pada LILO atau GRUB boot prompt tambahkan parameter ini pada kernel :
+\begin{verbatim}
+init=/bin/bash
+\end{verbatim}
+Pada tahap akhir boot kernel kita harus ke bash prompt. Read-write akses ke root filesystem dengan perintah berikut :
+\begin{verbatim}
+mount /proc
+mount -o remount, rw /
+\end{verbatim}
+
