@@ -23,6 +23,21 @@
 		\item sebagai wadah/tempat pengelolaan daya dan pengalokasian data.
 		\item sebagai penerjemah bahasa biner lalu ditampilkan ke monitor berupa kombinasi teks dan grafis.
 		\end{enumerate}
+\subsection{System Calls}
+System Calls yaitu sebuah mekanisme yang digunakan oleh program aplikasi untuk meminta service dari sistem operasi. service disini berupa storage, main memory, network, proses management, dll. Jadi, peran sistem operasi disini sebagai jembatan komunikasi antara user dan hardware.
+\subsubsection{Jenis system calls}
+\begin{itemize}
+\item Manajemen proses
+\item Manajemen Berkas
+\item Manajemen perangkat I/O
+\item informasi
+\item komunikasi berupa message-passing dan shared-memory \ref{SC}
+\end{itemize}
+\begin{figure}[ht]
+		\centerline{\includegraphics[width=1\textwidth]{figures/message-parsing.JPG}}
+		\caption{Systemcalls}
+		\label{SC}
+	\end{figure}
 \subsection{Jenis sistem operasi}
 \subsubsection{Single dan multi-tasking}
 	\begin{enumerate}
@@ -116,7 +131,8 @@
 			\hline	
 		\end{tabular}
 		\end{table}
-	
+
+
 
 \cite{silberschatz2014operating}
 \cite{hoare1974monitors}
